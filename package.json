@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "visible-visual",
+=======
+  "name": "shaky-sphere",
+>>>>>>> 9cba23ffa7750c60bac77a9c99f654b28123cc64
   "type": "module",
   "version": "0.0.1",
   "engines": {
