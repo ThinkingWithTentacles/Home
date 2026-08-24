@@ -1,8 +1,21 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+
+import { 
+  swamp, 
+  flower, 
+  deadEnd, 
+  landing, 
+} from '../config.js';
 ---
 
 <Layout>
-	<h1>Hello World Again!</h1>
+	<h1>Hello World</h1>
 </Layout>
+
+<main>
+  <a href={swamp+landing}>|   Thinking With Tentacles   |</a>;
+  <a href={flower+landing}>|   WickedGabi   |</a>;
+  <a href={deadEnd+landing}>|   Dead End   |</a>;
+</main>
