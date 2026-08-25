@@ -5,8 +5,8 @@ import Layout from '../layouts/Layout.astro';
 import { 
   swamp, 
   flower, 
-  deadEnd, 
-  landing, 
+  end,
+  vault
 } from '../config.js';
 ---
 
@@ -15,7 +15,8 @@ import {
 </Layout>
 
 <main>
-  <a href={swamp+landing}>|   Thinking With Tentacles   |</a>;
-  <a href={flower+landing}>|   WickedGabi   |</a>;
-  <a href={deadEnd+landing}>|   Dead End   |</a>;
+  <a href={swamp + "/landing"}>|   Thinking With Tentacles   |</a>;
+  <a href={flower + "/landing"}>|   WickedGabi   |</a>;
+  <a href={end + "/landing"}>|   Dead End   |</a>;
+  <a href={vault + "/landing"}>|   Vault   |</a>;
 </main>
