@@ -3,20 +3,19 @@ import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
 import { 
-  swamp, 
-  flower, 
-  end,
-  vault
+  swampLand, 
+  wickedLand, 
+  deadEnd,
+  theVault
 } from '../config.js';
 ---
-
 <Layout>
 	<h1>Hello World</h1>
 </Layout>
 
 <main>
-  <a href={swamp + "/landing"}>|   Thinking With Tentacles   |</a>;
-  <a href={flower + "/landing"}>|   WickedGabi   |</a>;
-  <a href={end + "/landing"}>|   Dead End   |</a>;
-  <a href={vault + "/landing"}>|   Vault   |</a>;
+  <a href={swampLand}>|   Thinking With Tentacles   |</a>;
+  <a href={wickedLand}>|   WickedGabi   |</a>;
+  <a href={deadEnd}>|   Dead End   |</a>;
+  <a href={theVault}>|   Vault   |</a>;
 </main>
