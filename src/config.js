@@ -1,75 +1,144 @@
 //////////////////////////////////////////////
-/*                 Landings                 */
+/*            River Haven Grotto            */
 //////////////////////////////////////////////
 
-/* River Haven Grotto*/
 const swamp = "/ThinkingWithTentacles";
 const wicked = "/WickedGabi";
 const end = "/DeadEnd";
 const vault = "/Vault";
 
-/*----------------------------------------------------------------------*/
+//////////////////////////////////////////////
+/*                  Lands                   */
+//////////////////////////////////////////////
 
-/* Lands */
 export const swampLand = `${swamp}/landing`;
 export const wickedLand = `${wicked}/landing`;
 export const deadEnd = `${end}/landing`;
 export const theVault = `${vault}/landing`;
 
-/* Swamp */
-// Tentacles
-export const swampGlass = `${swamp}/Glasscraft/Glasscraft`;
-export const swampLeather = `${swamp}/Leathercraft/Leathercraft`;
-export const swampParacord = `${swamp}/Paracordcraft/Paracordcraft`;
-export const swampWood = `${swamp}/Woodcraft/Woodcraft`;
-export const swampWorkShop = `${swamp}/Workshop/Swamp`;
+//////////////////////////////////////////////
+/*                 Swamp                    */
+//////////////////////////////////////////////
 
-// Pylops
-export const swampCreature = `${swamp}/Workshop/About/Me`;
-export const swampFixations = `${swamp}/Workshop/Current/HyperFixation`;
-export const swampShop = `${swamp}/Workshop/Stock/TheShop`;
+/* Tentacles */
+export const swampGlasscraft = `${swamp}/Glasscraft`;
+export const swampLeathercraft = `${swamp}/Leathercraft`;
+export const swampParacordcraft = `${swamp}/Paracordcraft`;
+export const swampWoodcraft = `${swamp}/Woodcraft`;
+export const swampWorkshop = `${swamp}/Workshop`;
 
-/* WickedGabi */
-// Flowers
-export const wickedBurn = `${wicked}/BurningArt/BurningArt`;
-export const wickedDye = `${wicked}/DyeArt/DyeArt`;
-export const wickedWire = `${wicked}/WireArt/WireArt`;
-export const wickedArtStuido = `${wicked}/ArtStudio/TheGarden`;
+/* Suckers */
+export const swampGlass = `${swampGlasscraft}/Glasscraft`;
+export const swampLeather = `${swampLeathercraft}/Leathercraft`;
+export const swampParacord = `${swampParacordcraft}/Paracordcraft`;
+export const swampWood = `${swampWoodcraft}/Woodcraft`;
+export const swampShop = `${swampWorkshop}/Swamp`;
 
-// Petals
-export const wickedCreature = `${wicked}/About/Me`;
-export const wickedFixation = `${wicked}/Current/HyperFixation`;
-export const wickedShop = `${wicked}/Stock/TheStudio`;
+/* Teeth */
+export const swampTameWood = `${swampWoodcraft}/Tame/TameWood`;
+export const swampHotWood = `${swampWoodcraft}/Hot/HotWood`;
+export const swampSpicyWood = `${swampWoodcraft}/Spicy/SpicyWood`;
 
-/* Dead End */
-// Pilfer, Filter, Transfer
-export const reDuce = `${end}/ReDuce/CollectingTrash`;
-export const reUse = `${end}/ReUse/UsefulTrash`;
-export const reCycle = `${end}/ReCycle/ArtisticTrash`;
+/* Pylops */
+export const swampCreature = `${swampWorkshop}/About/Me`;
+export const swampFixations = `${swampWorkshop}/Current/HyperFixation`;
+export const swampCraft = `${swampWorkshop}/Stock/TheShop`;
 
-/* Vault */
-// Open Secrets
-export const duck = `${end}/Vault/duck`;
+//////////////////////////////////////////////
+/*                 Wicked                   */
+//////////////////////////////////////////////
+
+/* Flowers */
+export const wickedBurningArt = `${wicked}/BurningArt`;
+export const wickedDyeArt = `${wicked}/DyeArt`;
+export const wickedWireArt = `${wicked}/WireArt`;
+export const wickedArtStudio = `${wicked}/ArtStudio`;
+
+/* Pollen */
+export const wickedBurn = `${wickedBurningArt}/BurningArt`;
+export const wickedDye = `${wickedDyeArt}/DyeArt`;
+export const wickedWire = `${wickedWireArt}/WireArt`;
+export const wickedStudio = `${wickedArtStudio}/TheGarden`;
+
+/* Roots */
+export const wickedTameWood = `${wickedBurningArt}/Tame/TameWood`;
+export const wickedTarotWood = `${wickedBurningArt}/Tarot/TarotWood`;
+export const wickedSpicyWood = `${wickedBurningArt}/Spicy/SpicyWood`;
+
+/* Petals */
+export const wickedCreature = `${wickedArtStudio}/About/Me`;
+export const wickedFixation = `${wickedArtStudio}/Current/HyperFixation`;
+export const wickedArt = `${wickedArtStudio}/Stock/TheStudio`;
 
 //////////////////////////////////////////////
 /*             Product Catalogs             */
 //////////////////////////////////////////////
-// Swampwood
-export const mildWood = `${swamp}/Woodcraft/Tame`;
-export const hotWood = `${swamp}/Woodcraft/Hot`;
-export const spicyWood = `${swamp}/Woodcraft/Spicy`;
 
-// Filtered Used Art
+/* Swamp Crafts */
+export const craftedGlass = `${swampGlasscraft}/CraftedGlass`;
+export const craftedLeather = `${swampLeathercraft}/CraftedLeather`;
+export const craftedParacord = `${swampParacordcraft}/CraftedParacord`;
+export const tameWood = `${swampWoodcraft}/Tame/Wood`;
+export const hotWood = `${swampWoodcraft}/Hot/Wood`;
+export const spicyWood = `${swampWoodcraft}/Spicy/Wood`;
+
+/* Wicked Art */
+export const artWire = `${wickedWireArt}/WickedWire`;
+export const artDye = `${wickedDyeArt}/WickedDye`;
+export const tameBurn = `${wickedBurningArt}/Tame/Burns`;
+export const tarotBurn = `${wickedBurningArt}/Tarot/Burns`;
+export const spicyBurn = `${wickedBurningArt}/Spicy/Burns`;
+
+/* Filtered Used Art */
 export const reCollecting = `${end}/FilteredArt`;
 export const forUse = `${end}/UseMe`;
 export const upCycled = `${end}/MeepMorps`;
 
-// Swamp Work
-export const swampDeleted = `${swamp}/Workshop/About/Deleted`;
-export const swampProgress = `${swamp}/Workshop/Current/Progress`;
-export const swampStock = `${swamp}/Workshop/Stock/Stock`;
+/* Archive */
+export const sold = `${vault}/Archive/Sold`;
+export const creations = `${vault}/Archive/Creations`;
 
-// Wicked Art
-export const wickedDeleted = `${swamp}/ArtStudio/About/Deleted`;
-export const wickedProgress = `${swamp}/ArtStudio/Current/Progress`;
-export const witckedStock = `${swamp}/ArtStudio/Stock/Stock`;
+//////////////////////////////////////////////
+/*                   Work                   */
+//////////////////////////////////////////////
+
+/* Swamp */
+export const swampDeleted = `${swampWorkshop}/About/Deleted`;
+export const swampProgress = `${swampWorkshop}/Current/Progress`;
+export const swampStock = `${swampWorkshop}/Stock/Stock`;
+
+/* Wicked */
+export const wickedDeleted = `${wickedArtStudio}/About/Deleted`;
+export const wickedProgress = `${wickedArtStudio}/Current/Progress`;
+export const wickedStock = `${wickedArtStudio}/Stock/Stock`;
+
+//////////////////////////////////////////////
+/*                Dead End                  */
+//////////////////////////////////////////////
+
+/* Pilfer, Filter, Transfer */
+export const reDuce = `${end}/ReDuce/CollectingTrash`;
+export const reUse = `${end}/ReUse/UsefulTrash`;
+export const reCycle = `${end}/ReCycle/ArtisticTrash`;
+
+//////////////////////////////////////////////
+/*                  Valut                   */
+//////////////////////////////////////////////
+
+//* Open Secrets */
+export const archive = `${vault}/Archive/stuff`;
+
+/* Not So Open Secrets */
+export const duckPrints = `${vault}/DuckPrints`;
+
+/* Truth */
+export const bluePrints = `${vault}/BluePrints`;
+
+/* The Whole Truth */
+export const yellowPrints = `${vault}/YellowPrints`;
+
+/* Nothing But the Truth */
+export const redPrints = `${vault}/RedPrints`;
+
+/* Duck Prints */
+export const duck = `${duckPrints}/duck`;
