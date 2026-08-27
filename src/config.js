@@ -28,21 +28,21 @@ export const swampWoodcraft = `${swamp}/Woodcraft`;
 export const swampWorkshop = `${swamp}/Workshop`;
 
 /* Suckers */
-export const swampGlass = `${swampGlasscraft}/Glasscraft`;
-export const swampLeather = `${swampLeathercraft}/Leathercraft`;
-export const swampParacord = `${swampParacordcraft}/Paracordcraft`;
-export const swampWood = `${swampWoodcraft}/Woodcraft`;
-export const swampShop = `${swampWorkshop}/Swamp`;
+export const swampGlass = `${swampGlasscraft}/glasscraft`;
+export const swampLeather = `${swampLeathercraft}/leathercraft`;
+export const swampParacord = `${swampParacordcraft}/paracordcraft`;
+export const swampWood = `${swampWoodcraft}/woodcraft`;
+export const swampShop = `${swampWorkshop}/swamp`;
 
 /* Teeth */
-export const swampTameWood = `${swampWoodcraft}/Tame/TameWood`;
-export const swampHotWood = `${swampWoodcraft}/Hot/HotWood`;
-export const swampSpicyWood = `${swampWoodcraft}/Spicy/SpicyWood`;
+export const swampTameWood = `${swampWoodcraft}/Tame/tame-wood`;
+export const swampHotWood = `${swampWoodcraft}/Hot/hot-wood`;
+export const swampSpicyWood = `${swampWoodcraft}/Spicy/spicy-wood`;
 
 /* Pylops */
-export const swampCreature = `${swampWorkshop}/About/Me`;
-export const swampFixations = `${swampWorkshop}/Current/HyperFixation`;
-export const swampCraft = `${swampWorkshop}/Stock/TheShop`;
+export const swampCreature = `${swampWorkshop}/About/me`;
+export const swampFixations = `${swampWorkshop}/Current/hyper-fixation`;
+export const swampCraft = `${swampWorkshop}/Shop/the-shop`;
 
 //////////////////////////////////////////////
 /*                 Wicked                   */
@@ -55,39 +55,39 @@ export const wickedWireArt = `${wicked}/WireArt`;
 export const wickedArtStudio = `${wicked}/ArtStudio`;
 
 /* Pollen */
-export const wickedBurn = `${wickedBurningArt}/BurningArt`;
-export const wickedDye = `${wickedDyeArt}/DyeArt`;
-export const wickedWire = `${wickedWireArt}/WireArt`;
-export const wickedStudio = `${wickedArtStudio}/TheGarden`;
+export const wickedBurn = `${wickedBurningArt}/burning-art`;
+export const wickedDye = `${wickedDyeArt}/dye-art`;
+export const wickedWire = `${wickedWireArt}/wire-art`;
+export const wickedStudio = `${wickedArtStudio}/the-garden`;
 
 /* Roots */
-export const wickedTameWood = `${wickedBurningArt}/Tame/TameWood`;
-export const wickedTarotWood = `${wickedBurningArt}/Tarot/TarotWood`;
-export const wickedSpicyWood = `${wickedBurningArt}/Spicy/SpicyWood`;
+export const wickedTameBurn = `${wickedBurningArt}/Tame/tame-burn`;
+export const wickedTarotBurn = `${wickedBurningArt}/Tarot/tarot-burn`;
+export const wickedSpicyBurn = `${wickedBurningArt}/Spicy/spicy-burn`;
 
 /* Petals */
-export const wickedCreature = `${wickedArtStudio}/About/Me`;
-export const wickedFixation = `${wickedArtStudio}/Current/HyperFixation`;
-export const wickedArt = `${wickedArtStudio}/Stock/TheStudio`;
+export const wickedCreature = `${wickedArtStudio}/About/me`;
+export const wickedFixation = `${wickedArtStudio}/Current/hyper-fixation`;
+export const wickedArt = `${wickedArtStudio}/Studio/the-studio`;
 
 //////////////////////////////////////////////
 /*             Product Catalogs             */
 //////////////////////////////////////////////
 
 /* Swamp Crafts */
-export const craftedGlass = `${swampGlasscraft}/CraftedGlass`;
-export const craftedLeather = `${swampLeathercraft}/CraftedLeather`;
-export const craftedParacord = `${swampParacordcraft}/CraftedParacord`;
-export const tameWood = `${swampWoodcraft}/Tame/Wood`;
-export const hotWood = `${swampWoodcraft}/Hot/Wood`;
-export const spicyWood = `${swampWoodcraft}/Spicy/Wood`;
+export const swampCraftedGlass = `${swampGlasscraft}/SwampGlass`;
+export const swampCraftedLeather = `${swampLeathercraft}/SwampLeather`;
+export const swampCraftedParacord = `${swampParacordcraft}/SwampParacord`;
+export const swampCraftedTameWood = `${swampWoodcraft}/Tame/Wood`;
+export const swampCraftedHotWood = `${swampWoodcraft}/Hot/Wood`;
+export const swampCraftedSpicyWood = `${swampWoodcraft}/Spicy/Wood`;
 
 /* Wicked Art */
-export const artWire = `${wickedWireArt}/WickedWire`;
-export const artDye = `${wickedDyeArt}/WickedDye`;
-export const tameBurn = `${wickedBurningArt}/Tame/Burns`;
-export const tarotBurn = `${wickedBurningArt}/Tarot/Burns`;
-export const spicyBurn = `${wickedBurningArt}/Spicy/Burns`;
+export const wickedArtWires = `${wickedWireArt}/WickedWires`;
+export const wickedArtDyes = `${wickedDyeArt}/WickedDyes`;
+export const wickedArtTameBurns = `${wickedBurningArt}/Tame/Burns`;
+export const wickedArtTarotBurns = `${wickedBurningArt}/Tarot/Burns`;
+export const wickedArtSpicyBurns = `${wickedBurningArt}/Spicy/Burns`;
 
 /* Filtered Used Art */
 export const reCollecting = `${end}/FilteredArt`;
@@ -105,12 +105,12 @@ export const creations = `${vault}/Archive/Creations`;
 /* Swamp */
 export const swampDeleted = `${swampWorkshop}/About/Deleted`;
 export const swampProgress = `${swampWorkshop}/Current/Progress`;
-export const swampStock = `${swampWorkshop}/Stock/Stock`;
+export const swampStock = `${swampWorkshop}/Shop/Stock`;
 
 /* Wicked */
 export const wickedDeleted = `${wickedArtStudio}/About/Deleted`;
 export const wickedProgress = `${wickedArtStudio}/Current/Progress`;
-export const wickedStock = `${wickedArtStudio}/Stock/Stock`;
+export const wickedStock = `${wickedArtStudio}/Studio/Stock`;
 
 //////////////////////////////////////////////
 /*                Dead End                  */
@@ -122,7 +122,7 @@ export const reUse = `${end}/ReUse/UsefulTrash`;
 export const reCycle = `${end}/ReCycle/ArtisticTrash`;
 
 //////////////////////////////////////////////
-/*                  Valut                   */
+/*                  Vault                   */
 //////////////////////////////////////////////
 
 //* Open Secrets */
