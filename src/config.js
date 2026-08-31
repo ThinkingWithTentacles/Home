@@ -83,8 +83,9 @@ export const swampCraftedHotWood = `${swampWoodcraft}/Hot/Wood`;
 export const swampCraftedSpicyWood = `${swampWoodcraft}/Spicy/Wood`;
 
 /* Wicked Art */
-export const wickedArtWires = `${wickedWireArt}/WickedWires`;
 export const wickedArtDyes = `${wickedDyeArt}/WickedDyes`;
+export const wickedArtWiresBroom = `${wickedWireArt}/WickedWires/Broom`;
+export const wickedArtWiresBlunt = `${wickedWireArt}/WickedWires/Blunt`;
 export const wickedArtTameBurns = `${wickedBurningArt}/Tame/Burns`;
 export const wickedArtTarotBurns = `${wickedBurningArt}/Tarot/Burns`;
 export const wickedArtSpicyBurns = `${wickedBurningArt}/Spicy/Burns`;
