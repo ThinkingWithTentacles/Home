@@ -1,27 +1,115 @@
 ---
+import './src/styles/global.css';
+
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
 import { 
   swampTameWood,
   swampHotWood,
   swampSpicyWood,
   swampCraftedTameWood, 
   swampCraftedHotWood, 
-  swampCraftedSpicyWood, 
+  swampCraftedSpicyWood,
 } from '../../../config.js';
+
+const rawSamplesData = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Swamp/Shop/Stock/HardwoodSamples/Raw/*.{jpg,jpeg,png}',
+  { eager: true }
+);
+
+const finishedSamplesData = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Swamp/Shop/Stock/HardwoodSamples/Finished/*.{jpg,jpeg,png}',
+  { eager: true }
+);
+
+const infoSamplesData = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Swamp/Shop/Stock/HardwoodSamples/Info/*.{jpg,jpeg,png}',
+  { eager: true }
+);
+
+const getFileName = (path: string) => {
+  const filePath = path.split('/').pop()?.split('.').shift();
+  return filePath.replace(/^\d+-/, '');
+};
+
+import bark from '/src/assets/Swamp/Shop/Stock/HardwoodSamples/bark.jpg';
 ---
 
+<body>
+  <div
+    id = "background";
+    class= "woodcraft-background"
+    style={`background-image: url(${bark.src})`}
+  ></div>
 
-<main>
-  <h1>Click yet</h1>
+  <main>
+    <section id="woodcraft" class="woodcraft-header">
+      <h1>Woodcraft</h1>
+    </section>
 
-  <a href={swampTameWood}>|   Tame   |</a>
-  <a href={swampHotWood}>|   Hot   |</a>
-  <a href={swampSpicyWood}>|   Spicy   |</a>
+    <section class="sample-grid">
+      {Object.entries(rawSamplesData).map(([path, sample]) => {
+        const woodType = getFileName(path);
 
-  <h2></h2>
+        return (
+          <div class="image-wrapper">
+            <button class="image-wrapper" data-background={sample.default.src}>
+              <Image 
+                src={sample.default} 
+                alt={woodType} 
+                class="image_container" 
+              />
+              <span class="image-name">{woodType}</span>
+            </button> 
+          </div>
+        );
+      })}
+    </section>
 
-  <h3>Don't click yet</h3>
+    <section class="sample-grid">
+      {Object.entries(finishedSamplesData).map(([path, sample]) => {
+        const woodType = getFileName(path);
 
-  <a href={swampCraftedTameWood}>|   Wood   |</a>
-  <a href={swampCraftedHotWood}>|   Wood...   |</a>
-  <a href={swampCraftedSpicyWood}>|   Would   |</a>
-</main>
+        return (
+          <div class="image-wrapper">
+            <button class="image-wrapper" data-background={sample.default.src}>
+              <Image 
+                src={sample.default} 
+                alt={woodType} 
+                class="image_container" 
+              />
+              <span class="image-name">{woodType}</span>
+            </button> 
+          </div>
+        );
+      })}
+    </section>
+
+    <section class="wood-info">
+      <h1>WOOD!</h1>
+    </section>
+
+    <a href={swampTameWood}>|   Tame   |</a>
+    <a href={swampHotWood}>|   Hot   |</a>
+    <a href={swampSpicyWood}>|   Spicy   |</a>
+
+    <br>
+
+    <a href={swampCraftedTameWood}>|   Wood   |</a>
+    <a href={swampCraftedHotWood}>|   Wood...   |</a>
+    <a href={swampCraftedSpicyWood}>|   Would   |</a>
+  </main>
+</body>
+
+<script>
+  const background = document.getElementById('background');
+
+  document.querySelectorAll('[data-background]').forEach(button => {
+    button.addEventListener('click', () => {
+      const image = button.dataset.background;
+
+      background.style.backgroundImage = `url('${image}')`;
+    });
+  });
+</script>
