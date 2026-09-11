@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+import { wallpapers } from '/src/data/wallpaper.ts';
+import { grove } from '/src/data/wicked.ts';
+import { wickedDyeArt } from '/src/data/wicked.ts';
+import { wickedDyes } from '/src/data/wicked.ts';
+
+import './src/styles/global.css';
+import './src/styles/dye-art-page.css';
+
+const wallpaper = wallpapers.garden[0];
+
+const hoverRing = grove.garden[2];
+---
+
+<body>
+  <div id = "background"; class= "page-background" style={`background-image: url(${wallpaper.image.src})`}></div>
+
+  <main>
+    <article class="ring-wrapper">
+      <Image src={hoverRing.image} alt="Sample"/>
+    </article>
+  </main>
+</body>

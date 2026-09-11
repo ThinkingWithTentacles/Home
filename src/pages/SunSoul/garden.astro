@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+import { wallpapers } from '/src/data/wallpaper.ts';
+import { grove } from '/src/data/wicked.ts';
+
+import './src/styles/global.css';
+import './src/styles/garden-page.css';
+
+import { 
+  wickedBurn, 
+  wickedDye, 
+  wickedWire, 
+  wickedArtStudio,
+} from '../../config.js';
+
+const wallpaper = wallpapers.garden[0];
+
+const hyperRing = grove.garden[0];
+const hoverRing = grove.garden[2];
+---
+
+<body>
+  <div id = "background"; class= "landing-page-background" style={`background-image: url(${wallpaper.image.src})`}></div>
+
+  <main>
+    <article class="ring-wrapper">
+      <Image src={hyperRing.image} alt="Sample"/>
+
+      <button class="studio-wrapper" onclick={`window.location.href = "${wickedArtStudio}"`}></button>
+      <button class="burn-wrapper" onclick={`window.location.href = "${wickedDye}"`}></button>
+      <button class="dye-wrapper" onclick={`window.location.href = "${wickedWire}"`}></button>
+      <button class="wire-wrapper" onclick={`window.location.href = "${wickedBurn}"`}></button>
+    </article>
+  </main>
+</body>
