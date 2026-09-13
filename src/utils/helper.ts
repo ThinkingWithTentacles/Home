@@ -120,7 +120,7 @@ export function parseArt(art) {
         flavor,
         style,
         ingredients,
-        flagShot: null,
+        flagshot: null,
         shots: {}
       };
     }
