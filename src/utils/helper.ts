@@ -65,10 +65,10 @@ export function parseCraft(art) {
     const bits = file.split(".");
 
     const order = prepOrder(bits[0]);
-    const flavor = prepFlavor(bits[1]);
-    const style = prepStyle(bits[2]);
-    const ingredients = prepIngredients(bits[3]);
-    const value = prepValue(bits[4]);
+    const value = prepValue(bits[1]);
+    const flavor = prepFlavor(bits[2]);
+    const style = prepStyle(bits[3]);
+    const ingredients = prepIngredients(bits[4]);
     const shot = bits[5];
 
     if (!craftLog[flavor]) {
@@ -77,19 +77,19 @@ export function parseCraft(art) {
 
     if (!craftLog[flavor][order]) {
       craftLog[flavor][order] = {
+        value,
         flavor,
         style,
         ingredients,
-        value,
-        flagShot: null,
+        flagshot: null,
         shots: {}
       };
     }
 
-    craftLog[flavor][order].shots[shot] = image.default;
-
     if (shot === "F") {
-      craftLog[flavor][order].flagShot = image.default;
+      craftLog[flavor][order].flagshot = image.default;
+    } else {
+        craftLog[flavor][order].shots[shot] = image.default;
     }
   });
 
@@ -104,10 +104,10 @@ export function parseArt(art) {
     const bits = file.split(".");
 
     const order = prepOrder(bits[0]);
-    const flavor = prepFlavor(bits[1]);
-    const style = prepStyle(bits[2]);
-    const ingredients = prepIngredients(bits[3]);
-    const value = prepValue(bits[4]);
+    const value = prepValue(bits[1]);
+    const flavor = prepFlavor(bits[2]);
+    const style = prepStyle(bits[3]);
+    const ingredients = prepIngredients(bits[4]);
     const shot = bits[5];
 
     if (!artLog[flavor]) {
@@ -116,19 +116,19 @@ export function parseArt(art) {
 
     if (!artLog[flavor][order]) {
       artLog[flavor][order] = {
+        value,
         flavor,
         style,
         ingredients,
-        value,
         flagShot: null,
         shots: {}
       };
     }
 
-    artLog[flavor][order].shots[shot] = image.default;
-
     if (shot === "F") {
-      artLog[flavor][order].flagShot = image.default;
+      artLog[flavor][order].flagshot = image.default;
+    } else {
+        artLog[flavor][order].shots[shot] = image.default;
     }
   });
 
@@ -136,7 +136,7 @@ export function parseArt(art) {
 }
 
 export function prepOrder(order: string): string {
-  return order.replace("#", 'PN');
+  return "PN" + order;
 }
 
 export function prepFlavor(flavor: string): string {
@@ -144,7 +144,7 @@ export function prepFlavor(flavor: string): string {
 }
 
 export function prepIngredients(ingredients: string): string {
-  return ingredients.replace(/\b\w/g, (char) => char.toUpperCase()).replaceAll("-", ' ').split("+");
+  return ingredients.replace(/(?:^|[-_\s])\w/g, char => char.toUpperCase()).replaceAll("-", " ").split("_");
 }
 
 export function prepStyle(style: string): string {
@@ -152,9 +152,9 @@ export function prepStyle(style: string): string {
 }
 
 export function prepValue(value: string): string {
-  return Number(value.replace("$",''));
+  return Number(value);
 }
 
 export function fluffIngredients(ingredients: string): string {
-  return ingredients.replace(/\b\w/g, (char) => char.toUpperCase()).replaceAll("-", ' ').replaceAll("+", ' & ');
+  return ingredients.replace(/\b\w/g, (char) => char.toUpperCase()).replaceAll("-", ' ');
 }

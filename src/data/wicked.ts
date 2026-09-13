@@ -57,10 +57,31 @@ const spicyBurns = import.meta.glob<{ default: ImageMetadata }>(
 );
 
 /* SwampLeahter Brands */
-const tieDyes = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Wicked/WickedDyes/*.{jpg,jpeg,png}',
+const dyeDresses = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Wicked/WickedDyes/Dresses/*.{jpg,jpeg,png}',
   { eager: true }
 );
+
+const dyeShirts = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Wicked/WickedDyes/Shirts/*.{jpg,jpeg,png}',
+  { eager: true }
+);
+
+const dyeShorts = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Wicked/WickedDyes/Shorts/*.{jpg,jpeg,png}',
+  { eager: true }
+);
+
+const dyeKids = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Wicked/WickedDyes/Kids/*.{jpg,jpeg,png}',
+  { eager: true }
+);
+
+const dyeTapestries= import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Wicked/WickedDyes/Tapestries/*.{jpg,jpeg,png}',
+  { eager: true }
+);
+
 
 /* SwampParacord Brands*/
 const broomWires = import.meta.glob<{ default: ImageMetadata }>(
@@ -79,6 +100,6 @@ export const wickedWireArt = parsePage(wireart);
 export const grove = parsePage(garden);
 
 /* SwampLand Product Catalogs */
-export const wickedBurns = {tame: parseArt(tameBurns), hot: parseArt(tarotBurns), spicy: parseArt(spicyBurns)};
-//export const wickedWires = {broom: parseArt(broomWires), blunt: parseArt(bluntWires)};
-//export const wickedDyes = {dyes: parseArt(tieDyes)};
+export const wickedBurns = {tame: parseArt(tameBurns), tarot: parseArt(tarotBurns), spicy: parseArt(spicyBurns)};
+export const wickedWires = {broom: parseArt(broomWires), blunt: parseArt(bluntWires)};
+export const wickedDyes = {dresses: parseArt(dyeDresses), shirts: parseArt(dyeShirts), shorts: parseArt(dyeShorts), kids: parseArt(dyeKids), tapes: parseArt(dyeTapestries)};

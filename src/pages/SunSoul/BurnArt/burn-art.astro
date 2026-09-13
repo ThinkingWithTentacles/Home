@@ -7,10 +7,12 @@ import { grove } from '/src/data/wicked.ts';
 import { wickedBurnArt } from '/src/data/wicked.ts';
 import { wickedBurns } from '/src/data/wicked.ts';
 
-import './src/styles/global.css';
-import './src/styles/burn-art-page.css';
+import '/src/styles/global.css';
+import '/src/styles/burn-art-page.css';
 
-const wallpaper = wallpapers.garden[0];
+const wallpaper = wallpapers.garden[3];
+const hoverRing = grove.garden[1];
+const sadPanda = wallpapers.null[0];
 
 const tameBurns = wickedBurns.tame;
 const tarotBurns = wickedBurns.tarot;
@@ -18,15 +20,13 @@ const spicyBurns = wickedBurns.spicy;
 
 const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' , });
 
-{console.log(spicyBurns)}
+{console.log(tarotBurns)}
 ---
 
-<body>
-  <div id = "background"; class= "page-background" style={`background-image: url(${wallpaper.image.src})`}></div>
-
+<body id = "background"; class= "product-page-background" style={`background-image: url(${wallpaper.image.src})`}>
   <main>
-    <section id="burnart" class="burn-art-header">
-          <h1>Burn Art</h1>
+    <section class="burn-art-header">
+      <h1>Burn Art</h1>
     </section>
 
     <section class="burn-art-info">
@@ -40,6 +40,218 @@ const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction'
       landmine links go "off" </p>
     </section>
 
-    {console.log(spicyBurns.Tray.PO01)}
+    <article class="product-grid"> 
+      {Object.values(tameBurns).flatMap((burns) => {
+        return Object.values(burns).map((order) => {
+          const dynamicShots = order.shots ? Object.values(order.shots) : [];
+          const allImages = [order.flagshot || sadPanda.image, ...dynamicShots].filter(Boolean);
+
+          const lightboxData = { 
+            brand: order.ingredients[0] + ' ' + order.style + ' ' + order.flavor, 
+            flavor: order.style.toLowerCase() + ' style design', 
+            ingredients: 'Made from ' + formatter.format(order.ingredients).toLowerCase() 
+          };
+
+          return (
+            <article 
+              class="product-card" 
+              data-deep-info={JSON.stringify(lightboxData)}
+            >
+              <div class="product-wrapper">
+                <Image src={allImages[0]} alt="Flagshot" class="product-image" />
+
+                <div class="hidden-paths hidden">
+                  {allImages.map((img) => (
+                    <span class="path-item">{typeof img === 'string' ? img : img.src}</span>
+                  ))}
+                </div>
+              </div>
+
+              <section class="product-info --standard"> 
+                <h3>{order.ingredients[0]} {order.style} {order.flavor}</h3> 
+                <p>${order.value}</p> 
+              </section>
+            </article>
+          );
+        });
+      })}
+    </article>
+
+
+    <article class="product-grid"> 
+      {Object.values(tarotBurns).flatMap((burns) => {
+        return Object.values(burns).map((order) => {
+          const dynamicShots = order.shots ? Object.values(order.shots) : [];
+          const allImages = [order.flagshot || sadPanda.image, ...dynamicShots].filter(Boolean);
+
+          const lightboxData = { 
+            brand: order.ingredients[0] + ' ' + order.style + ' ' + order.flavor, 
+            flavor: order.style.toLowerCase() + ' style design', 
+            ingredients: 'Made from ' + formatter.format(order.ingredients).toLowerCase() 
+          };
+
+          return (
+            <article 
+              class="product-card" 
+              data-deep-info={JSON.stringify(lightboxData)}
+            >
+              <div class="product-wrapper">
+                <Image src={allImages[0]} alt="Flagshot" class="product-image" />
+
+                <div class="hidden-paths hidden">
+                  {allImages.map((img) => (
+                    <span class="path-item">{typeof img === 'string' ? img : img.src}</span>
+                  ))}
+                </div>
+              </div>
+
+              <section class="product-info --standard"> 
+                <h3>{order.ingredients[0]} {order.style} {order.flavor}</h3> 
+                <p>${order.value}</p> 
+              </section>
+            </article>
+          );
+        });
+      })}
+    </article>
+
+    <article class="product-grid"> 
+      {Object.values(spicyBurns).flatMap((burns) => {
+        return Object.values(burns).map((order) => {
+          const dynamicShots = order.shots ? Object.values(order.shots) : [];
+          const allImages = [order.flagshot || sadPanda.image, ...dynamicShots].filter(Boolean);
+
+          const lightboxData = { 
+            brand: order.ingredients[0] + ' ' + order.style + ' ' + order.flavor, 
+            flavor: order.style.toLowerCase() + ' style design', 
+            ingredients: 'Made from ' + formatter.format(order.ingredients).toLowerCase() 
+          };
+
+          return (
+            <article 
+              class="product-card" 
+              data-deep-info={JSON.stringify(lightboxData)}
+            >
+              <div class="product-wrapper">
+                <Image src={allImages[0]} alt="Flagshot" class="product-image" />
+
+                <div class="hidden-paths hidden">
+                  {allImages.map((img) => (
+                    <span class="path-item">{typeof img === 'string' ? img : img.src}</span>
+                  ))}
+                </div>
+              </div>
+
+              <section class="product-info --standard"> 
+                <h3>{order.ingredients[0]} {order.style} {order.flavor}</h3> 
+                <p>${order.value}</p> 
+              </section>
+            </article>
+          );
+        });
+      })}
+    </article>
+
+      <div id="lightbox" class="lightbox hidden">
+      <button class="lightbox-close" aria-label="Close view">&times;</button>
+      <button class="lightbox-arrow --left" aria-label="Previous image">&#10094;</button>
+      
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Enlarged gallery view" />
+
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+
+      <button class="lightbox-arrow --right" aria-label="Next image">&#10095;</button>
+    </div>
   </main>
 </body>
+
+<script>
+  const cards = document.querySelectorAll('.product-card');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = lightbox?.querySelector('.lightbox-close');
+  const prevBtn = lightbox?.querySelector('.lightbox-arrow.--left');
+  const nextBtn = lightbox?.querySelector('.lightbox-arrow.--right');
+
+  let currentGallery = [];
+  let currentIndex = 0; 
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const pathElements = card.querySelectorAll('.path-item');
+      
+      currentGallery = Array.from(pathElements).map(el => el.textContent || '');
+      currentIndex = 0; 
+      
+      if (currentGallery.length > 0 && lightboxImg) {
+        lightboxImg.setAttribute('src', currentGallery[currentIndex]);
+        lightbox?.classList.remove('hidden');
+      }
+    });
+  });
+
+  nextBtn?.addEventListener('click', (e) => {
+    e.stopPropagation(); 
+    if (currentGallery.length === 0) return;
+
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    if (lightboxImg) lightboxImg.setAttribute('src', currentGallery[currentIndex]);
+  });
+
+  prevBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (currentGallery.length === 0) return;
+
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    if (lightboxImg) lightboxImg.setAttribute('src', currentGallery[currentIndex]);
+  });
+
+  closeBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    lightbox?.classList.add('hidden');
+  });
+
+  lightbox?.addEventListener('click', () => {
+    lightbox?.classList.add('hidden');
+  });
+
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const pathElements = card.querySelectorAll('.path-item');
+      currentGallery = Array.from(pathElements).map(el => el.textContent || '');
+      currentIndex = 0; 
+      
+      if (currentGallery.length > 0 && lightboxImg) {
+        lightboxImg.setAttribute('src', currentGallery[currentIndex]);
+        
+        if (lightboxCaption) {
+          lightboxCaption.innerHTML = '';
+
+          const rawData = card.getAttribute('data-deep-info');
+          
+          if (rawData) {
+            const deepInfo = JSON.parse(rawData);
+
+            const lines = [
+              deepInfo.brand,
+              deepInfo.flavor,
+              deepInfo.ingredients
+            ].filter(Boolean);
+
+            lines.forEach((line) => {
+              const paragraph = document.createElement('p');
+              paragraph.textContent = line; 
+              lightboxCaption.appendChild(paragraph);
+            });
+          }
+        }
+        
+        lightbox?.classList.remove('hidden');
+      }
+    });
+  });
+</script>

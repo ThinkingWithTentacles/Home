@@ -10,10 +10,12 @@ import '/src/styles/global.css';
 import '/src/styles/woodcraft-page.css';
 
 const wallpaper = wallpapers.woodcraft[2];
+const sadPanda = wallpapers.null[0];
 
 const samples = swampWoodcraft.sample;
 const rawSamples = samples.slice(0, 10);
 const marinatedSamples = samples.slice(10);
+
 const tameWood = swampWood.tame;
 const spicyWood = swampWood.spicy;
 const hotWood = swampWood.hot;
@@ -40,7 +42,7 @@ const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction'
       {marinatedSamples.map((sample) => (
         <button class="sample-wrapper" data-action="background" data-background={sample.image.src}>
           <Image src={sample.image} alt="Sample"/>
-          <span class="sample-name">{sample.name}</span>
+          <span class="sample-name">{sample.name }</span>
         </button>
       ))}
     </section>
@@ -56,39 +58,55 @@ const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction'
       landmine links go "off" </p>
     </section>
 
-<article class="product-grid"> 
-  {Object.values(spicyWood).flatMap((flavors) => {
-    return Object.values(flavors).map((order) => {
-      // Get the keys available for this order (e.g. "F,B,L")
-      const availableKeys = Object.keys(order.shots).join(',');
+    <article class="product-grid"> 
+      {Object.values(spicyWood).flatMap((flavors) => {
+        return Object.values(flavors).map((order) => {
+          const dynamicShots = order.shots ? Object.values(order.shots) : [];
+          const allImages = [order.flagshot || sadPanda.image, ...dynamicShots].filter(Boolean);
 
-      {console.log(order.shots)}
+          const lightboxData = { 
+            brand: order.ingredients[0] + ' ' + order.style + ' ' + order.flavor, 
+            flavor: order.style.toLowerCase() + ' style design', 
+            ingredients: 'Made from ' + formatter.format(order.ingredients).toLowerCase() 
+          };
 
-      return (
-        <article class="product-card" data-available-keys={availableKeys}>
-          <div class="product-wrapper" data-action="enhance"> 
-            <Image class="shot" src={order.flagShot} alt="Wood" data-key="F" />
-            
-            <section class="description product-info-deep"> 
-              <p>Crafted out of {formatter.format(order.ingredients).toLowerCase()} hardwood</p> 
-              <p>Custom {order.style.toLowerCase()} style</p> 
-              <p>{order.flavor} design</p> 
-              <p>Good thud, Good chud</p> 
-            </section> 
-          </div>
+          return (
+            <article 
+              class="product-card" 
+              data-deep-info={JSON.stringify(lightboxData)}
+            >
+              <div class="product-wrapper">
+                <Image src={allImages[0]} alt="Flagshot" class="product-image" />
 
-          <button class="product-swipe-left" data-action="flip-left"></button>
-          <button class="product-swipe-right" data-action="flip-right"></button>
-          
-          <button class="product-info" data-action="dive"> 
-            <h3>{order.ingredients[0]} {order.style} {order.flavor}</h3> 
-            <p>${order.value}</p> 
-          </button>
-        </article>
-      )
-    });
-  })}
-</article>
+                <div class="hidden-paths hidden">
+                  {allImages.map((img) => (
+                    <span class="path-item">{typeof img === 'string' ? img : img.src}</span>
+                  ))}
+                </div>
+              </div>
+
+              <section class="product-info --standard"> 
+                <h3>{order.ingredients[0]} {order.style} {order.flavor}</h3> 
+                <p>${order.value}</p> 
+              </section>
+            </article>
+          );
+        });
+      })}
+    </article>
+
+    <div id="lightbox" class="lightbox hidden">
+      <button class="lightbox-close" aria-label="Close view">&times;</button>
+      <button class="lightbox-arrow --left" aria-label="Previous image">&#10094;</button>
+      
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Enlarged gallery view" />
+
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+
+      <button class="lightbox-arrow --right" aria-label="Next image">&#10095;</button>
+    </div>
   </main>
 </body> 
 
@@ -119,70 +137,89 @@ const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction'
 </script>
 
 <script>
-  const buttons = document.querySelectorAll('[data-action="enhance"]');
+  const cards = document.querySelectorAll('.product-card');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = lightbox?.querySelector('.lightbox-close');
+  const prevBtn = lightbox?.querySelector('.lightbox-arrow.--left');
+  const nextBtn = lightbox?.querySelector('.lightbox-arrow.--right');
 
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-    button.classList.toggle('enhanced');
-    });
-  });
-</script>
+  let currentGallery = [];
+  let currentIndex = 0; 
 
-<script>
-  const buttons = document.querySelectorAll('[data-action="dive"]');
-  
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const deepInfo = button.closest('.product-card'); 
-      const description = deepInfo?.querySelector('.description');
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const pathElements = card.querySelectorAll('.path-item');
       
-      if (description) {
-        description.classList.toggle('dive');
+      currentGallery = Array.from(pathElements).map(el => el.textContent || '');
+      currentIndex = 0; 
+      
+      if (currentGallery.length > 0 && lightboxImg) {
+        lightboxImg.setAttribute('src', currentGallery[currentIndex]);
+        lightbox?.classList.remove('hidden');
       }
     });
   });
-</script>
 
-<script>
-  // 1. Eagerly load all optimized image asset URLs within your assets folder
-  const allOptimizedImages = import.meta.glob('/src/assets/**/*', { eager: true, import: 'default' });
+  nextBtn?.addEventListener('click', (e) => {
+    e.stopPropagation(); 
+    if (currentGallery.length === 0) return;
 
-  const flipButtons = document.querySelectorAll('[data-action="flip-left"], [data-action="flip-right"]');  
-  
-  flipButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const card = button.closest('.product-card');
-      const img = card?.querySelector('.shot') as HTMLImageElement;
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    if (lightboxImg) lightboxImg.setAttribute('src', currentGallery[currentIndex]);
+  });
+
+  prevBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (currentGallery.length === 0) return;
+
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    if (lightboxImg) lightboxImg.setAttribute('src', currentGallery[currentIndex]);
+  });
+
+  closeBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    lightbox?.classList.add('hidden');
+  });
+
+  lightbox?.addEventListener('click', () => {
+    lightbox?.classList.add('hidden');
+  });
+
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const pathElements = card.querySelectorAll('.path-item');
+      currentGallery = Array.from(pathElements).map(el => el.textContent || '');
+      currentIndex = 0; 
       
-      if (!card || !img) return;
+      if (currentGallery.length > 0 && lightboxImg) {
+        lightboxImg.setAttribute('src', currentGallery[currentIndex]);
+        
+        if (lightboxCaption) {
+          lightboxCaption.innerHTML = '';
 
-      // 2. Parse the available keys for this specific product card (e.g., ['F', 'B'])
-      const keys = card.dataset.availableKeys?.split(',') || [];
-      if (keys.length <= 1) return;
+          const rawData = card.getAttribute('data-deep-info');
+          
+          if (rawData) {
+            const deepInfo = JSON.parse(rawData);
 
-      // 3. Track the letter index alignment
-      const currentKey = img.dataset.key || 'F';
-      let numericIndex = keys.indexOf(currentKey);
-      if (numericIndex === -1) numericIndex = 0;
+            const lines = [
+              deepInfo.brand,
+              deepInfo.flavor,
+              deepInfo.ingredients
+            ].filter(Boolean);
 
-      // 4. Cycle through your numeric placements
-      const direction = button.dataset.action;
-      if (direction === 'flip-right') {
-        numericIndex = (numericIndex + 1) % keys.length;
-      } else if (direction === 'flip-left') {
-        numericIndex = (numericIndex - 1 + keys.length) % keys.length;
-      }
-
-      const nextKey = keys[numericIndex];
-
-      // 5. Look up the optimized bundle path directly out of Vite's asset tracking map
-      // This matches the exact compiled asset string reference that Astro generates!
-      const targetImageMeta = allOptimizedImages[nextKey] as any;
-      const nextSrc = targetImageMeta?.src || targetImageMeta;
-
-      if (nextSrc) {
-        img.src = nextSrc;
-        img.dataset.key = nextKey;
+            lines.forEach((line) => {
+              const paragraph = document.createElement('p');
+              paragraph.textContent = line; 
+              lightboxCaption.appendChild(paragraph);
+            });
+          }
+        }
+        
+        lightbox?.classList.remove('hidden');
       }
     });
   });
