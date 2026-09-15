@@ -2,15 +2,20 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
-import { wallpapers } from '/src/data/wallpaper.ts';
+import { wallpapers } from '/src/data/resource.ts';
 import { swampWoodcraft } from '/src/data/swamp.ts';
 import { swampWood } from '/src/data/swamp.ts';
+
+import SampleGrid from '/src/components/SampleGrid.astro';
+import ProductGrid from '/src/components/ProductGrid.astro';
+import LightBox from '/src/components/LightBox.astro';
+import ContactForm from './src/components/ContactForm.astro';
+import SocialLinks from '/src/components/WickedSocialLinks.astro';
 
 import '/src/styles/global.css';
 import '/src/styles/woodcraft-page.css';
 
 const wallpaper = wallpapers.woodcraft[2];
-const sadPanda = wallpapers.null[0];
 
 const samples = swampWoodcraft.sample;
 const rawSamples = samples.slice(0, 10);
@@ -19,33 +24,21 @@ const marinatedSamples = samples.slice(10);
 const tameWood = swampWood.tame;
 const spicyWood = swampWood.spicy;
 const hotWood = swampWood.hot;
-
-const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' , });
 ---
 
-<body id = "background"; class= "product-page-background" style={`background-image: url(${wallpaper.image.src})`}>
-  <main>
+<body
+  id="background"
+  class="product-page-background"
+  style={`background-image: url(${wallpaper.image.src})`}
+>
+
+<main>
     <section id="woodcraft" class="woodcraft-sign">
       <h1>Woodcraft</h1>
     </section>
 
-    <section class="sample-grid">
-      {rawSamples.map((sample) => (
-        <button class="sample-wrapper" data-action="background" data-background={sample.image.src}>
-          <Image src={sample.image} alt="Sample"/>
-          <span class="sample-name">{sample.name}</span>
-        </button>
-      ))}
-    </section>
-
-    <section class="sample-grid">
-      {marinatedSamples.map((sample) => (
-        <button class="sample-wrapper" data-action="background" data-background={sample.image.src}>
-          <Image src={sample.image} alt="Sample"/>
-          <span class="sample-name">{sample.name }</span>
-        </button>
-      ))}
-    </section>
+    <SampleGrid samples={Object.values(rawSamples)} />
+    <SampleGrid samples={Object.values(marinatedSamples)} />
 
     <section class="woodcraft-info">
       <h1>WOOD!</h1>
@@ -58,169 +51,10 @@ const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction'
       landmine links go "off" </p>
     </section>
 
-    <article class="product-grid"> 
-      {Object.values(spicyWood).flatMap((flavors) => {
-        return Object.values(flavors).map((order) => {
-          const dynamicShots = order.shots ? Object.values(order.shots) : [];
-          const allImages = [order.flagshot || sadPanda.image, ...dynamicShots].filter(Boolean);
+    <ContactForm />
+    <SocialLinks />
 
-          const lightboxData = { 
-            brand: order.ingredients[0] + ' ' + order.style + ' ' + order.flavor, 
-            flavor: order.style.toLowerCase() + ' style design', 
-            ingredients: 'Made from ' + formatter.format(order.ingredients).toLowerCase() 
-          };
-
-          return (
-            <article 
-              class="product-card" 
-              data-deep-info={JSON.stringify(lightboxData)}
-            >
-              <div class="product-wrapper">
-                <Image src={allImages[0]} alt="Flagshot" class="product-image" />
-
-                <div class="hidden-paths hidden">
-                  {allImages.map((img) => (
-                    <span class="path-item">{typeof img === 'string' ? img : img.src}</span>
-                  ))}
-                </div>
-              </div>
-
-              <section class="product-info --standard"> 
-                <h3>{order.ingredients[0]} {order.style} {order.flavor}</h3> 
-                <p>${order.value}</p> 
-              </section>
-            </article>
-          );
-        });
-      })}
-    </article>
-
-    <div id="lightbox" class="lightbox hidden">
-      <button class="lightbox-close" aria-label="Close view">&times;</button>
-      <button class="lightbox-arrow --left" aria-label="Previous image">&#10094;</button>
-      
-      <div class="lightbox-content">
-        <img id="lightbox-img" src="" alt="Enlarged gallery view" />
-
-        <div id="lightbox-caption" class="lightbox-caption"></div>
-      </div>
-
-      <button class="lightbox-arrow --right" aria-label="Next image">&#10095;</button>
-    </div>
+    <ProductGrid products={Object.values(swampWood.spicy)} />
+    <LightBox />
   </main>
 </body> 
-
-<script>
-  const buttons = document.querySelectorAll('[data-action="background"]');
-
-  const background = document.getElementById('background');
-  const wallpaper = background.style.backgroundImage;
-
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const sample = button.dataset.background;
-
-      if (button.classList.contains('selected')) {
-        background.style.backgroundImage = wallpaper;
-        button.classList.remove('selected');
-      } else {
-        background.style.backgroundImage = `url('${sample}')`;
-
-        buttons.forEach(sample => {
-          sample.classList.remove('selected');
-        });
-
-        button.classList.add('selected');
-      }
-    });
-  });
-</script>
-
-<script>
-  const cards = document.querySelectorAll('.product-card');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const closeBtn = lightbox?.querySelector('.lightbox-close');
-  const prevBtn = lightbox?.querySelector('.lightbox-arrow.--left');
-  const nextBtn = lightbox?.querySelector('.lightbox-arrow.--right');
-
-  let currentGallery = [];
-  let currentIndex = 0; 
-
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const pathElements = card.querySelectorAll('.path-item');
-      
-      currentGallery = Array.from(pathElements).map(el => el.textContent || '');
-      currentIndex = 0; 
-      
-      if (currentGallery.length > 0 && lightboxImg) {
-        lightboxImg.setAttribute('src', currentGallery[currentIndex]);
-        lightbox?.classList.remove('hidden');
-      }
-    });
-  });
-
-  nextBtn?.addEventListener('click', (e) => {
-    e.stopPropagation(); 
-    if (currentGallery.length === 0) return;
-
-    currentIndex = (currentIndex + 1) % currentGallery.length;
-    if (lightboxImg) lightboxImg.setAttribute('src', currentGallery[currentIndex]);
-  });
-
-  prevBtn?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (currentGallery.length === 0) return;
-
-    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-    if (lightboxImg) lightboxImg.setAttribute('src', currentGallery[currentIndex]);
-  });
-
-  closeBtn?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    lightbox?.classList.add('hidden');
-  });
-
-  lightbox?.addEventListener('click', () => {
-    lightbox?.classList.add('hidden');
-  });
-
-  const lightboxCaption = document.getElementById('lightbox-caption');
-
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const pathElements = card.querySelectorAll('.path-item');
-      currentGallery = Array.from(pathElements).map(el => el.textContent || '');
-      currentIndex = 0; 
-      
-      if (currentGallery.length > 0 && lightboxImg) {
-        lightboxImg.setAttribute('src', currentGallery[currentIndex]);
-        
-        if (lightboxCaption) {
-          lightboxCaption.innerHTML = '';
-
-          const rawData = card.getAttribute('data-deep-info');
-          
-          if (rawData) {
-            const deepInfo = JSON.parse(rawData);
-
-            const lines = [
-              deepInfo.brand,
-              deepInfo.flavor,
-              deepInfo.ingredients
-            ].filter(Boolean);
-
-            lines.forEach((line) => {
-              const paragraph = document.createElement('p');
-              paragraph.textContent = line; 
-              lightboxCaption.appendChild(paragraph);
-            });
-          }
-        }
-        
-        lightbox?.classList.remove('hidden');
-      }
-    });
-  });
-</script>

@@ -1,0 +1,10 @@
+---
+import { Image } from 'astro:assets';
+
+const { sample } = Astro.props;
+---
+
+<button class="sample-wrapper" data-action="background" data-background={sample.image.src}>
+    <Image src={sample.image} alt="Sample"/>
+    <span class="sample-name">{sample.name }</span>
+</button>

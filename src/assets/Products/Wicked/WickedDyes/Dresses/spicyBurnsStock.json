@@ -1,0 +1,64 @@
+{
+  "slapper.01": {
+    "value": 75,
+    "flavor": "Slapper",
+    "style": "Chevron",
+    "ingredients": ["yellowheart", "walnut"]
+  },
+
+  "stoker.01": {
+    "value": 75,
+    "flavor": "Stoker",
+    "style": "Chevron",
+    "ingredients": ["yellowheart", "walnut"]
+  },
+
+  "biter.01": {
+    "value": 100,
+    "flavor": "Biter",
+    "style": "Streak",
+    "ingredients": ["yellowheart", "paduak"]
+  },
+
+  "puncher.01": {
+    "value": 100,
+    "flavor": "Puncher",
+    "style": "Stripes",
+    "ingredients": ["purpleheart", "walnut"]
+  },
+
+  "striker.01": {
+    "value": 100,
+    "flavor": "Puncher",
+    "style": "Stripes",
+    "ingredients": ["paduak", "white maple"]
+  },
+
+  "striker.02": {
+    "value": 100,
+    "flavor": "Striker",
+    "style": "Stripes",
+    "ingredients": ["paduak", "walnut"]
+  },
+
+  "striker.03": {
+    "value": 100,
+    "flavor": "Striker",
+    "style": "Stripes",
+    "ingredients": ["paduak", "walnut", "white maple"]
+  },
+
+  "striker.04": {
+    "value": 100,
+    "flavor": "Striker",
+    "style": "Stripes",
+    "ingredients": ["paduak", "white maple"]
+  },
+
+  "kicker.01": {
+    "value": 100,
+    "flavor": "Kicker",
+    "style": "Chevron tread",
+    "ingredients": ["paduak", "cherry"]
+  }
+}

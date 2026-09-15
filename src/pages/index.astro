@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import { wallpapers } from '/src/data/resource.ts';
 
 import { 
   swampGrove, 
@@ -7,14 +7,25 @@ import {
   deadEnd,
   theVault
 } from '../config.js';
+
+import '/src/styles/global.css';
+import '/src/styles/home-page.css';
+
+const wallpaper = wallpapers.landing[0];
 ---
 
-<Layout>
-	<h1>Hello World</h1>
-</Layout>
+<body
+  id="background"
+  class="home-page-background"
+  style={`background-image: url(${wallpaper.image.src})`}
+>
+  <main>
+    <section class="home-sign">
+      <h1>Woodcraft</h1>
+    </section>
 
-<main>
-  <a href={swampGrove}>|   Thinking With Tentacles   |</a>;
-  <a href={wickedGrove}>|   WickedGabi   |</a>;
-  <a href={deadEnd}>|   Dead End   |</a>;
-</main>
+    <a href={swampGrove}>|   Thinking With Tentacles   |</a>;
+    <a href={wickedGrove}>|   WickedGabi   |</a>;
+    <a href={deadEnd}>|   Dead End   |</a>;
+  </main>
+</body>

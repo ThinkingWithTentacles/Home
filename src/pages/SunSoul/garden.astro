@@ -2,8 +2,8 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
-import { wallpapers } from '/src/data/wallpaper.ts';
-import { grove } from '/src/data/wicked.ts';
+import { wallpapers } from '/src/data/resource.ts';
+import { garden } from '/src/data/wicked.ts';
 
 import '/src/styles/global.css';
 import '/src/styles/garden-page.css';
@@ -15,15 +15,17 @@ import {
   wickedArtStudio,
 } from '../../config.js';
 
-const wallpaper = wallpapers.garden[0];
+{console.log(wallpapers)}
 
-const hyperRing = grove.garden[0];
-const hoverRing = grove.garden[2];
+const wallpaper = wallpapers.garden[0];
+const hyperRing = garden.ring[0];
 ---
 
-<body>
-  <div id = "background"; class= "landing-page-background" style={`background-image: url(${wallpaper.image.src})`}></div>
-
+<body
+  id="background"
+  class="landing-page-background"
+  style={`background-image: url(${wallpaper.image.src})`}
+>
   <main>
     <article class="ring-wrapper">
       <Image src={hyperRing.image} alt="Sample"/>

@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+import LightBox from './LightBox.astro';
+
+const { product } = Astro.props;
+
+const dynamicShots = product.shots ? Object.values(product.shots) : [];
+const allImages = [product.flagshot, ...dynamicShots].filter(Boolean);
+---
+
+<section class="product-wrapper">
+  <Image src={allImages[0]} alt="Flagshot" class="product-image" />
+  
+  <div class="hidden-paths hidden">
+    {allImages.map((img) => (
+      <span class="path-item">{typeof img === 'string' ? img : img.src}</span>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,46 @@
+---
+import SampleViewer from './SampleViewer.astro';
+
+const { samples } = Astro.props;
+---
+
+<section class="sample-grid">
+  {samples.map((sample) => (
+    <SampleViewer sample={sample} />
+  ))}
+</section>
+
+<script>
+  const background = document.getElementById('background');
+  const sampleGrids = document.querySelectorAll('.sample-grid');
+
+  if (background) {
+    const wallpaper = background.style.backgroundImage;
+
+    sampleGrids.forEach(grid => {
+      grid.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-action="background"]');
+
+        if (!button) return;
+
+        const sample = button.dataset.background;
+
+        if (button.classList.contains('selected')) {
+          background.style.backgroundImage = wallpaper;
+          button.classList.remove('selected');
+          return;
+        }
+
+        background.style.backgroundImage = `url('${sample}')`;
+
+        document
+          .querySelectorAll('[data-action="background"]')
+          .forEach(sample => {
+            sample.classList.remove('selected');
+          });
+
+        button.classList.add('selected');
+      });
+    });
+  }
+</script>

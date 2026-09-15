@@ -1,0 +1,14 @@
+---
+import ProductCard from './ProductCard.astro';
+import LightBox from './LightBox.astro';
+
+const { products } = Astro.props;
+---
+
+<section class="product-grid">
+  {products.flatMap((flavor) => 
+    Object.values(flavor).map((product) => (
+      <ProductCard product={product} />
+    ))
+  )}
+</section>

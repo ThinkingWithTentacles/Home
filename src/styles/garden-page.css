@@ -1,15 +1,14 @@
 /* Main Page Layout */
 
-.garden-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  opacity: .90;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
+.garden-sign {
+  position: relative;
+  text-align: center;
+  margin-top: 0; 
+
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 4vw;
+  font-style: oblique;
 }
 
 .garden-header {

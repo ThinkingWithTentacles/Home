@@ -1,0 +1,120 @@
+---
+---
+
+<div id="lightbox" class="lightbox hidden">
+  <button class="lightbox-close" aria-label="Close view">&times;</button>
+
+  <button
+    class="lightbox-arrow --left"
+    aria-label="Previous image"
+  >
+    &#10094;
+  </button>
+
+  <div class="lightbox-content">
+    <img
+      id="lightbox-img"
+      src=""
+      alt="Enlarged gallery view"
+    />
+
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+
+  <button
+    class="lightbox-arrow --right"
+    aria-label="Next image"
+  >
+    &#10095;
+  </button>
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.product-card');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  const closeBtn = lightbox?.querySelector('.lightbox-close');
+  const prevBtn = lightbox?.querySelector('.lightbox-arrow.--left');
+  const nextBtn = lightbox?.querySelector('.lightbox-arrow.--right');
+
+  let currentGallery = [];
+  let currentIndex = 0;
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const pathElements = card.querySelectorAll('.path-item');
+
+      currentGallery = Array.from(pathElements)
+        .map(el => el.textContent || '')
+        .filter(Boolean);
+
+      currentIndex = 0;
+
+      if (!currentGallery.length || !lightboxImg) return;
+
+      lightboxImg.src = currentGallery[currentIndex];
+
+      if (lightboxCaption) {
+        lightboxCaption.innerHTML = '';
+
+        const rawData = card.getAttribute('data-deep-info');
+
+        if (rawData) {
+          const deepInfo = JSON.parse(rawData);
+
+          [
+            deepInfo.brand,
+            deepInfo.flavor,
+            deepInfo.ingredients
+          ]
+            .filter(Boolean)
+            .forEach(line => {
+              const paragraph = document.createElement('p');
+              paragraph.textContent = line;
+              lightboxCaption.appendChild(paragraph);
+            });
+        }
+      }
+
+      lightbox?.classList.remove('hidden');
+    });
+  });
+
+  nextBtn?.addEventListener('click', (event) => {
+    event.stopPropagation();
+
+    if (!currentGallery.length) return;
+
+    currentIndex =
+      (currentIndex + 1) % currentGallery.length;
+
+    if (lightboxImg) {
+      lightboxImg.src = currentGallery[currentIndex];
+    }
+  });
+
+  prevBtn?.addEventListener('click', (event) => {
+    event.stopPropagation();
+
+    if (!currentGallery.length) return;
+
+    currentIndex =
+      (currentIndex - 1 + currentGallery.length) %
+      currentGallery.length;
+
+    if (lightboxImg) {
+      lightboxImg.src = currentGallery[currentIndex];
+    }
+  });
+
+  closeBtn?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    lightbox?.classList.add('hidden');
+  });
+
+  lightbox?.addEventListener('click', () => {
+    lightbox?.classList.add('hidden');
+  });
+</script>

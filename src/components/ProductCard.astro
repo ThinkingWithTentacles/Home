@@ -1,0 +1,22 @@
+---
+import ProductViewer from './ProductViewer.astro';
+
+const { product } = Astro.props;
+
+const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' , });
+
+const lightboxData = {
+  brand: `${product.ingredients[0]} ${product.style} ${product.flavor}`,
+  flavor: `${product.style.toLowerCase()} style design`,
+  ingredients: 'Made from ' + formatter.format(product.ingredients).toLowerCase()
+};
+---
+
+<section class="product-card" data-deep-info={JSON.stringify(lightboxData)}> 
+  <ProductViewer product={product} />
+
+  <section class="product-info --standard">
+    <h3>{product.ingredients?.[0]} {product.style} {product.flavor}</h3>
+    <p>${product.value}</p>
+  </section>
+</section>

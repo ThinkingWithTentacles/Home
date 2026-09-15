@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
-import { wallpapers } from '/src/data/wallpaper.ts';
+import { wallpapers } from '/src/data/resource.ts';
 import { grove } from '/src/data/wicked.ts';
 
 import '/src/styles/global.css';
@@ -22,14 +22,13 @@ const wallpaper = wallpapers.garden[1];
 <body>
   <div
     id="background"
-    class="swamp-background"
+    class="landing-page-background"
     style={`background-image: url(${wallpaper.image.src})`}>
   </div>
 
   <main>
     <article class="swamp-wrapper">
       <button onclick={`window.location.href = "${swampWood}"`}></button>
-      <button onclick={`window.location.href = "${swampLeather}"`}></button>
       <button onclick={`window.location.href = "${swampWorkshop}"`}></button>
     </article>
   </main>

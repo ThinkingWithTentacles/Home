@@ -4,8 +4,8 @@ export const getFileName = (path: Path): string => {
   return path.replace(/\.[^/.]+$/, '').split(/[/\\]/).pop() || ''; 
 };
 
-export function parseWallpaper(folder) {
-  const wallpapers = {};
+export function parseResource(folder) {
+  const resources = {};
 
   Object.entries(folder).forEach(([path, image]) => {
     const file = getFileName(path);
@@ -14,19 +14,19 @@ export function parseWallpaper(folder) {
     const page = bits[0];
     const priority = Number(bits[1]);
 
-    const wallpaper = {
+    const resource = {
       priority,
       image: image.default
     };
 
-    if(!wallpapers[page]) {
-      wallpapers[page] = [];
+    if(!resources[page]) {
+      resources[page] = [];
     }
 
-    wallpapers[page].push(wallpaper);
+    resources[page].push(resource);
   });
 
-  return wallpapers;
+  return resources;
 }
 
 export function parsePage(page) {
@@ -57,19 +57,20 @@ export function parsePage(page) {
   return stockPhotos;
 }
 
-export function parseCraft(art) {
+export function parseCraft(craft, stock) {
   const craftLog = {};
 
-  Object.entries(art).forEach(([path, image]) => {
+  Object.entries(craft).forEach(([path, image]) => {
     const file = getFileName(path);
     const bits = file.split(".");
 
-    const order = prepOrder(bits[0]);
-    const value = prepValue(bits[1]);
-    const flavor = prepFlavor(bits[2]);
-    const style = prepStyle(bits[3]);
-    const ingredients = prepIngredients(bits[4]);
-    const shot = bits[5];
+    const flavor = bits[0];
+    const order = bits[1];
+    const shot = bits[2];
+
+    const product = stock[flavor + "." + order];  
+    
+    {console.log(product)}
 
     if (!craftLog[flavor]) {
       craftLog[flavor] = {};
@@ -77,16 +78,14 @@ export function parseCraft(art) {
 
     if (!craftLog[flavor][order]) {
       craftLog[flavor][order] = {
-        value,
-        flavor,
-        style,
-        ingredients,
+        order,
+        ...product,
         flagshot: null,
         shots: {}
       };
     }
 
-    if (shot === "F") {
+    if (shot === "A") {
       craftLog[flavor][order].flagshot = image.default;
     } else {
         craftLog[flavor][order].shots[shot] = image.default;
