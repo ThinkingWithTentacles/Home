@@ -1,0 +1,37 @@
+{
+  "cutting-board.01": {
+    "flavor": "wood burned cutting board",
+    "style": "stripes",
+    "ingredients": ["paduak", "purpleheart", "white maple", "cherry"]
+  },
+
+  "cutting-board.02": {
+    "flavor": "wood burned cutting board",
+    "style": "stripes",
+    "ingredients": ["paduak", "walnut", "white maple", "cherry"]
+  },
+
+  "paddle.01": {
+    "flavor": "slapper fumble",
+    "style": "chevron",
+    "ingredients": ["purpleheart", "white maple"]
+  },
+
+  "paddle.02": {
+    "flavor": "splat prototype",
+    "style": "bed of nails",
+    "ingredients": ["industrial grade thumb tack"]
+  },
+
+  "paddle.03": {
+    "flavor": "protoype",
+    "style": "sensation paddle",
+    "ingredients": ["shark teeth"]
+  },
+
+  "vinyl.01": {
+    "flavor": "memorabilia",
+    "style": "vinyl record",
+    "ingredients": ["walnut", "white maple"]
+  }
+}

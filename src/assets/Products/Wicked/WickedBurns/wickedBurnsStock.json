@@ -1,373 +1,430 @@
 {
-"cut out.01": {
+  "cut out.01": {
     "value": 50,
-    "flavor": "cut out",
+    "flavor": "circle",
     "style": "stained glass",
-    "ingredients": ["fullmoon goddess"]
+    "subject": "fullmoon goddess",
+    "ingredients": []
   },
 
   "cut out.02": {
     "value": 50,
-    "flavor": "cut out",
+    "flavor": "circle",
     "style": "stained glass",
-    "ingredients": ["green goddess"]
+    "subject": "green goddess",
+    "ingredients": []
   },
 
   "cut out.03": {
     "value": 50,
-    "flavor": "cut out",
+    "flavor": "circle",
     "style": "stained glass",
-    "ingredients": ["crescent moon"]
+    "subject": "crescent moon",
+    "ingredients": []
   },
 
   "cut out.04": {
     "value": 50,
-    "flavor": "cut out",
+    "flavor": "circle",
     "style": "stained glass",
-    "ingredients": ["skull"]
+    "subject": "skull",
+    "ingredients": []
   },
 
   "cut out.05": {
     "value": 50,
-    "flavor": "cut out",
+    "flavor": "circle",
     "style": "stained glass",
-    "ingredients": ["black cat"]
+    "subject": "black cat",
+    "ingredients": []
   },
 
   "cut out.06": {
     "value": 50,
-    "flavor": "cut out",
+    "flavor": "circle",
     "style": "stained glass",
-    "ingredients": ["orange pentagram"]
+    "subject": "orange pentagram",
+    "ingredients": []
   },
 
   "cut out.07": {
     "value": 50,
-    "flavor": "cut out",
+    "flavor": "circle",
     "style": "stained glass",
-    "ingredients": ["purple pentagram"]
+    "subject": "purple pentagram",
+    "ingredients": []
   },
 
   "cut out.08": {
     "value": 40,
-    "flavor": "cut out",
-    "style": "flower",
-    "ingredients": ["chain hung"]
+    "flavor": "outline",
+    "style": "chain hung",
+    "subject": "flower",
+    "ingredients": []
   },
 
   "cut out.09": {
     "value": 30,
-    "flavor": "cut out",
-    "style": "planets",
-    "ingredients": ["chain hung"]
+    "flavor": "",
+    "style": "chain hung",
+    "subject": "flowery planets",
+    "ingredients": []
   },
 
   "cut out.10": {
     "value": 30,
-    "flavor": "cut out",
-    "style": "knome love",
-    "ingredients": ["stone wire hung"]
+    "flavor": "",
+    "style": "stone wire hung",
+    "subject": "gnome love",
+    "ingredients": []
   },
 
   "cut out.11": {
     "value": 35,
-    "flavor": "cut out",
-    "style": "witchy ghost",
-    "ingredients": ["chain hung"]
+    "flavor": "",
+    "style": "chain hung",
+    "subject": "witchy boo",
+    "ingredients": []
   },
 
   "cut out.12": {
     "value": 30,
-    "flavor": "cut out",
-    "style": "ghost people",
-    "ingredients": ["chain hung"]
+    "flavor": "",
+    "style": "chain hung",
+    "subject": "i ghost people",
+    "ingredients": []
   },
 
   "cut out.13": {
     "value": 30,
-    "flavor": "cut out",
-    "style": "peace sun goddess",
-    "ingredients": ["wire hung"]
+    "flavor": "",
+    "style": "wire hung",
+    "subject": "peace sun goddess",
+    "ingredients": []
   },
 
   "cut out.14": {
     "value": 20,
-    "flavor": "cut out",
-    "style": "anya",
-    "ingredients": ["wire hung"]
+    "flavor": "reclaimed wood",
+    "style": "chain hung",
+    "subject": "anya",
+    "ingredients": []
   },
 
   "cut out.15": {
     "value": 25,
-    "flavor": "cut out",
-    "style": "sunflower",
-    "ingredients": ["cord hung"]
+    "flavor": "",
+    "style": "cord hung",
+    "subject": "sunflower",
+    "ingredients": []
   },
 
   "cut out.16": {
     "value": 10,
-    "flavor": "cut out",
-    "style": "mushroom friend",
-    "ingredients": ["string hung"]
+    "flavor": "",
+    "style": "string hung",
+    "subject": "mushroom friend",
+    "ingredients": []
   },
 
   "cut out.17": {
     "value": 60,
-    "flavor": "cut out",
-    "style": "dark romance",
-    "ingredients": ["gold foil"]
+    "flavor": "",
+    "style": "gold foil",
+    "subject": "dark romance",
+    "ingredients": []
   },
 
   "cut out.18": {
     "value": 20,
-    "flavor": "cut out",
-    "style": "broken chain",
-    "ingredients": ["wire hung"]
+    "flavor": "",
+    "style": "wire hung",
+    "subject": "broken chain",
+    "ingredients": []
   },
 
   "cut out.19": {
     "value": 25,
-    "flavor": "cut out",
-    "style": "bite the bullet",
-    "ingredients": ["chain hung"]
+    "flavor": "",
+    "style": "chain hung",
+    "subject": "bite the bullet",
+    "ingredients": []
   },
 
   "cut out.20": {
     "value": 25,
-    "flavor": "cut out",
-    "style": "lollipop girl",
-    "ingredients": ["chain hung"]
+    "flavor": "",
+    "style": "chain hung",
+    "subject": "lollipop girl",
+    "ingredients": []
   },
 
   "cut out.21": {
     "value": 20,
-    "flavor": "cut out",
-    "style": "brewkakke",
-    "ingredients": ["chain hung"]
+    "flavor": "reclaimed wood",
+    "style": "chain hung",
+    "subject": "brewkakke",
+    "ingredients": []
   },
 
   "cut out.22": {
     "value": 30,
-    "flavor": "cut out",
-    "style": "spooky bitch",
-    "ingredients": ["chain hung"]
+    "flavor": "",
+    "style": "chain hung",
+    "subject": "spooky bitch",
+    "ingredients": []
   },
 
   "cut out.23": {
     "value": 25,
-    "flavor": "cut out",
-    "style": "graveyard smash",
-    "ingredients": ["stone wire hung"]
+    "flavor": "",
+    "style": "stone wire hung",
+    "subject": "graveyard smash",
+    "ingredients": []
   },
 
   "cut out.24": {
     "value": 35,
-    "flavor": "cut out",
-    "style": "boo booty",
-    "ingredients": ["live edge"]
+    "flavor": "live edge slab",
+    "style": "",
+    "subject": "boo booty",
+    "ingredients": []
   },
 
   "cut out.25": {
     "value": 25,
-    "flavor": "cut out",
-    "style": "tongue out peace",
-    "ingredients": ["white"]
+    "flavor": "portrait",
+    "style": "",
+    "subject": "tongue out for peace",
+    "ingredients": []
   },
 
   "cut out.26": {
     "value": 25,
-    "flavor": "cut out",
-    "style": "tongue out peace",
-    "ingredients": ["black"]
+    "flavor": "portrait",
+    "style": "",
+    "subject": "tongue out for peace",
+    "ingredients": []
   },
 
   "cut out.27": {
     "value": 25,
-    "flavor": "cut out",
-    "style": "tongue out peace",
-    "ingredients": ["tan"]
-   },
+    "flavor": "portrait",
+    "style": "",
+    "subject": "tongue out for peace",
+    "ingredients": []
+  },
 
   "tray.01": {
     "value": 20,
     "flavor": "tray",
-    "style": "biting lips",
-    "ingredients": ["holographic"]
+    "style": "holographic foil",
+    "subject": "biting lips",
+    "ingredients": []
   },
 
   "tray.02": {
     "value": 20,
     "flavor": "tray",
-    "style": "dripping lips",
-    "ingredients": ["juicy"]
+    "style": "",
+    "subject": "juicy lips",
+    "ingredients": []
   },
 
   "tray.03": {
     "value": 20,
     "flavor": "tray",
-    "style": "fly a kite lips",
-    "ingredients": ["tongue"]
-
+    "style": "",
+    "subject": "fly a kite over tongue",
+    "ingredients": []
   },
 
   "magnet.01": {
     "value": 8,
     "flavor": "magnet",
-    "style": "whipped cream mushroom",
-    "ingredients": ["magnet"]
+    "style": "",
+    "subject": "whipped cream mushroom",
+    "ingredients": []
   },
 
   "magnet.02": {
     "value": 8,
     "flavor": "magnet",
-    "style": "gardening mushroom",
-    "ingredients": ["magnet"]
+    "style": "",
+    "subject": "gardening mushroom",
+    "ingredients": []
   },
 
   "bookmark.01": {
     "value": 5,
     "flavor": "bookmark",
-    "style": "bird",
-    "ingredients": ["wood", "3x10"]
+    "style": "abstract",
+    "subject": "parrot",
+    "size": "3''x10''",
+    "ingredients": []
   },
 
   "bookmark.02": {
     "value": 5,
     "flavor": "bookmark",
-    "style": "cat reading",
-    "ingredients": ["wood", "2.75x9"]
+    "style": "abstract",
+    "subject": "reading cat",
+    "size": "2.75''x9''",
+    "ingredients": []
   },
 
   "bookmark.03": {
     "value": 5,
     "flavor": "bookmark",
-    "style": "feather",
-    "ingredients": ["wood", "2.25x8.25"]
+    "style": "abstract",
+    "subject": "feather",
+    "size": "2.25''x8.25''",
+    "ingredients": []
   },
 
   "bookmark.04": {
     "value": 5,
     "flavor": "bookmark",
-    "style": "sleepy cat",
-    "ingredients": ["wood", "1.75x6.5"]
+    "style": "abstract",
+    "subject": "sleepy cat",
+    "size": "1.75''x6.5''",
+    "ingredients": []
   },
 
   "bookmark.05": {
     "value": 5,
     "flavor": "bookmark",
-    "style": "fall flowers",
-    "ingredients": ["wood", "2.25x6.5"]
+    "style": "seasonal",
+    "subject": "flowers",
+    "size": "3''x10''",
+    "ingredients": []
   },
 
   "tarot card.01": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "rope play",
-    "ingredients": ["II"]
+    "style": "",
+    "subject": "II-Rope Play",
+    "ingredients": []
   },
 
   "tarot card.02": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "they breeding kink",
-    "ingredients": ["IX"]
+    "style": "",
+    "subject": "IX-They Breeding Kink",
+    "ingredients": []
   },
 
   "tarot card.03": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "the rope bunny",
-    "ingredients": ["VII"]
+    "style": "",
+    "subject": "VII-The Rope Bunny",
+    "ingredients": []
   },
 
   "tarot card.04": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "the fated mated",
-    "ingredients": ["VII"]
+    "style": "",
+    "subject": "VII-The Fated Mated",
+    "ingredients": []
   },
 
   "tarot card.05": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "the daddy",
-    "ingredients": ["X"]
+    "style": "",
+    "subject": "X-The Daddy",
+    "ingredients": []
   },
 
   "tarot card.06": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "the spanking",
-    "ingredients": ["X"]
+    "style": "",
+    "subject": "X-The Spanking",
+    "ingredients": []
   },
 
   "tarot card.07": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "fake dating",
-    "ingredients": ["X"]
+    "style": "",
+    "subject": "X-Fake Dating",
+    "ingredients": []
   },
 
   "tarot card.08": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "the book of spells",
-    "ingredients": ["I"]
+    "style": "",
+    "subject": "I-The Book Of Spells",
+    "ingredients": []
   },
 
   "tarot card.09": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "starborn",
-    "ingredients": ["XII"]
+    "style": "",
+    "subject": "XII-Starborn",
+    "ingredients": []
   },
 
   "tarot card.10": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "the bodyguard romance",
-    "ingredients": ["XXIII"]
+    "style": "",
+    "subject": "XXIII-The Bodyguard Romance",
+    "ingredients": []
   },
 
   "tarot card.11": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "the necklace",
-    "ingredients": ["XX"]
+    "style": "",
+    "subject": "XX-The Necklace",
+    "ingredients": []
   },
 
   "tarot card.12": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "the brat",
-    "ingredients": ["I"]
+    "style": "",
+    "subject": "I-The Brat",
+    "ingredients": []
   },
 
   "tarot card.13": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "the trigger warnings",
-    "ingredients": ["XXXI"]
+    "style": "",
+    "subject": "XXXI-The Trigger Warnings",
+    "ingredients": []
   },
 
   "tarot card.14": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "the smuttrovrt",
-    "ingredients": ["I"]
+    "style": "",
+    "subject": "I-The Smuttrovert",
+    "ingredients": []
   },
 
   "tarot card.15": {
     "value": 25,
     "flavor": "tarot card",
-    "style": "the smut slut",
-    "ingredients": ["V"]
+    "style": "",
+    "subject": "V-The Smut Slut",
+    "ingredients": []
   },
 
   "tarot card.16": {
     "value": 40,
     "flavor": "tarot card",
-    "style": "the scary movie",
-    "ingredients": ["XII", "stone wire hung"]
+    "style": "stone wire hung",
+    "subject": "XII-The Scary Movie",
+    "ingredients": []
   }
 }

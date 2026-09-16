@@ -1,5 +1,4 @@
 /* Main Page Layout */
-
 .garden-sign {
   position: relative;
   text-align: center;
@@ -32,82 +31,171 @@
 
 .ring-wrapper {
   position: relative;
-  margin: 12.5%;
   width: 75%;
-  display: block;
-  
+  margin: 12.5%;
   aspect-ratio: 1;
 }
 
 .ring-wrapper img {
+  display: block;
   width: 100%;
   height: 100%;
 }
 
 .studio-wrapper {
-  position: relative;
+  position: absolute;
+
+  left: 1%;
+  top: 33%;
+
+  width: 15%;
+  height: 15%;
+
   background: transparent;
- 
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  border: none;
-  bottom: 700px;
-  left: 20px;
-  width: 10vw;
-  height: 10vh;
+}
+
+.studio-wrapper::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
+  background-color: aqua;
   
-  aspect-ratio: .1;
+  opacity: .25;
+  transition: opacity 3s ease;
+}
+
+.studio-wrapper:hover::after {
+  content: "Wicked Studios";
+  align-content: center;
+  text-align: center;
+
+  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+
+  opacity: .75;
+  transition: opacity 3s ease;
 }
 
 .burn-wrapper {
-  position: relative;
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
+  position: absolute;
 
-  bottom: 775px;
-  left: 300px;
-  width: 15vw;
-  height: 15vh;
+  left: 49%;
+  top: 79%;
+
+  width: 30%;
+  height: 15%;  
+  transform: rotate(-30deg);
+
+  background: transparent;
+}
+
+.burn-wrapper::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
+  background-color: aqua;
   
-  aspect-ratio: .1;
+  opacity: .25;
+  transition: opacity 3s ease;
+}
+
+.burn-wrapper:hover::after {
+  content: "Wicked Burns";
+  align-content: center;
+  text-align: center;
+
+  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+
+  opacity: .75;
+  transition: opacity 3s ease;
 }
 
 .dye-wrapper {
-  position: relative;
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
+  position: absolute;
 
-  bottom: 350px;
-  right: 275px;
-  width: 10vw;
-  height: 15vh;
+  left: 25%;
+  top: 15%;
+
+  width: 30%;
+  height: 30%;
+
+  background: transparent;
+}
+
+.dye-wrapper::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
+  background-color: aqua;
   
-  aspect-ratio: .1;
+  opacity: .25;
+  transition: opacity 3s ease;
+}
+
+.dye-wrapper:hover::after {
+  content: "Wicked Dyes";
+  align-content: center;
+  text-align: center;
+
+  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+
+  opacity: .75;
+  transition: opacity 3s ease;
 }
 
 .wire-wrapper {
-  position: relative;
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
+  position: absolute;
 
-  bottom: 300px;
-  left: 100px;
-  width: 15vw;
-  height: 10vh;
-  
-  aspect-ratio: .1;
+  left: 7.5%;
+  top: 60%;
+
+  width: 10%;
+  height: 30%;  
+  transform: rotate(-15deg);
+
+  background: transparent;
 }
 
-.wire-wrapper:hover .ring-wrapper img {
-  opacity: .5;
+.wire-wrapper::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
+  background-color: aqua;
+  
+  opacity: .25;
+  transition: opacity 3s ease;
+}
+
+.wire-wrapper:hover::after {
+  content: "Wicked Wires";
+  align-content: center;
+  text-align: center;
+
+  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+
+  opacity: .75;
+  transition: opacity 3s ease;
 }

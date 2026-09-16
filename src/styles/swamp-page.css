@@ -27,3 +27,120 @@ color: white;
 font-family: monospace;
 font-size: 3ch;
 }
+
+.wood-wrapper {
+  position: absolute;
+
+  left: 0%;
+  top: 50%;
+
+  width: 25%;
+  height: 25%; 
+
+  background: transparent;
+}
+
+.wood-wrapper::after {
+  content: "Swamp wood";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
+  background-color: aqua;
+  
+  opacity: .25;
+  transition: opacity 3s ease;
+}
+
+.wood-wrapper:hover::after {
+  content: "Swamp wood";
+  align-content: center;
+  text-align: center;
+
+  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+
+  opacity: .75;
+  transition: opacity 3s ease;
+}
+
+.leather-wrapper {
+  position: absolute;
+
+  left: 0%;
+  top: 25%;
+
+  width: 25%;
+  height: 25%;
+
+  background: transparent;
+}
+
+.leather-wrapper::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
+  background-color: aqua;
+  
+  opacity: .25;
+  transition: opacity 3s ease;
+}
+
+.leather-wrapper:hover::after {
+  content: "Swamp Leather";
+  align-content: center;
+  text-align: center;
+
+  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+
+  opacity: .75;
+  transition: opacity 3s ease;
+}
+
+.shop-wrapper {
+  position: absolute;
+
+  left: 0%;
+  top: 0%;
+
+  width: 25%;
+  height: 25%; 
+
+  background: transparent;
+}
+
+.shop-wrapper::after {
+  content: "Swamp Shop";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
+  background-color: aqua;
+  
+  opacity: .25;
+  transition: opacity 3s ease;
+}
+
+.shop-wrapper:hover::after {
+  content: "Swamp Shop";
+  align-content: center;
+  text-align: center;
+
+  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+
+  opacity: .75;
+  transition: opacity 3s ease;
+}

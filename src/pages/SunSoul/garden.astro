@@ -15,25 +15,59 @@ import {
   wickedArtStudio,
 } from '../../config.js';
 
-{console.log(wallpapers)}
-
 const wallpaper = wallpapers.garden[0];
 const hyperRing = garden.ring[0];
 ---
 
-<body
-  id="background"
-  class="landing-page-background"
-  style={`background-image: url(${wallpaper.image.src})`}
->
-  <main>
-    <article class="ring-wrapper">
-      <Image src={hyperRing.image} alt="Sample"/>
+<body>
+  <div
+    id="background"
+    class="landing-page-background"
+    style={`background-image: url(${wallpaper.image.src})`}>
+  </div>
 
-      <button class="studio-wrapper" onclick={`window.location.href = "${wickedArtStudio}"`}></button>
-      <button class="burn-wrapper" onclick={`window.location.href = "${wickedDye}"`}></button>
-      <button class="dye-wrapper" onclick={`window.location.href = "${wickedWire}"`}></button>
-      <button class="wire-wrapper" onclick={`window.location.href = "${wickedBurn}"`}></button>
-    </article>
+  <main>
+    <div class="ring-wrapper">
+      <Image src={hyperRing.image} alt="" />
+
+      <a class="studio-wrapper" href={wickedArtStudio}>
+          <span></span>
+      </a>
+
+      <a class="burn-wrapper" href={wickedBurn}>
+          <span></span>
+      </a>
+
+      <a class="dye-wrapper" href={wickedDye}>
+          <span></span>
+      </a>
+
+      <a class="wire-wrapper" href={wickedWire}>
+          <span></span>
+      </a>
+    </div>
+
+    <section class="garden-sign">
+      <h1>SunSoul Studios</h1>
+    </section>
+
+    <section class="garden-info">
+      <h1>Hi!!</h1>
+  
+      <p> We say words here </p>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </section>
   </main>
 </body>

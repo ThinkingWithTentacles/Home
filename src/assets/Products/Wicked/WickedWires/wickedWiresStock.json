@@ -2,133 +2,133 @@
   "smoking wand.01": {
     "value": 25,
     "flavor": "smoking wand",
-    "style": "crystal",
+    "style": "crystal wrap",
     "ingredients": ["copper wire", "amethyst"]
   },
 
   "smoking wand.02": {
     "value": 25,
     "flavor": "smoking wand",
-    "style": "crystal",
+    "style": "crystal wrap",
     "ingredients": ["copper wire", "rose quartz"]
   },
 
   "smoking wand.03": {
     "value": 25,
     "flavor": "smoking wand",
-    "style": "crystal chakras",
+    "style": "crystal chakras wrap",
     "ingredients": ["copper wire", "chip beads"]
   },
 
   "smoking wand.04": {
     "value": 25,
     "flavor": "smoking wand",
-    "style": "crystal chakras",
+    "style": "crystal chakras wrap",
     "ingredients": ["copper wire", "round beads"]
   },
 
   "smoking wand.05": {
     "value": 25,
     "flavor": "smoking wand",
-    "style": "skull",
+    "style": "skull wrap",
     "ingredients": ["copper wire", "labrdorite"]
   },
 
   "smoking wand.06": {
     "value": 20,
     "flavor": "smoking wand",
-    "style": "colorful",
+    "style": "colorful wrap",
     "ingredients": ["copper wire", "beads"]
   },
 
   "smoking wand.07": {
     "value": 20,
     "flavor": "smoking wand",
-    "style": "colorful peace",
+    "style": "colorful peace wrap",
     "ingredients": ["copper wire", "beads"]
   },
 
   "smoking wand.08": {
     "value":20,
     "flavor": "smoking wand",
-    "style": "onyx beads",
+    "style": "onyx beads wrap",
     "ingredients": ["copper wire", "onyx"]
   },
 
   "smoking wand.09": {
     "value":20,
     "flavor": "smoking wand",
-    "style": "smoky moon",
+    "style": "smoky moon wrap",
     "ingredients": ["copper wire", "smoky quartz"]
   },
 
   "smoking wand.10": {
     "value": 20,
     "flavor": "smoking wand",
-    "style": "sea",
+    "style": "pearl wrap",
     "ingredients": ["copper wire", "mother of pearl"]
   },
 
   "smoking wand.11": {
     "value": 20,
     "flavor": "smoking wand",
-    "style": "citrine",
+    "style": "citrine wrap",
     "ingredients": ["copper wire", "citrine"]
   },
 
   "smoking wand.12": {
     "value": 20,
     "flavor": "smoking wand",
-    "style": "citrine",
+    "style": "citrine wrap",
     "ingredients": ["copper wire", "citrine"]
   },
 
   "smoking wand.13": {
     "value": 15,
     "flavor": "smoking wand",
-    "style": "mini star",
+    "style": "mini star wrap",
     "ingredients": ["copper wire", "dyed howlite"]
   },
 
   "smoking wand.14": {
     "value": 15,
     "flavor": "smoking wand",
-    "style": "mini peace",
+    "style": "mini peace wrap",
     "ingredients": ["copper wire", "dyed howlite"]
   },
 
   "smoking wand.15": {
     "value": 20,
     "flavor": "smoking wand",
-    "style": "peace",
+    "style": "peace wrap",
     "ingredients": ["copper wire", "chip beads"]
   },
 
   "smoking wand.16": {
     "value": 20,
     "flavor": "smoking wand",
-    "style": "stone",
+    "style": "stone wrap",
     "ingredients": ["copper wire", "citrine"]
   },
 
   "smoking wand.17": {
     "value": 20,
     "flavor": "smoking wand",
-    "style": "candy",
+    "style": "candy trinket",
     "ingredients": ["copper wire", "beads"]
   },
 
   "smoking wand.18": {
     "value":20,
     "flavor": "smoking wand",
-    "style": "popsicle",
+    "style": "popsicle trinket",
     "ingredients": ["copper wire", "beads"]
   },
 
   "smoking wand.19": {
     "value": 20,
     "flavor": "smoking wand",
-    "style": "cupcake",
+    "style": "cupcake trinket",
     "ingredients": ["copper wire", "beads"]
   },
 
@@ -169,85 +169,85 @@
 
   "broom.01": {
     "value": 25,
-    "flavor": "broom",
-    "style": "whimsical treasure pendent",
+    "flavor": "pendent",
+    "style": "whimsical broom",
     "ingredients": ["copper wire", "black kyanite"]
   },
 
   "broom.02": {
     "value": 25,
-    "flavor": "broom",
-    "style": "whimsical treasure pendent",
+    "flavor": "pendent",
+    "style": "whimsical broom",
     "ingredients": ["copper wire", "black kyanite"]
   },
 
   "broom.03": {
     "value": 25,
-    "flavor": "broom",
-    "style": "whimsical treasure",
+    "flavor": "pendent",
+    "style": "whimsical broom",
     "ingredients": ["copper wire", "black kyanite"]
   },
 
   "broom.04": {
     "value": 25,
-    "flavor": "broom",
-    "style": "whimsical treasure",
+    "flavor": "pendent",
+    "style": "whimsical broom",
     "ingredients": ["copper wire", "black kyanite"]
   },
 
   "broom.05": {
     "value": 25,
-    "flavor": "broom",
-    "style": "whimsical treasure",
+    "flavor": "pendent",
+    "style": "whimsical broom",
     "ingredients": ["copper wire", "black kyanite"]
   },
 
   "broom.06": {
     "value": 25,
-    "flavor": "broom",
-    "style": "whimsical treasure",
+    "flavor": "pendent",
+    "style": "whimsical broom",
     "ingredients": ["copper wire", "black kyanite"]
   },
 
  "broom.07": {
     "value": 25,
-    "flavor": "broom",
-    "style": "whimsical treasure",
+    "flavor": "pendent",
+    "style": "whimsical broom",
     "ingredients": ["copper wire", "black kyanite"]
   },
 
   "broom.08": {
     "value": 25,
-    "flavor": "broom",
-    "style": "whimsical treasure",
+    "flavor": "pendent",
+    "style": "whimsical broom",
     "ingredients": ["copper wire", "black kyanite"]
   },
 
   "broom.09": {
     "value": 25,
-    "flavor": "broom",
-    "style": "whimsical treasure",
+    "flavor": "pendent",
+    "style": "whimsical broom",
     "ingredients": ["copper wire", "black kyanite"]
   },
 
   "broom.10": {
     "value": 25,
-    "flavor": "broom",
-    "style": "whimsical treasure",
+    "flavor": "pendent",
+    "style": "whimsical broom",
     "ingredients": ["copper wire", "black kyanite"]
   },
 
   "broom.11": {
     "value": 25,
-    "flavor": "broom",
-    "style": "whimsical treasure",
+    "flavor": "pendent",
+    "style": "whimsical broom",
     "ingredients": ["copper wire", "black kyanite"]
   },
 
   "broom.12": {
     "value": 25,
-    "flavor": "broom",
-    "style": "whimsical treasure",
+    "flavor": "pendent",
+    "style": "whimsical broom",
     "ingredients": ["copper wire", "black kyanite"]
   }
 }

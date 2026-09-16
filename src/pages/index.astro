@@ -1,5 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import { wallpapers } from '/src/data/resource.ts';
+import { garden } from '/src/data/wicked.ts';
+import { swamp } from '/src/data/swamp.ts';
 
 import { 
   swampGrove, 
@@ -12,6 +15,7 @@ import '/src/styles/global.css';
 import '/src/styles/home-page.css';
 
 const wallpaper = wallpapers.landing[0];
+const sunSoul = garden.ring[0];
 ---
 
 <body
@@ -21,11 +25,51 @@ const wallpaper = wallpapers.landing[0];
 >
   <main>
     <section class="home-sign">
-      <h1>Woodcraft</h1>
+      <h1> River Haven Grotto </h1>
     </section>
 
-    <a href={swampGrove}>|   Thinking With Tentacles   |</a>;
-    <a href={wickedGrove}>|   WickedGabi   |</a>;
-    <a href={deadEnd}>|   Dead End   |</a>;
+    <div class="grove-container">
+      <div class="top-row">
+        <div class="soul-wrapper">
+          <Image src={sunSoul.image} alt="" />
+          <a class="soul-link" href={wickedGrove}> <span></span></a>
+        </div>
+        
+        <div class="swamp-wrapper">
+          <Image src={sunSoul.image} alt="" />
+          <a class="swamp-link" href={swampGrove}> <span></span></a>
+        </div>
+      </div>
+
+      <div class="dead-wrapper">
+        <Image src={sunSoul.image} alt="" />
+        <a class="dead-link" href={deadEnd}> <span></span></a>
+      </div>
+
+      <div class="vault-wrapper">
+        <Image src={sunSoul.image} alt="" />
+        <a class="vault-link" href={theVault}> <span></span></a>
+      </div>
+    </div>
+
+    <section class="home-sign">
+      <h1>Welcome</h1>
+    </section>
+
+    <section class="home-info">
+      <p> We say words here </p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </section>
   </main>
 </body>

@@ -1,64 +1,161 @@
 {
-  "slapper.01": {
-    "value": 75,
-    "flavor": "Slapper",
-    "style": "Chevron",
-    "ingredients": ["yellowheart", "walnut"]
+  "tapestry.01": {
+    "value": 50,
+    "flavor": "tapestry",
+    "style": "mandala",
+    "size": "landscape",
+    "ingredients": ["upcycled cotton"]
   },
 
-  "stoker.01": {
-    "value": 75,
-    "flavor": "Stoker",
-    "style": "Chevron",
-    "ingredients": ["yellowheart", "walnut"]
+  "tapestry.02": {
+    "value": 50,
+    "flavor": "tapestry",
+    "style": "mandala",
+    "size": "landscape",
+    "ingredients": ["upcycled cotton"]
   },
 
-  "biter.01": {
-    "value": 100,
-    "flavor": "Biter",
-    "style": "Streak",
-    "ingredients": ["yellowheart", "paduak"]
+  "tapestry.03": {
+    "value": 50,
+    "flavor": "tapestry",
+    "style": "twin spiral",
+    "size": "square",
+    "ingredients": ["upcycled cotton"]
   },
 
-  "puncher.01": {
-    "value": 100,
-    "flavor": "Puncher",
-    "style": "Stripes",
-    "ingredients": ["purpleheart", "walnut"]
+  "dress.01": {
+    "value": 30,
+    "flavor": "dress",
+    "style": "galaxy void",
+    "size": "x-large",
+    "ingredients": ["upcycled cotton"]
   },
 
-  "striker.01": {
-    "value": 100,
-    "flavor": "Puncher",
-    "style": "Stripes",
-    "ingredients": ["paduak", "white maple"]
+  "dress.02": {
+    "value": 30,
+    "flavor": "dress",
+    "style": "firestorm",
+    "size": "large",
+    "ingredients": ["upcycled cotton"]
   },
 
-  "striker.02": {
-    "value": 100,
-    "flavor": "Striker",
-    "style": "Stripes",
-    "ingredients": ["paduak", "walnut"]
+  "shirt.01": {
+    "value": 30,
+    "flavor": "shirt",
+    "style": "fault line",
+    "size": "large",
+    "ingredients": ["upcycled cotton"]
   },
 
-  "striker.03": {
-    "value": 100,
-    "flavor": "Striker",
-    "style": "Stripes",
-    "ingredients": ["paduak", "walnut", "white maple"]
+  "shirt.02": {
+    "value": 30,
+    "flavor": "shirt",
+    "style": "galaxy void",
+    "size": "medium",
+    "ingredients": ["upcycled cotton"]
   },
 
-  "striker.04": {
-    "value": 100,
-    "flavor": "Striker",
-    "style": "Stripes",
-    "ingredients": ["paduak", "white maple"]
+  "shirt.03": {
+    "value": 30,
+    "flavor": "shirt",
+    "style": "galaxy void",
+    "size": "small",
+    "ingredients": ["upcycled cotton"]
   },
 
-  "kicker.01": {
-    "value": 100,
-    "flavor": "Kicker",
-    "style": "Chevron tread",
-    "ingredients": ["paduak", "cherry"]
+  "shirt.04": {
+    "value": 30,
+    "flavor": "shirt",
+    "style": "spectrum",
+    "size": "small",
+    "ingredients": ["upcycled cotton"]
+  },
+
+  "shirt.05": {
+    "value": 30,
+    "flavor": "shirt",
+    "style": "worm hole",
+    "size": "x-large",
+    "ingredients": ["upcycled cotton"]
+  },
+
+  "shorts.01": {
+    "value": 20,
+    "flavor": "shorts",
+    "style": "galaxy void",
+    "size": "x-large",
+    "ingredients": ["upcycled cotton"]
+  },
+
+  "shorts.02": {
+    "value": 20,
+    "flavor": "shorts",
+    "style": "rainbow spectrum",
+    "size": "size-7",
+    "ingredients": ["upcycled cotton"]
+  },
+
+  "kids.01": {
+    "value": 15,
+    "flavor": "kids",
+    "style": "mandala",
+    "size": "small",
+    "ingredients": ["upcycled cotton"]
+  },
+
+  "kids.02": {
+    "value": 15,
+    "flavor": "kids",
+    "style": "contrast splash",
+    "size": "medium",
+    "ingredients": ["upcycled cotton"]
+  },
+
+  "kids.03": {
+    "value": 15,
+    "flavor": "kids",
+    "style": "heart",
+    "size": "medium",
+    "ingredients": ["upcycled cotton"]
+  },
+
+  "kids.04": {
+    "value": 15,
+    "flavor": "kids",
+    "style": "spiral",
+    "size": "medium",
+    "ingredients": ["upcycled cotton"]
+  },
+
+  "kids.05": {
+    "value": 15,
+    "flavor": "kids",
+    "style": "contrast splash",
+    "size": "medium",
+    "ingredients": ["upcycled cotton"]
+  },
+
+  "kids.06": {
+    "value": 15,
+    "flavor": "kids",
+    "style": "firestorm",
+    "size": "x-small",
+    "ingredients": ["upcycled cotton"]
+  },
+
+  "kids.07": {
+    "value": 15,
+    "flavor": "kids",
+    "style": "contrast splash",
+    "size": "x-large",
+    "ingredients": ["upcycled cotton"]
+  },
+
+  "kids.08": {
+    "value": 15,
+    "flavor": "kids",
+    "style": "mandala",
+    "size": "medium",
+    "ingredients": ["upcycled cotton"]
   }
 }

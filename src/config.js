@@ -21,13 +21,13 @@ export const theVault = `${vault}/facade`;
 //////////////////////////////////////////////
 
 /* Tentacles */
-export const swampWood = `${swamp}/Woodcraft/woodcraft`;
-export const swampLeather = `${swamp}/Leathercraft/leathercraft`;
-export const swampParacord = `${swamp}/Paracordcraft/paracordcraft`;
-export const swampGlass = `${swamp}/Glasscraft/glasscraft`;
+export const swampWood = `${swamp}/Woodcraft/wood-craft`;
+export const swampLeather = `${swamp}/Leathercraft/leather-craft`;
+export const swampParacord = `${swamp}/Paracordcraft/paracord-craft`;
+export const swampGlass = `${swamp}/Glasscraft/glass-craft`;
 
 /* Teeth */
-export const swampWorkshop = `${swamp}/Workshop/workshop`;
+export const swampWorkshop = `${swamp}/Workshop/work-shop`;
 export const swampCreature = `${swamp}/Workshop/About/teeth`;
 export const swampFixations = `${swamp}/Workshop/Current/hyper-fixation`;
 export const swampShop = `${swamp}/Workshop/Shop/the-shop`;
@@ -59,9 +59,6 @@ export const reCycle = `${end}/ReCycle/artistic-trash`;
 //////////////////////////////////////////////
 /*                  Vault                   */
 //////////////////////////////////////////////
-
-//* Open Secrets */
-export const archive = `${vault}/Archive/stuff`;
 
 /* Duck Prints */
 export const duck = `${vault}/DuckPrints/duck`;

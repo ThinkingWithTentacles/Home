@@ -1,13 +1,17 @@
 import type { ImageMetadata } from 'astro';
 
-import { parsePage } from '/src/utils/helper.ts';
-import { parseCraft } from '/src/utils/helper.ts';
+import { parseResources } from '/src/utils/helper.ts';
+import { parseProducts } from '/src/utils/helper.ts';
+
+import creations from "/src/assets/Vault/archive.json"
 
 /* Vault Site */
-const vault = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Site/Vault/**/*.{jpg,jpeg,png}',
+const vaultfacade = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Resources/Pages/Vault/**/*.{jpg,jpeg,png}',
   { eager: true }
 );
+
+
 
 const wheelin = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/Vault/Creations/*.{jpg,jpeg,png}',
@@ -15,19 +19,19 @@ const wheelin = import.meta.glob<{ default: ImageMetadata }>(
 );
 
 const dealin = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Site/Vault/Creations/*.{jpg,jpeg,png}',
+  '/src/assets/Vault/Pushed/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
 const schemin = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Vault/Creations/*.{jpg,jpeg,png}',
+  '/src/assets/Vault/Prints/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
 /* Vault Stock Photos */
-export const grove = parsePage(vault);
+export const vault = parseResources(vaultfacade);
 
 /* Vault Archives */
-export const creations = {tame: parseCraft(wheelin)};
-export const pushed = {coin: parseCraft(deelin)};
-export const prints = {birds: parseCraft(schemin)};
+export const archive = {shelf: parseProducts(wheelin, creations), pushed: parseProducts(dealin, creations), prints: parseProducts(schemin, creations)};
+
+{console.log(archive)}

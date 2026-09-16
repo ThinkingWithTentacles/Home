@@ -27,3 +27,201 @@ color: white;
 font-family: monospace;
 font-size: 3ch;
 }
+
+.grove-container {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 300px;
+}
+
+/* 2. Top Row: Soul and Swamp side-by-side */
+.top-row {
+  display: flex;
+  justify-content: space-around; /* Distributes them evenly */
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem; /* Creates space above the dead-wrapper */
+}
+
+/* 3. Soul and Swamp Wrappers (Now relative so absolute links work inside them) */
+.soul-wrapper, 
+.swamp-wrapper {
+  position: relative; /* Acts as the anchor for the absolute links */
+  width: 30%;        /* Your desired width */
+  aspect-ratio: 1;
+}
+
+.soul-wrapper img, 
+.swamp-wrapper img {
+  display: block;
+  width: 100%;       /* Fills the 40% wrapper width */
+  height: 100%;
+}
+
+/* Links inside Soul and Swamp */
+.soul-link, 
+.swamp-link {
+  position: absolute;
+  left: 0%;
+  top: 15%;
+  width: 15%;
+  height: 15%;
+  background: transparent;
+  z-index: 10;       /* Ensures link stays on top */
+}
+
+.soul-link::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
+  background-color: aqua;
+  
+  opacity: .25;
+  transition: opacity 3s ease;
+}
+
+.soul-link:hover::after {
+  content: "Wicked Studios";
+  align-content: center;
+  text-align: center;
+
+  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+
+  opacity: .75;
+  transition: opacity 3s ease;
+}
+
+.swamp-link::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
+  background-color: aqua;
+  
+  opacity: .25;
+  transition: opacity 3s ease;
+}
+
+.swamp-link:hover::after {
+  content: "Wicked Studios";
+  align-content: center;
+  text-align: center;
+
+  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+
+  opacity: .75;
+  transition: opacity 3s ease;
+}
+
+.dead-wrapper {
+  position: relative;
+  width: 75%;
+  margin: 0 auto 2rem auto;
+  aspect-ratio: 1;
+}
+
+.dead-wrapper img {
+  display: block;
+  width: 60%;
+  height: 60%;
+  margin: 0 auto;
+}
+
+.dead-link {
+  position: absolute;
+  left: 1%;
+  top: 33%;
+  width: 15%;
+  height: 15%;
+  background: transparent;
+  z-index: 10;
+}
+
+.dead-link::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
+  background-color: aqua;
+  
+  opacity: .25;
+  transition: opacity 3s ease;
+}
+
+.dead-link:hover::after {
+  content: "Wicked Studios";
+  align-content: center;
+  text-align: center;
+
+  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+
+  opacity: .75;
+  transition: opacity 3s ease;
+}
+
+.vault-wrapper {
+  position: relative; /* Keeps it as the anchor for vault-link */
+  width: 75%;
+  margin: 0 auto 2rem auto; /* Centers horizontally, adds space below */
+  aspect-ratio: 1;
+}
+
+.vault-wrapper img {
+  display: block;
+  width: 60%;
+  height: 60%;
+  margin: 0 auto; /* Centers the image inside the wrapper */
+}
+
+.vault-link {
+  position: absolute;
+  left: 1%;
+  top: 63%;
+  width: 15%;
+  height: 15%;
+  background: transparent;
+  z-index: 10;
+}
+
+.vault-link::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
+  background-color: aqua;
+  
+  opacity: .25;
+  transition: opacity 3s ease;
+}
+
+.vault-link:hover::after {
+  content: "Wicked Studios";
+  align-content: center;
+  text-align: center;
+
+  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+
+  opacity: .75;
+  transition: opacity 3s ease;
+}

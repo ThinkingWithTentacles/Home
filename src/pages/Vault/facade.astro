@@ -1,14 +1,62 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+import { wallpapers } from '/src/data/resource.ts';
+import { vault } from '/src/data/vault.ts';
+import { archive } from '/src/data/vault.ts';
+
+    {console.log(archive.pushed)}
+
+import SampleGrid from '/src/components/SampleGrid.astro';
+import ProductGrid from '/src/components/ProductGrid.astro';
+import LightBox from '/src/components/LightBox.astro';
+import ContactForm from '/src/components/ContactForm.astro';
+
+import '/src/styles/global.css';
+import '/src/styles/vault-page.css';
+
 import { 
-  archive, 
   duck,
 } from '../../config.js';
+
+const wallpaper = wallpapers.woodcraft[2];
 ---
 
+<body
+  id="background"
+  class="product-page-background"
+  style={`background-image: url(${wallpaper.image.src})`}
+>
 
 <main>
-  <h1>stay...</h1>
+    <section class="vault-sign">
+      <h1>Stay</h1>
+    </section>
 
-  <a href={archive}>|   Archive   |</a>
-  <a href={duck}>|   Duckprints   |</a>
-</main>
+    <ProductGrid products={Object.values(archive.shelf)} />
+    <ProductGrid products={Object.values(archive.pushed)} />
+    <LightBox />
+    <ContactForm />
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <a href={duck}>|   Duckprints   |</a>
+  </main>
+</body> 

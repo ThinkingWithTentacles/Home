@@ -1,8 +1,7 @@
 import type { ImageMetadata } from 'astro';
 
-import { parsePage } from '/src/utils/helper.ts';
-import { parseArt } from '/src/utils/helper.ts';
-import { parseCraft } from '/src/utils/helper.ts';
+import { parseResources } from '/src/utils/helper.ts';
+import { parseProducts } from '/src/utils/helper.ts';
 
 import wickedBurnsStock from "/src/assets/Products/Wicked/WickedBurns/wickedBurnsStock.json"
 import wickedDyesStock from "/src/assets/Products/Wicked/WickedDyes/wickedDyesStock.json"
@@ -10,22 +9,22 @@ import wickedWiresStock from "/src/assets/Products/Wicked/WickedWires/wickedWire
 
 /* Garden Sites */
 const gardenart = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Pages/Garden/Zone/**/*.{jpg,jpeg,png}',
+  '/src/assets/Resources/Pages/Garden/Zone/**/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
 const burnart = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Pages/Garden/BurnArt/**/*.{jpg,jpeg,png}',
+  '/src/assets/Resources/Pages/Garden/BurnArt/**/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
 const dyeart = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Pages/Garden/DyeArt/**/*.{jpg,jpeg,png}',
+  '/src/assets/Resources/Pages/Garden/DyeArt/**/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
 const wireart = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Pages/Garden/WireArt/**/*.{jpg,jpeg,png}',
+  '/src/assets/Resources/Pages/Garden/WireArt/**/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
@@ -98,12 +97,12 @@ const bluntWires = import.meta.glob<{ default: ImageMetadata }>(
 );
 
 /* SwampLand Stock Photos */
-export const garden = parsePage(gardenart);
-export const wickedBurnArt = parsePage(burnart);
-export const wickedDyeArt = parsePage(dyeart);
-export const wickedWireArt = parsePage(wireart);
+export const garden = parseResources(gardenart);
+export const wickedBurnArt = parseResources(burnart);
+export const wickedDyeArt = parseResources(dyeart);
+export const wickedWireArt = parseResources(wireart);
 
 /* SwampLand Product Catalogs */
-export const wickedBurns = {tame: parseCraft(tameBurns, wickedBurnsStock), tarot: parseCraft(tarotBurns, wickedBurnsStock), spicy: parseCraft(spicyBurns, wickedBurnsStock)};
-export const wickedWires = {broom: parseCraft(broomWires, wickedWiresStock), blunt: parseCraft(bluntWires, wickedWiresStock)};
-export const wickedDyes = {dresses: parseArt(dyeDresses), shirts: parseArt(dyeShirts), shorts: parseArt(dyeShorts), kids: parseArt(dyeKids), tapes: parseArt(dyeTapestries)};
+export const wickedBurns = {tame: parseProducts(tameBurns, wickedBurnsStock), tarot: parseProducts(tarotBurns, wickedBurnsStock), spicy: parseProducts(spicyBurns, wickedBurnsStock)};
+export const wickedWires = {broom: parseProducts(broomWires, wickedWiresStock), blunt: parseProducts(bluntWires, wickedWiresStock)};
+export const wickedDyes = {dresses: parseProducts(dyeDresses, wickedDyesStock), shirts: parseProducts(dyeShirts, wickedDyesStock), shorts: parseProducts(dyeShorts, wickedDyesStock), kids: parseProducts(dyeKids, wickedDyesStock), tapes: parseProducts(dyeTapestries, wickedDyesStock)};

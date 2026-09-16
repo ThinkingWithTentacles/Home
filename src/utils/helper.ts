@@ -4,61 +4,34 @@ export const getFileName = (path: Path): string => {
   return path.replace(/\.[^/.]+$/, '').split(/[/\\]/).pop() || ''; 
 };
 
-export function parseResource(folder) {
+export function parseResources(folder) {
   const resources = {};
 
   Object.entries(folder).forEach(([path, image]) => {
     const file = getFileName(path);
     const bits = file.split(".");
 
-    const page = bits[0];
-    const priority = Number(bits[1]);
+    const source = bits[0];
+    const index = Number(bits[1]);
 
     const resource = {
-      priority,
+      source,
+      index,
       image: image.default
     };
 
-    if(!resources[page]) {
-      resources[page] = [];
+    if(!resources[source]) {
+      resources[source] = [];
     }
 
-    resources[page].push(resource);
+    resources[source].push(resource);
   });
 
   return resources;
 }
 
-export function parsePage(page) {
-  const stockPhotos = {};
-
-  Object.entries(page).forEach(([path, image]) => {
-    const file = getFileName(path);
-    const bits = file.split(".");
-
-    const type = bits[0];
-    const index = Number(bits[1]);
-    const name = bits[2];
-
-    const photo = {
-      type,
-      index,
-      name,
-      image: image.default
-    };
-
-    if(!stockPhotos[type]) {
-      stockPhotos[type] = [];
-    }
-
-    stockPhotos[type].push(photo);
-  });
-
-  return stockPhotos;
-}
-
-export function parseCraft(craft, stock) {
-  const craftLog = {};
+export function parseProducts(craft, stock) {
+  const productLog = {};
 
   Object.entries(craft).forEach(([path, image]) => {
     const file = getFileName(path);
@@ -69,15 +42,13 @@ export function parseCraft(craft, stock) {
     const shot = bits[2];
 
     const product = stock[flavor + "." + order];  
-    
-    {console.log(product)}
 
-    if (!craftLog[flavor]) {
-      craftLog[flavor] = {};
+    if (!productLog[flavor]) {
+      productLog[flavor] = {};
     }
 
-    if (!craftLog[flavor][order]) {
-      craftLog[flavor][order] = {
+    if (!productLog[flavor][order]) {
+      productLog[flavor][order] = {
         order,
         ...product,
         flagshot: null,
@@ -85,75 +56,31 @@ export function parseCraft(craft, stock) {
       };
     }
 
-    if (shot === "A") {
-      craftLog[flavor][order].flagshot = image.default;
+    if (shot == "A" || shot == "A1") {
+      productLog[flavor][order].flagshot = image.default;
     } else {
-        craftLog[flavor][order].shots[shot] = image.default;
+        productLog[flavor][order].shots[shot] = image.default;
     }
   });
 
-  return craftLog;
+  return productLog;
 }
 
-export function parseArt(art) {
-  const artLog = {};
+export function fluffTitle(ingredient: string, style: string, flavor: string, tarot: boolean): string {
+  const capitalizeWords = (text: string) =>
+    text
+      .split(" ")
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ");
 
-  Object.entries(art).forEach(([path, image]) => {
-    const file = getFileName(path);
-    const bits = file.split(".");
-
-    const order = prepOrder(bits[0]);
-    const value = prepValue(bits[1]);
-    const flavor = prepFlavor(bits[2]);
-    const style = prepStyle(bits[3]);
-    const ingredients = prepIngredients(bits[4]);
-    const shot = bits[5];
-
-    if (!artLog[flavor]) {
-      artLog[flavor] = {};
-    }
-
-    if (!artLog[flavor][order]) {
-      artLog[flavor][order] = {
-        value,
-        flavor,
-        style,
-        ingredients,
-        flagshot: null,
-        shots: {}
-      };
-    }
-
-    if (shot === "F") {
-      artLog[flavor][order].flagshot = image.default;
-    } else {
-        artLog[flavor][order].shots[shot] = image.default;
-    }
-  });
-
-  return artLog;
+  if(tarot) {
+    return `${capitalizeWords(ingredient)} ${style} ${capitalizeWords(flavor)}`;
+  }
+  else {
+    return `${capitalizeWords(ingredient)} ${capitalizeWords(style)} ${capitalizeWords(flavor)}`;
+  }
 }
 
-export function prepOrder(order: string): string {
-  return "PN" + order;
-}
-
-export function prepFlavor(flavor: string): string {
-  return flavor.replace(/\b\w/g, (char) => char.toUpperCase()).replaceAll("-", ' ');
-}
-
-export function prepIngredients(ingredients: string): string {
-  return ingredients.replace(/(?:^|[-_\s])\w/g, char => char.toUpperCase()).replaceAll("-", " ").split("_");
-}
-
-export function prepStyle(style: string): string {
-  return style.replace(/\b\w/g, (char) => char.toUpperCase()).replaceAll("-", ' ');
-}
-
-export function prepValue(value: string): string {
-  return Number(value);
-}
-
-export function fluffIngredients(ingredients: string): string {
-  return ingredients.replace(/\b\w/g, (char) => char.toUpperCase()).replaceAll("-", ' ');
+export function fluffWord(word: string) {
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 }

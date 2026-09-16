@@ -1,33 +1,33 @@
 import type { ImageMetadata } from 'astro';
 
-import { parsePage } from '/src/utils/helper.ts';
-import { parseCraft } from '/src/utils/helper.ts';
+import { parseResources } from '/src/utils/helper.ts';
+import { parseProducts } from '/src/utils/helper.ts';
 
 import swampWoodStock from "/src/assets/Products/Swamp/SwampWood/swampWoodStock.json"
 
 /* Swamp Site */
 const swampcraft = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Pages/Swamp/Zone/**/*.{jpg,jpeg,png}',
+  '/src/assets/Resources/Pages/Swamp/Zone/**/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
 const woodcraft = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Pages/Swamp/Woodcraft/**/*.{jpg,jpeg,png}',
+  '/src/assets/Resources/Pages/Swamp/Woodcraft/**/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
 const leathercraft = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Pages/Swamp/Leathercraft/**/*.{jpg,jpeg,png}',
+  '/src/assets/Resources/Pages/Swamp/Leathercraft/**/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
 const glasscraft = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Pages/Swamp/Glasscraft/**/*.{jpg,jpeg,png}',
+  '/src/assets/Resources/Pages/Swamp/Glasscraft/**/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
 const paracordcraft = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Pages/Swamp/Paracordcraft/**/*.{jpg,jpeg,png}',
+  '/src/assets/Resources/Pages/Swamp/Paracordcraft/**/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
@@ -101,14 +101,19 @@ const spicyMonkey = import.meta.glob<{ default: ImageMetadata }>(
 );
 
 /* SwampLand Stock Photos */
-export const swamp = parsePage(swampcraft);
-export const swampWoodcraft = parsePage(woodcraft);
-//export const swampLeathercraft = parsePage(leathercraft);
-//export const swampGlasscraft = parsePage(glasscraft);
-//export const swampParacordcraft = parsePage(paracordcraft);
+export const swamp = parseResources(swampcraft);
+
+/* SwampLand Page Images */
+export const swampWoodcraft = parseResources(woodcraft);
+//export const swampLeathercraft = parseResource(leathercraft);
+//export const swampGlasscraft = parseResource(glasscraft);
+//export const swampParacordcraft = parseResource(paracordcraft);
 
 /* SwampLand Product Catalogs */
-export const swampWood = {tame: parseCraft(tameWood, swampWoodStock), hot: parseCraft(hotWood, swampWoodStock), spicy: parseCraft(spicyWood, swampWoodStock)};
-//export const swampLeather = {coin: parseCraft(unfairCoins), anchor: parseCraft(anchorRings), keeper: parseCraft(bookKeepers), feral: parseCraft(feralToys)};
-//export const swampGlass = {birds: parseCraft(birdsEye)};
-//export const swampParacord= {funny: parseCraft(funnyMonkey), spicy: parseCraft(spicyMonkey)};
+export const swampWood = {tame: parseProducts(tameWood, swampWoodStock), hot: parseProducts(hotWood, swampWoodStock), spicy: parseProducts(spicyWood, swampWoodStock)};
+//export const swampLeather = {coin: parseProducts(unfairCoins), anchor: parseProducts(anchorRings), keeper: parseProducts(bookKeepers), feral: parseProducts(feralToys)};
+//export const swampGlass = {birds: parseProducts(birdsEye)};
+//export const swampParacord= {funny: parseProducts(funnyMonkey), spicy: parseProducts(spicyMonkey)};
+
+/* Swamp Shop */
+export const shop = {deleted: parseResources(deletedPhotos), progress: parseResources(progressPhotos), stock: parseResources(stockPhotos)}

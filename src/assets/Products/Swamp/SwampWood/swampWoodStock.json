@@ -1,4 +1,18 @@
 {
+  "cutting-board.01": {
+    "value": 175,
+    "flavor": "cutting board",
+    "style": "stripes",
+    "ingredients": ["paduak", "walnut", "white maple", "cherry"]
+  },
+
+  "cutting-board.02": {
+    "value": 150,
+    "flavor": "cutting board",
+    "style": "stripes",
+    "ingredients": ["paduak", "walnut", "white maple", "cherry"]
+  },
+
   "tray.01": {
     "value": 10,
     "flavor": "tray",
@@ -15,64 +29,64 @@
 
   "slapper.01": {
     "value": 75,
-    "flavor": "Slapper",
-    "style": "Chevron",
+    "flavor": "slapper",
+    "style": "chevron",
     "ingredients": ["yellowheart", "walnut"]
   },
 
   "stoker.01": {
     "value": 75,
-    "flavor": "Stoker",
-    "style": "Chevron",
+    "flavor": "stoker",
+    "style": "chevron",
     "ingredients": ["yellowheart", "walnut"]
   },
 
   "biter.01": {
     "value": 100,
-    "flavor": "Biter",
-    "style": "Streak",
+    "flavor": "biter",
+    "style": "streak",
     "ingredients": ["yellowheart", "paduak"]
   },
 
   "puncher.01": {
     "value": 100,
-    "flavor": "Puncher",
-    "style": "Stripes",
+    "flavor": "puncher",
+    "style": "stripes",
     "ingredients": ["purpleheart", "walnut"]
   },
 
   "striker.01": {
     "value": 100,
-    "flavor": "Puncher",
-    "style": "Stripes",
+    "flavor": "puncher",
+    "style": "stripes",
     "ingredients": ["paduak", "white maple"]
   },
 
   "striker.02": {
     "value": 100,
-    "flavor": "Striker",
-    "style": "Stripes",
+    "flavor": "striker",
+    "style": "stripes",
     "ingredients": ["paduak", "walnut"]
   },
 
   "striker.03": {
     "value": 100,
-    "flavor": "Striker",
-    "style": "Stripes",
+    "flavor": "striker",
+    "style": "stripes",
     "ingredients": ["paduak", "walnut", "white maple"]
   },
 
   "striker.04": {
     "value": 100,
-    "flavor": "Striker",
-    "style": "Stripes",
+    "flavor": "striker",
+    "style": "stripes",
     "ingredients": ["paduak", "white maple"]
   },
 
   "kicker.01": {
     "value": 100,
-    "flavor": "Kicker",
-    "style": "Chevron tread",
+    "flavor": "kicker",
+    "style": "chevron tread",
     "ingredients": ["paduak", "cherry"]
   }
 }

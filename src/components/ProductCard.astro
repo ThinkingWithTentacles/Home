@@ -1,14 +1,31 @@
 ---
+import { fluffTitle } from '/src/utils/helper.ts';
+import { fluffWord } from '/src/utils/helper.ts';
+
 import ProductViewer from './ProductViewer.astro';
 
 const { product } = Astro.props;
 
 const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' , });
 
-const lightboxData = {
-  brand: `${product.ingredients[0]} ${product.style} ${product.flavor}`,
-  flavor: `${product.style.toLowerCase()} style design`,
-  ingredients: 'Made from ' + formatter.format(product.ingredients).toLowerCase()
+const brandName = product.ingredients?.[0] 
+  ? fluffTitle(product.ingredients[0], product.style, product.flavor, product.flavor === 'tarot card') 
+  : fluffTitle(product.style, product.subject, product.flavor, product.flavor === 'tarot card');
+
+const newFlavor = product.ingredients?.[0] ? 
+`Featuring a ${product.style} style design` : product.style ? 
+`${fluffWord(product.style)} style design` : '';
+
+const cherryGarnish = product.ingredients?.[0] ? 'Made from ' + formatter.format(product.ingredients) : 'Made with wood, hot metal, and burning love';
+const flavorSize = product.size ? `Size: ${product.size}` : ''
+
+const candyPrice = product.value ? "$" + product.value : "Concept";
+
+const lightboxData = { 
+  brand: `${brandName}`,
+  flavor: `${newFlavor}`, 
+  ingredients: `${cherryGarnish}`, 
+  size: `${flavorSize}`
 };
 ---
 
@@ -16,7 +33,7 @@ const lightboxData = {
   <ProductViewer product={product} />
 
   <section class="product-info --standard">
-    <h3>{product.ingredients?.[0]} {product.style} {product.flavor}</h3>
-    <p>${product.value}</p>
+    <h3>{brandName}</h3>
+    <p>{candyPrice}</p>
   </section>
 </section>
