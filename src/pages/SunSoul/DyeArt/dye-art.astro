@@ -8,6 +8,7 @@ import { wickedDyes } from '/src/data/wicked.ts';
 
 import ProductGrid from '/src/components/ProductGrid.astro';
 import LightBox from '/src/components/LightBox.astro';
+import ContactForm from '/src/components/ContactForm.astro';
 
 import '/src/styles/global.css';
 import '/src/styles/dye-art-page.css';
@@ -22,13 +23,11 @@ const wallpaper = wallpapers.garden[0];
 >
 
 <main>
-    <section id="dying-art" class="dying-sign">
+    <section class="garden-sign">
       <h1>Dying Art</h1>
     </section>
 
     <section class="dying-info">
-      <h1>dye</h1>
-
       <p> Thrifted pieces and blank tapestries, reimagined in color </p>
       
       <p> Each piece is individually hand-dyed, giving new life to pre-loved clothing and turning it
@@ -44,6 +43,8 @@ const wallpaper = wallpapers.garden[0];
            let's create something together.
       </p>
     </section>
+
+    <ContactForm />
 
     <ProductGrid products={Object.values(wickedDyes.tapes)} />
     <ProductGrid products={Object.values(wickedDyes.dresses)} />

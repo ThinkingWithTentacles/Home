@@ -17,22 +17,20 @@ import {
 
 const wallpaper = wallpapers.garden[0];
 const hyperRing = garden.ring[0];
+
+import { Font } from "astro:assets";
 ---
 
 <body>
   <div
     id="background"
-    class="landing-page-background"
+    class="garden-page-background"
     style={`background-image: url(${wallpaper.image.src})`}>
   </div>
 
   <main>
     <div class="ring-wrapper">
       <Image src={hyperRing.image} alt="" />
-
-      <a class="studio-wrapper" href={wickedArtStudio}>
-          <span></span>
-      </a>
 
       <a class="burn-wrapper" href={wickedBurn}>
           <span></span>
@@ -52,8 +50,6 @@ const hyperRing = garden.ring[0];
     </section>
 
     <section class="garden-info">
-      <h1>Hi!!</h1>
-  
       <p> We say words here </p>
 
       <br>

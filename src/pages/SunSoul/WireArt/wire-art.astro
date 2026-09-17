@@ -8,6 +8,7 @@ import { wickedWires } from '/src/data/wicked.ts';
 
 import ProductGrid from '/src/components/ProductGrid.astro';
 import LightBox from '/src/components/LightBox.astro';
+import ContactForm from '/src/components/ContactForm.astro';
 
 import '/src/styles/global.css';
 import '/src/styles/wire-art-page.css';
@@ -22,13 +23,11 @@ const wallpaper = wallpapers.garden[0];
 >
 
 <main>
-    <section id="wiring-art" class="wiring-sign">
+    <section id="wiring-art" class="garden-sign">
       <h1>Wire Art</h1>
     </section>
 
     <section class="wiring-info">
-      <h1>wrap</h1>
-
       <p> Where my journey with handmade art began. There’s something special about working with wire by hand—shaping it slowly around stones, crystals, and
            found treasures until something entirely new takes form. Each piece is an exploration of texture, movement, and the natural beauty of the materials themselves.
       </p>
@@ -37,6 +36,8 @@ const wallpaper = wallpapers.garden[0];
            Email me with your vision, and let’s create something uniquely yours.
       </p>jh
     </section>
+
+    <ContactForm />
 
     <ProductGrid products={Object.values(wickedWires.broom)} />
     <ProductGrid products={Object.values(wickedWires.blunt)} />

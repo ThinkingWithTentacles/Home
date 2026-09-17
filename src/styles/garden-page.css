@@ -1,23 +1,18 @@
 /* Main Page Layout */
-.garden-sign {
-  position: relative;
-  text-align: center;
-  margin-top: 0; 
-
-  color: white;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 4vw;
-  font-style: oblique;
-}
-
 .garden-header {
   position: relative;
   text-align: center;
+  top: 500px;
 
-  color: white;
+  color: rgb(252, 252, 252);
   font-family:'Times New Roman', Times, serif;
   font-size: 5ch;
   font-style: oblique;
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 45px 32px rgba(11, 163, 173, 0.6);
+  background-color: aqua;
 }
 
 .garden-info {
@@ -25,7 +20,8 @@
   text-align: center;
 
   color: white;
-  font-family:monospace;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+
   font-size: 3ch;
 }
 
@@ -33,6 +29,7 @@
   position: relative;
   width: 75%;
   margin: 12.5%;
+  top: -100px;
   aspect-ratio: 1;
 }
 
@@ -95,18 +92,24 @@
 }
 
 .burn-wrapper::after {
-  content: "";
+  content: "Wicked Burns";
+  align-content: center;
+  text-align: center;
 
   position: absolute;
   inset: 0;
+  
+  font-size: 3ch;
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(82, 46, 13);
 
   border-radius: 100%;
-
-  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
-  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgb(218, 170, 14, .75);
+  background-color: rgb(218, 170, 14, .75);
   
-  opacity: .25;
-  transition: opacity 3s ease;
+  opacity: .65;
+  transition: 2000ms;
 }
 
 .burn-wrapper:hover::after {
@@ -114,11 +117,20 @@
   align-content: center;
   text-align: center;
 
-  background-color: aqua;
-  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+  position: absolute;
+  inset: 0;
 
-  opacity: .75;
-  transition: opacity 3s ease;
+  font-size: 5ch;
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(82, 46, 13);
+
+  border-radius: 100%;
+  box-shadow: 0 0 32px 16px rgba(155, 121, 10, 0.9);
+  background-color: rgba(223, 178, 31, 0.9);
+
+  opacity: .85;
+  transition: 1000ms;
 }
 
 .dye-wrapper {
@@ -134,18 +146,24 @@
 }
 
 .dye-wrapper::after {
-  content: "";
+  content: "Wicked Dyes";
+  align-content: center;
+  text-align: center;
 
   position: absolute;
   inset: 0;
+  
+  font-size: 3.5ch;
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(221, 221, 120);
 
   border-radius: 100%;
-
-  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
-  background-color: aqua;
+  box-shadow: 0 0 40px 20px rgba(218, 28, 14, .6);;
+  background-color: rgba(218, 28, 14, .6);
   
-  opacity: .25;
-  transition: opacity 3s ease;
+  opacity: .6;
+  transition: 2000ms;
 }
 
 .dye-wrapper:hover::after {
@@ -153,39 +171,53 @@
   align-content: center;
   text-align: center;
 
-  background-color: aqua;
-  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+  position: absolute;
+  inset: 0;
 
-  opacity: .75;
-  transition: opacity 3s ease;
+  font-size: 5.25ch;
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(228, 228, 27);
+
+  box-shadow: 0 0 80px 40px rgba(235, 77, 65, .8);
+  background-color: rgba(194, 24, 12, .8);
+
+  opacity: .8;
+  transition: 1000ms;
 }
 
 .wire-wrapper {
   position: absolute;
 
-  left: 7.5%;
-  top: 60%;
+  left: -3%;
+  top: 68%;
 
-  width: 10%;
-  height: 30%;  
-  transform: rotate(-15deg);
+  width: 30%;
+  height: 10%;  
+  transform: rotate(75deg);
 
   background: transparent;
 }
 
 .wire-wrapper::after {
-  content: "";
+  content: "Wicked Wires";
+  align-content: center;
+  text-align: center;
 
   position: absolute;
   inset: 0;
+  
+  font-size: 2.5ch;
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(218, 154, 90);
 
   border-radius: 100%;
-
-  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
-  background-color: aqua;
+  box-shadow: 0 0 32px 16px rgb(67, 42, 90, .9);
+  background-color: rgb(67, 42, 90, .9);
   
-  opacity: .25;
-  transition: opacity 3s ease;
+  opacity: .70;
+  transition: 2000ms;
 }
 
 .wire-wrapper:hover::after {
@@ -193,9 +225,17 @@
   align-content: center;
   text-align: center;
 
-  background-color: aqua;
-  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+  position: absolute;
+  inset: 0;
 
-  opacity: .75;
-  transition: opacity 3s ease;
+  font-size: 4.25ch;
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(240, 138, 36);
+
+  box-shadow: 0 0 32px 16px rgb(67, 42, 90, .85);
+  background-color: rgb(67, 42, 90, .85);
+
+  opacity: .85;
+  transition: 1000ms;
 }
