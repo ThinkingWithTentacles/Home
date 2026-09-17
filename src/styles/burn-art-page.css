@@ -1,29 +1,30 @@
 /* Main Page Layout */
 .burning-sign {
-position: relative;
-text-align: center;
-margin-top: 0; 
+    position: relative;
+    text-align: center;
+    margin-top: 0; 
 
-color: white;
-font-family: 'Times New Roman', Times, serif;
-font-size: 4vw;
-font-style: oblique;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4vw;
+    font-style: oblique;
 }
 
 .burning-header {
-position: relative;
-text-align: center;
+    position: relative;
+    text-align: center;
 
-color: white;
-font-family: monospace;
-font-size: 3ch;
+    color: white;
+    font-family: monospace;
+    font-size: 3ch;
 }
 
 .burning-info {
-position: relative;
-text-align: center;
+    position: relative;
+    text-align: center;
+    margin: 10%;
 
-color: white;
-font-family: monospace;
-font-size: 3ch;
+    color: rgb(236, 202, 8);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 3ch;
 }

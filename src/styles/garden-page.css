@@ -2,10 +2,9 @@
 .garden-header {
   position: relative;
   text-align: center;
-  top: 500px;
 
   color: rgb(252, 252, 252);
-  font-family:'Times New Roman', Times, serif;
+  font-family:Georgia, 'Times New Roman', Times, serif;
   font-size: 5ch;
   font-style: oblique;
 
@@ -13,16 +12,6 @@
 
   box-shadow: 0 0 45px 32px rgba(11, 163, 173, 0.6);
   background-color: aqua;
-}
-
-.garden-info {
-  position: relative;
-  text-align: center;
-
-  color: white;
-  font-family:Georgia, 'Times New Roman', Times, serif;
-
-  font-size: 3ch;
 }
 
 .ring-wrapper {
