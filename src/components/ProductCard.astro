@@ -8,15 +8,15 @@ const { product } = Astro.props;
 
 const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' , });
 
-const brandName = product.ingredients?.[0] 
-  ? fluffTitle(product.ingredients[0], product.style, product.flavor, product.flavor === 'tarot card') 
-  : fluffTitle(product.style, product.subject, product.flavor, product.flavor === 'tarot card');
+const brandName = product.ingredients?.[0] ? 
+  fluffTitle(product.ingredients[0], product.style, product.flavor, product.flavor === 'tarot card') 
+  : fluffTitle(product.style, product.subject? product.subject : product.size, product.flavor, product.flavor === 'tarot card');
 
 const newFlavor = product.ingredients?.[0] ? 
 `Featuring a ${product.style} style design` : product.style ? 
 `${fluffWord(product.style)} style design` : '';
 
-const cherryGarnish = product.ingredients?.[0] ? 'Made from ' + formatter.format(product.ingredients) : 'Made with wood, hot metal, and burning love';
+const cherryGarnish = product.ingredients?.[0] ? 'Made from ' + formatter.format(product.ingredients) : product.subject? 'Made with wood, hot metal, and burning love' : 'Made with Dharma iced die technique';
 const flavorSize = product.size ? `Size: ${product.size}` : ''
 
 const candyPrice = product.value ? "$" + product.value : "Concept";

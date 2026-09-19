@@ -4,7 +4,7 @@
     "flavor": "tapestry",
     "style": "mandala",
     "size": "landscape",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "tapestry.02": {
@@ -12,7 +12,7 @@
     "flavor": "tapestry",
     "style": "mandala",
     "size": "landscape",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "tapestry.03": {
@@ -20,7 +20,7 @@
     "flavor": "tapestry",
     "style": "twin spiral",
     "size": "square",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "dress.01": {
@@ -28,7 +28,7 @@
     "flavor": "dress",
     "style": "galaxy void",
     "size": "x-large",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "dress.02": {
@@ -36,7 +36,7 @@
     "flavor": "dress",
     "style": "firestorm",
     "size": "large",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "shirt.01": {
@@ -44,7 +44,7 @@
     "flavor": "shirt",
     "style": "fault line",
     "size": "large",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "shirt.02": {
@@ -52,7 +52,7 @@
     "flavor": "shirt",
     "style": "galaxy void",
     "size": "medium",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "shirt.03": {
@@ -60,7 +60,7 @@
     "flavor": "shirt",
     "style": "galaxy void",
     "size": "small",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "shirt.04": {
@@ -68,7 +68,7 @@
     "flavor": "shirt",
     "style": "spectrum",
     "size": "small",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "shirt.05": {
@@ -76,7 +76,7 @@
     "flavor": "shirt",
     "style": "worm hole",
     "size": "x-large",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "shorts.01": {
@@ -84,7 +84,7 @@
     "flavor": "shorts",
     "style": "galaxy void",
     "size": "x-large",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "shorts.02": {
@@ -92,7 +92,7 @@
     "flavor": "shorts",
     "style": "rainbow spectrum",
     "size": "size-7",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "kids.01": {
@@ -100,7 +100,7 @@
     "flavor": "kids",
     "style": "mandala",
     "size": "small",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "kids.02": {
@@ -108,7 +108,7 @@
     "flavor": "kids",
     "style": "contrast splash",
     "size": "medium",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "kids.03": {
@@ -116,7 +116,7 @@
     "flavor": "kids",
     "style": "heart",
     "size": "medium",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "kids.04": {
@@ -124,7 +124,7 @@
     "flavor": "kids",
     "style": "spiral",
     "size": "medium",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "kids.05": {
@@ -132,7 +132,7 @@
     "flavor": "kids",
     "style": "contrast splash",
     "size": "medium",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "kids.06": {
@@ -140,7 +140,7 @@
     "flavor": "kids",
     "style": "firestorm",
     "size": "x-small",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "kids.07": {
@@ -148,7 +148,7 @@
     "flavor": "kids",
     "style": "contrast splash",
     "size": "x-large",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   },
 
   "kids.08": {
@@ -156,6 +156,6 @@
     "flavor": "kids",
     "style": "mandala",
     "size": "medium",
-    "ingredients": ["upcycled cotton"]
+    "ingredients": []
   }
 }

@@ -1,4 +1,6 @@
 ---
+import ReturnTo from '/src/components/ReturnTo.astro';
+
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
@@ -17,18 +19,17 @@ import {
 
 const wallpaper = wallpapers.garden[0];
 const hyperRing = garden.ring[0];
-
-import { Font } from "astro:assets";
 ---
 
 <body>
   <div
-    id="background"
     class="garden-page-background"
     style={`background-image: url(${wallpaper.image.src})`}>
   </div>
 
   <main>
+    <ReturnTo destination= "home" />
+
     <div class="ring-wrapper">
       <Image src={hyperRing.image} alt="" />
 
@@ -51,19 +52,6 @@ import { Font } from "astro:assets";
 
     <section class="garden-info">
       <p> We say words here </p>
-
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
     </section>
   </main>
 </body>

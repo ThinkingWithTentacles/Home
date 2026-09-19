@@ -39,13 +39,14 @@
 
 .home-name {
   position: absolute;
-  top: 0;
+  top: 50px;
   left: 0;
   width: 100%;
   
-  color: rgba(14, 190, 221, .8);
-  font-family: monospace;
-  font-size: 4rem;
+  color: rgba(21, 146, 168, 0.95);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-style: oblique;
+  font-size: 5rem;
   
   opacity: .7;
   animation: fadeIn 5s ease-in-out forwards;
@@ -67,10 +68,17 @@
   bottom:0;
   left: 0;
   width: 100%;
+  height: 9%;
   
+  text-align: center;
   color: white;
   font-family: monospace;
-  font-size: 1rem;
+  font-size: 1.5rem;
+
+  display: inline-flex;
+  align-items: end;
+  justify-content: left;
+  
   
   background: rgba(0, 0, 0, .75);
   box-sizing: border-box;
@@ -107,13 +115,15 @@
   align-items: center;
 
   width: 100%;
-  margin-bottom: 5rem;
+  margin-bottom: 15%;
 }
 
 .soul-wrapper, 
 .swamp-wrapper {
   position: relative;
   display: block;
+  border: 1;
+  border-radius:100;
 
   width: 40%;
   aspect-ratio: 1;
@@ -121,20 +131,39 @@
 
 .soul-wrapper img, 
 .swamp-wrapper img {
+  position: relative;
   display: block;
+
+  border: 1px solid black; 
+  border-radius: 100%;    
+  
+  width: 100%;
+  height: 100%;
+  
+  aspect-ratio: 1 / 1;    
+  object-fit: cover;      
+}
+
+.soul-link {
+  position: absolute;
+  left: 7%;
+  top: 9%;
+
+  width: 85%;
+  height: 85%;
+
+  background: transparent;
+
+  z-index: 10;
+}
+
+.swamp-link {
+  position: absolute;
+  left: 0%;
+  top: 0%;
 
   width: 100%;
   height: 100%;
-}
-
-.soul-link, 
-.swamp-link {
-  position: absolute;
-  left: 5%;
-  top: 5%;
-
-  width: 90%;
-  height: 90%;
 
   background: transparent;
 
@@ -143,44 +172,55 @@
 
 .soul-link::after {
   content: "";
-
-  position: absolute;
-  inset: 0;
-
-  border-radius: 100%;
-
-  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
-  background-color: aqua;
-  
-  opacity: .25;
-  transition: opacity 3s ease;
-}
-
-.soul-link:hover::after {
-  content: "Wicked Studios";
   align-content: center;
   text-align: center;
 
-  background-color: aqua;
-  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+  position: absolute;
+  inset: 0;
 
-  opacity: .75;
-  transition: opacity 3s ease;
+  border-radius: 100%;
+  box-shadow: 0 0 25px 25px rgb(218, 170, 14, .65);
+  background-color: rgb(218, 170, 14, .55);
+  cursor:-webkit-zoom-in;
+
+  transition: 2000ms;
 }
 
-.swamp-link::after {
+.soul-link:hover::after {
   content: "";
+  align-content: center;
+  text-align: center;
 
   position: absolute;
   inset: 0;
 
   border-radius: 100%;
+  box-shadow: 0px 0px 125px 100px rgb(218, 170, 14, .65);
+  background-color: rgba(223, 178, 31, .35);
 
-  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
-  background-color: aqua;
+  transition: 1000ms;
+}
+
+.swamp-link::after {
+  content: "Thinking With Tentacles";
+  align-content: center;
+  text-align: center;
+
+  position: absolute;
+  inset: 0;
   
-  opacity: .25;
-  transition: opacity 3s ease;
+  font-size: clamp(5.5cqi, 5.5cqi, 7.5cqi);
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(0, 0, 0);
+
+  border-radius: 100%;
+  box-shadow: 0 0 60px 30px rgba(149, 9, 192, 0.75);
+  background-color: rgba(25, 121, 230, 0.75);
+  cursor:-webkit-zoom-in;
+  
+  opacity: .75;
+  transition: 2000ms;
 }
 
 .swamp-link:hover::after {
@@ -188,20 +228,106 @@
   align-content: center;
   text-align: center;
 
-  background-color: aqua;
-  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+  position: absolute;
+  inset: 0;
 
-  opacity: .75;
-  transition: opacity 3s ease;
+  font-size: clamp(5.75cqi, 5.75cqi, 7.75cqi);
+  font-style:oblique;
+  color:rgba(221, 207, 206, 0.836);
+  font-style:oblique;
+
+  border-radius: 100%;
+  box-shadow: 0px 0px 125px 100px rgba(25, 121, 230, 0.75);
+  background-color: rgba(149, 9, 192, 0.33);
+
+  opacity: 1;
+  transition: 1000ms;
+}
+
+.vault-wrapper {
+  position: relative;
+  display: block;
+
+  width: 33%;
+  left: 33.5%;
+  
+  margin: 0;
+  aspect-ratio: 1;
+  
+  margin-bottom: 15%;
+}
+
+.vault-wrapper img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 100%;
+
+  margin: 0 auto;
+}
+
+.vault-link {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  
+  width: 100%;
+  height: 100%;
+
+  background: transparent;
+  z-index: 10;
+}
+
+.vault-link::after {
+  content: "Vault";
+  align-content: center;
+  text-align: center;
+
+  position: absolute;
+  inset: 0;
+  
+  font-size: clamp(5.5cqi, 5.5cqi, 7.5cqi);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:rgb(8, 173, 124);
+
+  border-radius: 100%;
+
+  cursor:-webkit-zoom-in;
+
+  transition: 1000ms;
+}
+
+.vault-link:hover::after {
+  content: "Vault";
+  align-content: center;
+  text-align: center;
+
+  position: absolute;
+  inset: 0;
+
+  font-size: clamp(7.5cqi, 7.5cqi, 9.5cqi);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:rgb(6, 129, 92);
+
+  border-radius: 100%;
+
+  background-color: rgba(233, 27, 37, 0.5);
+  cursor:-webkit-zoom-in;
+
+  transition: 1000ms;
 }
 
 .dead-wrapper {
   position: relative;
-  width: 33%;
+  width: 25%;
+
+  left: 37.5%;
   
-  margin: auto;
   aspect-ratio: 1;
-  overflow: hidden;
+  
+  margin-bottom: 5rem;
 }
 
 .dead-wrapper img {
@@ -218,29 +344,37 @@
 
 .dead-link {
   position: absolute;
-  left: 5%;
-  top: 5%;
+  left: 0%;
+  top: 0%;
   
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
 
   background: transparent;
   z-index: 10;
 }
 
 .dead-link::after {
-  content: "";
+  content: "Dead End";
+  align-content: center;
+  text-align: center;
 
   position: absolute;
   inset: 0;
+  
+  font-size: clamp(.75rem, 4cqi, 8rem);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:rgb(216, 89, 89);
 
   border-radius: 100%;
 
-  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
-  background-color: aqua;
-  
-  opacity: .25;
-  transition: opacity 3s ease;
+  border-style: dashed;
+
+  box-shadow: var(--shadow-x) 85vh 300px 0px rgb(23, 0, 48, .6);
+  background-color: rgba(76, 53, 131, 0.25);
+  cursor:-webkit-zoom-in;
+
+  transition: 5000ms;
 }
 
 .dead-link:hover::after {
@@ -248,66 +382,21 @@
   align-content: center;
   text-align: center;
 
-  background-color: aqua;
-  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
-
-  opacity: .75;
-  transition: opacity 3s ease;
-}
-
-.vault-wrapper {
-  position: relative;
-  width: 25%;
-
-  margin: 0 auto 2rem auto;
-  aspect-ratio: 1;
-}
-
-.vault-wrapper img {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-    
-  border-radius: 100%;
-
-  margin: 10rem auto;
-}
-
-.vault-link {
-  position: absolute;
-  left: 5%;
-  top: 5%;
-
-  width: 90%;
-  height: 90%;
-  background: transparent;
-  z-index: 10;
-}
-
-.vault-link::after {
-  content: "";
-
   position: absolute;
   inset: 0;
 
+  font-size: 4.5cqi;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:rgb(160, 17, 17);
+
   border-radius: 100%;
-
-  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
-  background-color: aqua;
   
-  opacity: .25;
-  transition: opacity 3s ease;
-}
 
-.vault-link:hover::after {
-  content: "Vault";
-  align-content: center;
-  text-align: center;
+  border-style: dashed;
 
-  background-color: aqua;
-  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+  box-shadow: 0 0 25px 25px rgba(20, 4, 37, 1);
+  background-color: rgba(76, 53, 131, 0.75);
+  cursor:-webkit-zoom-in;
 
-  opacity: .75;
-  transition: opacity 3s ease;
+  transition: 3000ms;
 }

@@ -10,6 +10,7 @@ import SampleGrid from '/src/components/SampleGrid.astro';
 import ProductGrid from '/src/components/ProductGrid.astro';
 import LightBox from '/src/components/LightBox.astro';
 import ContactForm from '/src/components/ContactForm.astro';
+import ProductLabel from '/src/components/ProductLabel.astro';
 
 import '/src/styles/global.css';
 import '/src/styles/vault-page.css';
@@ -32,8 +33,12 @@ const wallpaper = wallpapers.woodcraft[2];
       <h1>Stay</h1>
     </section>
 
+    <ProductLabel text="Prototype and Commissionable Concepts" location="vault"/>
     <ProductGrid products={Object.values(archive.shelf)} />
-    <ProductGrid products={Object.values(archive.pushed)} />
+
+    <ProductLabel text="Sold!" />
+    <ProductGrid products={Object.values(archive.pushed)} location="vault"/>
+
     <LightBox />
     <ContactForm />
 

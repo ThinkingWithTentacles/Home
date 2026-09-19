@@ -20,18 +20,24 @@
   "paddle.02": {
     "flavor": "splat prototype",
     "style": "bed of nails",
-    "ingredients": ["industrial grade thumb tack"]
+    "ingredients": ["industrial grade thumb tacks"]
   },
 
   "paddle.03": {
     "flavor": "protoype",
-    "style": "sensation paddle",
-    "ingredients": ["shark teeth"]
+    "style": "chaos sensation",
+    "ingredients": ["harvested shark teeth"]
   },
 
   "vinyl.01": {
     "flavor": "memorabilia",
     "style": "vinyl record",
     "ingredients": ["walnut", "white maple"]
+  },
+
+  "cuff.01": {
+    "flavor": "leather cuff",
+    "style": "burgendy and brass",
+    "ingredients": ["love", "pain"]
   }
 }

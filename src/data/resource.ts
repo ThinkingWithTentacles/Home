@@ -2,6 +2,8 @@ import type { ImageMetadata } from 'astro';
 
 import { parseResources } from '/src/utils/helper.ts';
 
+
+/* Site Resources */
 const wallpaperGlob = import.meta.glob<{ default: ImageMetadata }>
   ('/src/assets/Resources/Wallpapers/*.{jpeg,jpg,png,gif}', { 
   eager: true 

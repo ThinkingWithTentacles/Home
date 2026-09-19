@@ -1,0 +1,36 @@
+---
+const { destination } = Astro.props;
+
+import { Image } from 'astro:assets';
+import { icons } from '/src/data/resource.ts';
+
+import {
+  index, 
+  swampGrove, 
+  wickedGrove,
+} from '../config.js';
+
+let returnIcon = icons.null[0];
+let address = ""; 
+
+if(destination == "garden") {
+    returnIcon = icons.ring[0];
+    address = wickedGrove;
+}
+
+else if(destination == "swamp") {
+    returnIcon = icons.deadend[0];
+    address = swampGrove;
+}
+
+else if(destination == "home") {
+    returnIcon = icons.landing[0];
+    address = "/";
+}
+---
+
+<nav class="return-link">
+  <a href={address} rel="noopener noreferrer">
+    <Image src={returnIcon.image} alt="Link Tree" class="return-image" />
+  </a>
+</nav>

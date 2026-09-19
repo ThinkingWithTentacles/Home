@@ -8,7 +8,9 @@ import { wickedDyes } from '/src/data/wicked.ts';
 
 import ProductGrid from '/src/components/ProductGrid.astro';
 import LightBox from '/src/components/LightBox.astro';
+import ReturnTo from '/src/components/ReturnTo.astro';
 import ContactForm from '/src/components/ContactForm.astro';
+import ProductLabel from '/src/components/ProductLabel.astro';
 
 import '/src/styles/global.css';
 import '/src/styles/dye-art-page.css';
@@ -17,12 +19,13 @@ const wallpaper = wallpapers.garden[0];
 ---
 
 <body
-  id="background"
   class="product-page-background"
   style={`background-image: url(${wallpaper.image.src})`}
 >
 
-<main>
+  <main>
+    <ReturnTo destination= "garden" />
+
     <section class="garden-sign">
       <h1>Dying Art</h1>
     </section>
@@ -45,11 +48,23 @@ const wallpaper = wallpapers.garden[0];
 
     <ContactForm />
 
+    <ProductLabel text="Tapestries and Pillow Cases" location="garden"/>
     <ProductGrid products={Object.values(wickedDyes.tapes)} />
-    <ProductGrid products={Object.values(wickedDyes.dresses)} />
-    <ProductGrid products={Object.values(wickedDyes.shirts)} />
-    <ProductGrid products={Object.values(wickedDyes.shorts)} />
-    <ProductGrid products={Object.values(wickedDyes.kids)} />
+
+    <ProductLabel text="Dresses"  location="garden"/>
+    <ProductGrid products={Object.values(wickedDyes.dresses)}/>
+
+    <ProductLabel text="Shirts and Tops"  location="garden"/>
+    <ProductGrid products={Object.values(wickedDyes.shirts)}/>
+
+    <ProductLabel text="Shorts and Skirts"  location="garden"/>
+    <ProductGrid products={Object.values(wickedDyes.shorts)}/>
+
+    <ProductLabel text="Kids Sizes"  location="garden"/>
+    <ProductGrid products={Object.values(wickedDyes.kids)}/>
     <LightBox />
   </main>
-</body> 
+</body>
+
+
+

@@ -3,7 +3,17 @@
   position: absolute;
 
   width: 100%;
-  min-height: 250dvh;
+  min-height: 100dvh;
+  padding-bottom: 15%;
+
+  z-index: 0; 
+}
+
+.swamp-page-background {
+  position: absolute;
+
+  width: 100%;
+  min-height: 100%;
 
   z-index: 0; 
 }
@@ -22,11 +32,12 @@
   z-index: 0; 
 }
 
+/* Garden Classes */
 .garden-sign {
   position: relative;
   text-align: center;
-  margin: 0px;
   width: 100%;
+  margin-top: 12.5%;
 
   font-family:Georgia, 'Times New Roman', Times, serif;
   font-size: 4vw;
@@ -44,29 +55,99 @@
 }
 
 .garden-info {
-    position: relative;
-    text-align: center;
-    margin: 7.5%;
+  position: relative;
+  text-align: center;
+  margin: 7.5%;
 
-    color: rgb(236, 202, 8);
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 3ch;
+  color: rgb(236, 202, 8);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: clamp(1rem, 2.5cqi, 4rem);
 }
 
-.swamp-page-background {
-  position: absolute;
-  background-repeat: no-repeat;
+/* Product Labels */
+.garden-product-label {
+  position: relative;
+  text-align: center;
 
-  background-size: 100% auto;
+  color: rgb(236, 202, 8);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: clamp(1rem, 2.5cqi, 4rem);
+}
+
+.page-product-label {
+  position: relative;
+  text-align: center;
+
+  color: rgb(236, 202, 8);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: clamp(1rem, 2.5cqi, 4rem);
+}
+
+.swamp-product-label {
+  position: relative;
+  text-align: center;
+
+  color: rgb(236, 202, 8);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: clamp(1rem, 2.5cqi, 4rem);
+}
+
+/* Resources */
+.return-link {
+  position: fixed;
+  top:15px;
+  left:15px;
+
+  width: 10dvw;
+  height: 10dvw;
+
+  aspect-ratio: 1;
+  border-radius: 25px;
+
+  overflow: hidden;
+  display: block; 
+}
+
+.return-image {
+  display: block; 
 
   width: 100%;
-  height: 150dvh;
+  height: 100%;
+}
 
-  margin: 0;
-  padding-top: 50px;
-  display: flow-root;
+.contact-form {
+  position: relative;
+  width: 100%;
+  left: 2.5dvw;
+  max-width: 90dvw;
+  height: auto;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  display: block;
+  align-self: center;
+}
 
-  z-index: 0; 
+.contact-label {
+  display: block;
+  width: 100%;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%; 
+  box-sizing: border-box;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 0.75rem;
+  cursor: pointer;
 }
 
 .product-page-background {
@@ -92,10 +173,12 @@
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 
-  gap: 2rem;
-  padding: 4rem;
+  gap: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .product-card {
@@ -133,7 +216,7 @@
   text-align: center;
   align-content: center;
 
-  font-size: 2ch;
+  font-size: 1.25cqi;
   color: rgb(32, 231, 155);
   opacity: .5;
   background-color: rgb(1, 12, 7);
@@ -158,8 +241,8 @@
 }
 
 .lightbox-content {
-  max-width: 85%;
-  max-height: 80%;
+  width: 100%;
+  height: 100%;
 
   display: flex;
   align-items: center;
@@ -167,13 +250,13 @@
 }
 
 #lightbox-img {
-  max-width: 100%;
+  max-width: 100cqi;
   max-height: 100%;
 
   border-radius: 4px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .lightbox-close, .lightbox-arrow {
@@ -228,7 +311,7 @@
   background: rgba(0, 0, 0, 0.4);
 
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1cqi;
   color: rgba(255, 255, 255, 0.85);
 
   padding: 0.5rem 1rem;
@@ -237,6 +320,7 @@
   line-height: 1.4;
 }
 
+/* Index */
 html,
 body {
 position: relative;
@@ -247,7 +331,7 @@ width: 100%;
 
 display: flex;
 flex-direction: column;
-background-image: linear-gradient(to bottom, #000000 90%, #16052b 100%);
+background-image: linear-gradient(to bottom, #000000 85%, #023d38 100%);
 background-size: 100% 100%;
 background-attachment: scroll;
 background-repeat: no-repeat;
@@ -270,7 +354,7 @@ position: relative;
 z-index: 1;
 }
 
-/* Small Mobile Adjustments */
+/* Mobile Adjustments */
 @media (max-width: 600px) {
 .lightbox-arrow {
   padding: 0.25rem 0.5rem;

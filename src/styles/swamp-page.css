@@ -2,7 +2,7 @@
 .swamp-sign {
 position: relative;
 text-align: center;
-margin-top: 0; 
+margin-top: 15%;
 
 color: white;
 font-family: 'Times New Roman', Times, serif;
@@ -28,109 +28,167 @@ font-family: monospace;
 font-size: 3ch;
 }
 
+.swamp-wrapper {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  
+  margin-top:5%;
+  margin-right:5%;
+  margin-left:5%;
+  margin-bottom:5%;
+  top: 0px;
+
+  aspect-ratio: 1/2;
+}
+
+.swamp-wrapper img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
 .wood-wrapper {
   position: absolute;
 
-  left: 0%;
-  top: 50%;
+  left: 22.5%;
+  top: 0%;
 
-  width: 25%;
-  height: 25%; 
+  width: 20%;
+  height: 10%;
 
   background: transparent;
 }
 
 .wood-wrapper::after {
-  content: "Swamp wood";
+  content: "Woodcraft";
+  align-content: center;
+  text-align: center;
+
+  position: absolute;
+  inset: 0;
+  
+  font-size: clamp(2.25cqi, 4.25cqi, 2.25cqi);
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(82, 46, 13);
+
+  border-radius: 0%;
+  box-shadow: 0 0 32px 16px rgb(218, 170, 14, .75);
+  background-color: rgb(218, 170, 14, .75);
+  
+  opacity: .65;
+  transition: 2000ms;
+}
+
+.wood-wrapper:hover::after {
+  content: "Woodcraft";
+  align-content: center;
+  text-align: center;
 
   position: absolute;
   inset: 0;
 
+  font-size: clamp(2.75cqi, 4.75cqi, 2.75cqi);
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(82, 46, 13);
+
   border-radius: 100%;
+  box-shadow: 0 0 32px 16px rgba(155, 121, 10, 0.9);
+  background-color: rgba(223, 178, 31, 0.9);
 
-  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
-  background-color: aqua;
-  
-  opacity: .25;
-  transition: opacity 3s ease;
-}
-
-.wood-wrapper:hover::after {
-  content: "Swamp wood";
-  align-content: center;
-  text-align: center;
-
-  background-color: aqua;
-  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
-
-  opacity: .75;
-  transition: opacity 3s ease;
+  opacity: .85;
+  transition: 1000ms;
 }
 
 .leather-wrapper {
   position: absolute;
 
   left: 0%;
-  top: 25%;
+  top: 0%;
 
-  width: 25%;
-  height: 25%;
+  width: 20%;
+  height: 10%;
 
   background: transparent;
 }
 
 .leather-wrapper::after {
-  content: "";
+  content: "Leathercraft";
+  align-content: center;
+  text-align: center;
+
+  position: absolute;
+  inset: 0;
+  
+  font-size: clamp(2.25cqi, 4.25cqi, 2.25cqi);
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(82, 46, 13);
+
+  border-radius: 0%;
+  box-shadow: 0 0 32px 16px rgb(218, 170, 14, .75);
+  background-color: rgb(218, 170, 14, .75);
+  
+  opacity: .65;
+  transition: 2000ms;
+}
+
+.leather-wrapper:hover::after {
+  content: "Leathercraft";
+  align-content: center;
+  text-align: center;
 
   position: absolute;
   inset: 0;
 
+  font-size: clamp(2.75cqi, 4.75cqi, 2.75cqi);
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(82, 46, 13);
+
   border-radius: 100%;
+  box-shadow: 0 0 32px 16px rgba(155, 121, 10, 0.9);
+  background-color: rgba(223, 178, 31, 0.9);
 
-  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
-  background-color: aqua;
-  
-  opacity: .25;
-  transition: opacity 3s ease;
-}
-
-.leather-wrapper:hover::after {
-  content: "Swamp Leather";
-  align-content: center;
-  text-align: center;
-
-  background-color: aqua;
-  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
-
-  opacity: .75;
-  transition: opacity 3s ease;
+  opacity: .85;
+  transition: 1000ms;
 }
 
 .shop-wrapper {
   position: absolute;
 
-  left: 0%;
+  left: 69.5%;
   top: 0%;
+  border-radius: 0%;
 
-  width: 25%;
-  height: 25%; 
+  width: 30%;
+  height: 15%;
 
   background: transparent;
 }
 
 .shop-wrapper::after {
   content: "Swamp Shop";
+  align-content: center;
+  text-align: center;
 
   position: absolute;
   inset: 0;
-
-  border-radius: 100%;
-
-  box-shadow: 0 0 32px 16px rgba(11, 163, 173, 0.6);
-  background-color: aqua;
   
-  opacity: .25;
-  transition: opacity 3s ease;
+  font-size: clamp(2.25cqi, 4.25cqi, 2.25cqi);
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(82, 46, 13);
+
+  border-radius: 0%;
+  box-shadow: 0 0 32px 16px rgb(218, 170, 14, .75);
+  background-color: rgb(218, 170, 14, .75);
+  
+  opacity: .65;
+  transition: 2000ms;
 }
 
 .shop-wrapper:hover::after {
@@ -138,9 +196,18 @@ font-size: 3ch;
   align-content: center;
   text-align: center;
 
-  background-color: aqua;
-  box-shadow: 0 0 32px 16px rgba(3, 68, 63, 0.7);
+  position: absolute;
+  inset: 0;
 
-  opacity: .75;
-  transition: opacity 3s ease;
+  font-size: clamp(2.75cqi, 4.75cqi, 2.75cqi);
+  font-family: cursive;
+  font-style:oblique;
+  color:rgb(82, 46, 13);
+
+  border-radius: 100%;
+  box-shadow: 0 0 32px 16px rgba(155, 121, 10, 0.9);
+  background-color: rgba(223, 178, 31, 0.9);
+
+  opacity: .85;
+  transition: 1000ms;
 }

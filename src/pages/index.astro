@@ -21,13 +21,16 @@ import '/src/styles/home-page.css';
 
 const riverHavenGrotto = wallpapers.landing[0];
 const sunSoul = garden.ring[0];
+const swampThing = icons.tentacles[0];
 
-const words = ["exists", "stays", "exists", "decays", "revives", "thinks", "laughs", "cries", "ducks", "dies", 
-  "dyes", "burns", "wraps", "hits", "slaps", "binds", "writhes", "illuminates", "veils", "vies", "lies", "manifests", 
-  "drops", "fornicates", "sucks", "fucks", "lives", "lives", "lives", "lives patiently for you"];
+const words = ["exists", "implores", "decays", "absolves", "breathes", "spreads", "says yes", "thinks", "infuses", "loves you", "laughs", "cries", 
+ "is hand loved", "dies", "dyes", "slaps", "burns", "wraps", "feels", "holds", "hits", "takes a hit", "is a hit", "needs you",
+ "has been", "will be", "drops", "finds you", "waits", "evolves", "grows", "consumes", "is free", "ducks","fucks", "lives patiently for you"];
 
-const deadend = icons.deadend[1];
-const vault = icons.vault[1];
+const deadend = icons.deadend[0];
+const vault = icons.vault[0];
+
+const den = Math.floor(Math.random() * (200)) - 100;
 ---
 
 <body
@@ -55,19 +58,19 @@ const vault = icons.vault[1];
         </div>
         
         <div class="swamp-wrapper">
-          <Image src={sunSoul.image} alt="" />
+          <Image src={swampThing.image} alt="" />
           <a class="swamp-link" href={swampGrove}> <span></span></a>
         </div>
-      </div>
-
-      <div class="dead-wrapper">
-        <Image src={deadend.image} alt="" />
-        <a class="dead-link" href={deadEnd}> <span></span></a>
       </div>
 
       <div class="vault-wrapper">
         <Image src={vault.image} alt="" />
         <a class="vault-link" href={theVault}> <span></span></a>
+      </div>
+
+      <div class="dead-wrapper">
+        <Image src={deadend.image} alt="" />
+        <a class="dead-link" style={`--shadow-x: ${den}dvw;`} href={deadEnd}> <span></span></a>
       </div>
     </div>
   </main>

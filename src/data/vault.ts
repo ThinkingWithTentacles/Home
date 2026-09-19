@@ -5,13 +5,13 @@ import { parseProducts } from '/src/utils/helper.ts';
 
 import creations from "/src/assets/Vault/archive.json"
 
-/* Vault Site */
+/* Vault Page Resourses */
 const vaultfacade = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/Resources/Pages/Vault/**/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
-
+/* Vault Photo Dumps */
 
 const wheelin = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/Vault/Creations/*.{jpg,jpeg,png}',

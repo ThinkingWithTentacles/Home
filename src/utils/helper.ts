@@ -13,10 +13,12 @@ export function parseResources(folder) {
 
     const source = bits[0];
     const index = Number(bits[1]);
+    const name = bits[2];
 
     const resource = {
       source,
       index,
+      name,
       image: image.default
     };
 

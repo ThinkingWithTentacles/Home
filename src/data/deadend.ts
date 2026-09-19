@@ -3,12 +3,13 @@ import type { ImageMetadata } from 'astro';
 import { parseResources } from '/src/utils/helper.ts';
 import { parseProducts } from '/src/utils/helper.ts';
 
-/* DeadEnd Sites */
+/* DeadEnd Page Resources */
 const deadends = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/Resources/Pages/DeadEnds/**/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
+/* DeadEnd Product Image Data */
 const reDuce = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/DeadEnd/FilteredArt/*.{jpg,jpeg,png}',
   { eager: true }

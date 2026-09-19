@@ -10,7 +10,8 @@ import SampleGrid from '/src/components/SampleGrid.astro';
 import ProductGrid from '/src/components/ProductGrid.astro';
 import LightBox from '/src/components/LightBox.astro';
 import ContactForm from '/src/components/ContactForm.astro';
-import SocialLinks from '/src/components/WickedSocialLinks.astro';
+import ReturnTo from '/src/components/ReturnTo.astro';
+import ProductLabel from '/src/components/ProductLabel.astro';
 
 import '/src/styles/global.css';
 import '/src/styles/woodcraft-page.css';
@@ -26,6 +27,8 @@ const samples = swampWoodcraft.sample;
 >
 
 <main>
+    <ReturnTo destination="swamp" />
+
     <section class="woodcraft-sign">
       <h1>Woodcraft</h1>
     </section>
@@ -46,6 +49,13 @@ const samples = swampWoodcraft.sample;
 
     <ContactForm />
 
+    <ProductLabel text="Cutting Boards" location="swamp"/>
+    <ProductGrid products={Object.values(swampWood.tame)} />
+
+    <ProductLabel text="Hot Boxes" location="swamp"/>
+    <ProductGrid products={Object.values(swampWood.hot)} />
+
+    <ProductLabel text="Custom Made Paddle Designs" location="swamp"/>
     <ProductGrid products={Object.values(swampWood.spicy)} />
     <LightBox />
   </main>
