@@ -103,3 +103,13 @@ if (span) {
   setTimeout(updateWord, 3500);
 }
 </script>
+
+<script>
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+    }
+  });
+</script>
