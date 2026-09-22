@@ -1,4 +1,6 @@
 ---
+import Layouts from '/src/layouts/Layout.astro';
+
 import { Image } from 'astro:assets';
 
 import { wallpapers } from '/src/data/resource.ts';
@@ -33,48 +35,50 @@ const words = ["exists", "implores", "decays", "absolves", "breathes", "spreads"
  "has been", "will be", "drops", "finds you", "waits", "evolves", "grows", "consumes", "is free", "ducks","fucks", "lives patiently for you"];
 ---
 
-<body
-  class="home-page-background"
->
-  <main>
-    <section class="home-sign">
-      <a href={receipts.home} target="_blank" rel="noopener noreferrer">
-      <Image src={riverHavenGrotto.image} alt="River Haven Grotto Banner" class="home-banner" />
-      </a>
-      
-      <span class="home-name">River Haven Grotto</span>
-      <span class="home-callout" data-words={JSON.stringify(words)}>Where art lives patiently for you</span>
-    </section>
-
-    <section class="home-header">
-      <p> We say words here </p>
-    </section>
-
-    <div class="grove-container">
-      <div class="top-row">
-        <div class="soul-wrapper">
-          <Image src={sunSoul.image} alt="" />
-          <a class="soul-link" href={wickedGrove}> <span></span></a>
-        </div>
+<Layouts title="River Haven Grotto">
+  <body
+    class="home-page-background"
+  >
+    <main>
+      <section class="home-sign">
+        <a href={receipts.home} target="_blank" rel="noopener noreferrer">
+        <Image src={riverHavenGrotto.image} alt="River Haven Grotto Banner" class="home-banner" />
+        </a>
         
-        <div class="swamp-wrapper">
-          <Image src={swampThing.image} alt="" />
-          <a class="swamp-link" href={swampGrove}> <span></span></a>
+        <span class="home-name">River Haven Grotto</span>
+        <span class="home-callout" data-words={JSON.stringify(words)}>Where art lives patiently for you</span>
+      </section>
+
+      <section class="home-header">
+        <p> We say words here </p>
+      </section>
+
+      <div class="grove-container">
+        <div class="top-row">
+          <div class="soul-wrapper">
+            <Image src={sunSoul.image} alt="" />
+            <a class="soul-link" href={wickedGrove}> <span></span></a>
+          </div>
+          
+          <div class="swamp-wrapper">
+            <Image src={swampThing.image} alt="" />
+            <a class="swamp-link" href={swampGrove}> <span></span></a>
+          </div>
+        </div>
+
+        <div class="vault-wrapper">
+          <Image src={vault.image} alt="" />
+          <a class="vault-link" href={theVault}> <span></span></a>
+        </div>
+
+        <div class="dead-wrapper">
+          <Image src={deadend.image} alt="" />
+          <a class="dead-link" style={`--shadow-x: ${den}dvw;`} href={deadEnd}> <span></span></a>
         </div>
       </div>
-
-      <div class="vault-wrapper">
-        <Image src={vault.image} alt="" />
-        <a class="vault-link" href={theVault}> <span></span></a>
-      </div>
-
-      <div class="dead-wrapper">
-        <Image src={deadend.image} alt="" />
-        <a class="dead-link" style={`--shadow-x: ${den}dvw;`} href={deadEnd}> <span></span></a>
-      </div>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
+</Layouts>
 
 <script>
 const span = document.querySelector('.home-callout');
@@ -102,14 +106,4 @@ if (span) {
 
   setTimeout(updateWord, 3500);
 }
-</script>
-
-<script>
-  window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-      if (document.activeElement instanceof HTMLElement) {
-        document.activeElement.blur();
-      }
-    }
-  });
 </script>

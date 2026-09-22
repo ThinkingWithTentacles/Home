@@ -1,5 +1,6 @@
 ---
 import ReturnTo from '/src/components/ReturnTo.astro';
+import Layouts from '/src/layouts/Layout.astro';
 
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
@@ -21,50 +22,42 @@ const wallpaper = wallpapers.garden[0];
 const hyperRing = garden.ring[0];
 ---
 
-<body>
-  <div
-    class="garden-page-background"
-    style={`background-image: url(${wallpaper.image.src})`}>
-  </div>
-
-  <main>
-    <ReturnTo destination= "home" />
-
-    <div class="ring-wrapper">
-      <Image src={hyperRing.image} alt="" />
-
-      <a class="burn-wrapper" href={wickedBurn}>
-        <div class="burn-halo-plate"></div>
-        <span class="burn-text">Wicked Burns</span>
-      </a>
-
-      <a class="dye-wrapper" href={wickedDye}>
-        <div class="dye-halo-plate"></div>
-        <span class="dye-text">Wicked Dyes</span>
-      </a>
-
-      <a class="wire-wrapper" href={wickedWire}>
-        <div class="wire-halo-plate"></div>
-        <span class="wire-text">Wicked Wires</span>
-      </a>
+<Layouts title="River Haven Grotto">
+  <body>
+    <div
+      class="garden-page-background"
+      style={`background-image: url(${wallpaper.image.src})`}>
     </div>
 
-    <section class="garden-sign">
-      <h1>SunSoul Studios</h1>
-    </section>
+    <main>
+      <ReturnTo destination= "home" />
 
-    <section class="garden-info">
-      <p> We say words here </p>
-    </section>
-  </main>
-</body>
+      <div class="ring-wrapper">
+        <Image src={hyperRing.image} alt="" />
 
-<script>
-  window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-      if (document.activeElement instanceof HTMLElement) {
-        document.activeElement.blur();
-      }
-    }
-  });
-</script>
+        <a class="burn-wrapper" href={wickedBurn}>
+          <div class="burn-halo-plate"></div>
+          <span class="burn-text">Wicked Burns</span>
+        </a>
+
+        <a class="dye-wrapper" href={wickedDye}>
+          <div class="dye-halo-plate"></div>
+          <span class="dye-text">Wicked Dyes</span>
+        </a>
+
+        <a class="wire-wrapper" href={wickedWire}>
+          <div class="wire-halo-plate"></div>
+          <span class="wire-text">Wicked Wires</span>
+        </a>
+      </div>
+
+      <section class="garden-sign">
+        <h1>SunSoul Studios</h1>
+      </section>
+
+      <section class="garden-info">
+        <p> We say words here </p>
+      </section>
+    </main>
+  </body>
+</Layouts>

@@ -1,25 +1,49 @@
 ---
-// Layout.astro
+// Frontmatter can accept props like a dynamic page title
+const { title = "Default Title" } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="color-scheme" content="light only" />
-		<title>My Astro Site</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    
+    <!-- Astro automatically injects your page body content right here -->
+    <slot />
 
-<style is:global>
-	html {
-		-webkit-text-size-adjust: 100%;
-		text-size-adjust: 100%;
-	}
-	* {
-		-webkit-tap-highlight-color: transparent;
-	}
-</style>
+    <!-- Your global back-button resetting script remains safe here at the bottom -->
+    <script>
+      function initializeBurnEffects() {
+        const burnLinks = document.querySelectorAll('.burn-wrapper');
+        burnLinks.forEach(link => {
+          link.addEventListener('click', function (event) {
+            const anchor = link.closest('a');
+            if (!anchor) return;
+
+            event.preventDefault();
+            link.classList.add('touch-active');
+            const targetUrl = anchor.href;
+
+            setTimeout(() => {
+              window.location.href = targetUrl;
+            }, 1000);
+          });
+        });
+      }
+
+      initializeBurnEffects();
+
+      window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+          document.querySelectorAll('.burn-wrapper.touch-active').forEach(wrapper => {
+            wrapper.classList.remove('touch-active');
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

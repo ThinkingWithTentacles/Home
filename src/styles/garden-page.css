@@ -134,7 +134,8 @@
   z-index: 2;
 }
 
-.burn-wrapper:hover .burn-halo-plate {
+.burn-wrapper:hover .burn-halo-plate,
+.burn-wrapper.touch-active .burn-halo-plate {
   mix-blend-mode: luminosity;
   backdrop-filter: blur(16px) saturate(1.8) contrast(1.1);
   
@@ -150,7 +151,8 @@
   transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.burn-wrapper:hover .burn-text {  
+.burn-wrapper:hover .burn-text,
+.burn-wrapper.touch-active .burn-text {  
   color: rgb(43, 20, 2);
   font-size: clamp(1rem, 4cqi, 4rem);
   
