@@ -23,3 +23,13 @@
 		-webkit-tap-highlight-color: transparent;
 	}
 </style>
+
+<script>
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+    }
+  });
+</script>
