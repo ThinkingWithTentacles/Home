@@ -70,12 +70,13 @@ const words = ["exists", "implores", "decays", "absolves", "breathes", "spreads"
           <Image src={vault.image} alt="" />
           <a class="vault-link" href={theVault}> <span></span></a>
         </div>
-
-        <div class="dead-wrapper">
-          <Image src={deadend.image} alt="" />
-          <a class="dead-link" style={`--shadow-x: ${den}dvw;`} href={deadEnd}> <span></span></a>
-        </div>
       </div>
+
+        <a class="dead-wrapper" href={deadEnd}> 
+          <Image src={deadend.image} alt="Dead End" /> 
+          <div class="dead-halo-plate" style={`--shadow-x: ${den}dvw;`}></div> 
+          <span class="dead-text">Dead End</span> 
+        </a>
     </main>
   </body>
 </Layouts>

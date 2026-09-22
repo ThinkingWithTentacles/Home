@@ -357,10 +357,6 @@ position: relative;
 z-index: 1;
 }
 
-a {
-  text-decoration: none;
-}
-
 /* Mobile Adjustments */
 @media (max-width: 600px) {
 .lightbox-arrow {
