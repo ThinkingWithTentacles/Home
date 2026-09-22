@@ -258,7 +258,7 @@
   "bookmark.01": {
     "ingredients": [],
     "subject": "parrot",
-    "style": "",
+    "style": "abstract",
     "flavor": "bookmark",
     "size": "3''x10''",
     "value": 5
@@ -267,7 +267,7 @@
   "bookmark.02": {
     "ingredients": [],
     "subject": "reading cat",
-    "style": "",
+    "style": "abstract",
     "flavor": "bookmark",
     "size": "2.75''x9''",
     "value": 5
@@ -276,7 +276,7 @@
   "bookmark.03": {
     "ingredients": [],
     "subject": "feather",
-    "style": "",
+    "style": "abstract",
     "flavor": "bookmark",
     "size": "2.25''x8.25''",
     "value": 5
