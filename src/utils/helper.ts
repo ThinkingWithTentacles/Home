@@ -32,10 +32,10 @@ export function parseResources(folder) {
   return resources;
 }
 
-export function parseProducts(craft, stock) {
+export function parseProducts(products, stock) {
   const productLog = {};
 
-  Object.entries(craft).forEach(([path, image]) => {
+  Object.entries(products).forEach(([path, image]) => {
     const file = getFileName(path);
     const bits = file.split(".");
 
@@ -68,21 +68,46 @@ export function parseProducts(craft, stock) {
   return productLog;
 }
 
-export function fluffTitle(ingredient: string, style: string, flavor: string, tarot: boolean): string {
-  const capitalizeWords = (text: string) =>
-    text
-      .split(" ")
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-      .join(" ");
-
-  if(tarot) {
-    return `${capitalizeWords(ingredient)} ${style} ${capitalizeWords(flavor)}`;
-  }
-  else {
-    return `${capitalizeWords(ingredient)} ${capitalizeWords(style)} ${capitalizeWords(flavor)}`;
-  }
+export function fluffWords(words: string): string {
+  if (!words) return "";
+  return words.split(/\s+/).map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(" ");
 }
 
-export function fluffWord(word: string) {
+export function fluffWord(word: string): string {
+  if (!word) return "";
   return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+
+export function formatter(words: string[]): string {
+  if (!words || words.length === 0) return "";
+  
+  return new Intl.ListFormat('en', { 
+    style: 'long', 
+    type: 'conjunction' 
+  }).format(words); // Added .format() here
+}
+
+export function fluffTitle(product: any): string {
+  const ingredient = product.ingredients?.[0] ? fluffWords(product.ingredients[0]): "";
+  const subject = product.subject ? product.flavor == "tarot card" ? product.subject : fluffWords(product.subject): "";
+  const style = product.style ? fluffWords(product.style): "";
+  const flavor = product.flavor ? fluffWords(product.flavor) : "";
+
+  return (ingredient + " " + subject + " " + style + " " + flavor).trim();
+}
+
+export function fluffFlavor(product: any): string {
+  return product.style ? `Featuring a ${product.style} design` : "";
+}
+
+export function fluffIngredients(product: any): string {
+  return product.ingredients?.[0] ? `Made with ${formatter(product.ingredients)}` : "";
+}
+
+export function fluffSize(product: any): string {
+  return product.size ? `Size: ${fluffWord(product.size)}` : "";
+}
+
+export function fluffValue(product: any): string {
+  return product.value ? "$" + product.value : "";
 }

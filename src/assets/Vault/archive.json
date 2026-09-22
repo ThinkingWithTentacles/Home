@@ -1,43 +1,43 @@
 {
   "cutting-board.01": {
-    "flavor": "wood burned cutting board",
+    "ingredients": ["paduak", "purpleheart", "white maple", "cherry"],
     "style": "stripes",
-    "ingredients": ["paduak", "purpleheart", "white maple", "cherry"]
+    "flavor": "wood burned cutting board"
   },
 
   "cutting-board.02": {
-    "flavor": "wood burned cutting board",
+    "ingredients": ["paduak", "walnut", "white maple", "cherry"],
     "style": "stripes",
-    "ingredients": ["paduak", "walnut", "white maple", "cherry"]
+    "flavor": "wood burned cutting board"
   },
 
   "paddle.01": {
-    "flavor": "slapper fumble",
+    "ingredients": ["purpleheart", "white maple"],
     "style": "chevron",
-    "ingredients": ["purpleheart", "white maple"]
+    "flavor": "slapper fumble"
   },
 
   "paddle.02": {
-    "flavor": "splat prototype",
+    "ingredients": ["industrial grade thumb tacks"],
     "style": "bed of nails",
-    "ingredients": ["industrial grade thumb tacks"]
+    "flavor": "splat prototype"
   },
 
   "paddle.03": {
-    "flavor": "protoype",
+    "ingredients": ["harvested shark teeth"],
     "style": "chaos sensation",
-    "ingredients": ["harvested shark teeth"]
+    "flavor": "protoype"
   },
 
   "vinyl.01": {
-    "flavor": "memorabilia",
+    "ingredients": ["walnut", "white maple"],
     "style": "vinyl record",
-    "ingredients": ["walnut", "white maple"]
+    "flavor": "memorabilia"
   },
 
   "cuff.01": {
-    "flavor": "leather cuff",
-    "style": "burgendy and brass",
-    "ingredients": ["love", "pain"]
+    "ingredients": ["wrist"],
+    "style": "brass embedded burgendy",
+    "flavor": "leather cuff"
   }
 }
