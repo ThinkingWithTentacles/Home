@@ -158,7 +158,7 @@
 
   border-radius: 100%;
   
-  box-shadow: 0 0 200px 25px rgba(255, 208, 0, 0.75);
+  box-shadow: 0 0 25px 5px rgba(255, 208, 0, 0.75);
   background-image: radial-gradient(
     circle, 
     rgba(255, 208, 0, 0.33) 0%, 
@@ -177,7 +177,7 @@
   .soul-wrapper:hover .soul-halo-plate {
     mix-blend-mode:color-burn;
     
-    box-shadow: 0 0 200px 100px rgba(255, 208, 0, 0.75);
+    box-shadow: 0 0 50px 15px rgba(255, 208, 0, 0.75);
     background-image: radial-gradient(
       circle, 
       rgba(255, 208, 0, 0.33) 0%, 
@@ -185,7 +185,7 @@
       transparent 100%
     );
 
-    transition: all 750ms cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 2500ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 }
 
@@ -224,7 +224,7 @@
 
   border-radius: 100%;
   
-  box-shadow: 0 0 200px 25px rgba(242, 0, 250, 0.75);
+  box-shadow: 0 0 25px 5px rgba(242, 0, 250, 0.75);
   background-image: radial-gradient(
     circle, 
     rgba(255, 0, 0, 0.1) 50%, 
@@ -255,10 +255,11 @@
   font-style: oblique;
   color: rgb(255, 255, 255);
 
-  opacity: 1; 
+  opacity: 1;
+
   transition: 
-    font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1),
-    color 1500ms ease;
+    font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+    color 2000ms ease 500ms;
     
   z-index: 2;
 }
@@ -267,7 +268,7 @@
   .swamp-wrapper:hover .swamp-halo-plate {
     mix-blend-mode:color-dodge;
     
-    box-shadow: 0 0 10px 33px rgba(88, 171, 204, 1);
+    box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
     background-image: radial-gradient(
       circle, 
       rgba(88, 171, 204, .5) 50%, 
@@ -275,18 +276,18 @@
       transparent 100%
     );
 
-    transition: all 750ms cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .swamp-wrapper:hover .swamp-text {  
     mix-blend-mode:color-dodge;
 
     color: rgb(0, 0, 0);
-    font-size: clamp(2.25rem, 4.5cqi, 6.25rem);
+    font-size: clamp(1.25rem, 4.25cqi, 6.25rem);
 
     transition:
-      font-size 5000ms cubic-bezier(0.25, 1, 0.5, 1),
-      color 2500ms ease-in 500ms,
+      font-size 5000ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+      color 2500ms ease-in 1000ms,
   }
 }
 
@@ -322,7 +323,7 @@
 
   border-radius: 100%;
 
-  box-shadow: 0 0 25px 25px rgba(65, 205, 240, 1);
+  box-shadow: 0 0 50px 2.5px rgba(65, 205, 240, 1);
   background-image: radial-gradient(
     circle, 
     rgba(255, 0, 0, 0.1) 0%, 
@@ -330,7 +331,7 @@
     transparent 100%
   );
 
-  transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 3000ms cubic-bezier(0.25, 1, 0.5, 1);
 
   z-index: 1;
 }
@@ -360,8 +361,8 @@
   opacity: 1; 
 
   transition: 
-    font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1),
-    color 1000ms ease;
+    font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+    color 1000ms ease 50ms;
     
   z-index: 2;
 }
@@ -377,7 +378,7 @@
       transparent 100%
     );
 
-    box-shadow: 0px 0px 100px 25px rgba(65, 205, 240, 1);
+    box-shadow: 0 0 5px 5px rgba(65, 205, 240, 1);
 
     transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -413,6 +414,7 @@
 
   object-fit: cover !important;
   border-radius: 50%;
+
   z-index: 0;
 }
 
@@ -425,12 +427,11 @@
 
   border-radius: 50%;
 
-  mix-blend-mode: difference;
   backdrop-filter: blur(5px);
   
-  box-shadow: var(--shadow-x) 40dvh 25px -10dvw rgba(228, 50, 5, 0.5);
+  box-shadow: var(--shadow-x) calc(40dvh + 25dvw) 10px calc(3.5dvh - 10dvw) rgba(10, 1, 34, 0.5);
 
-  transition: all 3000ms cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 
   z-index: 1;
 }
@@ -458,132 +459,131 @@
   opacity: 1; 
 
   transition: 
-    font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1),
-    color 1500ms ease,
-    text-shadow 1500ms ease;
+    font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+    color 1500ms ease 50ms,
+    text-shadow 1500ms ease 50ms;
     
   z-index: 2;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .dead-wrapper:hover .dead-halo-plate {
-    mix-blend-mode: luminosity;
-    backdrop-filter: blur(0px) saturate(1.8) contrast(1.1);
+    mix-blend-mode:darken;
+
+    backdrop-filter: blur(0px) saturate(1);
     background-image: radial-gradient(
       circle, 
       rgba(223, 178, 31, 0.7) 0%, 
       rgba(223, 178, 31, 0.3) 70%, 
       transparent 100%
     );
-    box-shadow: 0 0 200px 100px rgba(32, 1, 68, 1);
-    transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
+
+    box-shadow: 0 0 10px 15px rgba(32, 1, 68, 1);
+
+    transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .dead-wrapper:hover .dead-text {  
-    color: rgb(43, 20, 2);
+    mix-blend-mode:hard-light;
+
+    color: rgba(224, 4, 4, 1);
     font-size: clamp(2rem, 6.5cqi, 8.5rem);
     text-shadow: 
-      0 0 4px rgba(218, 109, 14, 0.8),
-      0 2px 14px rgba(19, 9, 1, 0.95);
-    mix-blend-mode: color-burn;
+      0 0 4px rgba(255, 0, 0, .1),
+      0 2px 14px rgba(170, 31, 31, .1);
+    
     transition:
-      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 0ms,
-      color 3000ms ease-in 2000ms,
-      text-shadow 500ms ease-in 2000ms;
+      font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+      color 1000ms ease-in 50ms,
+      text-shadow 1000ms ease-in 50ms;
   }
 }
 
 /* Mobile */
 .soul-wrapper.touch-active .soul-halo-plate {
-    mix-blend-mode:color-burn;
-    background-image: radial-gradient(
-      circle, 
-      rgba(255, 208, 0, 0.33) 0%, 
-      rgba(255, 208, 0, 0.33) 100%, 
-      transparent 100%
-    );
-    
-    box-shadow: 0 0 200px 100px rgba(255, 208, 0, 0.75);
-    transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
+  mix-blend-mode:color-burn;
+  
+  box-shadow: 0 0 50px 15px rgba(255, 208, 0, 0.75);
+  background-image: radial-gradient(
+    circle, 
+    rgba(255, 208, 0, 0.33) 0%, 
+    rgba(255, 208, 0, 0.33) 100%, 
+    transparent 100%
+  );
+
+  transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .swamp-wrapper.touch-active .swamp-halo-plate {
-    mix-blend-mode: luminosity;
-    backdrop-filter: blur(0px) saturate(1.8) contrast(1.1);
-    background-image: radial-gradient(
-      circle, 
-      rgba(223, 178, 31, 0.7) 0%, 
-      rgba(223, 178, 31, 0.3) 70%, 
-      transparent 100%
-    );
-    box-shadow: 0 0 200px 100px rgb(231, 231, 233);
-    transform: scale(1.1);
-    transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
+  mix-blend-mode:color-dodge;
+  
+  box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
+  background-image: radial-gradient(
+    circle, 
+    rgba(88, 171, 204, .5) 50%, 
+    rgba(255, 0, 0, 0.1) 100%, 
+    transparent 100%
+  );
+
+  transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .swamp-wrapper.touch-active .swamp-text {  
-    color: rgb(43, 20, 2);
-    font-size: clamp(1rem, 4cqi, 4rem);
-    text-shadow: 
-      0 0 4px rgba(218, 109, 14, 0.8),
-      0 2px 14px rgba(19, 9, 1, 0.95);
-    mix-blend-mode: color-burn;
-    transition:
-      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 0ms,
-      color 3000ms ease-in 2000ms,
-      text-shadow 500ms ease-in 2000ms;
+  mix-blend-mode:color-dodge;
+
+  color: rgb(0, 0, 0);
+  font-size: clamp(1.25rem, 4.25cqi, 6.25rem);
+
+  transition:
+    font-size 2000ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+    color 2000ms ease-in 1000ms,
 }
 
 .vault-wrapper.touch-active .vault-halo-plate {
-    mix-blend-mode: luminosity;
-    backdrop-filter: blur(0px) saturate(1.8) contrast(1.1);
-    background-image: radial-gradient(
-      circle, 
-      rgba(223, 178, 31, 0.7) 0%, 
-      rgba(223, 178, 31, 0.3) 70%, 
-      transparent 100%
-    );
-    box-shadow: 0 0 200px 100px rgb(231, 231, 233);
-    transform: scale(1.1);
-    transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
+  mix-blend-mode: luminosity;
+
+  background-image: radial-gradient(
+    circle, 
+    rgba(223, 178, 31, 0.7) 0%, 
+    rgba(223, 178, 31, 0.3) 70%, 
+    transparent 100%
+  );
+
+  box-shadow: 0 0 5px 5px rgba(65, 205, 240, 1);
+
+  transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .vault-wrapper.touch-active .vault-text {  
-    color: rgb(43, 20, 2);
-    font-size: clamp(1rem, 4cqi, 4rem);
-    text-shadow: 
-      0 0 4px rgba(218, 109, 14, 0.8),
-      0 2px 14px rgba(19, 9, 1, 0.95);
-    mix-blend-mode: color-burn;
-    transition:
-      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 0ms,
-      color 3000ms ease-in 2000ms,
-      text-shadow 500ms ease-in 2000ms;
+  mix-blend-mode:color-burn;
+
+  font-size: clamp(2rem, 6.5cqi, 8.5rem);
+  color: rgb(43, 20, 2);
+
+  transition:
+    font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+    color 1000ms ease-in 50ms;
 }
 
 .dead-wrapper.touch-active .dead-halo-plate {
-    mix-blend-mode: luminosity;
-    backdrop-filter: blur(0px) saturate(1.8) contrast(1.1);
-    background-image: radial-gradient(
-      circle, 
-      rgba(223, 178, 31, 0.7) 0%, 
-      rgba(223, 178, 31, 0.3) 70%, 
-      transparent 100%
-    );
-    box-shadow: 0 0 200px 100px rgb(231, 231, 233);
-    transform: scale(1.1);
-    transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
+  backdrop-filter: blur(0px) saturate(1);
+
+  box-shadow: 0 0 10px 15px rgba(32, 1, 68, 1);
+
+  transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .dead-wrapper.touch-active .dead-text {  
-    color: rgb(43, 20, 2);
-    font-size: clamp(1rem, 4cqi, 4rem);
-    text-shadow: 
-      0 0 4px rgba(218, 109, 14, 0.8),
-      0 2px 14px rgba(19, 9, 1, 0.95);
-    mix-blend-mode: color-burn;
-    transition:
-      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 0ms,
-      color 3000ms ease-in 2000ms,
-      text-shadow 500ms ease-in 2000ms;
+  mix-blend-mode:hard-light;
+
+  font-size: clamp(2rem, 6.5cqi, 8.5rem);
+  color: rgba(224, 4, 4, 1);
+  text-shadow: 
+    0 0 4px rgba(255, 0, 0, .1),
+    0 2px 14px rgba(170, 31, 31, .1);
+
+  transition:
+    font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+    color 1000ms ease-in 50ms,
+    text-shadow 1000ms ease-in 50ms;
 }

@@ -1,9 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+
 import Layouts from '/src/layouts/Layout.astro';
+
 import DenTracker from '/src/components/DenTracker.astro';
 import ZoomDoom from '../components/ZoomDoom.astro';
-
-import { Image } from 'astro:assets';
 
 import { wallpapers } from '/src/data/resource.ts';
 import { icons } from '/src/data/resource.ts';
@@ -23,6 +24,7 @@ import {
 import '/src/styles/global.css';
 import '/src/styles/home-page.css';
 
+const wallpaper = wallpapers.home[0];
 const riverHavenGrotto = wallpapers.landing[0];
 
 const sunsoul = garden.ring[0];
@@ -30,7 +32,6 @@ const swampthing = icons.tentacles[0];
 const deadend = icons.deadend[0];
 const vault = icons.vault[0];
 
-// DenTracker.astro
 interface Props {
   den: number;
 }
@@ -43,84 +44,87 @@ const words = ["exists", "implores", "decays", "absolves", "breathes", "spreads"
 ---
 
 <Layouts title="River Haven Grotto">
-  <ZoomDoom maxZoom={3} minZoom={1}>
+  <div class="home-page-wrapper">
+    <div 
+      class="home-page-background" 
+      style={`background-image: url(${wallpaper.image.src})`}
+    ></div>
 
-  <div class="home-page-background">
-    <main>
-      <section class="home-sign">
-        <a href={receipts.home} target="_blank" rel="noopener noreferrer">
-        <Image src={riverHavenGrotto.image} alt="River Haven Grotto Banner" class="home-banner" />
-        </a>
-        
-        <span class="home-name">River Haven Grotto</span>
-        <span class="home-callout" data-words={JSON.stringify(words)}>Where art lives patiently for you</span>
-      </section>
+    <ZoomDoom maxZoom={3} minZoom={1}>
+      <main>
+        <section class="home-sign">
+          <a href={receipts.home} target="_blank" rel="noopener noreferrer">
+          <Image src={riverHavenGrotto.image} alt="River Haven Grotto Banner" class="home-banner" />
+          </a>
+          
+          <span class="home-name">River Haven Grotto</span>
+          <span class="home-callout" data-words={JSON.stringify(words)}>Where art lives patiently for you</span>
+        </section>
 
-      <section class="home-header">
-        <p> We say words here </p>
-      </section>
+        <section class="home-header">
+          <p> We say words here </p>
+        </section>
 
-      
-      <DenTracker />
+        <DenTracker />
 
-      <section class="grove-container">
-        <div class="grove-top">
-          <a class="soul-wrapper" href={wickedGrove}> 
-            <Image src={sunsoul.image} alt="SunSoul" /> 
-            <div class="soul-halo-plate" ></div> 
+        <section class="grove-container">
+          <div class="grove-top">
+            <a class="soul-wrapper" href={wickedGrove}> 
+              <Image src={sunsoul.image} alt="SunSoul" /> 
+              <div class="soul-halo-plate" ></div> 
+            </a>
+
+            <a class="swamp-wrapper" href={swampGrove}> 
+              <Image src={swampthing.image} alt="Dead End" /> 
+              <div class="swamp-halo-plate" ></div> 
+              <span class="swamp-text">Thinking With Tentacles</span> 
+            </a>
+          </div>
+
+          <a class="vault-wrapper" href={theVault}> 
+            <Image src={vault.image} alt="The Vault" /> 
+            <div class="vault-halo-plate" }></div> 
+            <span class="vault-text">Vault</span> 
           </a>
 
-          <a class="swamp-wrapper" href={swampGrove}> 
-            <Image src={swampthing.image} alt="Dead End" /> 
-            <div class="swamp-halo-plate" ></div> 
-            <span class="swamp-text">Thinking With Tentacles</span> 
+          <a class="dead-wrapper" href={deadEnd}> 
+            <Image src={deadend.image} alt="Dead End" /> 
+            <div class="dead-halo-plate" style={`--shadow-x: ${den}dvw;`}></div> 
+            <span class="dead-text">Dead End</span> 
           </a>
-        </div>
+        </section>
 
-        <a class="vault-wrapper" href={theVault}> 
-          <Image src={vault.image} alt="The Vault" /> 
-          <div class="vault-halo-plate" }></div> 
-          <span class="vault-text">Vault</span> 
-        </a>
-
-        <a class="dead-wrapper" href={deadEnd}> 
-          <Image src={deadend.image} alt="Dead End" /> 
-          <div class="dead-halo-plate" style={`--shadow-x: ${den}dvw;`}></div> 
-          <span class="dead-text">Dead End</span> 
-        </a>
-      </section>
-
-      <section class="gradient-background" >
-      </section>
-    </main>
+        <section class="gradient-background" >
+        </section>
+      </main>
+    </ZoomDoom>
   </div>
-  </ZoomDoom>
 </Layouts>
 
 <script>
-const span = document.querySelector('.home-callout');
+  const span = document.querySelector('.home-callout');
 
-if (span) {
-  const words = JSON.parse(span.getAttribute('data-words') || '[]');
-  let wordIndex = 0;
+  if (span) {
+    const words = JSON.parse(span.getAttribute('data-words') || '[]');
+    let wordIndex = 0;
 
-  function updateWord() {
-    const  word = words[wordIndex];
-    span.textContent = "Where art " + word;
+    function updateWord() {
+      const  word = words[wordIndex];
+      span.textContent = "Where art " + word;
 
-    let nextDelay = 1000; // Default fallback delay
+      let nextDelay = 1000; // Default fallback delay
 
-    if (word === "lives patiently for you") {
-      nextDelay = 3500;
-    } else {
-      nextDelay = 3500/(0.4*wordIndex+1);
+      if (word === "lives patiently for you") {
+        nextDelay = 3500;
+      } else {
+        nextDelay = 3500/(0.4*wordIndex+1);
+      }
+
+      setTimeout(updateWord, nextDelay);
+
+      wordIndex = (wordIndex + 1) % words.length;
     }
 
-    setTimeout(updateWord, nextDelay);
-
-    wordIndex = (wordIndex + 1) % words.length;
+    setTimeout(updateWord, 3500);
   }
-
-  setTimeout(updateWord, 3500);
-}
 </script>

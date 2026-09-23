@@ -1,12 +1,23 @@
+.home-page-wrapper {
+  position: relative;
+  width: 100%;
+  
+  min-height: 100dvh; 
+}
+
 .home-page-background {
-  position: absolute;
-  background-color: #000000;
+  position: fixed;
 
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh; 
 
-  overflow-x: hidden; 
+  background-size: contain;
+  background-repeat: repeat;
+  background-position: top center;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .gradient-background {
@@ -31,19 +42,18 @@
 .garden-page-wrapper {
   position: relative;
   width: 100%;
-  /* CRITICAL: Allow the container to expand if content grows */
+
   min-height: 100dvh; 
 }
 
 .garden-page-background {
   position: fixed;
-  /* Attaches strictly to the edges of the screen window */
+
   top: 0;
   left: 0;
   width: 100vw;
   height: 100dvh; 
 
-  /* Your existing properties */
   background-size: contain;
   background-repeat: repeat;
   background-position: top center;
