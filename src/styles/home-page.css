@@ -122,7 +122,7 @@
 }
 
 /* SunSoul Studio */
-.soul-wrapper {
+.soul-grotto {
   position: relative;
   top: 0px;
 
@@ -134,7 +134,7 @@
   cursor: -webkit-zoom-in;
 }
 
-.soul-wrapper img {
+.soul-grotto img {
   position: absolute;
   inset: 0;
 
@@ -166,6 +166,8 @@
     transparent 100%
   );
 
+  opacity: .99;
+
   cursor: -webkit-zoom-in;
 
   transition: all 3000ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -174,7 +176,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .soul-wrapper:hover .soul-halo-plate {
+  .soul-grotto:hover .soul-halo-plate {
     mix-blend-mode:color-burn;
     
     box-shadow: 0 0 50px 15px rgba(255, 208, 0, 0.75);
@@ -185,12 +187,12 @@
       transparent 100%
     );
 
-    transition: all 2500ms cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 3000ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 }
 
 /* Swamp */
-.swamp-wrapper {
+.swamp-grotto {
   position: relative;
   top: 0px;
 
@@ -202,7 +204,7 @@
   cursor: -webkit-zoom-in;
 }
 
-.swamp-wrapper img {
+.swamp-grotto img {
   position: absolute;
   inset: 0;
 
@@ -232,7 +234,7 @@
     transparent 100%
   );
 
-  transition: all 3000ms cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 5000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .swamp-text {
@@ -255,17 +257,17 @@
   font-style: oblique;
   color: rgb(255, 255, 255);
 
-  opacity: 1;
+  opacity: .99;
 
   transition: 
     font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
-    color 2000ms ease 500ms;
+    color 1000ms ease 50ms;
     
   z-index: 2;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .swamp-wrapper:hover .swamp-halo-plate {
+  .swamp-grotto:hover .swamp-halo-plate {
     mix-blend-mode:color-dodge;
     
     box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
@@ -279,20 +281,20 @@
     transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  .swamp-wrapper:hover .swamp-text {  
+  .swamp-grotto:hover .swamp-text {  
     mix-blend-mode:color-dodge;
 
     color: rgb(0, 0, 0);
-    font-size: clamp(1.25rem, 4.25cqi, 6.25rem);
+    font-size: clamp(1.1rem, 4.1cqi, 6.1rem);
 
     transition:
-      font-size 5000ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
-      color 2500ms ease-in 1000ms,
+      font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+      color 1000ms ease-in 10ms,
   }
 }
 
 /* Vault */
-.vault-wrapper {
+.vault-grotto {
   position: relative;
   width: 40%;
   max-width: 1000px;
@@ -302,7 +304,7 @@
   cursor: -webkit-zoom-in;
 }
 
-.vault-wrapper img {
+.vault-grotto img {
   position: absolute;
   inset: 0;
 
@@ -358,8 +360,6 @@
 
   mix-blend-mode: normal; 
 
-  opacity: 1; 
-
   transition: 
     font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
     color 1000ms ease 50ms;
@@ -368,7 +368,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .vault-wrapper:hover .vault-halo-plate {
+  .vault-grotto:hover .vault-halo-plate {
     mix-blend-mode: luminosity;
 
     background-image: radial-gradient(
@@ -383,7 +383,7 @@
     transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  .vault-wrapper:hover .vault-text {  
+  .vault-grotto:hover .vault-text {  
     mix-blend-mode:color-burn;
 
     font-size: clamp(2rem, 6.5cqi, 8.5rem);
@@ -396,7 +396,7 @@
 }
 
 /* Dead End */
-.dead-wrapper {
+.dead-grotto {
   position: relative;
   width: 40%;
   max-width: 1000px;
@@ -405,7 +405,7 @@
   cursor:crosshair;
 }
 
-.dead-wrapper img {
+.dead-grotto img {
   position: absolute;
   inset: 0;
 
@@ -456,8 +456,6 @@
   font-style: oblique;
   color: rgb(255, 255, 255);
 
-  opacity: 1; 
-
   transition: 
     font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
     color 1500ms ease 50ms,
@@ -467,7 +465,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .dead-wrapper:hover .dead-halo-plate {
+  .dead-grotto:hover .dead-halo-plate {
     mix-blend-mode:darken;
 
     backdrop-filter: blur(0px) saturate(1);
@@ -483,7 +481,7 @@
     transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  .dead-wrapper:hover .dead-text {  
+  .dead-grotto:hover .dead-text {  
     mix-blend-mode:hard-light;
 
     color: rgba(224, 4, 4, 1);
@@ -500,7 +498,7 @@
 }
 
 /* Mobile */
-.soul-wrapper.touch-active .soul-halo-plate {
+.soul-grotto.touch-active .soul-halo-plate {
   mix-blend-mode:color-burn;
   
   box-shadow: 0 0 50px 15px rgba(255, 208, 0, 0.75);
@@ -514,7 +512,7 @@
   transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.swamp-wrapper.touch-active .swamp-halo-plate {
+.swamp-grotto.touch-active .swamp-halo-plate {
   mix-blend-mode:color-dodge;
   
   box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
@@ -528,18 +526,18 @@
   transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.swamp-wrapper.touch-active .swamp-text {  
+.swamp-grotto.touch-active .swamp-text {  
   mix-blend-mode:color-dodge;
 
   color: rgb(0, 0, 0);
-  font-size: clamp(1.25rem, 4.25cqi, 6.25rem);
+  font-size: clamp(1.2rem, 4.2cqi, 6.2rem);
 
   transition:
     font-size 2000ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
-    color 2000ms ease-in 1000ms,
+    color 2000ms ease-in 500ms,
 }
 
-.vault-wrapper.touch-active .vault-halo-plate {
+.vault-grotto.touch-active .vault-halo-plate {
   mix-blend-mode: luminosity;
 
   background-image: radial-gradient(
@@ -554,7 +552,7 @@
   transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.vault-wrapper.touch-active .vault-text {  
+.vault-grotto.touch-active .vault-text {  
   mix-blend-mode:color-burn;
 
   font-size: clamp(2rem, 6.5cqi, 8.5rem);
@@ -565,7 +563,7 @@
     color 1000ms ease-in 50ms;
 }
 
-.dead-wrapper.touch-active .dead-halo-plate {
+.dead-grotto.touch-active .dead-halo-plate {
   backdrop-filter: blur(0px) saturate(1);
 
   box-shadow: 0 0 10px 15px rgba(32, 1, 68, 1);
@@ -573,7 +571,7 @@
   transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.dead-wrapper.touch-active .dead-text {  
+.dead-grotto.touch-active .dead-text {  
   mix-blend-mode:hard-light;
 
   font-size: clamp(2rem, 6.5cqi, 8.5rem);

@@ -32,7 +32,7 @@
   height: 100%;
 }
 
-.studio-wrapper {
+.studio-grotto {
   position: absolute;
 
   left: 1%;
@@ -44,7 +44,7 @@
   background: transparent;
 }
 
-.studio-wrapper::after {
+.studio-grotto::after {
   content: "";
 
   position: absolute;
@@ -59,7 +59,7 @@
   transition: opacity 3s ease;
 }
 
-.studio-wrapper:hover::after {
+.studio-grotto:hover::after {
   content: "Wicked Studios";
   align-content: center;
   text-align: center;
@@ -71,8 +71,8 @@
   transition: opacity 3s ease;
 }
 
-/* Burn Wrapper */
-.burn-wrapper {
+/* Burn grotto */
+.burn-grotto {
   position: absolute;
   left: 49%;
   top: 79%;
@@ -99,6 +99,8 @@
     transparent 100%
   );
   
+  opacity: 0.99; 
+  
   mix-blend-mode: difference;
   box-shadow: 0 0 32px 16px rgba(129, 110, 48, 0.75);
   
@@ -119,8 +121,8 @@
   color: rgb(15, 11, 11);
   text-shadow: 0 2px 8px rgba(36, 18, 1, 0.4);
   mix-blend-mode: normal; 
-  
-  opacity: 0.99; 
+
+  opacity: .99;
 
   transition: 
     font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
@@ -131,7 +133,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .burn-wrapper:hover .burn-halo-plate {
+  .burn-grotto:hover .burn-halo-plate {
     mix-blend-mode:normal;
 
     background-image: radial-gradient(
@@ -148,7 +150,7 @@
     transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  .burn-wrapper:hover .burn-text {  
+  .burn-grotto:hover .burn-text {  
     color: rgb(43, 20, 2);
     font-size: clamp(.425rem, 4cqi, 4rem);
 
@@ -164,8 +166,8 @@
   }
 }
 
-/* Dye Wrapper */
-.dye-wrapper {
+/* Dye grotto */
+.dye-grotto {
   position: absolute;
 
   left: 25%;
@@ -215,8 +217,8 @@
   color: rgb(0, 0, 0, 1);
   text-shadow: 0 2px 8px rgba(36, 18, 1, 0.4);
   mix-blend-mode: normal; 
-  
-  opacity: 0.99; 
+
+  opacity: .99;
 
   transition: 
     font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
@@ -227,7 +229,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .dye-wrapper:hover .dye-halo-plate {
+  .dye-grotto:hover .dye-halo-plate {
     mix-blend-mode: luminosity;
     backdrop-filter: saturate(1.8) contrast(1.1);
     background-image: radial-gradient(
@@ -238,16 +240,15 @@
     );
 
     box-shadow: 0 0 6px 6px rgb(0, 124, 155);
+
     transform: scale(1.1);
+
     transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  .dye-wrapper:hover .dye-text {  
-    color: rgb(0, 0, 0, 1);
+  .dye-grotto:hover .dye-text {  
     font-size: clamp(.45rem, 4.25cqi, 4.25rem);
-    text-shadow: 
-      0 0 33px rgba(218, 109, 14, 0.8),
-      0 2px 14px rgba(19, 9, 1, 0.95);
+    color: rgb(0, 0, 0, 1);
 
     transition:
       font-size 2000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
@@ -256,7 +257,7 @@
   }
 }
 
-.wire-wrapper {
+.wire-grotto {
   position: absolute;
 
   left: -3%;
@@ -314,7 +315,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .wire-wrapper:hover .wire-halo-plate {
+  .wire-grotto:hover .wire-halo-plate {
     mix-blend-mode: luminosity;
 
     background-image: radial-gradient(
@@ -329,7 +330,7 @@
     transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  .wire-wrapper:hover .wire-text {  
+  .wire-grotto:hover .wire-text {  
     color: rgb(0, 0, 0, 1);
     font-size: clamp(.4rem, 3.5cqi, 4.25rem);
     text-shadow: 
@@ -344,7 +345,7 @@
 }
 
 /* Mobile */
-.burn-wrapper.touch-active .burn-halo-plate {
+.burn-grotto.touch-active .burn-halo-plate {
   mix-blend-mode:normal;
 
   background-image: radial-gradient(
@@ -361,7 +362,7 @@
   transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.burn-wrapper.touch-active .burn-text {  
+.burn-grotto.touch-active .burn-text {  
   color: rgb(43, 20, 2);
   font-size: clamp(.425rem, 4cqi, 4rem);
 
@@ -376,7 +377,7 @@
     text-shadow 1000ms ease-in 20ms;
 }
 
-.wire-wrapper.touch-active .wire-halo-plate {
+.dye-grotto.touch-active .dye-halo-plate {
   mix-blend-mode: luminosity;
   backdrop-filter: saturate(1.8) contrast(1.1);
   background-image: radial-gradient(
@@ -387,16 +388,15 @@
   );
 
   box-shadow: 0 0 6px 6px rgb(0, 124, 155);
+
   transform: scale(1.1);
+
   transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.wire-wrapper.touch-active .wire-text {  
-  color: rgb(0, 0, 0, 1);
+.dye-grotto.touch-active .dye-text {  
   font-size: clamp(.45rem, 4.25cqi, 4.25rem);
-  text-shadow: 
-    0 0 33px rgba(218, 109, 14, 0.8),
-    0 2px 14px rgba(19, 9, 1, 0.95);
+  color: rgb(0, 0, 0, 1);
 
   transition:
     font-size 2000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
@@ -404,7 +404,7 @@
     text-shadow 1000ms ease-in 20ms;
 }
 
-.wire-wrapper.touch-active .wire-halo-plate {
+.wire-grotto.touch-active .wire-halo-plate {
   mix-blend-mode: luminosity;
 
   background-image: radial-gradient(
@@ -419,7 +419,7 @@
   transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.wire-wrapper.touch-active .wire-text {  
+.wire-grotto.touch-active .wire-text {  
   color: rgb(0, 0, 0, 1);
   font-size: clamp(.4rem, 3.5cqi, 4.25rem);
   text-shadow: 

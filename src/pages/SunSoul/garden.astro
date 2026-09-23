@@ -31,24 +31,25 @@ const sunSoul = garden.ring[0];
       style={`background-image: url(${wallpaper.image.src})`}
     ></div>
 
+    <ReturnTo destination= "home" />
+
     <ZoomDoom maxZoom={3} minZoom={1}>
       <main>
-        <ReturnTo destination= "home" />
 
         <section class="ring-wrapper">
           <Image src={sunSoul.image} alt="" />
 
-          <a class="burn-wrapper" href={wickedBurn}>
+          <a class="burn-grotto" href={wickedBurn}>
             <div class="burn-halo-plate"></div>
             <span class="burn-text">Wicked Burns</span>
           </a>
 
-          <a class="dye-wrapper" href={wickedDye}>
+          <a class="dye-grotto" href={wickedDye}>
             <div class="dye-halo-plate"></div>
             <span class="dye-text">Wicked Dyes</span>
           </a>
 
-          <a class="wire-wrapper" href={wickedWire}>
+          <a class="wire-grotto" href={wickedWire}>
             <div class="wire-halo-plate"></div>
             <span class="wire-text">Wicked Wires</span>
           </a>
