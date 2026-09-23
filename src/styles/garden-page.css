@@ -18,7 +18,9 @@
   display: block;
 }
 
+/***********************/
 /* Wicked Burns Grotto */
+/***********************/
 .burn-grotto {
   position: absolute;
   left: 49%;
@@ -27,6 +29,7 @@
   width: 30%;
   height: 15%;  
 
+  background: transparent;
   transform: rotate(-30deg);
 
   display: grid;
@@ -43,8 +46,7 @@
       rgba(223, 178, 31, 0.4) 70%, 
     transparent 100%
   );
-  
-  opacity: 0.99; 
+
   border-radius: 100%;
   box-shadow: 0 0 30px 15px rgba(129, 110, 48, 0.75);
   
@@ -55,31 +57,21 @@
 
 .burn-text {
   position: relative;
-  margin: 0;
-  padding: 0;
   
-  font-size: clamp(.4rem, 3cqi, 3.5rem);
+  font-size: clamp(1rem, 4cqi, 3.25rem);
   font-family: bold;
   font-style: oblique;
-
-  color: rgb(15, 11, 11);
-  text-shadow: 0 2px 8px rgba(36, 18, 1, 0.4);
-  mix-blend-mode: normal; 
-
-  opacity: .99;
+  color: rgb(15, 11, 11, 1);
 
   transition: 
     font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
-    color 1500ms ease 20ms,
-    text-shadow 1500ms ease 20ms;
+    color 1000ms ease 20ms;
 
   z-index: 2;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .burn-grotto:hover .burn-halo-plate {
-    mix-blend-mode:normal;
-
     background-image: radial-gradient(
       circle, 
       rgba(223, 178, 31, 0.7) 0%, 
@@ -90,13 +82,12 @@
     box-shadow: 0 0 64px 24px rgba(129, 110, 48, 1);
 
     transform: scale(1.1);
-
     transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .burn-grotto:hover .burn-text {  
+    font-size: clamp(1.25rem, 4.25cqi, 3.5rem);
     color: rgb(43, 20, 2);
-    font-size: clamp(.425rem, 4cqi, 4rem);
 
     text-shadow: 
       0 0 4px rgba(121, 51, 5, 0.8),
@@ -104,16 +95,17 @@
 
     mix-blend-mode: color-burn;
     transition:
-      font-size 2000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
+      font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
       color 1000ms ease-in 20ms,
       text-shadow 1000ms ease-in 20ms;
   }
 }
 
-/* Dye grotto */
+/*********************/
+/* Wicked Dye Grotto */
+/*********************/
 .dye-grotto {
   position: absolute;
-
   left: 25%;
   top: 15%;
 
@@ -130,19 +122,18 @@
   position: absolute;
   inset: 0;
 
-  border-radius: 100%;
-  
   background-image: radial-gradient(
     circle, 
     rgba(94, 126, 145, 0.6) 50%, 
     rgba(228, 74, 14, 0.6) 100%, 
     transparent 100%
   );
+
+  border-radius: 100%;
+  box-shadow: 0 0 1px 2px rgba(0, 75, 94, 1);
   
   mix-blend-mode: difference;
-
-  backdrop-filter: saturate(1.6);
-  box-shadow: 0 0 1px 2px rgba(0, 75, 94, 1);
+  backdrop-filter: saturate(1.5);
   
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 
@@ -151,31 +142,21 @@
 
 .dye-text {
   position: relative;
-  margin: 0;
-  padding: 0;
   
-  font-size: clamp(.4rem, 4cqi, 4rem);
-  font-family: cursive;
+  font-size: clamp(1rem, 4cqi, 3.25rem);
+  font-family: bold;
   font-style: oblique;
-
   color: rgb(0, 0, 0, 1);
-  text-shadow: 0 2px 8px rgba(36, 18, 1, 0.4);
-  mix-blend-mode: normal; 
-
-  opacity: .99;
 
   transition: 
     font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
-    color 1500ms ease 20ms,
-    text-shadow 1500ms ease 20ms;
+    color 1000ms ease 20ms;
 
   z-index: 2;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .dye-grotto:hover .dye-halo-plate {
-    mix-blend-mode: luminosity;
-    backdrop-filter: saturate(1.8) contrast(1.1);
     background-image: radial-gradient(
       circle, 
       rgba(223, 178, 31, 0.7) 0%, 
@@ -183,27 +164,30 @@
       transparent 100%
     );
 
-    box-shadow: 0 0 6px 6px rgb(0, 124, 155);
+    box-shadow: 0 0 6px 6px rgba(0, 124, 155, 1);
+
+    mix-blend-mode:luminosity;
+    backdrop-filter: saturate(1.8) contrast(1.1);
 
     transform: scale(1.1);
-
     transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .dye-grotto:hover .dye-text {  
-    font-size: clamp(.45rem, 4.25cqi, 4.25rem);
+    font-size: clamp(1.5rem, 4.5cqi, 3.75rem);
     color: rgb(0, 0, 0, 1);
 
     transition:
-      font-size 2000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
-      color 1000ms ease-in 20ms,
-      text-shadow 1000ms ease-in 20ms;
+      font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
+      color 1000ms ease 20ms;
   }
 }
 
+/**********************/
+/* Wicked Wire Grotto */
+/**********************/
 .wire-grotto {
   position: absolute;
-
   left: -3%;
   top: 68%;
 
@@ -220,8 +204,6 @@
 .wire-halo-plate {
   position: absolute;
   inset: 0;
-
-  border-radius: 100%;
   
   background-image: radial-gradient(
     circle, 
@@ -229,6 +211,9 @@
     rgba(4, 40, 51, 0.6) 100%, 
     transparent 100%
   );
+
+  border-radius: 100%;
+  box-shadow: 0 0 10px 5px rgba(0, 75, 94, 1);
   
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 
@@ -237,61 +222,51 @@
 
 .wire-text {
   position: relative;
-  margin: 0;
-  padding: 0;
   
-  font-size: clamp(.35rem, 3cqi, 4rem);
+  font-size: clamp(.75rem, 3cqi, 2.5rem);
   font-family: cursive;
   font-style: oblique;
-
   color: rgb(0, 0, 0, 1);
-  text-shadow: 0 2px 8px rgba(36, 18, 1, 0.4);
-  mix-blend-mode: normal; 
-  
-  opacity: 0.99; 
 
   transition: 
     font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
-    color 1500ms ease 20ms,
-    text-shadow 1500ms ease 20ms;
+    color 1000ms ease 20ms;
 
   z-index: 2;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .wire-grotto:hover .wire-halo-plate {
-    mix-blend-mode: luminosity;
-
     background-image: radial-gradient(
       circle, 
-      rgba(147, 233, 233, 0.6) 25%, 
+      rgba(147, 233, 233, 0.6) 75%, 
       rgba(4, 40, 51, 0.6) 100%, 
       transparent 100%
     );
 
     box-shadow: 0 0 100px 20px rgba(147, 233, 233, .5);
+
     transform: scale(1.1);
     transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .wire-grotto:hover .wire-text {  
+    font-size: clamp(1rem, 3.25cqi, 2.75rem);
     color: rgb(0, 0, 0, 1);
-    font-size: clamp(.4rem, 3.5cqi, 4.25rem);
     text-shadow: 
       0 0 444px rgba(138, 219, 240, 0.8),
       0 300px 444px rgba(70, 139, 196, 0.95);
 
     transition:
-      font-size 2000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
-      color 1000ms ease-in 20ms,
-      text-shadow 1000ms ease-in 20ms;
+      font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
+      color 1000ms ease 20ms;
   }
 }
 
-/* Mobile */
+/*******************/
+/* Mobile Hotfixes */
+/*******************/
 .burn-grotto.touch-active .burn-halo-plate {
-  mix-blend-mode:normal;
-
   background-image: radial-gradient(
     circle, 
     rgba(223, 178, 31, 0.7) 0%, 
@@ -302,13 +277,12 @@
   box-shadow: 0 0 64px 24px rgba(129, 110, 48, 1);
 
   transform: scale(1.1);
-
   transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .burn-grotto.touch-active .burn-text {  
+  font-size: clamp(1.1rem, 3.25cqi, 3.25rem);
   color: rgb(43, 20, 2);
-  font-size: clamp(.425rem, 4cqi, 4rem);
 
   text-shadow: 
     0 0 4px rgba(121, 51, 5, 0.8),
@@ -316,14 +290,12 @@
 
   mix-blend-mode: color-burn;
   transition:
-    font-size 2000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
+    font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
     color 1000ms ease-in 20ms,
     text-shadow 1000ms ease-in 20ms;
 }
 
 .dye-grotto.touch-active .dye-halo-plate {
-  mix-blend-mode: luminosity;
-  backdrop-filter: saturate(1.8) contrast(1.1);
   background-image: radial-gradient(
     circle, 
     rgba(223, 178, 31, 0.7) 0%, 
@@ -331,47 +303,45 @@
     transparent 100%
   );
 
-  box-shadow: 0 0 6px 6px rgb(0, 124, 155);
+  box-shadow: 0 0 6px 6px rgba(0, 124, 155, 1);
+
+  mix-blend-mode:luminosity;
+  backdrop-filter: saturate(1.8) contrast(1.1);
 
   transform: scale(1.1);
-
   transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .dye-grotto.touch-active .dye-text {  
-  font-size: clamp(.45rem, 4.25cqi, 4.25rem);
+  font-size: clamp(1.1rem, 3.25cqi, 3.25rem);
   color: rgb(0, 0, 0, 1);
 
   transition:
-    font-size 2000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
-    color 1000ms ease-in 20ms,
-    text-shadow 1000ms ease-in 20ms;
+    font-size 2000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms;
 }
 
 .wire-grotto.touch-active .wire-halo-plate {
-  mix-blend-mode: luminosity;
-
   background-image: radial-gradient(
     circle, 
-    rgba(147, 233, 233, 0.6) 25%, 
+    rgba(147, 233, 233, 0.6) 75%, 
     rgba(4, 40, 51, 0.6) 100%, 
     transparent 100%
   );
 
   box-shadow: 0 0 100px 20px rgba(147, 233, 233, .5);
+
   transform: scale(1.1);
   transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .wire-grotto.touch-active .wire-text {  
+  font-size: clamp(.85rem, 3.25cqi, 3.25rem);
   color: rgb(0, 0, 0, 1);
-  font-size: clamp(.4rem, 3.5cqi, 4.25rem);
   text-shadow: 
     0 0 444px rgba(138, 219, 240, 0.8),
     0 300px 444px rgba(70, 139, 196, 0.95);
 
   transition:
-    font-size 2000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
-    color 1000ms ease-in 20ms,
-    text-shadow 1000ms ease-in 20ms;
+    font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 20ms,
+    color 1000ms ease 20ms;
 }
