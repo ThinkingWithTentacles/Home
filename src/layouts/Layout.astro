@@ -15,46 +15,56 @@ const { title = "Default Title" } = Astro.props;
   <body>
     <slot />
 
-    <!-- Your global back-button resetting script remains safe here at the bottom -->
-	<script>
-	function initializeBurnEffects() {
-		const burnLinks = document.querySelectorAll('.burn-wrapper');
+    <script>
+		function initializeBurnEffects() {
+		// Combine all selectors into a single NodeList
+		const links = document.querySelectorAll('.burn-wrapper, .wire-wrapper, .dye-wrapper, .dead-wrapper');
 		
-		burnLinks.forEach(link => {
-		link.addEventListener('click', function (event) {
+		links.forEach(link => {
+			link.addEventListener('click', function (event) {
 			const anchor = link.closest('a');
 			if (!anchor) return;
 
 			event.preventDefault();
 			
-			// Triggers the animation via the standalone class
 			link.classList.add('touch-active');
 			const targetUrl = anchor.href;
 
 			setTimeout(() => {
-			window.location.href = targetUrl;
+				window.location.href = targetUrl;
 			}, 1000);
+			});
 		});
-		});
-	}
+		}
 
-	// Handle initial page script setup
-	initializeBurnEffects();
+		initializeBurnEffects();
 
-	// Reset the UI completely when navigating back via bfcache
-	window.addEventListener('pageshow', (event) => {
+		window.addEventListener('pageshow', (event) => {
 		if (event.persisted) {
-		// 1. Remove the active style class
-		document.querySelectorAll('.burn-wrapper.touch-active').forEach(wrapper => {
+			// Select and clean up all touch-active wrapper elements at once
+			const activeWrappers = document.querySelectorAll(
+			'.burn-wrapper.touch-active, .wire-wrapper.touch-active, .dye-wrapper.touch-active, .dead-wrapper.touch-active'
+			);
+			
+			activeWrappers.forEach(wrapper => {
 			wrapper.classList.remove('touch-active');
-		});
+			});
 
-		// 2. Force the active element to drop its mobile focus target
-		if (document.activeElement instanceof HTMLElement) {
+			// Remove focus from the currently active element
+			if (document.activeElement instanceof HTMLElement) {
 			document.activeElement.blur();
+			}
 		}
-		}
-	});
+		});
 	</script>
   </body>
 </html>
+
+<style is:global>
+  html, body {
+    min-height: 100%; 
+    height: auto;
+
+    overscroll-behavior-y: none; 
+  }
+</style>

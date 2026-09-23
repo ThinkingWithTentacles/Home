@@ -1,0 +1,78 @@
+---
+// src/components/ZoomViewport.astro
+interface Props {
+  maxZoom?: number;
+  minZoom?: number;
+}
+
+const { maxZoom = 4, minZoom = 1 } = Astro.props;
+---
+
+<div class="zoom-container" data-max={maxZoom} data-min={minZoom}>
+  <div class="zoom-content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .zoom-container {
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+  }
+  .zoom-container:active {
+    cursor: grabbing;
+  }
+  .zoom-content {
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    will-change: transform;
+    transition: transform 0.05s ease-out;
+  }
+</style>
+
+<script>
+  const containers = document.querySelectorAll('.zoom-container');
+
+  containers.forEach((container) => {
+    const content = container.querySelector('.zoom-content') as HTMLElement;
+
+      if (!content) return;
+
+      const maxZoom = parseFloat(container.getAttribute('data-max') || '4');
+      const minZoom = parseFloat(container.getAttribute('data-min') || '1');
+      
+      let scale = 1;
+      const ZOOM_SPEED = 0.08;
+
+      panel.addEventListener('wheel', (e: WheelEvent) => {
+        if (!e.ctrlKey) {
+          return; 
+        }
+
+        const rect = panel.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        if ((e.deltaY < 0 && scale < maxZoom) || (e.deltaY > 0 && scale > minZoom)) {
+          e.preventDefault();
+
+          const originX = (x / rect.width) * 100;
+          const originY = (y / rect.height) * 100;
+
+          content.style.transformOrigin = `${originX}% ${originY}%`;
+
+          const step = 0.05 * scale;
+          if (e.deltaY < 0) {
+            scale = Math.min(scale + step, maxZoom);
+          } else {
+            scale = Math.max(scale - step, minZoom);
+          }
+
+          content.style.transform = `scale(${scale})`;
+        }
+      }, { passive: false });
+  });
+</script>

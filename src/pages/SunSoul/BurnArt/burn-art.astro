@@ -2,8 +2,9 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
-import { wallpapers } from '/src/data/resource.ts';
+import Layouts from '/src/layouts/Layout.astro';
 
+import { wallpapers } from '/src/data/resource.ts';
 import { wickedBurnArt } from '/src/data/wicked.ts';
 import { wickedBurns } from '/src/data/wicked.ts';
 
@@ -13,6 +14,7 @@ import LightBox from '/src/components/LightBox.astro';
 import ReturnTo from '/src/components/ReturnTo.astro';
 import ContactForm from '/src/components/ContactForm.astro';
 import ProductLabel from '/src/components/ProductLabel.astro';
+import ZoomDoom from '/src/components/ZoomDoom.astro';
 
 import '/src/styles/global.css';
 import '/src/styles/burn-art-page.css';
@@ -20,39 +22,45 @@ import '/src/styles/burn-art-page.css';
 const wallpaper = wallpapers.garden[0];
 ---
 
-<body
-  class="product-page-background"
-  style={`background-image: url(${wallpaper.image.src})`}
->
-  <main>
-    <ReturnTo destination= "garden" />
+<Layouts title="Wicked Burns">
+  <div class="product-page-wrapper">
+    <div 
+      class="product-page-background" 
+      style={`background-image: url(${wallpaper.image.src})`}
+    ></div>
 
-    <section class="garden-sign">
-      <h1>Burning Art</h1>
-    </section>
+    <ZoomDoom maxZoom={3} minZoom={1}>
+      <main>
+        <ReturnTo destination= "garden" />
 
-    <section class="garden-info">
-      <p> Burning tarot cards, animals, titles, signs, and wholesome smut </p>
-      
-      <p> Wood burning is one of the many ways I love to turn an idea into something tangible. I'm drawn
-           to the natural character of wood and the patience of creating each image through heat,
-           texture, and detail.</p>
+        <section class="garden-sign">
+          <h1>Burning Art</h1>
+        </section>
 
-      <p>I'm not currently creating new wood-burned pieces for the collection, but custom requests are
-          still welcome. Have an idea in mind? Email me with your vision, and let's talk about bringing
-          it to life on wood. </p>
-    </section>
+        <section class="garden-info">
+          <p> Burning tarot cards, animals, titles, signs, and wholesome smut </p>
+          
+          <p> Wood burning is one of the many ways I love to turn an idea into something tangible. I'm drawn
+              to the natural character of wood and the patience of creating each image through heat,
+              texture, and detail.</p>
 
-    <ContactForm />
+          <p>I'm not currently creating new wood-burned pieces for the collection, but custom requests are
+              still welcome. Have an idea in mind? Email me with your vision, and let's talk about bringing
+              it to life on wood. </p>
+        </section>
 
-    <ProductLabel text="Bookmarks, Flowers, and Magic" location="garden" />
-    <ProductGrid products={Object.values(wickedBurns.tame)} />
+        <ContactForm />
 
-    <ProductLabel text="Tarot Cards"  location="garden" />
-    <ProductGrid products={Object.values(wickedBurns.tarot)} />
+        <ProductLabel text="Bookmarks, Flowers, and Magic" location="garden" />
+        <ProductGrid products={Object.values(wickedBurns.tame)} />
 
-    <ProductLabel text="Spicy Burns..."  location="garden"/>
-    <ProductGrid products={Object.values(wickedBurns.spicy)} />
-    <LightBox />
-  </main>
-</body> 
+        <ProductLabel text="Tarot Cards"  location="garden" />
+        <ProductGrid products={Object.values(wickedBurns.tarot)} />
+
+        <ProductLabel text="Spicy Burns..."  location="garden"/>
+        <ProductGrid products={Object.values(wickedBurns.spicy)} />
+        <LightBox />
+      </main>
+    </ZoomDoom>
+  </div>
+</Layouts>

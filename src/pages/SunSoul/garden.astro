@@ -1,9 +1,11 @@
 ---
-import ReturnTo from '/src/components/ReturnTo.astro';
-import Layouts from '/src/layouts/Layout.astro';
-
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+
+import Layouts from '/src/layouts/Layout.astro';
+
+import ReturnTo from '/src/components/ReturnTo.astro';
+import ZoomDoom from '/src/components/ZoomDoom.astro';
 
 import { wallpapers } from '/src/data/resource.ts';
 import { garden } from '/src/data/wicked.ts';
@@ -19,45 +21,49 @@ import {
 } from '../../config.js';
 
 const wallpaper = wallpapers.garden[0];
-const hyperRing = garden.ring[0];
+const sunSoul = garden.ring[0];
 ---
 
-<Layouts title="River Haven Grotto">
-  <body>
-    <div
-      class="garden-page-background"
-      style={`background-image: url(${wallpaper.image.src})`}>
-    </div>
+<Layouts title="SunSoul Studio">
+  <div class="garden-page-wrapper">
+    <div 
+      class="garden-page-background" 
+      style={`background-image: url(${wallpaper.image.src})`}
+    ></div>
 
-    <main>
-      <ReturnTo destination= "home" />
+    <ZoomDoom maxZoom={3} minZoom={1}>
+      <main>
+        <ReturnTo destination= "home" />
 
-      <div class="ring-wrapper">
-        <Image src={hyperRing.image} alt="" />
+        <section class="ring-wrapper">
+          <Image src={sunSoul.image} alt="" />
 
-        <a class="burn-wrapper" href={wickedBurn}>
-          <div class="burn-halo-plate"></div>
-          <span class="burn-text">Wicked Burns</span>
-        </a>
+          <a class="burn-wrapper" href={wickedBurn}>
+            <div class="burn-halo-plate"></div>
+            <span class="burn-text">Wicked Burns</span>
+          </a>
 
-        <a class="dye-wrapper" href={wickedDye}>
-          <div class="dye-halo-plate"></div>
-          <span class="dye-text">Wicked Dyes</span>
-        </a>
+          <a class="dye-wrapper" href={wickedDye}>
+            <div class="dye-halo-plate"></div>
+            <span class="dye-text">Wicked Dyes</span>
+          </a>
 
-        <a class="wire-wrapper" href={wickedWire}>
-          <div class="wire-halo-plate"></div>
-          <span class="wire-text">Wicked Wires</span>
-        </a>
-      </div>
+          <a class="wire-wrapper" href={wickedWire}>
+            <div class="wire-halo-plate"></div>
+            <span class="wire-text">Wicked Wires</span>
+          </a>
+        </section>
 
-      <section class="garden-sign">
-        <h1>SunSoul Studios</h1>
-      </section>
+        <section class="garden-sign">
+          <h1>SunSoul Studios</h1>
+        </section>
 
-      <section class="garden-info">
-        <p> We say words here </p>
-      </section>
-    </main>
-  </body>
+        <section class="garden-info">
+          <p> We say words here </p>
+          <p> We say words here </p>
+          <p> We say words here </p>
+        </section>
+      </main>
+    </ZoomDoom>
+  </div>
 </Layouts>

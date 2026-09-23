@@ -1,5 +1,7 @@
 ---
 import Layouts from '/src/layouts/Layout.astro';
+import DenTracker from '/src/components/DenTracker.astro';
+import ZoomDoom from '../components/ZoomDoom.astro';
 
 import { Image } from 'astro:assets';
 
@@ -23,12 +25,17 @@ import '/src/styles/home-page.css';
 
 const riverHavenGrotto = wallpapers.landing[0];
 
-const sunSoul = garden.ring[0];
-const swampThing = icons.tentacles[0];
+const sunsoul = garden.ring[0];
+const swampthing = icons.tentacles[0];
 const deadend = icons.deadend[0];
 const vault = icons.vault[0];
 
-const den = Math.floor(Math.random() * (200)) - 100;
+// DenTracker.astro
+interface Props {
+  den: number;
+}
+
+const { den } = Astro.props;
 
 const words = ["exists", "implores", "decays", "absolves", "breathes", "spreads", "says yes", "thinks", "infuses", "loves you", "laughs", "cries", 
  "is hand loved", "dies", "dyes", "slaps", "burns", "wraps", "feels", "holds", "hits", "takes a hit", "is a hit", "needs you",
@@ -36,9 +43,9 @@ const words = ["exists", "implores", "decays", "absolves", "breathes", "spreads"
 ---
 
 <Layouts title="River Haven Grotto">
-  <body
-    class="home-page-background"
-  >
+  <ZoomDoom maxZoom={3} minZoom={1}>
+
+  <div class="home-page-background">
     <main>
       <section class="home-sign">
         <a href={receipts.home} target="_blank" rel="noopener noreferrer">
@@ -53,32 +60,41 @@ const words = ["exists", "implores", "decays", "absolves", "breathes", "spreads"
         <p> We say words here </p>
       </section>
 
-      <div class="grove-container">
-        <div class="top-row">
-          <div class="soul-wrapper">
-            <Image src={sunSoul.image} alt="" />
-            <a class="soul-link" href={wickedGrove}> <span></span></a>
-          </div>
-          
-          <div class="swamp-wrapper">
-            <Image src={swampThing.image} alt="" />
-            <a class="swamp-link" href={swampGrove}> <span></span></a>
-          </div>
+      
+      <DenTracker />
+
+      <section class="grove-container">
+        <div class="grove-top">
+          <a class="soul-wrapper" href={wickedGrove}> 
+            <Image src={sunsoul.image} alt="SunSoul" /> 
+            <div class="soul-halo-plate" ></div> 
+          </a>
+
+          <a class="swamp-wrapper" href={swampGrove}> 
+            <Image src={swampthing.image} alt="Dead End" /> 
+            <div class="swamp-halo-plate" ></div> 
+            <span class="swamp-text">Thinking With Tentacles</span> 
+          </a>
         </div>
 
-        <div class="vault-wrapper">
-          <Image src={vault.image} alt="" />
-          <a class="vault-link" href={theVault}> <span></span></a>
-        </div>
-      </div>
+        <a class="vault-wrapper" href={theVault}> 
+          <Image src={vault.image} alt="The Vault" /> 
+          <div class="vault-halo-plate" }></div> 
+          <span class="vault-text">Vault</span> 
+        </a>
 
         <a class="dead-wrapper" href={deadEnd}> 
           <Image src={deadend.image} alt="Dead End" /> 
           <div class="dead-halo-plate" style={`--shadow-x: ${den}dvw;`}></div> 
           <span class="dead-text">Dead End</span> 
         </a>
+      </section>
+
+      <section class="gradient-background" >
+      </section>
     </main>
-  </body>
+  </div>
+  </ZoomDoom>
 </Layouts>
 
 <script>

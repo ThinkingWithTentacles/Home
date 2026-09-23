@@ -28,7 +28,7 @@ font-family: monospace;
 font-size: 3ch;
 }
 
-.swamp-wrapper {
+.tentacle-wrapper {
   position: relative;
   width: 90%;
   height: 90%;
@@ -42,7 +42,7 @@ font-size: 3ch;
   aspect-ratio: 1/2;
 }
 
-.swamp-wrapper img {
+.tentacle-wrapper img {
   display: block;
 
   width: 100%;

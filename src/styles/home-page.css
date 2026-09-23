@@ -19,6 +19,7 @@
 
   width: 100%;
   min-height: 100%;
+  max-height: 40dvh;
 
   text-align: center;
   animation: fadeIn 3s ease-in-out forwards;
@@ -39,14 +40,14 @@
 
 .home-name {
   position: absolute;
-  top: 50px;
+  top: 25px;
   left: 0;
   width: 100%;
   
+  font-size: clamp(2rem, 6cqi, 10rem);
   color: rgba(21, 146, 168, 0.95);
   font-family:Georgia, 'Times New Roman', Times, serif;
   font-style: oblique;
-  font-size: 5rem;
   
   opacity: .7;
   animation: fadeIn 5s ease-in-out forwards;
@@ -73,14 +74,13 @@
   text-align: center;
   color: white;
   font-family: monospace;
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 1.75cqi, 2rem);
 
   display: inline-flex;
   align-items: end;
   justify-content: left;
   
-  
-  background: rgba(0, 0, 0, .75);
+  background: rgba(0, 0, 0, .8);
   box-sizing: border-box;
   
   opacity: .75;
@@ -95,294 +95,373 @@
   
   color: rgba(14, 190, 221, .8);
   font-family: monospace;
-  font-size: 4rem;
+  font-size: clamp(1.5rem, 3cqi, 5rem);
   
   opacity: .7;
   transition: opacity 5s ease-in-out;
 }
 
+/* Grove Container */
 .grove-container {
   position: relative;
   width: 100%;
 
-  max-width: 100%;
-  margin-top: 15%;
-}
-
-.top-row {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-
-  width: 100%;
-  margin-bottom: 15%;
 }
 
-.soul-wrapper, 
-.swamp-wrapper {
-  position: relative;
-  display: block;
-  border: 1;
-  border-radius:100;
-
-  width: 40%;
-  aspect-ratio: 1;
-}
-
-.soul-wrapper img, 
-.swamp-wrapper img {
-  position: relative;
-  display: block;
-
-  border: 1px solid black; 
-  border-radius: 100%;    
-  
+.grove-top {
   width: 100%;
   height: 100%;
-  
-  aspect-ratio: 1 / 1;    
-  object-fit: cover;      
+
+  display: flex;
+  justify-content: center;
+
+  gap: 5%;
 }
 
-.soul-link {
+/* SunSoul Studio */
+.soul-wrapper {
+  position: relative;
+  top: 0px;
+
+  width: 40%;
+  max-width: 1000px;
+
+  aspect-ratio: 1;
+
+  cursor: -webkit-zoom-in;
+}
+
+.soul-wrapper img {
   position: absolute;
-  left: 7%;
-  top: 9%;
+  inset: 0;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  border-radius: 50%;
+  
+  z-index: 0;
+}
+
+.soul-halo-plate {
+  position: absolute;
+  inset: 0;
+  top: 10%;
+  left: 8%;
 
   width: 85%;
   height: 85%;
 
-  background: transparent;
+  border-radius: 100%;
+  
+  box-shadow: 0 0 200px 25px rgba(255, 208, 0, 0.75);
+  background-image: radial-gradient(
+    circle, 
+    rgba(255, 208, 0, 0.33) 0%, 
+    rgba(255, 208, 0, 0.33) 100%, 
+    transparent 100%
+  );
 
-  z-index: 10;
+  cursor: -webkit-zoom-in;
+
+  transition: all 3000ms cubic-bezier(0.25, 1, 0.5, 1);
+
+  z-index: 1;
 }
 
-.swamp-link {
+@media (hover: hover) and (pointer: fine) {
+  .soul-wrapper:hover .soul-halo-plate {
+    mix-blend-mode:color-burn;
+    
+    box-shadow: 0 0 200px 100px rgba(255, 208, 0, 0.75);
+    background-image: radial-gradient(
+      circle, 
+      rgba(255, 208, 0, 0.33) 0%, 
+      rgba(255, 208, 0, 0.33) 100%, 
+      transparent 100%
+    );
+
+    transition: all 750ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+}
+
+/* Swamp */
+.swamp-wrapper {
+  position: relative;
+  top: 0px;
+
+  width: 40%;
+  max-width: 1000px;
+
+  aspect-ratio: 1;
+
+  cursor: -webkit-zoom-in;
+}
+
+.swamp-wrapper img {
   position: absolute;
-  left: 0%;
-  top: 0%;
+  inset: 0;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  border-radius: 50%;
+  
+  z-index: 0;
+}
+
+.swamp-halo-plate {
+  position: absolute;
+  inset: 0;
 
   width: 100%;
   height: 100%;
 
-  background: transparent;
-
-  z-index: 10;
-}
-
-.soul-link::after {
-  content: "";
-  align-content: center;
-  text-align: center;
-
-  position: absolute;
-  inset: 0;
-
   border-radius: 100%;
-  box-shadow: 0 0 25px 25px rgb(218, 170, 14, .65);
-  background-color: rgb(218, 170, 14, .55);
-  cursor:-webkit-zoom-in;
-
-  transition: 2000ms;
-}
-
-.soul-link:hover::after {
-  content: "";
-  align-content: center;
-  text-align: center;
-
-  position: absolute;
-  inset: 0;
-
-  border-radius: 100%;
-  box-shadow: 0px 0px 125px 100px rgb(218, 170, 14, .65);
-  background-color: rgba(223, 178, 31, .35);
-
-  transition: 1000ms;
-}
-
-.swamp-link::after {
-  content: "Thinking With Tentacles";
-  align-content: center;
-  text-align: center;
-
-  position: absolute;
-  inset: 0;
   
-  font-size: clamp(5.5cqi, 5.5cqi, 7.5cqi);
+  box-shadow: 0 0 200px 25px rgba(242, 0, 250, 0.75);
+  background-image: radial-gradient(
+    circle, 
+    rgba(255, 0, 0, 0.1) 50%, 
+    rgba(88, 171, 204, .5) 100%, 
+    transparent 100%
+  );
+
+  transition: all 3000ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.swamp-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  text-align: center;
+
+  margin: 0;
+  padding: 0 10px;
+
+  box-sizing: border-box;
+  
+  font-size: clamp(1rem, 4cqi, 6rem);
   font-family: cursive;
-  font-style:oblique;
-  color:rgb(0, 0, 0);
+  font-style: oblique;
+  color: rgb(255, 255, 255);
 
-  border-radius: 100%;
-  box-shadow: 0 0 60px 30px rgba(149, 9, 192, 0.75);
-  background-color: rgba(25, 121, 230, 0.75);
-  cursor:-webkit-zoom-in;
-  
-  opacity: .75;
-  transition: 2000ms;
+  opacity: 1; 
+  transition: 
+    font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1),
+    color 1500ms ease;
+    
+  z-index: 2;
 }
 
-.swamp-link:hover::after {
-  content: "Thinking With Tentacles";
-  align-content: center;
-  text-align: center;
+@media (hover: hover) and (pointer: fine) {
+  .swamp-wrapper:hover .swamp-halo-plate {
+    mix-blend-mode:color-dodge;
+    
+    box-shadow: 0 0 10px 33px rgba(88, 171, 204, 1);
+    background-image: radial-gradient(
+      circle, 
+      rgba(88, 171, 204, .5) 50%, 
+      rgba(255, 0, 0, 0.1) 100%, 
+      transparent 100%
+    );
 
-  position: absolute;
-  inset: 0;
+    transition: all 750ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
 
-  font-size: clamp(5.75cqi, 5.75cqi, 7.75cqi);
-  font-style:oblique;
-  color:rgba(221, 207, 206, 0.836);
-  font-style:oblique;
+  .swamp-wrapper:hover .swamp-text {  
+    mix-blend-mode:color-dodge;
 
-  border-radius: 100%;
-  box-shadow: 0px 0px 125px 100px rgba(25, 121, 230, 0.75);
-  background-color: rgba(149, 9, 192, 0.33);
+    color: rgb(0, 0, 0);
+    font-size: clamp(2.25rem, 4.5cqi, 6.25rem);
 
-  opacity: 1;
-  transition: 1000ms;
+    transition:
+      font-size 5000ms cubic-bezier(0.25, 1, 0.5, 1),
+      color 2500ms ease-in 500ms,
+  }
 }
 
+/* Vault */
 .vault-wrapper {
   position: relative;
-  display: block;
-
-  width: 33%;
-  left: 33.5%;
-  
-  margin: 0;
+  width: 40%;
+  max-width: 1000px;
   aspect-ratio: 1;
-  
-  margin-bottom: 15%;
+  margin: 20%;
+
+  cursor: -webkit-zoom-in;
 }
 
 .vault-wrapper img {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  border-radius: 100%;
-
-  margin: 0 auto;
-}
-
-.vault-link {
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  
-  width: 100%;
-  height: 100%;
-
-  background: transparent;
-  z-index: 10;
-}
-
-.vault-link::after {
-  content: "Vault";
-  align-content: center;
-  text-align: center;
-
-  position: absolute;
-  inset: 0;
-  
-  font-size: clamp(5.5cqi, 5.5cqi, 7.5cqi);
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color:rgb(8, 173, 124);
-
-  border-radius: 100%;
-
-  cursor:-webkit-zoom-in;
-
-  transition: 1000ms;
-}
-
-.vault-link:hover::after {
-  content: "Vault";
-  align-content: center;
-  text-align: center;
-
   position: absolute;
   inset: 0;
 
-  font-size: clamp(7.5cqi, 7.5cqi, 9.5cqi);
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color:rgb(6, 129, 92);
-
-  border-radius: 100%;
-
-  background-color: rgba(233, 27, 37, 0.5);
-  cursor:-webkit-zoom-in;
-
-  transition: 1000ms;
-}
-
-.dead-wrapper {
-  position: relative;
-  display: block;      /* Establishes block boundaries over the anchor link hook */
-  width: 33%;
-  left: 33.5%;
-  margin-bottom: 15%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  isolation: isolate;  /* Prevents mix-blend-mode bleedouts */
-  /* Remove overflow: hidden if you want the box-shadow glow visible outside the circle */
-}
-
-/* 1. Tame the Image Asset Framework Layers */
-.dead-wrapper img {
-  position: absolute;
-  inset: 0;
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important; /* Locks down size ratio proportions */
+
+  object-fit: cover !important;
   border-radius: 50%;
   z-index: 0;
 }
 
-/* 2. Absolute Positioning Layer for Halo Control */
-.dead-halo-plate {
+.vault-halo-plate {
   position: absolute;
   inset: 0;
+
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  mix-blend-mode: difference;
-  backdrop-filter: blur(4px) saturate(1.2);
-  
-  /* Safe mapping for the dynamic JS offset tracker */
-  box-shadow: var(--shadow-x) 1000px 0px 0px rgba(91, 12, 175, 0.6);
-  background-color: rgba(76, 53, 131, 0.25);
-  cursor: -webkit-zoom-in;
-  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+
+  border-radius: 100%;
+
+  box-shadow: 0 0 25px 25px rgba(65, 205, 240, 1);
+  background-image: radial-gradient(
+    circle, 
+    rgba(255, 0, 0, 0.1) 0%, 
+    rgba(65, 205, 240, .25) 100%, 
+    transparent 100%
+  );
+
+  transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
+
   z-index: 1;
 }
 
-/* 3. Center the Text Explicitly via Absolute Centering */
+.vault-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  text-align: center;
+
+  margin: 0;
+  padding: 0 10px;
+
+  box-sizing: border-box;
+  
+  font-size: clamp(1.5rem, 6cqi, 8rem);
+  font-family: cursive;
+  font-style: oblique;
+  color: rgb(19, 159, 252);
+
+  mix-blend-mode: normal; 
+
+  opacity: 1; 
+
+  transition: 
+    font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1),
+    color 1000ms ease;
+    
+  z-index: 2;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .vault-wrapper:hover .vault-halo-plate {
+    mix-blend-mode: luminosity;
+
+    background-image: radial-gradient(
+      circle, 
+      rgba(223, 178, 31, 0.7) 0%, 
+      rgba(223, 178, 31, 0.3) 70%, 
+      transparent 100%
+    );
+
+    box-shadow: 0px 0px 100px 25px rgba(65, 205, 240, 1);
+
+    transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .vault-wrapper:hover .vault-text {  
+    mix-blend-mode:color-burn;
+
+    font-size: clamp(2rem, 6.5cqi, 8.5rem);
+    color: rgb(43, 20, 2);
+
+    transition:
+      font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+      color 1000ms ease-in 50ms;
+  }
+}
+
+/* Dead End */
+.dead-wrapper {
+  position: relative;
+  width: 40%;
+  max-width: 1000px;
+  aspect-ratio: 1;
+
+  cursor:crosshair;
+}
+
+.dead-wrapper img {
+  position: absolute;
+  inset: 0;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.dead-halo-plate {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  mix-blend-mode: difference;
+  backdrop-filter: blur(5px);
+  
+  box-shadow: var(--shadow-x) 40dvh 25px -10dvw rgba(228, 50, 5, 0.5);
+
+  transition: all 3000ms cubic-bezier(0.25, 1, 0.5, 1);
+
+  z-index: 1;
+}
+
 .dead-text {
   position: absolute;
   top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
+
   width: 100%;
   text-align: center;
+
   margin: 0;
   padding: 0 10px;
+
   box-sizing: border-box;
   
-  font-size: clamp(1rem, 3.75cqi, 3.75rem);
+  font-size: clamp(1.5rem, 6cqi, 8rem);
   font-family: cursive;
   font-style: oblique;
   color: rgb(255, 255, 255);
-  text-shadow: 0 2px 8px rgba(206, 115, 29, 0.4);
-  mix-blend-mode: normal; 
-  opacity: 0.99; 
+
+  opacity: 1; 
+
   transition: 
     font-size 1000ms cubic-bezier(0.25, 1, 0.5, 1),
     color 1500ms ease,
     text-shadow 1500ms ease;
+    
   z-index: 2;
 }
 
@@ -396,12 +475,53 @@
       rgba(223, 178, 31, 0.3) 70%, 
       transparent 100%
     );
-    box-shadow: 0 0 200px 100px rgb(16, 51, 207);
-    transform: scale(1.1);
-    transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 0 200px 100px rgba(32, 1, 68, 1);
+    transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .dead-wrapper:hover .dead-text {  
+    color: rgb(43, 20, 2);
+    font-size: clamp(2rem, 6.5cqi, 8.5rem);
+    text-shadow: 
+      0 0 4px rgba(218, 109, 14, 0.8),
+      0 2px 14px rgba(19, 9, 1, 0.95);
+    mix-blend-mode: color-burn;
+    transition:
+      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 0ms,
+      color 3000ms ease-in 2000ms,
+      text-shadow 500ms ease-in 2000ms;
+  }
+}
+
+/* Mobile */
+.soul-wrapper.touch-active .soul-halo-plate {
+    mix-blend-mode:color-burn;
+    background-image: radial-gradient(
+      circle, 
+      rgba(255, 208, 0, 0.33) 0%, 
+      rgba(255, 208, 0, 0.33) 100%, 
+      transparent 100%
+    );
+    
+    box-shadow: 0 0 200px 100px rgba(255, 208, 0, 0.75);
+    transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.swamp-wrapper.touch-active .swamp-halo-plate {
+    mix-blend-mode: luminosity;
+    backdrop-filter: blur(0px) saturate(1.8) contrast(1.1);
+    background-image: radial-gradient(
+      circle, 
+      rgba(223, 178, 31, 0.7) 0%, 
+      rgba(223, 178, 31, 0.3) 70%, 
+      transparent 100%
+    );
+    box-shadow: 0 0 200px 100px rgb(231, 231, 233);
+    transform: scale(1.1);
+    transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.swamp-wrapper.touch-active .swamp-text {  
     color: rgb(43, 20, 2);
     font-size: clamp(1rem, 4cqi, 4rem);
     text-shadow: 
@@ -411,34 +531,59 @@
     transition:
       font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 0ms,
       color 3000ms ease-in 2000ms,
-      text-shadow 3000ms ease-in 2000ms;
-  }
+      text-shadow 500ms ease-in 2000ms;
 }
 
-/* Mobile */
+.vault-wrapper.touch-active .vault-halo-plate {
+    mix-blend-mode: luminosity;
+    backdrop-filter: blur(0px) saturate(1.8) contrast(1.1);
+    background-image: radial-gradient(
+      circle, 
+      rgba(223, 178, 31, 0.7) 0%, 
+      rgba(223, 178, 31, 0.3) 70%, 
+      transparent 100%
+    );
+    box-shadow: 0 0 200px 100px rgb(231, 231, 233);
+    transform: scale(1.1);
+    transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.vault-wrapper.touch-active .vault-text {  
+    color: rgb(43, 20, 2);
+    font-size: clamp(1rem, 4cqi, 4rem);
+    text-shadow: 
+      0 0 4px rgba(218, 109, 14, 0.8),
+      0 2px 14px rgba(19, 9, 1, 0.95);
+    mix-blend-mode: color-burn;
+    transition:
+      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 0ms,
+      color 3000ms ease-in 2000ms,
+      text-shadow 500ms ease-in 2000ms;
+}
+
 .dead-wrapper.touch-active .dead-halo-plate {
-  mix-blend-mode: luminosity;
-  backdrop-filter: blur(16px) saturate(1.8) contrast(1.1);
-  background-image: radial-gradient(
-    circle, 
-    rgba(223, 178, 31, 0.7) 0%, 
-    rgba(223, 178, 31, 0.3) 70%, 
-    transparent 100%
-  );
-  box-shadow: 0 0 200px 100px rgba(155, 119, 3, 1);
-  transform: scale(1.1);
-  transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
+    mix-blend-mode: luminosity;
+    backdrop-filter: blur(0px) saturate(1.8) contrast(1.1);
+    background-image: radial-gradient(
+      circle, 
+      rgba(223, 178, 31, 0.7) 0%, 
+      rgba(223, 178, 31, 0.3) 70%, 
+      transparent 100%
+    );
+    box-shadow: 0 0 200px 100px rgb(231, 231, 233);
+    transform: scale(1.1);
+    transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .dead-wrapper.touch-active .dead-text {  
-  color: rgb(43, 20, 2);
-  font-size: clamp(1rem, 4cqi, 4rem);
-  text-shadow: 
-    0 0 4px rgba(218, 109, 14, 0.8),
-    0 2px 14px rgba(19, 9, 1, 0.95);
-  mix-blend-mode: color-burn;
-  transition:
-    font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 0ms,
-    color 3000ms ease-in 2000ms,
-    text-shadow 3000ms ease-in 2000ms;
+    color: rgb(43, 20, 2);
+    font-size: clamp(1rem, 4cqi, 4rem);
+    text-shadow: 
+      0 0 4px rgba(218, 109, 14, 0.8),
+      0 2px 14px rgba(19, 9, 1, 0.95);
+    mix-blend-mode: color-burn;
+    transition:
+      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 0ms,
+      color 3000ms ease-in 2000ms,
+      text-shadow 500ms ease-in 2000ms;
 }

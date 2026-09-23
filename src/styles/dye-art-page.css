@@ -1,15 +1,4 @@
 /* Main Page Layout */
-.dying-sign {
-position: relative;
-text-align: center;
-margin-top: 10px; 
-
-color: white;
-font-family: 'Times New Roman', Times, serif;
-font-size: 4vw;
-font-style: oblique;
-}
-
 .dying-header {
 position: relative;
 text-align: center;
