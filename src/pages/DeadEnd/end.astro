@@ -2,6 +2,11 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
+import Layouts from '/src/layouts/Layout.astro';
+
+import ReturnTo from '/src/components/ReturnTo.astro';
+import ZoomDoom from '/src/components/ZoomDoom.astro';
+
 import { wallpapers } from '/src/data/resource.ts';
 import { deadend } from '/src/data/deadend.ts';
 import { ends } from '/src/data/deadend.ts';
@@ -14,22 +19,31 @@ import ContactForm from '/src/components/ContactForm.astro';
 import '/src/styles/global.css';
 import '/src/styles/dead-end-page.css';
 
-const wallpaper = wallpapers.woodcraft[2];
+const wallpaper = wallpapers.garden[3];
 ---
 
-<body
-  class="product-page-background"
-  style={`background-image: url(${wallpaper.image.src})`}
->
-  <main>
-    <section class="dead-end-sign">
-      <h1>Dead End</h1>
-    </section>
+<Layouts title="The End">
+  <LightBox />
+  <ReturnTo destination="home" />
+  
+  <div class="home-page-wrapper">
+    <div
+      class="home-page-background" 
+      style={`background-image: url(${wallpaper.image.src})`}
+    ></div>
 
-    <section class="dead-end-info">
-      <h1>Stuff</h1>
+    <ZoomDoom maxZoom={3} minZoom={1}>
+        <main>
+          <section class="dead-end-sign">
+            <h1>Dead End</h1>
+          </section>
 
-      <p>What is stuff?</p>
-    </section>
-  </main>
-</body> 
+          <section class="dead-end-info">
+            <h1>Stuff</h1>
+
+            <p>What is stuff?</p>
+          </section>
+        </main>    
+    </ZoomDoom>
+  </div>
+</Layouts>

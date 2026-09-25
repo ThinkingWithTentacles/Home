@@ -27,17 +27,14 @@ const { title = "Default Title" } = Astro.props;
 				
 				this.classList.add('touch-active');
 
-				// 2. Query the text child element which holds the longest transition definitions
 				const textChild = link.querySelector('[class$="-text"]'); // Matches .vault-text, .dead-text, etc.
 				
 				if (textChild) {
 				const computedStyle = window.getComputedStyle(textChild);
 				
-				// Extract transition duration and delay strings (e.g., "1s", "0.05s" or "1000ms")
 				const durations = computedStyle.transitionDuration.split(', ');
 				const delays = computedStyle.transitionDelay.split(', ');
 
-				// Parse times into milliseconds and calculate the maximum total duration
 				let maxTotalTime = 0;
 				durations.forEach((duration, index) => {
 					const parsedDuration = parseFloat(duration) * (duration.includes('ms') ? 1 : 1000);
@@ -49,13 +46,11 @@ const { title = "Default Title" } = Astro.props;
 					}
 				});
 
-				// 3. Navigate precisely when the longest transition completes
 				setTimeout(() => {
 					window.location.href = targetUrl;
 				}, maxTotalTime);
 				
 				} else {
-				// Fallback if no specific animated child text block is found
 				setTimeout(() => {
 					window.location.href = targetUrl;
 				}, 1000);
@@ -68,10 +63,7 @@ const { title = "Default Title" } = Astro.props;
 
 		window.addEventListener('pageshow', (event) => {
 		if (event.persisted) {
-			const activegrottos = document.querySelectorAll(
-			'.burn-grotto.touch-active, .wire-grotto.touch-active, .dye-grotto.touch-active, .dead-grotto.touch-active, .vault-grotto.touch-active, .swamp-grotto.touch-active, .soul-grotto.touch-active'
-			);
-			
+			const activegrottos = document.querySelectorAll('[class*="-grotto"].touch-active');
 			activegrottos.forEach(grotto => {
 			grotto.classList.remove('touch-active');
 			});

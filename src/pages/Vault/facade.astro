@@ -2,6 +2,11 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
+import Layouts from '/src/layouts/Layout.astro';
+
+import ReturnTo from '/src/components/ReturnTo.astro';
+import ZoomDoom from '/src/components/ZoomDoom.astro';
+
 import { wallpapers } from '/src/data/resource.ts';
 import { vault } from '/src/data/vault.ts';
 import { archive } from '/src/data/vault.ts';
@@ -19,47 +24,53 @@ import {
   duck,
 } from '../../config.js';
 
-const wallpaper = wallpapers.woodcraft[2];
+const wallpaper = wallpapers.woodcraft[1];
 ---
 
-<body
-  id="background"
-  class="product-page-background"
-  style={`background-image: url(${wallpaper.image.src})`}
->
+<Layouts title="The Vault of Stuff">
+  <LightBox />
+  <ReturnTo destination="home" />
+  
+  <div class="product-page-wrapper">
+    <div
+      class="product-page-background" 
+      style={`background-image: url(${wallpaper.image.src})`}
+    ></div>
 
-<main>
-    <section class="vault-sign">
-      <h1>Stay</h1>
-    </section>
+      <ZoomDoom maxZoom={3} minZoom={1}>
+        <main>
 
-    <ProductLabel text="Prototype and Commissionable Concepts" location="vault"/>
-    <ProductGrid products={Object.values(archive.shelf)} />
+        <section class="vault-sign">
+          <h1>Stay</h1>
+        </section>
 
-    <ProductLabel text="Sold!" />
-    <ProductGrid products={Object.values(archive.pushed)} location="vault"/>
+        <ProductLabel text="Prototype and Commissionable Concepts" location="vault"/>
+        <ProductGrid products={Object.values(archive.shelf)} />
 
-    <LightBox />
-    <ContactForm />
+        <ProductLabel text="Sold!" />
+        <ProductGrid products={Object.values(archive.pushed)} location="vault"/>
+        <ContactForm />
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
-    <a href={duck}>|   Duckprints   |</a>
-  </main>
-</body> 
+        <a href={duck}>|   Duckprints   |</a>
+      </main>    
+    </ZoomDoom>
+  </div>
+</Layouts>

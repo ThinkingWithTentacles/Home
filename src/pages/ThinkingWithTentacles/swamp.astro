@@ -2,10 +2,13 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
-import { wallpapers } from '/src/data/resource.ts';
-import { swamp } from '/src/data/swamp.ts';
+import Layouts from '/src/layouts/Layout.astro';
 
 import ReturnTo from '/src/components/ReturnTo.astro';
+import ZoomDoom from '/src/components/ZoomDoom.astro';
+
+import { wallpapers } from '/src/data/resource.ts';
+import { swamp } from '/src/data/swamp.ts';
 
 import '/src/styles/global.css';
 import '/src/styles/swamp-page.css';
@@ -22,32 +25,38 @@ const wallpaper = wallpapers.creature[0];
 const background = wallpapers.creature[2];
 ---
 
-<body
-  class="swamp-page-background"
-  style={`background-image: url(${wallpaper.image.src})`}
->
-  <main>
+<Layouts title="Thinking With Tentacles">
+  <ReturnTo destination="home" />
+  <div class="swamp-page-wrapper">
+    <div 
+      class="swamp-page-background" 
+      style={`background-image: url(${wallpaper.image.src})`}
+    ></div>
+    <ZoomDoom maxZoom={3} minZoom={1}>
+      <main>
+        <section class="swamp-sign">
+          <h1>Thinking With Tentacles</h1>
+        </section>
 
-    <section class="swamp-sign">
-      <h1>Thinking With Tentacles</h1>
-    </section>
+        <div class="tentacle-wrapper">
+          <Image src={background.image} alt="" />
 
-    <div class="tentacle-wrapper">
-      <Image src={background.image} alt="" />
+          <a class="thinking-grotto" href={swampWood}>
+            <div class="thinking-halo-plate"></div>
+            <span class="thinking-text">Woodcraft</span>
+          </a>
 
-      <a class="wood-wrapper" href={swampWood}>
-          <span></span>
-      </a>
+          <a class="still-thinking-grotto" href={swampLeather}>
+            <div class="still-thinking-halo-plate"></div>
+            <span class="still-thinking-text">Leathercraft</span>
+          </a>
 
-      <a class="leather-wrapper" href={swampLeather}>
-          <span></span>
-      </a>
-
-      <a class="shop-wrapper" href={swampWorkshop}>
-          <span></span>
-      </a>
-    </div>
-
-    <ReturnTo destination="home" />
-  </main>
-</body>
+          <a class="swampshop-grotto" href={swampWorkshop}>
+            <div class="swampshop-halo-plate"></div>
+            <span class="swampshop-text">SwampShop</span>
+          </a>
+        </div>
+      </main>
+    </ZoomDoom>
+  </div>
+</Layouts>

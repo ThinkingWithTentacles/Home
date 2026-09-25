@@ -6,7 +6,7 @@ margin-top: 15%;
 
 color: white;
 font-family: 'Times New Roman', Times, serif;
-font-size: 4vw;
+font-size: clamp(1rem, 3cqi, 6rem);
 font-style: oblique;
 }
 
@@ -16,7 +16,7 @@ text-align: center;
 
 color: white;
 font-family: monospace;
-font-size: 3ch;
+font-size: clamp(.75rem, 2cqi, 4rem);
 }
 
 .swamp-info {
@@ -25,7 +25,7 @@ text-align: center;
 
 color: white;
 font-family: monospace;
-font-size: 3ch;
+font-size: clamp(.75rem, 2cqi, 4rem);
 }
 
 .tentacle-wrapper {
@@ -43,171 +43,348 @@ font-size: 3ch;
 }
 
 .tentacle-wrapper img {
+  width: 100%;
+  height: 100%;
+  
   display: block;
+}
+
+.thinking-grotto {
+  position: absolute;
+  top: 0%;
+  left: 23.5%;
+
+  width: 19%;
+  height: 8.5%;
+
+  aspect-ratio: 1;
+
+  cursor:pointer;
+}
+
+.thinking-grotto img {
+  position: absolute;
+  inset: 0;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  border-radius: 50%;
+  
+  z-index: 0;
+}
+
+.thinking-halo-plate {
+  position: absolute;
+  inset: 0;
 
   width: 100%;
   height: 100%;
+  
+  box-shadow: 0 0 25px 10px rgba(76, 73, 77, 0.75);
+  background-image: radial-gradient(
+    circle, 
+    rgba(255, 0, 0, 0.1) 50%, 
+    rgba(88, 171, 204, .5) 100%, 
+    transparent 100%
+  );
+
+  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.wood-wrapper {
+.thinking-text {
   position: absolute;
+  width: 100%;
 
-  left: 22.5%;
+  text-align: center;
+  transform: translate(0%, 150%) scale(1);
+  will-change: transform;
+
+  font-size: clamp(.75rem, 3cqi, 5rem);
+  font-weight: 250;
+  font-style: oblique;
+  color: rgb(255, 255, 255);
+
+  mix-blend-mode: normal;
+  transition: 
+    transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+    color 1500ms ease 50ms;
+    
+  z-index: 2;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .thinking-grotto:hover .thinking-halo-plate {
+    box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
+    background-image: radial-gradient(
+      circle, 
+      rgba(88, 171, 204, .5) 50%, 
+      rgba(255, 0, 0, 0.1) 100%, 
+      transparent 100%
+    );
+
+    mix-blend-mode:normal;
+    transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .thinking-grotto:hover .thinking-text {  
+    transform: translate(0%, 150%) scale(1.1);
+    color: rgb(0, 0, 0);
+
+    mix-blend-mode:normal;
+    transition:
+      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+      color 1500ms ease-in 10ms,
+  }
+}
+
+.still-thinking-grotto {
+  position: absolute;
   top: 0%;
-
-  width: 20%;
-  height: 10%;
-
-  background: transparent;
-}
-
-.wood-wrapper::after {
-  content: "Woodcraft";
-  align-content: center;
-  text-align: center;
-
-  position: absolute;
-  inset: 0;
-  
-  font-size: clamp(2.25cqi, 4.25cqi, 2.25cqi);
-  font-family: cursive;
-  font-style:oblique;
-  color:rgb(82, 46, 13);
-
-  border-radius: 0%;
-  box-shadow: 0 0 32px 16px rgb(218, 170, 14, .75);
-  background-color: rgb(218, 170, 14, .75);
-  
-  opacity: .65;
-  transition: 2000ms;
-}
-
-.wood-wrapper:hover::after {
-  content: "Woodcraft";
-  align-content: center;
-  text-align: center;
-
-  position: absolute;
-  inset: 0;
-
-  font-size: clamp(2.75cqi, 4.75cqi, 2.75cqi);
-  font-family: cursive;
-  font-style:oblique;
-  color:rgb(82, 46, 13);
-
-  border-radius: 100%;
-  box-shadow: 0 0 32px 16px rgba(155, 121, 10, 0.9);
-  background-color: rgba(223, 178, 31, 0.9);
-
-  opacity: .85;
-  transition: 1000ms;
-}
-
-.leather-wrapper {
-  position: absolute;
-
   left: 0%;
-  top: 0%;
 
-  width: 20%;
-  height: 10%;
+  width: 19%;
+  height: 8.5%;
 
-  background: transparent;
+  aspect-ratio: 1;
+
+  cursor: progress;
 }
 
-.leather-wrapper::after {
-  content: "Leathercraft";
-  align-content: center;
-  text-align: center;
-
-  position: absolute;
-  inset: 0;
-  
-  font-size: clamp(2.25cqi, 4.25cqi, 2.25cqi);
-  font-family: cursive;
-  font-style:oblique;
-  color:rgb(82, 46, 13);
-
-  border-radius: 0%;
-  box-shadow: 0 0 32px 16px rgb(218, 170, 14, .75);
-  background-color: rgb(218, 170, 14, .75);
-  
-  opacity: .65;
-  transition: 2000ms;
-}
-
-.leather-wrapper:hover::after {
-  content: "Leathercraft";
-  align-content: center;
-  text-align: center;
-
+.still-thinking-grotto img {
   position: absolute;
   inset: 0;
 
-  font-size: clamp(2.75cqi, 4.75cqi, 2.75cqi);
-  font-family: cursive;
-  font-style:oblique;
-  color:rgb(82, 46, 13);
+  width: 100% !important;
+  height: 100% !important;
 
-  border-radius: 100%;
-  box-shadow: 0 0 32px 16px rgba(155, 121, 10, 0.9);
-  background-color: rgba(223, 178, 31, 0.9);
-
-  opacity: .85;
-  transition: 1000ms;
+  object-fit: cover !important;
+  border-radius: 50%;
+  
+  z-index: 0;
 }
 
-.shop-wrapper {
+.still-thinking-halo-plate {
   position: absolute;
+  inset: 0;
 
-  left: 69.5%;
-  top: 0%;
-  border-radius: 0%;
+  width: 100%;
+  height: 100%;
+  
+  box-shadow: 0 0 25px 10px rgba(98, 30, 100, 0.75);
+  background-image: radial-gradient(
+    circle, 
+    rgba(255, 0, 0, 0.1) 50%, 
+    rgba(88, 171, 204, .5) 100%, 
+    transparent 100%
+  );
+
+  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.still-thinking-text {
+  position: absolute;
+  width: 100%;
+
+  text-align: center;
+  transform: translate(0%, 150%) scale(1);
+  will-change: transform;
+
+  font-size: clamp(.75rem, 3cqi, 5rem);
+  font-weight: 250;
+  font-style: oblique;
+  color: rgb(255, 255, 255);
+
+  mix-blend-mode: normal;
+  transition: 
+    transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+    color 1500ms ease 50ms;
+    
+  z-index: 2;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .still-thinking-grotto:hover .still-thinking-halo-plate {
+    box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
+    background-image: radial-gradient(
+      circle, 
+      rgba(88, 171, 204, .5) 50%, 
+      rgba(255, 0, 0, 0.1) 100%, 
+      transparent 100%
+    );
+
+    mix-blend-mode:normal;
+    transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .still-thinking-grotto:hover .still-thinking-text {  
+    transform: translate(0%, 150%) scale(1.1);
+    color: rgb(0, 0, 0);
+
+    mix-blend-mode:normal;
+    transition:
+      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+      color 1500ms ease-in 10ms,
+  }
+}
+
+.swampshop-grotto {
+  position: absolute;
+  top:0;
+  left:70%;
 
   width: 30%;
-  height: 15%;
+  height: 13.25%;
 
-  background: transparent;
+  aspect-ratio: 1;
+
+  cursor:pointer;
 }
 
-.shop-wrapper::after {
-  content: "Swamp Shop";
-  align-content: center;
-  text-align: center;
-
-  position: absolute;
-  inset: 0;
-  
-  font-size: clamp(2.25cqi, 4.25cqi, 2.25cqi);
-  font-family: cursive;
-  font-style:oblique;
-  color:rgb(82, 46, 13);
-
-  border-radius: 0%;
-  box-shadow: 0 0 32px 16px rgb(218, 170, 14, .75);
-  background-color: rgb(218, 170, 14, .75);
-  
-  opacity: .65;
-  transition: 2000ms;
-}
-
-.shop-wrapper:hover::after {
-  content: "Swamp Shop";
-  align-content: center;
-  text-align: center;
-
+.swampshop-grotto img {
   position: absolute;
   inset: 0;
 
-  font-size: clamp(2.75cqi, 4.75cqi, 2.75cqi);
-  font-family: cursive;
-  font-style:oblique;
-  color:rgb(82, 46, 13);
+  width: 100% !important;
+  height: 100% !important;
 
-  border-radius: 100%;
-  box-shadow: 0 0 32px 16px rgba(155, 121, 10, 0.9);
-  background-color: rgba(223, 178, 31, 0.9);
+  object-fit: cover !important;
+  border-radius: 50%;
+  
+  z-index: 0;
+}
 
-  opacity: .85;
-  transition: 1000ms;
+.swampshop-halo-plate {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  
+  box-shadow: 0 0 25px 10px rgba(242, 0, 250, 0.75);
+  background-image: radial-gradient(
+    circle, 
+    rgba(255, 0, 0, 0.1) 50%, 
+    rgba(88, 171, 204, .5) 100%, 
+    transparent 100%
+  );
+
+  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.swampshop-text {
+  position: absolute;
+  width: 100%;
+
+  text-align: center;
+  transform: translate(0%, 150%) scale(1);
+  will-change: transform;
+
+  font-size: clamp(1rem, 4.5cqi, 6rem);
+  font-weight: 250;
+  font-style: oblique;
+  color: rgb(255, 255, 255);
+
+  mix-blend-mode: normal;
+  transition: 
+    transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+    color 1500ms ease 50ms;
+    
+  z-index: 2;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .swampshop-grotto:hover .swampshop-halo-plate {
+    box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
+    background-image: radial-gradient(
+      circle, 
+      rgba(88, 171, 204, .5) 50%, 
+      rgba(255, 0, 0, 0.1) 100%, 
+      transparent 100%
+    );
+
+    mix-blend-mode:normal;
+    transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .swampshop-grotto:hover .swampshop-text {  
+    transform: translate(0%, 150%) scale(1.1);
+    color: rgb(0, 0, 0);
+
+    mix-blend-mode:normal;
+    transition:
+      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+      color 1500ms ease-in 10ms,
+  }
+}
+
+/* Mobile */
+.thinking-grotto.touch-active .thinking-halo-plate {
+  box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
+  background-image: radial-gradient(
+    circle, 
+    rgba(88, 171, 204, .5) 50%, 
+    rgba(255, 0, 0, 0.1) 100%, 
+    transparent 100%
+  );
+
+  mix-blend-mode:normal;
+  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.thinking-grotto.touch-active .thinking-text {
+  transform: translate(0%, 150%) scale(1.1);
+  color: rgb(0, 0, 0);
+
+  mix-blend-mode:normal;
+  transition:
+    font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+    color 1500ms ease-in 10ms,
+}
+
+.still-thinking-grotto.touch-active .still-thinking-halo-plate {
+  box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
+  background-image: radial-gradient(
+    circle, 
+    rgba(88, 171, 204, .5) 50%, 
+    rgba(255, 0, 0, 0.1) 100%, 
+    transparent 100%
+  );
+
+  mix-blend-mode:normal;
+  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.still-thinking-grotto.touch-active .still-thinking-text {
+  transform: translate(0%, 150%) scale(1.1);
+  color: rgb(0, 0, 0);
+
+  mix-blend-mode:normal;
+  transition:
+    font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+    color 1500ms ease-in 10ms,
+}
+
+.swampshop-grotto.touch-active .swampshop-halo-plate {
+  box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
+  background-image: radial-gradient(
+    circle, 
+    rgba(88, 171, 204, .5) 50%, 
+    rgba(255, 0, 0, 0.1) 100%, 
+    transparent 100%
+  );
+
+  mix-blend-mode:normal;
+  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.swampshop-grotto.touch-active .swampshop-text {
+  transform: translate(0%, 150%) scale(1.1);
+  color: rgb(0, 0, 0);
+
+  mix-blend-mode:normal;
+  transition:
+    font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+    color 1500ms ease-in 10ms,
 }

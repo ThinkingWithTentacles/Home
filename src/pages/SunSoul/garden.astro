@@ -25,26 +25,22 @@ const sunSoul = garden.ring[0];
 ---
 
 <Layouts title="SunSoul Studio">
-  <div class="garden-page-wrapper">
-    <div 
-      class="garden-page-background" 
-      style={`background-image: url(${wallpaper.image.src})`}
-    ></div>
-
-    <ReturnTo destination= "home" />
-
-    <ZoomDoom maxZoom={3} minZoom={1}>
+  <ReturnTo destination="home" />
+    <div class="garden-page-wrapper">
+      <div 
+        class="garden-page-background" 
+        style={`background-image: url(${wallpaper.image.src})`}
+      ></div>
+      <ZoomDoom maxZoom={3} minZoom={1}>
       <main>
 
         <section class="ring-wrapper">
           <Image src={sunSoul.image} alt="" />
 
-          <div class="burn-turn">
-            <a class="burn-grotto" href={wickedBurn}>
-              <div class="burn-halo-plate"></div>
-              <span class="burn-text">Wicked Burns</span>
-            </a>
-          </div>
+          <a class="burn-grotto" href={wickedBurn}>
+            <div class="burn-halo-plate"></div>
+            <span class="burn-text">Wicked Burns</span>
+          </a>
 
           <a class="dye-grotto" href={wickedDye}>
             <div class="dye-halo-plate"></div>
@@ -67,6 +63,6 @@ const sunSoul = garden.ring[0];
           <p> We say words here </p>
         </section>
       </main>
-    </ZoomDoom>
+     </ZoomDoom>
   </div>
 </Layouts>

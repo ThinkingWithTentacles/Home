@@ -16,14 +16,17 @@ const { maxZoom = 4, minZoom = 1 } = Astro.props;
 
 <style>
   .zoom-container {
-    overflow: hidden;
-    width: 100%;
-    min-height: 100vh;
     position: relative;
+    width: 100%;
+    min-height: 100dvh;
+    overflow: hidden;
+    cursor: grab;
   }
+
   .zoom-container:active {
     cursor: grabbing;
   }
+
   .zoom-content {
     width: 100%;
     height: 100%;
@@ -38,41 +41,39 @@ const { maxZoom = 4, minZoom = 1 } = Astro.props;
 
   containers.forEach((container) => {
     const content = container.querySelector('.zoom-content') as HTMLElement;
+    if (!content) return;
 
-      if (!content) return;
+    const maxZoom = parseFloat(container.getAttribute('data-max') || '4');
+    const minZoom = parseFloat(container.getAttribute('data-min') || '1');
+    
+    let scale = 1;
 
-      const maxZoom = parseFloat(container.getAttribute('data-max') || '4');
-      const minZoom = parseFloat(container.getAttribute('data-min') || '1');
+    // Fixed: Changed 'panel' to 'container'
+    container.addEventListener('wheel', (e: WheelEvent) => {
+      // Zoom only works when holding Ctrl / Cmd key (common UX pattern)
+      if (!e.ctrlKey) return; 
       
-      let scale = 1;
-      const ZOOM_SPEED = 0.08;
+      e.preventDefault();
 
-      panel.addEventListener('wheel', (e: WheelEvent) => {
-        if (!e.ctrlKey) {
-          return; 
-        }
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-        const rect = panel.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+      // Calculate dynamic step based on current scale for smoother transitions
+      const step = 0.05 * scale;
 
-        if ((e.deltaY < 0 && scale < maxZoom) || (e.deltaY > 0 && scale > minZoom)) {
-          e.preventDefault();
+      if (e.deltaY < 0 && scale < maxZoom) {
+        scale = Math.min(scale + step, maxZoom);
+      } else if (e.deltaY > 0 && scale > minZoom) {
+        scale = Math.max(scale - step, minZoom);
+      }
 
-          const originX = (x / rect.width) * 100;
-          const originY = (y / rect.height) * 100;
-
-          content.style.transformOrigin = `${originX}% ${originY}%`;
-
-          const step = 0.05 * scale;
-          if (e.deltaY < 0) {
-            scale = Math.min(scale + step, maxZoom);
-          } else {
-            scale = Math.max(scale - step, minZoom);
-          }
-
-          content.style.transform = `scale(${scale})`;
-        }
-      }, { passive: false });
+      // Dynamically move the origin to where the mouse pointer is located
+      const originX = (x / rect.width) * 100;
+      const originY = (y / rect.height) * 100;
+      
+      content.style.transformOrigin = `${originX}% ${originY}%`;
+      content.style.transform = `scale(${scale})`;
+    }, { passive: false });
   });
 </script>

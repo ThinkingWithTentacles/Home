@@ -2,6 +2,12 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
+import Layouts from '/src/layouts/Layout.astro';
+
+import ContactForm from '/src/components/ContactForm.astro';
+import ReturnTo from '/src/components/ReturnTo.astro';
+import ZoomDoom from '/src/components/ZoomDoom.astro';
+
 import { wallpapers } from '/src/data/resource.ts';
 import { swampWoodcraft } from '/src/data/swamp.ts';
 import { swampWood } from '/src/data/swamp.ts';
@@ -9,8 +15,6 @@ import { swampWood } from '/src/data/swamp.ts';
 import SampleGrid from '/src/components/SampleGrid.astro';
 import ProductGrid from '/src/components/ProductGrid.astro';
 import LightBox from '/src/components/LightBox.astro';
-import ContactForm from '/src/components/ContactForm.astro';
-import ReturnTo from '/src/components/ReturnTo.astro';
 import ProductLabel from '/src/components/ProductLabel.astro';
 
 import '/src/styles/global.css';
@@ -20,43 +24,49 @@ const wallpaper = wallpapers.woodcraft[2];
 const samples = swampWoodcraft.sample;
 ---
 
-<body
-  id="background"
-  class="product-page-background"
-  style={`background-image: url(${wallpaper.image.src})`}
->
+<Layouts title="Thinking With Tentacles">
+  <LightBox />
+  
+  <div class="swamp-page-wrapper">
+    <div
+      id="background"
+      class="product-page-background" 
+      style={`background-image: url(${wallpaper.image.src})`}
+    ></div>
+    
+    <ZoomDoom maxZoom={3} minZoom={1}>
+      <main>
+          <ReturnTo destination="swamp" />
 
-<main>
-    <ReturnTo destination="swamp" />
+          <section class="woodcraft-sign">
+            <h1>Woodcraft</h1>
+          </section>
 
-    <section class="woodcraft-sign">
-      <h1>Woodcraft</h1>
-    </section>
+          <SampleGrid samples={Object.values(samples.slice(0, 10))} />
+          <SampleGrid samples={Object.values(samples.slice(10))} />
 
-    <SampleGrid samples={Object.values(samples.slice(0, 10))} />
-    <SampleGrid samples={Object.values(samples.slice(10))} />
+          <section class="woodcraft-info">
+            <h1>WOOD!</h1>
 
-    <section class="woodcraft-info">
-      <h1>WOOD!</h1>
+            <p>Ash, White Maple, Cherry, Mahagony, Walnut, Black Limba, Canary, Yellowheart, Padauk, Purpleheart </p>
+            
+            <p> Here we talk about the thing that the page represents and the arts and crafts involved with 
+            it on a hand loved personal level. And all it takes it writing it out, all of it, eventually, 
+            when the words themselves look pretty enough on the page and items fall from the sky when those 
+            landmine links go "off" </p>
+          </section>
 
-      <p>Ash, White Maple, Cherry, Mahagony, Walnut, Black Limba, Canary, Yellowheart, Padauk, Purpleheart </p>
-      
-      <p> Here we talk about the thing that the page represents and the arts and crafts involved with 
-      it on a hand loved personal level. And all it takes it writing it out, all of it, eventually, 
-      when the words themselves look pretty enough on the page and items fall from the sky when those 
-      landmine links go "off" </p>
-    </section>
+          <ContactForm />
 
-    <ContactForm />
+          <ProductLabel text="Cutting Boards" location="swamp"/>
+          <ProductGrid products={Object.values(swampWood.tame)} />
 
-    <ProductLabel text="Cutting Boards" location="swamp"/>
-    <ProductGrid products={Object.values(swampWood.tame)} />
+          <ProductLabel text="Hot Boxes" location="swamp"/>
+          <ProductGrid products={Object.values(swampWood.hot)} />
 
-    <ProductLabel text="Hot Boxes" location="swamp"/>
-    <ProductGrid products={Object.values(swampWood.hot)} />
-
-    <ProductLabel text="Custom Made Paddle Designs" location="swamp"/>
-    <ProductGrid products={Object.values(swampWood.spicy)} />
-    <LightBox />
-  </main>
-</body> 
+          <ProductLabel text="Custom Made Paddle Designs" location="swamp"/>
+          <ProductGrid products={Object.values(swampWood.spicy)} />
+        </main>
+    </ZoomDoom>
+  </div>
+</Layouts>

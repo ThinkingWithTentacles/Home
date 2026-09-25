@@ -23,14 +23,13 @@ const wallpaper = wallpapers.garden[0];
 ---
 
 <Layouts title="Wicked Dyes">
+  <ReturnTo destination= "garden" />
+  <LightBox />
   <div class="product-page-wrapper">
     <div 
       class="product-page-background" 
       style={`background-image: url(${wallpaper.image.src})`}
     ></div>
-
-    <ReturnTo destination= "garden" />
-
     <ZoomDoom maxZoom={3} minZoom={1}>
       <main>
         <section class="garden-sign">
@@ -69,7 +68,6 @@ const wallpaper = wallpapers.garden[0];
 
         <ProductLabel text="Kids Sizes"  location="garden"/>
         <ProductGrid products={Object.values(wickedDyes.kids)}/>
-        <LightBox />
       </main>
     </ZoomDoom>
   </div>
