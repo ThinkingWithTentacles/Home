@@ -4,26 +4,31 @@ position: relative;
 text-align: center;
 margin-top: 0; 
 
-color: white;
-font-family: 'Times New Roman', Times, serif;
-font-size: 4vw;
-font-style: oblique;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: clamp(2rem, 4cqi, 6rem);
+color: rgb(236, 202, 8);
 }
 
 .vault-header {
 position: relative;
+width: 85%;
+margin: 0 auto;
 text-align: center;
+padding-bottom: 50px;
 
-color: white;
 font-family: monospace;
-font-size: 3ch;
+font-size: clamp(1rem, 2.5cqi, 4rem);
+color: rgb(236, 202, 8);
 }
 
 .vault-info {
 position: relative;
+width: 85%;
+margin: 0 auto;
 text-align: center;
+padding-bottom: 50px;
 
-color: white;
 font-family: monospace;
-font-size: 3ch;
-}
+font-size: clamp(1rem, 2.5cqi, 4rem);
+color: white;
+}  

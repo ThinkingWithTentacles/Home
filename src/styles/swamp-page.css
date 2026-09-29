@@ -1,31 +1,76 @@
 /* Main Page Layout */
 .swamp-sign {
-position: relative;
-text-align: center;
-margin-top: 15%;
+  position: relative;
+  text-align: center;
+  margin-top: 15%;
 
-color: white;
-font-family: 'Times New Roman', Times, serif;
-font-size: clamp(1rem, 3cqi, 6rem);
-font-style: oblique;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(1rem, 3cqi, 6rem);
+  font-style: oblique;
 }
 
 .swamp-header {
-position: relative;
-text-align: center;
+  position: relative;
+  text-align: center;
 
-color: white;
-font-family: monospace;
-font-size: clamp(.75rem, 2cqi, 4rem);
+  color: white;
+  font-family: monospace;
+  font-size: clamp(.75rem, 2cqi, 4rem);
+}
+
+.checkout-card {
+  position: relative;
+  display: block;
+
+  width: 95%; 
+  min-height: 100%;
+  
+  margin: auto;
+  margin-top: 2.5%;
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+.swamp-zone {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 60%;
+  height: 30%;
+
+  border: 4ch;
+  border-radius: 0%;
+  background-image: transparent;
+  background-color: rgb(25, 101, 167);
+  opacity: 75%;
+
+  display: flex;
+  justify-content: center;
+  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.swamp-zone:hover {
+  opacity: 55%;
+  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.swamp-zone.touch-active {
+  opacity: 10%;
+  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .swamp-info {
-position: relative;
-text-align: center;
+  position: relative;
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
 
-color: white;
-font-family: monospace;
-font-size: clamp(.75rem, 2cqi, 4rem);
+  color: white;
+  font-family: monospace;
+  font-size: clamp(.75rem, 2cqi, 4rem);
 }
 
 .tentacle-wrapper {
@@ -82,11 +127,12 @@ font-size: clamp(.75rem, 2cqi, 4rem);
   width: 100%;
   height: 100%;
   
-  box-shadow: 0 0 25px 10px rgba(76, 73, 77, 0.75);
+  box-shadow: 0 0 25px 10px rgba(242, 0, 250, 0.75);
+  backdrop-filter: blur(1px) saturate(2);
   background-image: radial-gradient(
     circle, 
-    rgba(255, 0, 0, 0.1) 50%, 
-    rgba(88, 171, 204, .5) 100%, 
+    rgba(139, 131, 14, 0.25) 33%, 
+    rgba(214, 206, 196, 0.5) 100%, 
     transparent 100%
   );
 
@@ -95,16 +141,16 @@ font-size: clamp(.75rem, 2cqi, 4rem);
 
 .thinking-text {
   position: absolute;
-  width: 100%;
-
-  text-align: center;
-  transform: translate(0%, 150%) scale(1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -300%) scale(1);
+  transform-origin: center center;
   will-change: transform;
 
-  font-size: clamp(.75rem, 3cqi, 5rem);
-  font-weight: 250;
-  font-style: oblique;
-  color: rgb(255, 255, 255);
+  font-size: clamp(1rem, 2cqi, 4rem);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 666;
+  color: rgba(0, 0, 0, 1);
 
   mix-blend-mode: normal;
   transition: 
@@ -116,23 +162,17 @@ font-size: clamp(.75rem, 2cqi, 4rem);
 
 @media (hover: hover) and (pointer: fine) {
   .thinking-grotto:hover .thinking-halo-plate {
-    box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
-    background-image: radial-gradient(
-      circle, 
-      rgba(88, 171, 204, .5) 50%, 
-      rgba(255, 0, 0, 0.1) 100%, 
-      transparent 100%
-    );
-
-    mix-blend-mode:normal;
+    box-shadow: 0 0 3px 10px rgba(88, 171, 204, 1);
+    backdrop-filter: blur(0px) saturate(0);
+    
     transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .thinking-grotto:hover .thinking-text {  
-    transform: translate(0%, 150%) scale(1.1);
-    color: rgb(0, 0, 0);
+    transform: translate(-50%, -340%) scale(.75);
+    color: rgb(119, 111, 111);
 
-    mix-blend-mode:normal;
+    mix-blend-mode:multiply;
     transition:
       font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
       color 1500ms ease-in 10ms,
@@ -149,7 +189,7 @@ font-size: clamp(.75rem, 2cqi, 4rem);
 
   aspect-ratio: 1;
 
-  cursor: progress;
+  cursor: help;
 }
 
 .still-thinking-grotto img {
@@ -172,11 +212,12 @@ font-size: clamp(.75rem, 2cqi, 4rem);
   width: 100%;
   height: 100%;
   
-  box-shadow: 0 0 25px 10px rgba(98, 30, 100, 0.75);
+  box-shadow: 0 0 25px 10px rgba(105, 55, 107, 0.75);
+  backdrop-filter: blur(1px) saturate(2);
   background-image: radial-gradient(
     circle, 
-    rgba(255, 0, 0, 0.1) 50%, 
-    rgba(88, 171, 204, .5) 100%, 
+    rgba(139, 131, 14, 0.25) 33%, 
+    rgba(214, 206, 196, 0.5) 100%, 
     transparent 100%
   );
 
@@ -185,16 +226,16 @@ font-size: clamp(.75rem, 2cqi, 4rem);
 
 .still-thinking-text {
   position: absolute;
-  width: 100%;
-
-  text-align: center;
-  transform: translate(0%, 150%) scale(1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -300%) scale(1);
+  transform-origin: center center;
   will-change: transform;
 
-  font-size: clamp(.75rem, 3cqi, 5rem);
-  font-weight: 250;
-  font-style: oblique;
-  color: rgb(255, 255, 255);
+  font-size: clamp(1rem, 2cqi, 4rem);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 666;
+  color: rgba(0, 0, 0, 1);
 
   mix-blend-mode: normal;
   transition: 
@@ -206,23 +247,17 @@ font-size: clamp(.75rem, 2cqi, 4rem);
 
 @media (hover: hover) and (pointer: fine) {
   .still-thinking-grotto:hover .still-thinking-halo-plate {
-    box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
-    background-image: radial-gradient(
-      circle, 
-      rgba(88, 171, 204, .5) 50%, 
-      rgba(255, 0, 0, 0.1) 100%, 
-      transparent 100%
-    );
-
-    mix-blend-mode:normal;
+    box-shadow: 0 0 3px 10px rgba(88, 171, 204, 1);
+    backdrop-filter: blur(0px) saturate(0);
+    
     transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .still-thinking-grotto:hover .still-thinking-text {  
-    transform: translate(0%, 150%) scale(1.1);
-    color: rgb(0, 0, 0);
+    transform: translate(-50%, -340%) scale(.75);
+    color: rgb(119, 111, 111);
 
-    mix-blend-mode:normal;
+    mix-blend-mode:multiply;
     transition:
       font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
       color 1500ms ease-in 10ms,
@@ -263,10 +298,11 @@ font-size: clamp(.75rem, 2cqi, 4rem);
   height: 100%;
   
   box-shadow: 0 0 25px 10px rgba(242, 0, 250, 0.75);
+  backdrop-filter: blur(1px) saturate(2);
   background-image: radial-gradient(
     circle, 
-    rgba(255, 0, 0, 0.1) 50%, 
-    rgba(88, 171, 204, .5) 100%, 
+    rgba(139, 131, 14, 0.25) 33%, 
+    rgba(214, 206, 196, 0.5) 100%, 
     transparent 100%
   );
 
@@ -275,16 +311,16 @@ font-size: clamp(.75rem, 2cqi, 4rem);
 
 .swampshop-text {
   position: absolute;
-  width: 100%;
-
-  text-align: center;
-  transform: translate(0%, 150%) scale(1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -275%) scale(1);
+  transform-origin: center center;
   will-change: transform;
 
-  font-size: clamp(1rem, 4.5cqi, 6rem);
-  font-weight: 250;
-  font-style: oblique;
-  color: rgb(255, 255, 255);
+  font-size: clamp(1.5rem, 3cqi, 6rem);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 666;
+  color: rgba(0, 0, 0, 1);
 
   mix-blend-mode: normal;
   transition: 
@@ -296,23 +332,17 @@ font-size: clamp(.75rem, 2cqi, 4rem);
 
 @media (hover: hover) and (pointer: fine) {
   .swampshop-grotto:hover .swampshop-halo-plate {
-    box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
-    background-image: radial-gradient(
-      circle, 
-      rgba(88, 171, 204, .5) 50%, 
-      rgba(255, 0, 0, 0.1) 100%, 
-      transparent 100%
-    );
-
-    mix-blend-mode:normal;
+    box-shadow: 0 0 3px 10px rgba(88, 171, 204, 1);
+    backdrop-filter: blur(0px) saturate(0);
+    
     transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .swampshop-grotto:hover .swampshop-text {  
-    transform: translate(0%, 150%) scale(1.1);
-    color: rgb(0, 0, 0);
+    transform: translate(-50%, -275%) scale(.75);
+    color: rgb(119, 111, 111);
 
-    mix-blend-mode:normal;
+    mix-blend-mode:multiply;
     transition:
       font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
       color 1500ms ease-in 10ms,
@@ -352,6 +382,7 @@ font-size: clamp(.75rem, 2cqi, 4rem);
     transparent 100%
   );
 
+  cursor:progress;
   mix-blend-mode:normal;
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -359,6 +390,7 @@ font-size: clamp(.75rem, 2cqi, 4rem);
 .still-thinking-grotto.touch-active .still-thinking-text {
   transform: translate(0%, 150%) scale(1.1);
   color: rgb(0, 0, 0);
+  cursor: progress;
 
   mix-blend-mode:normal;
   transition:

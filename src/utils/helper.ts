@@ -62,7 +62,7 @@ export function parseProducts(products, stock) {
       productLog[flavor][order].flagshot = image.default;
     } else {
         productLog[flavor][order].shots[shot] = image.default;
-    }
+    }4
   });
 
   return productLog;
@@ -78,7 +78,7 @@ export function fluffWord(word: string): string {
   return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 }
 
-export function formatter(words: string[]): string {
+export function wordsFormater(words: string[]): string {
   if (!words || words.length === 0) return "";
   
   return new Intl.ListFormat('en', { 
@@ -96,12 +96,12 @@ export function fluffTitle(product: any): string {
   return (ingredient + " " + subject + " " + style + " " + flavor).trim();
 }
 
-export function fluffFlavor(product: any): string {
+export function fluffStyle(product: any): string {
   return product.style ? `Featuring a ${product.style} design` : "";
 }
 
 export function fluffIngredients(product: any): string {
-  return product.ingredients?.[0] ? `Made with ${formatter(product.ingredients)}` : "";
+  return product.ingredients?.[0] ? `Made with ${wordsFormater(product.ingredients)}` : "";
 }
 
 export function fluffSize(product: any): string {

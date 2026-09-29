@@ -1,6 +1,6 @@
 ---
 import { fluffTitle } from '/src/utils/helper.ts';
-import { fluffFlavor } from '/src/utils/helper.ts';
+import { fluffStyle } from '/src/utils/helper.ts';
 import { fluffIngredients} from '/src/utils/helper.ts';
 import { fluffSize } from '/src/utils/helper.ts';
 import { fluffValue } from '/src/utils/helper.ts';
@@ -13,14 +13,14 @@ const { product } = Astro.props;
 const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' , });
 
 const brandName = fluffTitle(product);
-const newFlavor = fluffFlavor(product);
+const newFlavor = fluffStyle(product);
 const cherryGarnish = fluffIngredients(product);
 const flavorSize = fluffSize(product);
 const candyPrice = fluffValue(product);
 
 const lightboxData = { 
   brand: `${brandName}`,
-  flavor: `${newFlavor}`, 
+  style: `${newFlavor}`, 
   ingredients: `${cherryGarnish}`, 
   size: `${flavorSize}`
 };

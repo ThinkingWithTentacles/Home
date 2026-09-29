@@ -11,7 +11,7 @@ const vault = "/Vault";
 /*                  Lands                   */
 //////////////////////////////////////////////
 
-export const swampGrove = `${swamp}/swamp`;
+export const swampGrove = `${swamp}/think`;
 export const wickedGrove = `${wicked}/garden`;
 export const deadEnd = `${end}/end`;
 export const theVault = `${vault}/facade`;

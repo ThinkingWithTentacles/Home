@@ -15,13 +15,28 @@ const { title = "Default Title" } = Astro.props;
   <body>
     <slot />
 
+	<script>
+		const zones = document.querySelectorAll('[class$="-zone"]');
+
+		zones.forEach(zone => {
+			zone.addEventListener('click', function() {
+			zones.forEach(otherZone => {
+				if (otherZone !== this) {
+				otherZone.classList.remove('touch-active');
+				}
+			});
+
+			this.classList.toggle('touch-active');
+			});
+		});
+	</script>
+
     <script>
 		function initializeBurnEffects() {
 		const links = document.querySelectorAll('[class$="-grotto"]');
 		
 		links.forEach(link => {
 			link.addEventListener('click', function (event) {
-				const anchor = link.closest('a');
 				event.preventDefault();
 				const targetUrl = this.href;
 				
@@ -64,12 +79,17 @@ const { title = "Default Title" } = Astro.props;
 		window.addEventListener('pageshow', (event) => {
 		if (event.persisted) {
 			const activegrottos = document.querySelectorAll('[class*="-grotto"].touch-active');
-			activegrottos.forEach(grotto => {
-			grotto.classList.remove('touch-active');
+				activegrottos.forEach(grotto => {
+				grotto.classList.remove('touch-active');
+			});
+
+			const activezones = document.querySelectorAll('[class*="-zone"].touch-active');
+				activezones.forEach(zone => {
+				zone.classList.remove('touch-active');
 			});
 
 			if (document.activeElement instanceof HTMLElement) {
-			document.activeElement.blur();
+				document.activeElement.blur();
 			}
 		}
 		});

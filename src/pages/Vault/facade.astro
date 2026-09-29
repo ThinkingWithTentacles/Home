@@ -44,12 +44,17 @@ const wallpaper = wallpapers.woodcraft[1];
           <h1>Stay</h1>
         </section>
 
+        <section class="vault-header">
+          <p> A vault of creations that achieved the gold star "finished" merit badge and those that found a home</p>
+        </section>
+
+        <ContactForm />
+
         <ProductLabel text="Prototype and Commissionable Concepts" location="vault"/>
         <ProductGrid products={Object.values(archive.shelf)} />
 
         <ProductLabel text="Sold!" />
         <ProductGrid products={Object.values(archive.pushed)} location="vault"/>
-        <ContactForm />
 
         <br>
         <br>

@@ -1,161 +1,161 @@
 {
-  "tapestry.01": {
-    "ingredients": [],
-    "size": "landscape",
-    "style": "mandala",
-    "flavor": "tapestry",
-    "value": 50
-  },
+"tapestry.01": {
+"ingredients": [],
+"size": "landscape",
+"style": "mandala",
+"flavor": "tapestry",
+"value": 50
+},
 
-  "tapestry.02": {
-    "ingredients": [],
-    "size": "landscape",
-    "style": "mandala",
-    "flavor": "tapestry",
-    "value": 50
-  },
+"tapestry.02": {
+"ingredients": [],
+"size": "landscape",
+"style": "mandala",
+"flavor": "tapestry",
+"value": 50
+},
 
-  "tapestry.03": {
-    "ingredients": [],
-    "size": "square",
-    "style": "twin spiral",
-    "flavor": "tapestry",
-    "value": 50
-  },
+"tapestry.03": {
+"ingredients": [],
+"size": "square",
+"style": "twin spiral",
+"flavor": "tapestry",
+"value": 50
+},
 
-  "dress.01": {
-    "ingredients": [],
-    "size": "x-large",
-    "style": "galaxy void",
-    "flavor": "dress",
-    "value": 30
-  },
+"dress.01": {
+"ingredients": [],
+"size": "x-large",
+"style": "galaxy void",
+"flavor": "dress",
+"value": 30
+},
 
-  "dress.02": {
-    "ingredients": [],
-    "size": "large",
-    "style": "firestorm",
-    "flavor": "dress",
-    "value": 30
-  },
+"dress.02": {
+"ingredients": [],
+"size": "large",
+"style": "firestorm",
+"flavor": "dress",
+"value": 30
+},
 
-  "shirt.01": {
-    "ingredients": [],
-    "size": "large",
-    "style": "fault line",
-    "flavor": "shirt",
-    "value": 30
-  },
+"shirt.01": {
+"ingredients": [],
+"size": "large",
+"style": "fault line",
+"flavor": "shirt",
+"value": 30
+},
 
-  "shirt.02": {
-    "ingredients": [],
-    "size": "medium",
-    "style": "galaxy void",
-    "flavor": "shirt",
-    "value": 30
-  },
+"shirt.02": {
+"ingredients": [],
+"size": "medium",
+"style": "galaxy void",
+"flavor": "shirt",
+"value": 30
+},
 
-  "shirt.03": {
-    "ingredients": [],
-    "size": "small",
-    "style": "galaxy void",
-    "flavor": "shirt",
-    "value": 30
-  },
+"shirt.03": {
+"ingredients": [],
+"size": "small",
+"style": "galaxy void",
+"flavor": "shirt",
+"value": 30
+},
 
-  "shirt.04": {
-    "ingredients": [],
-    "size": "small",
-    "style": "spectrum",
-    "flavor": "shirt",
-    "value": 30
-  },
+"shirt.04": {
+"ingredients": [],
+"size": "small",
+"style": "spectrum",
+"flavor": "shirt",
+"value": 30
+},
 
-  "shirt.05": {
-    "ingredients": [],
-    "size": "x-large",
-    "style": "worm hole",
-    "flavor": "shirt",
-    "value": 30
-  },
+"shirt.05": {
+"ingredients": [],
+"size": "x-large",
+"style": "worm hole",
+"flavor": "shirt",
+"value": 30
+},
 
-  "shorts.01": {
-    "ingredients": [],
-    "size": "x-large",
-    "style": "galaxy void",
-    "flavor": "shorts",
-    "value": 20
-  },
+"shorts.01": {
+"ingredients": [],
+"size": "x-large",
+"style": "galaxy void",
+"flavor": "shorts",
+"value": 20
+},
 
-  "shorts.02": {
-    "ingredients": [],
-    "size": "size-7",
-    "style": "rainbow spectrum",
-    "flavor": "shorts",
-    "value": 20
-  },
+"shorts.02": {
+"ingredients": [],
+"size": "size-7",
+"style": "rainbow spectrum",
+"flavor": "shorts",
+"value": 20
+},
 
-  "kids.01": {
-    "ingredients": [],
-    "size": "small",
-    "style": "mandala",
-    "flavor": "kids",
-    "value": 15
-  },
+"kids.01": {
+"ingredients": [],
+"size": "small",
+"style": "mandala",
+"flavor": "kids",
+"value": 15
+},
 
-  "kids.02": {
-    "ingredients": [],
-    "size": "medium",
-    "style": "contrast splash",
-    "flavor": "kids",
-    "value": 15
-  },
+"kids.02": {
+"ingredients": [],
+"size": "medium",
+"style": "contrast splash",
+"flavor": "kids",
+"value": 15
+},
 
-  "kids.03": {
-    "ingredients": [],
-    "size": "medium",
-    "style": "heart",
-    "flavor": "kids",
-    "value": 15
-  },
+"kids.03": {
+"ingredients": [],
+"size": "medium",
+"style": "heart",
+"flavor": "kids",
+"value": 15
+},
 
-  "kids.04": {
-    "ingredients": [],
-    "size": "medium",
-    "style": "spiral",
-    "flavor": "kids",
-    "value": 15
-  },
+"kids.04": {
+"ingredients": [],
+"size": "medium",
+"style": "spiral",
+"flavor": "kids",
+"value": 15
+},
 
-  "kids.05": {
-    "ingredients": [],
-    "size": "medium",
-    "style": "contrast splash",
-    "flavor": "kids",
-    "value": 15
-  },
+"kids.05": {
+"ingredients": [],
+"size": "medium",
+"style": "contrast splash",
+"flavor": "kids",
+"value": 15
+},
 
-  "kids.06": {
-    "ingredients": [],
-    "size": "x-small",
-    "style": "firestorm",
-    "flavor": "kids",
-    "value": 15
-  },
+"kids.06": {
+"ingredients": [],
+"size": "x-small",
+"style": "firestorm",
+"flavor": "kids",
+"value": 15
+},
 
-  "kids.07": {
-    "ingredients": [],
-    "size": "x-large",
-    "style": "contrast splash",
-    "flavor": "kids",
-    "value": 15
-  },
+"kids.07": {
+"ingredients": [],
+"size": "x-large",
+"style": "contrast splash",
+"flavor": "kids",
+"value": 15
+},
 
-  "kids.08": {
-    "ingredients": [],
-    "size": "medium",
-    "style": "mandala",
-    "flavor": "kids",
-    "value": 15
-  }
+"kids.08": {
+"ingredients": [],
+"size": "medium",
+"style": "mandala",
+"flavor": "kids",
+"value": 15
+}
 }

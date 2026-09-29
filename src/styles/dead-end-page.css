@@ -4,26 +4,27 @@ position: relative;
 text-align: center;
 margin-top: 0; 
 
-color: white;
-font-family: 'Times New Roman', Times, serif;
-font-size: 4vw;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: clamp(2rem, 5cqi, 8rem);
 font-style: oblique;
+color: rgb(0, 0, 0);
 }
 
 .dead-end-header {
 position: relative;
 text-align: center;
 
-color: white;
-font-family: monospace;
-font-size: 3ch;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: clamp(1.5rem, 3cqi, 6rem);
+color: rgb(0, 0, 0);
 }
 
 .dead-end-info {
 position: relative;
 text-align: center;
 
-color: white;
-font-family: monospace;
-font-size: 3ch;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: clamp(1rem, 2cqi, 4rem);
+font-style: oblique;
+color: rgb(0, 0, 0);
 }

@@ -45,12 +45,12 @@ const words = ["exists", "implores", "decays", "absolves", "breathes", "spreads"
 
 <Layouts title="River Haven Grotto">
   <div class="home-page-wrapper">
-
-
     <div 
       class="home-page-background" 
       style={`background-image: url(${wallpaper.image.src})`}
     ></div>
+    
+    <ZoomDoom maxZoom={3} minZoom={1}>
       <main>
         <section class="home-sign">
           <a href={receipts.home} target="_blank" rel="noopener noreferrer">
@@ -62,7 +62,17 @@ const words = ["exists", "implores", "decays", "absolves", "breathes", "spreads"
         </section>
 
         <section class="home-header">
-          <p> We say words here </p>
+          <p> Welcome. </p>
+        </section>
+
+        <section class="home-info">      
+          <p> River Haven Grotto is a landing page for the artist in everyone, including you. </p>
+
+          <p> A place for sharing passion projects, points of contact, and galleries of creations in a way that becomes part of the joy that drives creativity. An online street market where each hub contains hand loved goods to wander through and stumble upon. Where the desire to manifest a dream coexists with the dream to manifest a desire.</p>
+
+          <p> What you see now may not be what remains upon your return. By owning the code, deployment, and domain, River Haven Grotto is being built to pass the tools of success forward. The site aims to evolve as a resource for lifestyle hobbyists and commission style artists who desire a personalized grove of their craft to exist and share. A shared pursuit to make such barriers limited by creativity, not subscription triangles.</p>
+
+          <p> This site was painted together with imagination and hand loved code. Enjoy your stay, come back soon, be present. The river is deeper than it appears, but every grotto is a haven of information. </p>
         </section>
 
         <DenTracker />
@@ -97,7 +107,7 @@ const words = ["exists", "implores", "decays", "absolves", "breathes", "spreads"
         <section class="gradient-background" >
         </section>
       </main>
-
+    </ZoomDoom>
   </div>
 </Layouts>
 
