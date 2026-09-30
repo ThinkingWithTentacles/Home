@@ -174,7 +174,7 @@
 
     mix-blend-mode:multiply;
     transition:
-      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+      transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
       color 1500ms ease-in 10ms;
   }
 }
@@ -259,7 +259,7 @@
 
     mix-blend-mode:multiply;
     transition:
-      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+      transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
       color 1500ms ease-in 10ms;
   }
 }
@@ -344,7 +344,7 @@
 
     mix-blend-mode:multiply;
     transition:
-      font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+      transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
       color 1500ms ease-in 10ms;
   }
 }
@@ -369,7 +369,7 @@
 
   mix-blend-mode:multiply;
   transition:
-    font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+    transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
     color 1500ms ease-in 10ms;
 }
 
@@ -393,7 +393,7 @@
 
   mix-blend-mode:multiply;
   transition:
-    font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+    transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
     color 1500ms ease-in 10ms;
 }
 
@@ -416,6 +416,6 @@
 
   mix-blend-mode:multiply;
   transition:
-    font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+    transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
     color 1500ms ease-in 10ms;
 }
