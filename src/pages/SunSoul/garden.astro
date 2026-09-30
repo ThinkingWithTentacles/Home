@@ -6,9 +6,10 @@ import Layouts from '/src/layouts/Layout.astro';
 
 import ReturnTo from '/src/components/ReturnTo.astro';
 import ZoomDoom from '/src/components/ZoomDoom.astro';
+import SocialLinks from '/src/components/SocialLinks.astro';
 
 import { wallpapers } from '/src/data/resource.ts';
-import { garden } from '/src/data/wicked.ts';
+import { pages } from '/src/data/resource.ts';
 
 import '/src/styles/global.css';
 import '/src/styles/garden-page.css';
@@ -20,8 +21,8 @@ import {
   wickedArtStudio,
 } from '../../config.js';
 
-const wallpaper = wallpapers.garden[0];
-const sunSoul = garden.ring[0];
+const wallpaper = wallpapers.galaxy.garden;
+const sunSoul = pages.wicked.sunsoul;
 ---
 
 <Layouts title="SunSoul Studio">
@@ -29,13 +30,13 @@ const sunSoul = garden.ring[0];
     <div class="garden-page-wrapper">
       <div 
         class="garden-page-background" 
-        style={`background-image: url(${wallpaper.image.src})`}
+        style={`background-image: url(${wallpaper.src})`}
       ></div>
       <ZoomDoom maxZoom={3} minZoom={1}>
       <main>
 
         <section class="ring-wrapper">
-          <Image src={sunSoul.image} alt="" />
+          <Image src={sunSoul} alt="" />
 
           <a class="burn-grotto" href={wickedBurn}>
             <div class="burn-halo-plate"></div>
@@ -58,10 +59,12 @@ const sunSoul = garden.ring[0];
         </section>
 
         <section class="garden-info">
-          <p> We say words here </p>
-          <p> We say words here </p>
-          <p> We say words here </p>
+          <p> A flare of solar light over casts rays of color upon whimsical fancies, scorched wood burnings, and reclaimed clothing </p>
+          <p> You'll find we put most of our effort into tie dying upcycled clothing and everything made of cotton we can find.  </p>
+          <p> Otherwise we add sets of wood burnings and and wire wrappings as they are commisioned. Examples of previous logo burned designs are kept in the vault</p>
         </section>
+
+        <SocialLinks source="garden"/>
       </main>
      </ZoomDoom>
   </div>

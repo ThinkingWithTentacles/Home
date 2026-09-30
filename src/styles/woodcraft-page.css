@@ -70,7 +70,9 @@ opacity: 1;
 .sample-name {
 position: absolute;
 text-align: center;
+align-content: center;
 width: 100%;
+height: 33%;
 top: 0;
 left: 0;
 

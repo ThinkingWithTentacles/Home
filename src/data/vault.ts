@@ -1,13 +1,13 @@
 import type { ImageMetadata } from 'astro';
 
-import { parseResources } from '/src/utils/helper.ts';
+import { parseResource } from '/src/utils/helper.ts';
 import { parseProducts } from '/src/utils/helper.ts';
 
 import creations from "/src/assets/Vault/archive.json"
 
 /* Vault Page Resourses */
 const vaultfacade = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Resources/Pages/Vault/**/*.{jpg,jpeg,png}',
+  '/src/assets/Resources/Pages/Vault/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
@@ -29,7 +29,7 @@ const schemin = import.meta.glob<{ default: ImageMetadata }>(
 );
 
 /* Vault Stock Photos */
-export const vault = parseResources(vaultfacade);
+export const vault = parseResource(vaultfacade);
 
 /* Vault Archives */
 export const archive = {shelf: parseProducts(wheelin, creations), pushed: parseProducts(dealin, creations), prints: parseProducts(schemin, creations)};

@@ -4,36 +4,24 @@ export const getFileName = (path: Path): string => {
   return path.replace(/\.[^/.]+$/, '').split(/[/\\]/).pop() || ''; 
 };
 
-export function parseResources(folder) {
+export function parseResource(folder) {
   const resources = {};
 
   Object.entries(folder).forEach(([path, image]) => {
     const file = getFileName(path);
-    const bits = file.split(".");
-
-    const source = bits[0];
-    const index = Number(bits[1]);
-    const name = bits[2];
 
     const resource = {
-      source,
-      index,
-      name,
       image: image.default
     };
 
-    if(!resources[source]) {
-      resources[source] = [];
-    }
-
-    resources[source].push(resource);
+    resources[file] = image.default;
   });
 
   return resources;
 }
 
 export function parseProducts(products, stock) {
-  const productLog = {};
+  const resourceLog = {};
 
   Object.entries(products).forEach(([path, image]) => {
     const file = getFileName(path);
@@ -45,12 +33,12 @@ export function parseProducts(products, stock) {
 
     const product = stock[flavor + "." + order];  
 
-    if (!productLog[flavor]) {
-      productLog[flavor] = {};
+    if (!resourceLog[flavor]) {
+      resourceLog[flavor] = {};
     }
 
-    if (!productLog[flavor][order]) {
-      productLog[flavor][order] = {
+    if (!resourceLog[flavor][order]) {
+      resourceLog[flavor][order] = {
         order,
         ...product,
         flagshot: null,
@@ -59,13 +47,13 @@ export function parseProducts(products, stock) {
     }
 
     if (shot == "A" || shot == "A1") {
-      productLog[flavor][order].flagshot = image.default;
+      resourceLog[flavor][order].flagshot = image.default;
     } else {
-        productLog[flavor][order].shots[shot] = image.default;
+        resourceLog[flavor][order].shots[shot] = image.default;
     }4
   });
 
-  return productLog;
+  return resourceLog;
 }
 
 export function fluffWords(words: string): string {

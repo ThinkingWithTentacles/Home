@@ -21,8 +21,10 @@ import {
   swampWorkshop, 
 } from '../../config.js';
 
-const wallpaper = wallpapers.creature[0];
-const background = wallpapers.creature[2];
+{console.log(wallpapers)}
+
+const wallpaper = wallpapers.thinking.think;
+const background = wallpapers.thinking.thunk;
 ---
 
 <Layouts title="Thinking With Tentacles">
@@ -30,7 +32,7 @@ const background = wallpapers.creature[2];
   <div class="swamp-page-wrapper">
     <div 
       class="swamp-page-background" 
-      style={`background-image: url(${wallpaper.image.src})`}
+      style={`background-image: url(${wallpaper.src})`}
     ></div>
     <ZoomDoom maxZoom={3} minZoom={1}>
       <main>
@@ -39,7 +41,7 @@ const background = wallpapers.creature[2];
         </section>
 
         <div class="tentacle-wrapper">
-          <Image src={background.image} alt="" />
+          <Image src={background} alt="" />
 
           <a class="thinking-grotto" href={swampWood}>
             <div class="thinking-halo-plate"></div>

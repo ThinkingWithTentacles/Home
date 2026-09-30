@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import { icons } from '/src/data/resource.ts';
+
+const swampLinks = [
+  { href: "https://linktr.ee/ThinkingWithTentacles", src: icons.social.tree, alt: "Link Tree" },
+  { href: "https://cash.app/$elara", src: icons.social.cash, alt: "Link Tree" },
+  { href: "https://www.etsy.com/shop/ThinkinWithTentacles", src: icons.social.etsy, alt: "Etsy" },
+  { href: "https://www.youtube.com/@TentacularQueen", src: icons.social.youtube, alt: "YouTube" },
+  { href: "https://www.tiktok.com/@thinkingwithtentacles", src: icons.social.tiktok, alt: "TikTok" },
+  { href: "https://www.twitch.tv/thinkingwithtentacles", src: icons.social.twitch, alt: "Twitch" }
+];
+
+const wickedLinks = [
+  { href: "https://linktr.ee/wickedgabi", src: icons.social.tree, alt: "Link Tree" },
+  { href: "https://www.etsy.com/shop/TheSunSoul?etsrc=sdt", src: icons.social.etsy, alt: "Etsy" },
+  { href: "https://cash.app/$wickedgabi", src: icons.social.cash, alt: "Link Tree" },
+  { href: "https://www.tiktok.com/@wickedgabi", src: icons.social.tiktok, alt: "Etsy" }
+];
+
+{console.log(icons.social)}
+const { source } = Astro.props;
+---
+
+<style>
+  .social-links {
+
+  }
+
+  .social-image {
+
+  }
+</style>
+
+<section class="social-grid">
+   {source === "swamp" &&
+    <nav class="social-links">
+      {swampLinks.map((link) => (
+        <a href={link.href} target="_blank" rel="noopener noreferrer">
+          <Image src={link.src} alt={link.alt} class="social-image" />
+        </a>
+      ))}
+    </nav>
+  }
+
+  {source === "garden" &&
+    <nav class="social-links">
+      {wickedLinks.map((link) => (
+        <a href={link.href} target="_blank" rel="noopener noreferrer">
+          <Image src={link.src} alt={link.alt} class="social-image" />
+        </a>
+      ))}
+    </nav>
+  }
+</section>

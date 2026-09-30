@@ -1,8 +1,6 @@
 ---
-const { destination } = Astro.props;
-
 import { Image } from 'astro:assets';
-import { icons } from '/src/data/resource.ts';
+import { pages } from '/src/data/resource.ts';
 
 import {
   index, 
@@ -10,27 +8,54 @@ import {
   wickedGrove,
 } from '../config.js';
 
-let returnIcon = icons.null[0];
+let returnIcon = "";
 let address = ""; 
 
+const { destination } = Astro.props;
+
 if(destination == "garden") {
-    returnIcon = icons.ring[0];
+    returnIcon = pages.wicked.sunsoul;
     address = wickedGrove;
 }
 
 else if(destination == "swamp") {
-    returnIcon = icons.creature[0];
+    returnIcon = pages.swamp.thinking;
     address = swampGrove;
 }
 
 else if(destination == "home") {
-    returnIcon = icons.landing[0];
+    returnIcon = pages.home.banner;
     address = "/";
 }
 ---
 
+<style>
+  .return-link {
+    position: fixed;
+    width: 10dvw;
+    height: 10dvw;
+    top:15px;
+    left:15px;
+
+    aspect-ratio: 1;
+    border-radius: 25px;
+
+    overflow: hidden;
+    display: block; 
+
+    z-index: 9999;
+  }
+
+  .return-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
 <nav class="return-link">
   <a href={address} rel="noopener noreferrer">
-    <Image src={returnIcon.image} alt="Link Tree" class="return-image" />
+    <Image src={returnIcon} alt="Link Tree" class="return-image" />
   </a>
 </nav>

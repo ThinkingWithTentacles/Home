@@ -19,7 +19,7 @@ import ZoomDoom from '/src/components/ZoomDoom.astro';
 import '/src/styles/global.css';
 import '/src/styles/dye-art-page.css';
 
-const wallpaper = wallpapers.garden[0];
+const wallpaper = wallpapers.galaxy.garden;
 ---
 
 <Layouts title="Wicked Dyes">
@@ -28,7 +28,7 @@ const wallpaper = wallpapers.garden[0];
   <div class="product-page-wrapper">
     <div 
       class="product-page-background" 
-      style={`background-image: url(${wallpaper.image.src})`}
+      style={`background-image: url(${wallpaper.src})`}
     ></div>
     <ZoomDoom maxZoom={3} minZoom={1}>
       <main>

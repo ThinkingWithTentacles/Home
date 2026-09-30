@@ -136,6 +136,38 @@ main {
   z-index: -1;
 }
 
+.about-image {
+  left:33%;
+  width: 33%;
+  height: 100%;
+}
+
+.social-grid {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links {
+  position: relative;
+  margin-top: 10dvh;
+  margin-bottom: 10dvh;
+  width: 90%;
+  max-width: 1080px;
+  left: .5%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 50px);
+  justify-content: center;
+}
+
+.social-image {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
 /*****************/
 /* Garden Grotto */
 /*****************/
@@ -152,7 +184,7 @@ main {
   font-style: oblique;
   color: transparent;
 
-  background-image: linear-gradient(180deg, #ece1dd 10%, #884410 100%);
+  background-image: linear-gradient(180deg, #ece1dd 10%, #753b0e 100%);
 
   border-radius: 100%;
   box-shadow: 0 0 80px 40px rgba(32, 134, 87, 0.753);
@@ -183,7 +215,7 @@ main {
 
   font-size: clamp(1rem, 2.5cqi, 4rem);
   font-family:Georgia, 'Times New Roman', Times, serif;
-  color: rgb(236, 202, 8);
+  color: rgb(255, 217, 0);
 }
 
 /******************/
@@ -272,82 +304,4 @@ main {
   font-style: oblique;
   color: rgb(40, 245, 166);
   background-color: rgb(1, 12, 7);
-}
-
-/*************/
-/* Resources */
-/*************/
-.return-link {
-  position: fixed;
-  width: 10dvw;
-  height: 10dvw;
-  top:15px;
-  left:15px;
-
-  aspect-ratio: 1;
-  border-radius: 25px;
-
-  overflow: hidden;
-  display: block; 
-
-  z-index: 9999;
-}
-
-.return-image {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-}
-
-.contact-form {
-  position: relative;
-  width: 100%;
-  max-width: 90dvw;
-  height: auto;
-  left: 2.5dvw;
-
-  padding: 2.5rem;
-
-  box-sizing: border-box;
-
-  display: block;
-  align-self: center;
-}
-
-.contact-label {
-  width: 100%;
-  margin-bottom: 0.5rem;
-  color: white;
-  display: block;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%; 
-  margin-bottom: 1.5rem;
-  padding: 0.75rem;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.contact-form button {
-  width: 100%;
-  padding: 0.75rem;
-  cursor: pointer;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 600px) {
-.lightbox-arrow {
-  padding: 0.25rem 0.5rem;
-  font-size: 1.5rem;
-}
-.lightbox-arrow.--left { left: 0.5rem; }
-.lightbox-arrow.--right { right: 0.5rem; }
-}
-
-* {
-  -webkit-tap-highlight-color: transparent;
 }

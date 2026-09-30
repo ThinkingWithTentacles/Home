@@ -11,25 +11,19 @@ import { wallpapers } from '/src/data/resource.ts';
 import { deadend } from '/src/data/deadend.ts';
 import { ends } from '/src/data/deadend.ts';
 
-import SampleGrid from '/src/components/SampleGrid.astro';
-import ProductGrid from '/src/components/ProductGrid.astro';
-import LightBox from '/src/components/LightBox.astro';
-import ContactForm from '/src/components/ContactForm.astro';
-
 import '/src/styles/global.css';
 import '/src/styles/dead-end-page.css';
 
-const wallpaper = wallpapers.garden[3];
+const wallpaper = wallpapers.galaxy.dust;
 ---
 
 <Layouts title="The End">
-  <LightBox />
   <ReturnTo destination="home" />
   
   <div class="home-page-wrapper">
     <div
       class="home-page-background" 
-      style={`background-image: url(${wallpaper.image.src})`}
+      style={`background-image: url(${wallpaper.src})`}
     ></div>
 
     <ZoomDoom maxZoom={3} minZoom={1}>

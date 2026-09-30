@@ -7,10 +7,7 @@ import DenTracker from '/src/components/DenTracker.astro';
 import ZoomDoom from '../components/ZoomDoom.astro';
 
 import { wallpapers } from '/src/data/resource.ts';
-import { icons } from '/src/data/resource.ts';
-
-import { garden } from '/src/data/wicked.ts';
-import { swamp } from '/src/data/swamp.ts';
+import { pages } from '/src/data/resource.ts';
 
 import receipts from "/src/assets/Resources/credits.json"
 
@@ -24,13 +21,13 @@ import {
 import '/src/styles/global.css';
 import '/src/styles/home-page.css';
 
-const wallpaper = wallpapers.home[0];
-const riverHavenGrotto = wallpapers.landing[0];
+const wallpaper = wallpapers.landing.abyss;
+const riverHavenGrotto = pages.home.banner;
 
-const sunsoul = garden.ring[0];
-const swampthing = icons.tentacles[0];
-const deadend = icons.deadend[0];
-const vault = icons.vault[0];
+const sunsoul = pages.wicked.sunsoul;
+const swampthing = pages.swamp.thinking;
+const deadend = pages.home.deadend;
+const vault = pages.home.shed;
 
 interface Props {
   den: number;
@@ -41,20 +38,20 @@ const { den } = Astro.props;
 const words = ["exists", "implores", "decays", "absolves", "breathes", "spreads", "says yes", "thinks", "infuses", "loves you", "laughs", "cries", 
  "is hand loved", "dies", "dyes", "slaps", "burns", "wraps", "feels", "holds", "hits", "takes a hit", "is a hit", "needs you",
  "has been", "will be", "drops", "finds you", "waits", "evolves", "grows", "consumes", "is free", "ducks","fucks", "lives patiently for you"];
----
+ ---
 
 <Layouts title="River Haven Grotto">
   <div class="home-page-wrapper">
     <div 
       class="home-page-background" 
-      style={`background-image: url(${wallpaper.image.src})`}
+      style={`background-image: url(${wallpaper.src})`}
     ></div>
     
     <ZoomDoom maxZoom={3} minZoom={1}>
       <main>
         <section class="home-sign">
           <a href={receipts.home} target="_blank" rel="noopener noreferrer">
-          <Image src={riverHavenGrotto.image} alt="River Haven Grotto Banner" class="home-banner" />
+          <Image src={riverHavenGrotto} alt="River Haven Grotto Banner" class="home-banner" />
           </a>
           
           <span class="home-name">River Haven Grotto</span>
@@ -80,25 +77,25 @@ const words = ["exists", "implores", "decays", "absolves", "breathes", "spreads"
         <section class="grove-container">
           <div class="grove-top">
             <a class="soul-grotto" href={wickedGrove}> 
-              <Image src={sunsoul.image} alt="SunSoul" /> 
+              <Image src={sunsoul} alt="SunSoul" /> 
               <div class="soul-halo-plate"></div> 
             </a>
 
             <a class="swamp-grotto" href={swampGrove}> 
-              <Image src={swampthing.image} alt="Dead End" /> 
+              <Image src={swampthing} alt="Dead End" /> 
               <div class="swamp-halo-plate" ></div> 
               <span class="swamp-text">Thinking With Tentacles</span> 
             </a>
           </div>
 
           <a class="vault-grotto" href={theVault}> 
-            <Image src={vault.image} alt="The Vault" /> 
+            <Image src={vault} alt="The Vault" /> 
             <div class="vault-halo-plate"></div> 
             <span class="vault-text">Vault</span> 
           </a>
 
           <a class="dead-grotto" href={deadEnd}> 
-            <Image src={deadend.image} alt="Dead End" /> 
+            <Image src={deadend} alt="Dead End" /> 
             <div class="dead-halo-plate" style={`--shadow-x: ${den}dvw;`}></div> 
             <span class="dead-text">Dead End</span> 
           </a>

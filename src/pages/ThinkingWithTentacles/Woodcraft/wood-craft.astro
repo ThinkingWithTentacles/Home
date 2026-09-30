@@ -8,20 +8,24 @@ import ContactForm from '/src/components/ContactForm.astro';
 import ReturnTo from '/src/components/ReturnTo.astro';
 import ZoomDoom from '/src/components/ZoomDoom.astro';
 
-import { wallpapers } from '/src/data/resource.ts';
-import { swampWoodcraft } from '/src/data/swamp.ts';
-import { swampWood } from '/src/data/swamp.ts';
-
 import SampleGrid from '/src/components/SampleGrid.astro';
 import ProductGrid from '/src/components/ProductGrid.astro';
 import LightBox from '/src/components/LightBox.astro';
 import ProductLabel from '/src/components/ProductLabel.astro';
 
+import { wallpapers } from '/src/data/resource.ts';
+import { pages } from '/src/data/resource.ts';
+import { icons } from '/src/data/resource.ts';
+
+import { swampWood } from '/src/data/swamp.ts';
+
 import '/src/styles/global.css';
 import '/src/styles/woodcraft-page.css';
 
-const wallpaper = wallpapers.woodcraft[2];
-const samples = swampWoodcraft.sample;
+const wallpaper = wallpapers.wood.bark;
+const samples = icons.sample;
+
+{console.log(samples)}
 ---
 
 <Layouts title="Thinking With Tentacles">
@@ -31,7 +35,7 @@ const samples = swampWoodcraft.sample;
     <div
       id="background"
       class="product-page-background" 
-      style={`background-image: url(${wallpaper.image.src})`}
+      style={`background-image: url(${wallpaper.src})`}
     ></div>
     
     <ZoomDoom maxZoom={3} minZoom={1}>
@@ -42,8 +46,8 @@ const samples = swampWoodcraft.sample;
             <h1>Woodcraft</h1>
           </section>
 
-          <SampleGrid samples={Object.values(samples.slice(0, 10))} />
-          <SampleGrid samples={Object.values(samples.slice(10))} />
+          <SampleGrid samples={Object.values(samples).slice(0, 10)} />
+          <SampleGrid samples={Object.values(samples).slice(10, 20)} />
 
           <section class="woodcraft-info">
             <h1>WOOD!</h1>
