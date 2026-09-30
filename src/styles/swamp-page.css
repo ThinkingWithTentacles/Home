@@ -175,7 +175,7 @@
     mix-blend-mode:multiply;
     transition:
       font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
-      color 1500ms ease-in 10ms,
+      color 1500ms ease-in 10ms;
   }
 }
 
@@ -260,7 +260,7 @@
     mix-blend-mode:multiply;
     transition:
       font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
-      color 1500ms ease-in 10ms,
+      color 1500ms ease-in 10ms;
   }
 }
 
@@ -345,7 +345,7 @@
     mix-blend-mode:multiply;
     transition:
       font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
-      color 1500ms ease-in 10ms,
+      color 1500ms ease-in 10ms;
   }
 }
 
@@ -364,13 +364,13 @@
 }
 
 .thinking-grotto.touch-active .thinking-text {
-  transform: translate(0%, 150%) scale(1.1);
-  color: rgb(0, 0, 0);
+  transform: translate(-50%, -340%) scale(.75);
+  color: rgb(119, 111, 111);
 
-  mix-blend-mode:normal;
+  mix-blend-mode:multiply;
   transition:
     font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
-    color 1500ms ease-in 10ms,
+    color 1500ms ease-in 10ms;
 }
 
 .still-thinking-grotto.touch-active .still-thinking-halo-plate {
@@ -378,7 +378,7 @@
   background-image: radial-gradient(
     circle, 
     rgba(88, 171, 204, .5) 50%, 
-    rgba(255, 0, 0, 0.1) 100%, 
+    rgba(255, 0, 0, 0.1) 100%,
     transparent 100%
   );
 
@@ -388,14 +388,13 @@
 }
 
 .still-thinking-grotto.touch-active .still-thinking-text {
-  transform: translate(0%, 150%) scale(1.1);
-  color: rgb(0, 0, 0);
-  cursor: progress;
+  transform: translate(-50%, -340%) scale(.75);
+  color: rgb(119, 111, 111);
 
-  mix-blend-mode:normal;
+  mix-blend-mode:multiply;
   transition:
     font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
-    color 1500ms ease-in 10ms,
+    color 1500ms ease-in 10ms;
 }
 
 .swampshop-grotto.touch-active .swampshop-halo-plate {
@@ -412,11 +411,11 @@
 }
 
 .swampshop-grotto.touch-active .swampshop-text {
-  transform: translate(0%, 150%) scale(1.1);
-  color: rgb(0, 0, 0);
+  transform: translate(-50%, -275%) scale(.75);
+  color: rgb(119, 111, 111);
 
-  mix-blend-mode:normal;
+  mix-blend-mode:multiply;
   transition:
     font-size 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
-    color 1500ms ease-in 10ms,
+    color 1500ms ease-in 10ms;
 }
