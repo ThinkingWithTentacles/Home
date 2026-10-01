@@ -1,10 +1,10 @@
 /* Hyper Link Ring */
 .ring-wrapper {
   position: relative;
-  top: 7.5dvh;
+  top: 5dvh;
   
   width: 90%;
-  max-width: 1080px;
+  max-width: 780px;
   margin: 0 auto 0% auto;
   
   display: block;
@@ -58,7 +58,7 @@
 .burn-text {
   position: relative;
   
-  font-size: clamp(.75rem, 4cqi, 3.25rem);
+  font-size: clamp(.75rem, 4cqi, 2.25rem);
   font-weight: 666;
   font-style: oblique;
   color: rgb(15, 11, 11, 1);
@@ -147,7 +147,7 @@
 .dye-text {
   position: relative;
   
-  font-size: clamp(1rem, 4.25cqi, 3.5rem);
+  font-size: clamp(1rem, 4.25cqi, 2.5rem);
   font-weight: 666;
   font-style: oblique;
   color: rgb(0, 0, 0, 1);
@@ -230,7 +230,7 @@
 .wire-text {
   position: relative;
 
-  font-size: clamp(.75rem, 4cqi, 3.25rem);
+  font-size: clamp(.75rem, 4cqi, 2.25rem);
   font-weight: 666;
   font-style: oblique;
   color: rgb(0, 0, 0, 1);

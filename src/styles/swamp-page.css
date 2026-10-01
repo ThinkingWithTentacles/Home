@@ -2,12 +2,28 @@
 .swamp-sign {
   position: relative;
   text-align: center;
-  margin-top: 15%;
+  top: 7.5dvh;
+  
+  width: 80%;
+  max-width: 1440px;
+  margin: 0 auto 0% auto;
 
-  color: white;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: clamp(1rem, 3cqi, 6rem);
-  font-style: oblique;
+  text-align: center;
+  align-content: center;
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: clamp(.5rem, 2cqi, 12rem);
+  font-weight: 500;
+  color: transparent;
+
+  background-image: linear-gradient(90deg, #095a46 33%, #753b0e 100%);
+  backdrop-filter: blur(1px) saturate(2);
+
+  border-radius: 100%;
+  box-shadow: 0 0 10px 10px rgba(32, 134, 87, 0.753);
+
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .swamp-header {
@@ -20,26 +36,51 @@
 }
 
 .checkout-card {
-  position: relative;
-  display: block;
+  position: absolute;
+  top: 75.6%;
+  left: 0%;
 
-  width: 95%; 
-  min-height: 100%;
+  width: 5%;
+  height: 2.1%;
+
+  aspect-ratio: 1;
+
+  cursor:pointer;
+}
+
+.checkout-card img {
+  position: absolute;
+  inset: 0;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  border-radius: 50%;
   
-  margin: auto;
-  margin-top: 2.5%;
+  z-index: 0;
+}
 
-  text-align: center;
+.checkout-halo-plate {
+  position: absolute;
+  inset: 0;
 
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  
+  box-shadow: 0 0 5px 2px rgba(253, 173, 0, 0.75);
+  backdrop-filter: saturate(5);
+
+  mix-blend-mode: color-burn;
+  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .swamp-zone {
   position: absolute;
-  top: 15%;
-  left: 5%;
-  width: 60%;
-  height: 30%;
+  top: 10%;
+  left: 2.5%;
+  width: 64%;
+  height: 33%;
 
   border: 4ch;
   border-radius: 0%;
@@ -73,6 +114,9 @@
   font-size: clamp(.75rem, 2cqi, 4rem);
 }
 
+/***************************/
+/* Thinking With Tentacles */
+/***************************/
 .tentacle-wrapper {
   position: relative;
   width: 90%;
@@ -82,7 +126,7 @@
   margin-right:5%;
   margin-left:5%;
   margin-bottom:5%;
-  top: 0px;
+  top: 10dvh;
 
   aspect-ratio: 1/2;
 }
@@ -94,6 +138,9 @@
   display: block;
 }
 
+/************/
+/* Thinking */
+/************/
 .thinking-grotto {
   position: absolute;
   top: 0%;
@@ -131,25 +178,27 @@
   backdrop-filter: blur(1px) saturate(2);
   background-image: radial-gradient(
     circle, 
-    rgba(139, 131, 14, 0.25) 33%, 
+    rgba(139, 131, 14, 0.25) 100%, 
     rgba(214, 206, 196, 0.5) 100%, 
     transparent 100%
   );
 
+  mix-blend-mode: color-burn;
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .thinking-text {
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -300%) scale(1);
+  top: 10%;
+  transform: translate(-50%, 0%) scale(1);
   transform-origin: center center;
   will-change: transform;
 
-  font-size: clamp(1rem, 2cqi, 4rem);
+  font-size: clamp(.5rem, 2.5cqi, 3rem);
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 666;
+  text-align: center;
   color: rgba(0, 0, 0, 1);
 
   mix-blend-mode: normal;
@@ -169,7 +218,7 @@
   }
 
   .thinking-grotto:hover .thinking-text {  
-    transform: translate(-50%, -340%) scale(.75);
+    transform: translate(-50%, -70%) scale(.75);
     color: rgb(119, 111, 111);
 
     mix-blend-mode:multiply;
@@ -179,7 +228,10 @@
   }
 }
 
-.still-thinking-grotto {
+/******************/
+/* Still Thinking */
+/******************/
+.pondering-grotto {
   position: absolute;
   top: 0%;
   left: 0%;
@@ -192,7 +244,7 @@
   cursor: help;
 }
 
-.still-thinking-grotto img {
+.pondering-grotto img {
   position: absolute;
   inset: 0;
 
@@ -205,7 +257,7 @@
   z-index: 0;
 }
 
-.still-thinking-halo-plate {
+.pondering-halo-plate {
   position: absolute;
   inset: 0;
 
@@ -213,26 +265,27 @@
   height: 100%;
   
   box-shadow: 0 0 25px 10px rgba(105, 55, 107, 0.75);
-  backdrop-filter: blur(1px) saturate(2);
   background-image: radial-gradient(
     circle, 
-    rgba(139, 131, 14, 0.25) 33%, 
+    rgba(139, 131, 14, 0.25) 100%, 
     rgba(214, 206, 196, 0.5) 100%, 
     transparent 100%
   );
 
+  backdrop-filter: blur(1px) saturate(2);
+  mix-blend-mode: color-burn;
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.still-thinking-text {
+.pondering-text {
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -300%) scale(1);
+  top: 10%;
+  transform: translate(-50%, 0%) scale(1);
   transform-origin: center center;
   will-change: transform;
 
-  font-size: clamp(1rem, 2cqi, 4rem);
+  font-size: clamp(.5rem, 2.25cqi, 3rem);
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 666;
   color: rgba(0, 0, 0, 1);
@@ -245,16 +298,52 @@
   z-index: 2;
 }
 
+.soon-text {
+  position: absolute;
+  left: 50%;
+  top: 82.5%;
+
+  transform: translate(-50%, 0%) scale(1);
+  transform-origin: center center;
+  will-change: transform;
+
+  font-size: clamp(.5rem, 2.25cqi, 3rem);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 666;
+  color: rgba(0, 0, 0, 1);
+
+  opacity: 0%;
+
+  mix-blend-mode: normal;
+  transition: 
+    transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+    color 1500ms ease 50ms;
+    
+  z-index: 2;
+}
+
 @media (hover: hover) and (pointer: fine) {
-  .still-thinking-grotto:hover .still-thinking-halo-plate {
-    box-shadow: 0 0 3px 10px rgba(88, 171, 204, 1);
-    backdrop-filter: blur(0px) saturate(0);
+  .pondering-grotto:hover .pondering-halo-plate {
+    box-shadow: 0 0 100px -1px rgba(105, 55, 107, 0.75);
+    backdrop-filter: blur(5px) saturate(0);
     
     transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  .still-thinking-grotto:hover .still-thinking-text {  
-    transform: translate(-50%, -340%) scale(.75);
+  .pondering-grotto:hover .pondering-text {  
+    transform: translate(-50%, -50%) scale(.75);
+    color: rgb(119, 111, 111);
+
+    mix-blend-mode:multiply;
+    transition:
+      transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+      color 1500ms ease-in 10ms;
+  }
+
+  .pondering-grotto:hover .soon-text {
+    opacity: 100%;
+
+    transform: translate(-50%, 0%) scale(1.1);
     color: rgb(119, 111, 111);
 
     mix-blend-mode:multiply;
@@ -264,6 +353,9 @@
   }
 }
 
+/********/
+/* Shop */
+/********/
 .swampshop-grotto {
   position: absolute;
   top:0;
@@ -301,23 +393,24 @@
   backdrop-filter: blur(1px) saturate(2);
   background-image: radial-gradient(
     circle, 
-    rgba(139, 131, 14, 0.25) 33%, 
+    rgba(139, 131, 14, 0.25) 100%, 
     rgba(214, 206, 196, 0.5) 100%, 
     transparent 100%
   );
 
+  mix-blend-mode: color-burn;
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .swampshop-text {
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -275%) scale(1);
+  top: 10%;
+  transform: translate(-50%, 0%) scale(1);
   transform-origin: center center;
   will-change: transform;
 
-  font-size: clamp(1.5rem, 3cqi, 6rem);
+  font-size: clamp(.75rem, 2.75cqi, 4rem);
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 666;
   color: rgba(0, 0, 0, 1);
@@ -333,13 +426,106 @@
 @media (hover: hover) and (pointer: fine) {
   .swampshop-grotto:hover .swampshop-halo-plate {
     box-shadow: 0 0 3px 10px rgba(88, 171, 204, 1);
-    backdrop-filter: blur(0px) saturate(0);
+    backdrop-filter: blur(0px) saturate(1);
     
     transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .swampshop-grotto:hover .swampshop-text {  
-    transform: translate(-50%, -275%) scale(.75);
+    transform: translate(-50%, -50%) scale(.75);
+    color: rgb(119, 111, 111);
+
+    mix-blend-mode:multiply;
+    transition:
+      transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+      color 1500ms ease-in 10ms;
+  }
+}
+
+/**************/
+/* Conception */
+/**************/
+.tentacular-grotto {
+  position: absolute;
+  top: 28.9%;
+  left: 67.5%;
+
+  width: 32.5%;
+  height: 15.25%;
+
+  aspect-ratio: 1;
+
+  cursor:pointer;
+}
+
+.tentacular-grotto img {
+  position: absolute;
+  inset: 0;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  border-radius: 50%;
+  
+  z-index: 0;
+}
+
+.tentacular-halo-plate {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  
+  box-shadow: 0 0 2px 2px rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(1px) saturate(1);
+  background-image: radial-gradient(
+    circle, 
+    rgba(139, 131, 14, 0.25) 100%, 
+    rgba(214, 206, 196, 0.5) 100%, 
+    transparent 100%
+  );
+
+  mix-blend-mode: color-burn;
+  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tentacular-text {
+  position: absolute;
+  width: 100%;
+  left: 45%;
+  top: 90%;
+
+  transform: translate(-50%, 0%) scale(1);
+  transform-origin: center center;
+  will-change: transform;
+
+  font-size: clamp(.5rem, 1.5cqi, 2.5rem);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 666;
+  text-align: center;
+  color: rgba(0, 0, 0, 1);
+
+  mix-blend-mode: normal;
+  transition: 
+    transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
+    color 1500ms ease 50ms;
+    
+  z-index: 2;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tentacular-grotto:hover .tentacular-halo-plate {
+    box-shadow: 0 0 2px -2px rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(0px) saturate(25);
+    
+    mix-blend-mode:saturation;
+    transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .tentacular-grotto:hover .tentacular-text {  
+    transform: translate(-50%, -25%) scale(.75);
     color: rgb(119, 111, 111);
 
     mix-blend-mode:multiply;
@@ -351,20 +537,14 @@
 
 /* Mobile */
 .thinking-grotto.touch-active .thinking-halo-plate {
-  box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
-  background-image: radial-gradient(
-    circle, 
-    rgba(88, 171, 204, .5) 50%, 
-    rgba(255, 0, 0, 0.1) 100%, 
-    transparent 100%
-  );
-
-  mix-blend-mode:normal;
+  box-shadow: 0 0 3px 10px rgba(88, 171, 204, 1);
+  backdrop-filter: blur(0px) saturate(1);
+  
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .thinking-grotto.touch-active .thinking-text {
-  transform: translate(-50%, -340%) scale(.75);
+  transform: translate(-50%, -70%) scale(.75);
   color: rgb(119, 111, 111);
 
   mix-blend-mode:multiply;
@@ -373,22 +553,27 @@
     color 1500ms ease-in 10ms;
 }
 
-.still-thinking-grotto.touch-active .still-thinking-halo-plate {
-  box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
-  background-image: radial-gradient(
-    circle, 
-    rgba(88, 171, 204, .5) 50%, 
-    rgba(255, 0, 0, 0.1) 100%,
-    transparent 100%
-  );
-
-  cursor:progress;
-  mix-blend-mode:normal;
+.pondering-grotto.touch-active .pondering-halo-plate {
+  box-shadow: 0 0 100px -1px rgba(105, 55, 107, 0.75);
+  backdrop-filter: blur(5px) saturate(1);
+  
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.still-thinking-grotto.touch-active .still-thinking-text {
-  transform: translate(-50%, -340%) scale(.75);
+.pondering-grotto.touch-active .pondering-text {
+  transform: translate(-50%, -50%) scale(.75);
+  color: rgb(119, 111, 111);
+
+  mix-blend-mode:multiply;
+  transition:
+    transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+    color 1500ms ease-in 10ms;
+}
+
+.pondering-grotto.touch-active .soon-text {
+  opacity: 100%;
+
+  transform: translate(-50%, 0%) scale(1.1);
   color: rgb(119, 111, 111);
 
   mix-blend-mode:multiply;
@@ -398,20 +583,32 @@
 }
 
 .swampshop-grotto.touch-active .swampshop-halo-plate {
-  box-shadow: 0 0 5px 10px rgba(88, 171, 204, 1);
-  background-image: radial-gradient(
-    circle, 
-    rgba(88, 171, 204, .5) 50%, 
-    rgba(255, 0, 0, 0.1) 100%, 
-    transparent 100%
-  );
-
-  mix-blend-mode:normal;
+  box-shadow: 0 0 3px 10px rgba(88, 171, 204, 1);
+  backdrop-filter: blur(0px) saturate(2);
+  
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .swampshop-grotto.touch-active .swampshop-text {
-  transform: translate(-50%, -275%) scale(.75);
+  transform: translate(-50%, -50%) scale(.75);
+  color: rgb(119, 111, 111);
+
+  mix-blend-mode:multiply;
+  transition:
+    transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
+    color 1500ms ease-in 10ms;
+}
+
+.tentacular-grotto.touch-active .tentacular-halo-plate {
+  box-shadow: 0 0 2px -2px rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(0px) saturate(25);
+  
+  mix-blend-mode:saturation;
+  transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tentacular-grotto.touch-active .tentacular-text {
+  transform: translate(-50%, -50%) scale(.75);
   color: rgb(119, 111, 111);
 
   mix-blend-mode:multiply;

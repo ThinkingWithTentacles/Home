@@ -175,7 +175,7 @@ main {
   position: relative;
   text-align: center;
   width: 100%;
-  margin-top: 12.5dvh;
+  top: 5dvh;
 
   opacity: .90;
 
@@ -209,11 +209,20 @@ main {
 }
 
 .garden-info {
+  height: 200px;
+
   position: relative;
   text-align: center;
-  margin: 7.5%;
+  align-content: center;
+  
+  top: 5dvh;
+  margin: 5%;
 
-  font-size: clamp(1rem, 2.5cqi, 4rem);
+  border-radius: 2.5%;
+  background-image: transparent;
+  background-color: rgba(3, 32, 41, 0.25);
+
+  font-size: clamp(1rem, 1.5cqi, 2rem);
   font-family:Georgia, 'Times New Roman', Times, serif;
   color: rgb(255, 217, 0);
 }

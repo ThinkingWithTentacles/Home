@@ -10,6 +10,8 @@ import ZoomDoom from '/src/components/ZoomDoom.astro';
 import { wallpapers } from '/src/data/resource.ts';
 import { swamp } from '/src/data/swamp.ts';
 
+import receipts from "/src/assets/Resources/credits.json"
+
 import '/src/styles/global.css';
 import '/src/styles/swamp-page.css';
 
@@ -48,22 +50,33 @@ const background = wallpapers.thinking.thunk;
             <span class="thinking-text">Woodcraft</span>
           </a>
 
-          <a class="still-thinking-grotto" href={swampLeather}>
-            <div class="still-thinking-halo-plate"></div>
-            <span class="still-thinking-text">Leathercraft</span>
+          <a class="pondering-grotto" href={}>
+            <div class="pondering-halo-plate"></div>
+            <span class="pondering-text">Leathercraft</span>
+            <span class="soon-text">Soon...</span>
           </a>
 
           <a class="swampshop-grotto" href={swampWorkshop}>
             <div class="swampshop-halo-plate"></div>
             <span class="swampshop-text">Swampshop</span>
           </a>
-        </div>
 
-        <div class="swamp-zone">
-          <section class="swamp-info">
-            <p>Thinking With Tentacles</p>
-          </section>
+          <a class="tentacular-grotto" href={receipts.tentacular}>
+            <div class="tentacular-halo-plate"></div>
+            <span class="tentacular-text">Conception of Craving</span>
+          </a>
+
+          <a class="checkout-card" href={receipts.thinking}>
+            <div class="checkout-halo-plate"></div>
+          </a>
+
+           <div class="swamp-zone">
+            <section class="swamp-info">
+              <p>Thinking With Tentacles</p>
+            </section>
+          </div>
         </div>
+       
       </main>
     </ZoomDoom>
   </div>

@@ -21,11 +21,13 @@ font-size: 3ch;
 
 .woodcraft-info {
 position: relative;
+width: 85%;
+margin: 0 auto;
 text-align: center;
 
 color: white;
 font-family: monospace;
-font-size: clamp(2.25cqi, 4.25cqi, 2.25cqi);;
+font-size: clamp(.75rem, 2cqi, 4rem);
 }
 
 /* Sample Grid Layout */
@@ -78,7 +80,7 @@ left: 0;
 
 color: white;
 font-family:monospace;
-font-size: clamp(1cqi, 2cqi, 1cqi);
+font-size: clamp(1.1cqi, 2cqi, 1cqi);
 
 background: rgba(0, 0, 0, 0.75);
 box-sizing: border-box;
