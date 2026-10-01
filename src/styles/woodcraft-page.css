@@ -1,13 +1,18 @@
 /* Main Page Layout */
 .woodcraft-sign {
-position: relative;
-text-align: center;
-margin-top: 0; 
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 75px;
 
-color: white;
-font-family: 'Times New Roman', Times, serif;
-font-size: 4vw;
-font-style: oblique;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 5dvw;
+  font-style: oblique;
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .woodcraft-header {

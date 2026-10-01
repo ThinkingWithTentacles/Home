@@ -23,13 +23,13 @@ import '/src/styles/global.css';
 import '/src/styles/woodcraft-page.css';
 
 const wallpaper = wallpapers.wood.bark;
+const red = wallpapers.wood.treebark;
 const samples = icons.sample;
-
-{console.log(icons)}
 ---
 
 <Layouts title="Thinking With Tentacles">
   <LightBox />
+  <ReturnTo destination="swamp" />
   
   <div class="swamp-page-wrapper">
     <div
@@ -40,9 +40,7 @@ const samples = icons.sample;
     
     <ZoomDoom maxZoom={3} minZoom={1}>
       <main>
-          <ReturnTo destination="swamp" />
-
-          <section class="woodcraft-sign">
+          <section class="woodcraft-sign" style={`background-image: url(${red.src})`}>
             <h1>Woodcraft</h1>
           </section>
 
@@ -50,14 +48,14 @@ const samples = icons.sample;
           <SampleGrid samples={Object.values(samples).slice(10, 20)} />
 
           <section class="woodcraft-info">
-            <h1>WOOD!</h1>
+            <h1> "Free Samples" </h1>
 
-            <p>Ash, White Maple, Cherry, Mahagony, Walnut, Black Limba, Canary, Yellowheart, Padauk, Purpleheart </p>
-            
-            <p> Here we talk about the thing that the page represents and the arts and crafts involved with 
-            it on a hand loved personal level. And all it takes it writing it out, all of it, eventually, 
-            when the words themselves look pretty enough on the page and items fall from the sky when those 
-            landmine links go "off" </p>
+            <p> Available Stock: Ash, White Maple, Cherry, Mahagony, Walnut, Black Limba, Canary, Yellowheart, Padauk, Purpleheart </p>
+            <br>
+            <p> Crafting hardwood fancies that are personable, functional, and delightfully your exact type of wood. Offering the art of intentional rule breaking in creating love it for life keepsakes, containers, keepers, cutting boards, and multifunctional charcuterie boards. Paddles too. And maybe eventually a place for you to sit still and relax. </p>
+            <p> Current stock below represents designs completely mendable to your desires for personalization and creativity. Reach out if anything sparks an interest. </p>
+            <br>
+            <p> Or to say anything on your mind really. </p>
           </section>
 
           <ContactForm />

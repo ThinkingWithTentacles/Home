@@ -12,10 +12,13 @@ const { samples } = Astro.props;
 
 <script>
   const background = document.getElementById('background');
+  const sign = document.querySelector('.woodcraft-sign')
   const sampleGrids = document.querySelectorAll('.sample-grid');
 
   if (background) {
     const wallpaper = background.style.backgroundImage;
+    const text = sign.style.backgroundImage;
+    let lastTest = text;
 
     sampleGrids.forEach(grid => {
       grid.addEventListener('click', (event) => {
@@ -27,11 +30,13 @@ const { samples } = Astro.props;
 
         if (button.classList.contains('selected')) {
           background.style.backgroundImage = wallpaper;
+          sign.style.backgroundImage = lastTest;
           button.classList.remove('selected');
           return;
         }
 
         background.style.backgroundImage = `url('${sample}')`;
+        sign.style.backgroundImage = wallpaper;
 
         document
           .querySelectorAll('[data-action="background"]')
@@ -40,6 +45,8 @@ const { samples } = Astro.props;
           });
 
         button.classList.add('selected');
+
+        lastTest = `url('${sample}')`;
       });
     });
   }
