@@ -14,7 +14,12 @@ const vaultfacade = import.meta.glob<{ default: ImageMetadata }>(
 /* Vault Photo Dumps */
 
 const wheelin = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Vault/Creations/*.{jpg,jpeg,png}',
+  '/src/assets/Vault/Creations/Swamp/*.{jpg,jpeg,png}',
+  { eager: true }
+);
+
+const castin = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Vault/Creations/Wicked/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
@@ -32,6 +37,5 @@ const schemin = import.meta.glob<{ default: ImageMetadata }>(
 export const vault = parseResource(vaultfacade);
 
 /* Vault Archives */
-export const archive = {shelf: parseProducts(wheelin, creations), pushed: parseProducts(dealin, creations), prints: parseProducts(schemin, creations)};
-
-{console.log(archive)}
+export const creations = {swamp: parseProducts(wheelin, creations), wicked: parseProducts(castin, creations)};
+export const pushed = parseProducts(dealin, creations);

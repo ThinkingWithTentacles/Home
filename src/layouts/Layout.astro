@@ -31,68 +31,83 @@ const { title = "Default Title" } = Astro.props;
 		});
 	</script>
 
-    <script>
-		function initializeBurnEffects() {
+	<script>
+	function initializeBurnEffects() {
 		const links = document.querySelectorAll('[class$="-grotto"]');
 		
 		links.forEach(link => {
-			link.addEventListener('click', function (event) {
-				event.preventDefault();
-				const targetUrl = this.href;
-				
-				this.classList.add('touch-active');
+		// Prevent duplicating event listeners if initialized multiple times
+		if (link.dataset.burnEffectsInitialized) return;
+		link.dataset.burnEffectsInitialized = "true";
 
-				const textChild = link.querySelector('[class$="-text"]'); // Matches .vault-text, .dead-text, etc.
-				
-				if (textChild) {
-				const computedStyle = window.getComputedStyle(textChild);
-				
+		link.addEventListener('click', function (event) {
+			event.preventDefault();
+			const targetUrl = this.href;
+			
+			this.classList.add('touch-active');
+
+			const isExternal = this.hostname !== window.location.hostname;
+			const isBlankTarget = this.target === '_blank';
+			const isNewTab = isExternal || isBlankTarget;
+
+			let delayTime = 1000; // Default fallback
+
+			const textChild = this.querySelector('[class$="-text"]');
+			
+			if (textChild) {
+			const computedStyle = window.getComputedStyle(textChild);
+			
+			if (computedStyle.transitionDuration && computedStyle.transitionDuration !== '0s') {
 				const durations = computedStyle.transitionDuration.split(', ');
 				const delays = computedStyle.transitionDelay.split(', ');
 
 				let maxTotalTime = 0;
 				durations.forEach((duration, index) => {
-					const parsedDuration = parseFloat(duration) * (duration.includes('ms') ? 1 : 1000);
-					const parsedDelay = delays[index] ? parseFloat(delays[index]) * (delays[index].includes('ms') ? 1 : 1000) : 0;
-					
-					const totalTime = parsedDuration + parsedDelay;
-					if (totalTime > maxTotalTime) {
+				const parsedDuration = parseFloat(duration) * (duration.includes('ms') ? 1 : 1000);
+				const parsedDelay = delays[index] ? parseFloat(delays[index]) * (delays[index].includes('ms') ? 1 : 1000) : 0;
+				
+				const totalTime = parsedDuration + parsedDelay;
+				if (totalTime > maxTotalTime) {
 					maxTotalTime = totalTime;
-					}
+				}
 				});
 
-				setTimeout(() => {
-					window.location.href = targetUrl;
-				}, maxTotalTime);
-				
-				} else {
-				setTimeout(() => {
-					window.location.href = targetUrl;
-				}, 1000);
+				if (maxTotalTime > 0) {
+				delayTime = maxTotalTime;
 				}
-			});
-		});
-		}
-
-		initializeBurnEffects();
-
-		window.addEventListener('pageshow', (event) => {
-		if (event.persisted) {
-			const activegrottos = document.querySelectorAll('[class*="-grotto"].touch-active');
-				activegrottos.forEach(grotto => {
-				grotto.classList.remove('touch-active');
-			});
-
-			const activezones = document.querySelectorAll('[class*="-zone"].touch-active');
-				activezones.forEach(zone => {
-				zone.classList.remove('touch-active');
-			});
-
-			if (document.activeElement instanceof HTMLElement) {
-				document.activeElement.blur();
 			}
-		}
+			}
+
+			// Fix navigation logic for standard vs new tabs
+			setTimeout(() => {
+			if (isNewTab) {
+				window.open(targetUrl, '_blank');
+				this.classList.remove('touch-active');
+			} else {
+				window.location.href = targetUrl;
+			}
+			}, delayTime);
 		});
+		});
+	}
+
+	// Initial load execution
+	initializeBurnEffects();
+
+	// Fix for Astro View Transitions (if you use them)
+	document.addEventListener('astro:page-load', initializeBurnEffects);
+
+	// Pageshow cache restoration cleanup
+	window.addEventListener('pageshow', (event) => {
+		if (event.persisted) {
+		document.querySelectorAll('[class*="-grotto"].touch-active, [class*="-zone"].touch-active')
+			.forEach(el => el.classList.remove('touch-active'));
+
+		if (document.activeElement instanceof HTMLElement) {
+			document.activeElement.blur();
+		}
+		}
+	});
 	</script>
   </body>
 </html>

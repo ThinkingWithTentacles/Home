@@ -66,13 +66,23 @@ export function fluffWord(word: string): string {
   return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 }
 
-export function wordsFormater(words: string[]): string {
-  if (!words || words.length === 0) return "";
+export function wordsFormatter(words?: string[]): string {
+  if (!words || words.length === 0) {
+    return "";
+  }
+  
+  const filteredWords = words
+    .map(word => word.trim())
+    .filter(word => word !== "" && word.toLowerCase() !== "ingredient");
+
+  if (filteredWords.length === 0) {
+    return "";
+  }
   
   return new Intl.ListFormat('en', { 
     style: 'long', 
     type: 'conjunction' 
-  }).format(words); // Added .format() here
+  }).format(filteredWords);
 }
 
 export function fluffTitle(product: any): string {
@@ -89,7 +99,7 @@ export function fluffStyle(product: any): string {
 }
 
 export function fluffIngredients(product: any): string {
-  return product.ingredients?.[0] ? `Made with ${wordsFormater(product.ingredients)}` : "";
+  return product.ingredients?.[0] || product.ingredients?.[1] ? `Made with ${wordsFormatter(product.ingredients)}` : "";
 }
 
 export function fluffSize(product: any): string {

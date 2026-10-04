@@ -23,7 +23,7 @@ a {
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 
   z-index: 1;
 }
@@ -61,9 +61,31 @@ main {
   top: 0;
   left: 0;
 
-  background-size: contain;
-  background-repeat: repeat;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   background-position: top center;
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.shop-page-wrapper {
+  position: relative;
+  width: 100%;
+  
+  min-height: 135dvh; 
+}
+
+.shop-page-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-size: cover; 
+  background-position: center bottom; /* Or 'center center' depending on the graphic */
+  background-repeat: no-repeat;
   pointer-events: none;
 
   z-index: -1;
@@ -80,7 +102,7 @@ main {
 
 .swamp-page-background {
   position: fixed;
-  width: 100vw;
+  width: 100dvw;
   height: 100dvh; 
   top: 0;
   left: 0;
@@ -102,7 +124,7 @@ main {
 
 .garden-page-background {
   position: fixed;
-  width: 100vw;
+  width: 100dvw;
   height: 150dvh; 
   top: 0;
   left: 0;
@@ -134,12 +156,6 @@ main {
   pointer-events: none;
 
   z-index: -1;
-}
-
-.about-image {
-  left:33%;
-  width: 33%;
-  height: 100%;
 }
 
 .social-grid {
@@ -209,15 +225,13 @@ main {
 }
 
 .garden-info {
-  height: 200px;
-
   position: relative;
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 75px;;
   text-align: center;
-  align-content: center;
+  top: 6dvh;
   
-  top: 5dvh;
-  margin: 5%;
-
   border-radius: 2.5%;
   background-image: transparent;
   background-color: rgba(3, 32, 41, 0.25);

@@ -2,13 +2,13 @@
   "cutting-board.01": {
     "ingredients": ["paduak", "purpleheart", "white maple", "cherry"],
     "style": "stripes",
-    "flavor": "wood burned cutting board"
+    "flavor": "logo burned cutting board"
   },
 
   "cutting-board.02": {
     "ingredients": ["paduak", "walnut", "white maple", "cherry"],
     "style": "stripes",
-    "flavor": "wood burned cutting board"
+    "flavor": "logo burned cutting board"
   },
 
   "paddle.01": {
@@ -18,15 +18,15 @@
   },
 
   "paddle.02": {
-    "ingredients": ["industrial grade thumb tacks"],
+    "ingredients": ["", "industrial grade thumb tacks"],
     "style": "bed of nails",
-    "flavor": "splat prototype"
+    "flavor": "splat paddle"
   },
 
   "paddle.03": {
-    "ingredients": ["harvested shark teeth"],
-    "style": "chaos sensation",
-    "flavor": "protoype"
+    "ingredients": ["", "harvested shark teeth"],
+    "style": "shark bait",
+    "flavor": "sensation paddle"
   },
 
   "vinyl.01": {
@@ -36,128 +36,127 @@
   },
 
   "cuff.01": {
-    "ingredients": ["wrist"],
-    "style": "brass embedded burgendy",
+    "style": "brass studded burgendy",
     "flavor": "leather cuff"
   },
 
   "cut out.28": {
-    "ingredients": ["live edge"],
-    "style": "tounge dripping peace",
-    "flavor": "girl"
+    "ingredients": ["", "live edge hardwood", "holographic foil"],
+    "style": "tounge out for peace",
+    "flavor": ""
   },
 
   "cut out.29": {
-    "ingredients": ["sunflower"],
+    "ingredients": [""],
     "style": "wild child",
-    "flavor": "cut out"
+    "flavor": "flower profile"
   },
 
   "cut out.30": {
-    "ingredients": ["live edge"],
+    "ingredients": ["", "live edge hardwood"],
     "style": "witchs broom",
-    "flavor": "sign"
+    "flavor": "live edge piece"
   },
 
   "cut out.31": {
-    "ingredients": ["tarot"],
-    "style": "four card",
-    "flavor": "sign"
+    "ingredients": [""],
+    "style": "kink deck",
+    "flavor": "tarot sign"
   },
 
   "cut out.32": {
-    "ingredients": ["the sanderson sisters"],
+    "ingredients": [""],
     "style": "black flame",
     "flavor": "candle company sign"
   },
 
   "cut out.33": {
-    "ingredients": ["witchy"],
-    "style": "bookshelf",
+    "ingredients": [""],
+    "style": "witchy bookshelf",
     "flavor": "art"
   },
 
   "cut out.34": {
-    "ingredients": ["wedding"],
-    "style": "gift",
-    "flavor": "sign"
+    "ingredients": [""],
+    "style": "reclaimed wood",
+    "flavor": "wedding gift"
   },
 
   "cut out.35": {
-    "ingredients": ["witchy"],
+    "ingredients": [""],
     "style": "cresent moon",
-    "flavor": "art"
+    "flavor": "witchy art"
   },
 
   "cut out.36": {
-    "ingredients": ["ollivanders"],
-    "style": "wand holding",
-    "flavor": "sign"
+    "ingredients": [""],
+    "style": "ollivanders wands",
+    "flavor": "holder"
   },
 
   "cut out.37": {
-    "ingredients": ["prince"],
-    "style": "hair words",
-    "flavor": "sign"
+    "ingredients": [""],
+    "style": " Let's Go Crazy",
+    "flavor": "For Prince"
   },
 
   "cut out.38": {
     "ingredients": ["tarot"],
-    "style": "four card",
-    "flavor": "sign"
+    "style": "kink deck",
+    "flavor": "tarot sign"
   },
 
   "cut out.39": {
-    "ingredients": ["disney"],
-    "style": "she wants",
-    "flavor": "rose glass"
+    "ingredients": [""],
+    "style": "she wants the D",
+    "flavor": "rose vase"
   },
 
   "cut out.40": {
-    "ingredients": ["live edge"],
-    "style": "prichards forge",
-    "flavor": "sign"
+    "ingredients": ["", "reclaimed live edge"],
+    "style": "prichards forge custom blades",
+    "flavor": "hung sign"
   },
 
   "cut out.41": {
-    "ingredients": ["foil"],
+    "ingredients": ["holographic foil"],
     "style": "dinosaur",
     "flavor": "sign"
   },
 
   "cut out.42": {
-    "ingredients": ["foil"],
+    "ingredients": ["holographic foil"],
     "style": "guitarist",
     "flavor": "sign"
   },
 
   "cut out.43": {
-    "ingredients": ["custom logo"],
-    "style": "fishing",
+    "ingredients": [""],
+    "style": "zander Fishing",
     "flavor": "sign"
   },
 
   "cut out.44": {
-    "ingredients": ["mushroom"],
-    "style": "fishing",
+    "ingredients": [""],
+    "style": "fishing mushroom",
     "flavor": "magnet"
   },
 
   "cut out.45": {
-    "ingredients": ["stain glass"],
-    "style": "full moon",
-    "flavor": "round"
+    "ingredients": ["", "water color paint"],
+    "style": "stained glass",
+    "flavor": "moonlit ocean"
   },
 
   "cut out.46": {
-    "ingredients": ["custom"],
-    "style": "aqua duck",
+    "ingredients": [""],
+    "style": "aqua duck water transport",
     "flavor": "sign"
   },
 
   "memorial box.01": {
-    "ingredients": ["wood box"],
-    "style": "custom",
+    "ingredients": [""],
+    "style": "outlands",
     "flavor": "memorial box"
   }
 }

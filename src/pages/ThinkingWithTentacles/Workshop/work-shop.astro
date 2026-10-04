@@ -5,9 +5,10 @@ import type { ImageMetadata } from 'astro';
 import Layouts from '/src/layouts/Layout.astro';
 
 import { wallpapers } from '/src/data/resource.ts';
+import { pages } from '/src/data/resource.ts';
+
 import { swamp } from '/src/data/swamp.ts';
 import { shop} from '/src/data/swamp.ts';
-import { icons } from '/src/data/resource.ts';
 
 import ReturnTo from '/src/components/ReturnTo.astro';
 import ZoomDoom from '/src/components/ZoomDoom.astro';
@@ -16,30 +17,38 @@ import SocialLinks from '/src/components/SocialLinks.astro';
 import '/src/styles/global.css';
 import '/src/styles/workshop-page.css';
 
-const wallpaper = wallpapers.wood.redbark;
+const wallpaper = wallpapers.thinking.exposed;
 const me = shop.deleted.me;
+
+const shell = pages.swamp.exposed;
+{console.log(shell)}
 ---
 
 <Layouts title="About That">
   <ReturnTo destination="swamp" />
 
-  <div class="swamp-page-wrapper">
+  <div class="shop-page-wrapper">
     <div
-      class="swamp-page-background" 
+      class="shop-page-background" 
       style={`background-image: url(${wallpaper.src})`}
     ></div>
     
     <ZoomDoom maxZoom={3} minZoom={1}>
       <main>
-
         <section class="shop-sign">
           <h1>Hey</h1>
-          <Image src= {me} alt= "" class="about-image" />
         </section>
 
+        <Image src= {me} alt= "" class="about-image" />
+
         <section class="shop-info">
-          <h1> So</h1>      
+          <h1> So </h1>      
           <p> About that </p>
+          <p> About it </p>
+          <p> About I </p>
+          <p> About you </p>
+          <p> About us </p>
+          <p> About me </p>
         </section>
         
         <SocialLinks source="swamp"/>

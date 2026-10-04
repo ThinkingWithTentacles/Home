@@ -9,7 +9,8 @@ import ZoomDoom from '/src/components/ZoomDoom.astro';
 
 import { wallpapers } from '/src/data/resource.ts';
 import { vault } from '/src/data/vault.ts';
-import { archive } from '/src/data/vault.ts';
+import { creations } from '/src/data/vault.ts';
+import { pushed } from '/src/data/vault.ts';
 
 import SampleGrid from '/src/components/SampleGrid.astro';
 import ProductGrid from '/src/components/ProductGrid.astro';
@@ -23,6 +24,10 @@ import '/src/styles/vault-page.css';
 import { 
   duck,
 } from '../../config.js';
+
+const flowers = creations.wicked;
+const constructs = creations.swamp;
+const sold = pushed;
 
 const wallpaper = wallpapers.wood.redbark;
 ---
@@ -45,16 +50,19 @@ const wallpaper = wallpapers.wood.redbark;
         </section>
 
         <section class="vault-header">
-          <p> A vault of creations that achieved the gold star "finished" merit badge and those that found a home</p>
+          <p> A vault of creations that achieved the gold star "finished" merit badge and those that found a home. Designs and concepts are commisionable and custimizable.</p>
         </section>
 
         <ContactForm />
 
-        <ProductLabel text="Prototype and Commissionable Concepts" location="vault"/>
-        <ProductGrid products={Object.values(archive.shelf)} />
+        <ProductLabel text="Wicked Creations" location="vault"/>
+        <ProductGrid products={Object.values(flowers)} />
+
+        <ProductLabel text="Swamp Constructs and Prototypes" location="vault"/>
+        <ProductGrid products={Object.values(constructs)} />
 
         <ProductLabel text="Sold!" />
-        <ProductGrid products={Object.values(archive.pushed)} location="vault"/>
+        <ProductGrid products={Object.values(pushed)} location="vault"/>
 
         <br>
         <br>
