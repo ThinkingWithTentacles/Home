@@ -14,7 +14,7 @@
   font-style: oblique;
   color: transparent;
 
-  background-image: linear-gradient(33deg, #791a59 -25%, #257966 100%);
+  background-image: linear-gradient(var(--degree), rgba(121, 9, 74, 0.75) 25%, #206e6a 70%);
 
   border-radius: 100%;
 
@@ -31,11 +31,11 @@
 
   border-radius: 100%;
   box-shadow: 0 0 50px 2px rgba(36, 88, 95, 0.75);
-  backdrop-filter: blur(0px) saturate(3);
+  backdrop-filter: blur(0px) saturate(.5);
   background-image: radial-gradient(
     circle, 
     rgba(189, 145, 169, 0.5) 90%, 
-    rgba(238, 5, 238, 0.5) 100%, 
+    rgba(121, 9, 74, 0.75) 100%, 
     transparent 100%
   );
 
@@ -45,13 +45,13 @@
 
 @media (hover: hover) and (pointer: fine) {
   .swamp-sign:hover .sign-halo-plate {
-    backdrop-filter: blur(0px) saturate(20);
+    backdrop-filter: blur(0px) saturate(3);
     transition: all 2500ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 }
 
 .swamp-sign.touch-active .sign-halo-plate {
-  backdrop-filter: blur(0px) saturate(20);
+  backdrop-filter: blur(0px) saturate(3);
   transition: all 2500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -100,7 +100,7 @@
 
   color: white;
   font-family: monospace;
-  font-size: 1.75cqi;
+  font-size: 1.85cqi;
 }
 
 /***************************/
@@ -161,7 +161,7 @@
   width: 100%;
   height: 100%;
   
-  box-shadow: 0 0 25px 10px rgba(242, 0, 250, 0.75);
+  box-shadow: 0 0 25px 10px rgba(121, 9, 74, 0.75);
   backdrop-filter: blur(1px) saturate(2);
   background-image: radial-gradient(
     circle, 
@@ -198,7 +198,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .thinking-grotto:hover .thinking-halo-plate {
-    box-shadow: 0 0 3px 10px rgba(88, 171, 204, 1);
+    box-shadow: 0 0 3px 5px rgba(88, 171, 204, 1);
     backdrop-filter: blur(0px) saturate(0);
     
     transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -376,7 +376,7 @@
   width: 100%;
   height: 100%;
   
-  box-shadow: 0 0 25px 10px rgba(242, 0, 250, 0.75);
+  box-shadow: 0 0 25px 10px rgba(121, 9, 74, 0.75);
   backdrop-filter: blur(1px) saturate(2);
   background-image: radial-gradient(
     circle, 
@@ -412,7 +412,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .swampshop-grotto:hover .swampshop-halo-plate {
-    box-shadow: 0 0 3px 10px rgba(88, 171, 204, 1);
+    box-shadow: 0 0 3px 5px rgba(88, 171, 204, 1);
     backdrop-filter: blur(0px) saturate(1);
     
     transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -534,7 +534,7 @@
 
 /* Mobile */
 .thinking-grotto.touch-active .thinking-halo-plate {
-  box-shadow: 0 0 3px 10px rgba(88, 171, 204, 1);
+  box-shadow: 0 0 3px 5px rgba(88, 171, 204, 1);
   backdrop-filter: blur(0px) saturate(1);
   
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -580,7 +580,7 @@
 }
 
 .swampshop-grotto.touch-active .swampshop-halo-plate {
-  box-shadow: 0 0 3px 10px rgba(88, 171, 204, 1);
+  box-shadow: 0 0 3px 5px rgba(88, 171, 204, 1);
   backdrop-filter: blur(0px) saturate(2);
   
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);

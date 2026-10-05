@@ -6,6 +6,7 @@ import Layouts from '/src/layouts/Layout.astro';
 
 import ReturnTo from '/src/components/ReturnTo.astro';
 import ZoomDoom from '/src/components/ZoomDoom.astro';
+import HeyTracker from '/src/components/HeyTracker.astro';
 
 import { wallpapers } from '/src/data/resource.ts';
 import { swamp } from '/src/data/swamp.ts';
@@ -21,9 +22,8 @@ import {
   swampParacord, 
   swampWood, 
   swampWorkshop, 
+  swampGrove
 } from '../../config.js';
-
-{console.log(wallpapers)}
 
 const wallpaper = wallpapers.thinking.think;
 const background = wallpapers.thinking.thunk;
@@ -43,6 +43,8 @@ const background = wallpapers.thinking.thunk;
           <h1>Thinking With Tentacles</h1>
         </section>
 
+        <HeyTracker />
+
         <div class="tentacle-wrapper">
           <Image src={background} alt="" />
 
@@ -51,7 +53,7 @@ const background = wallpapers.thinking.thunk;
             <span class="thinking-text">Woodcraft</span>
           </a>
 
-          <a class="pondering-grotto" href={}>
+          <a class="pondering-grotto" href={swampGrove}>
             <div class="pondering-halo-plate"></div>
             <span class="pondering-text">Leathercraft</span>
             <span class="soon-text">Soon...</span>

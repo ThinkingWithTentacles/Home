@@ -42,9 +42,21 @@ main {
   position: relative;
   
   width:100%;
-  background-image: linear-gradient(to bottom, #000000 33%, #034b33 90%, #045033 100%);
+  background-image: linear-gradient(
+  to bottom,
+  #000000 0%,
+  #000000 10%,        /* Stays solid black until here */
+  #000705 45.4%,     /* Eased transition begins */
+  #01140d 56.4%,
+  #012317 66.1%,
+  #023322 74.7%,
+  #02412c 82.4%,
+  #034b33 89.2%,     /* Smoothly arrives at your primary green */
+  #034c33 95.3%,
+  #045033 100%       /* Finishes seamlessly at your deepest green */
+);
+  background-size: 100% 100%;
   
-  top:5px;
   min-height: 40dvh;
 }
 
