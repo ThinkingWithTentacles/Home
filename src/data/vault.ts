@@ -3,7 +3,7 @@ import type { ImageMetadata } from 'astro';
 import { parseResource } from '/src/utils/helper.ts';
 import { parseProducts } from '/src/utils/helper.ts';
 
-import creations from "/src/assets/Vault/archive.json"
+import archive from "/src/assets/Vault/archive.json"
 
 /* Vault Page Resourses */
 const vaultfacade = import.meta.glob<{ default: ImageMetadata }>(
@@ -37,5 +37,5 @@ const schemin = import.meta.glob<{ default: ImageMetadata }>(
 export const vault = parseResource(vaultfacade);
 
 /* Vault Archives */
-export const creations = {swamp: parseProducts(wheelin, creations), wicked: parseProducts(castin, creations)};
-export const pushed = parseProducts(dealin, creations);
+export const creations = {swamp: parseProducts(wheelin, archive), wicked: parseProducts(castin, archive)};
+export const pushed = parseProducts(dealin, archive);
