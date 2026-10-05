@@ -1,5 +1,4 @@
 ---
-// Frontmatter can accept props like a dynamic page title
 const { title = "Default Title" } = Astro.props;
 ---
 
@@ -36,7 +35,6 @@ const { title = "Default Title" } = Astro.props;
 		const links = document.querySelectorAll('[class$="-grotto"]');
 		
 		links.forEach(link => {
-		// Prevent duplicating event listeners if initialized multiple times
 		if (link.dataset.burnEffectsInitialized) return;
 		link.dataset.burnEffectsInitialized = "true";
 
@@ -78,7 +76,6 @@ const { title = "Default Title" } = Astro.props;
 			}
 			}
 
-			// Fix navigation logic for standard vs new tabs
 			setTimeout(() => {
 			if (isNewTab) {
 				window.open(targetUrl, '_blank');
@@ -91,21 +88,18 @@ const { title = "Default Title" } = Astro.props;
 		});
 	}
 
-	// Initial load execution
 	initializeBurnEffects();
 
-	// Fix for Astro View Transitions (if you use them)
 	document.addEventListener('astro:page-load', initializeBurnEffects);
 
-	// Pageshow cache restoration cleanup
 	window.addEventListener('pageshow', (event) => {
 		if (event.persisted) {
-		document.querySelectorAll('[class*="-grotto"].touch-active, [class*="-zone"].touch-active')
-			.forEach(el => el.classList.remove('touch-active'));
+			document.querySelectorAll('[class*="-grotto"].touch-active, [class*="-zone"].touch-active')
+				.forEach(el => el.classList.remove('touch-active'));
 
-		if (document.activeElement instanceof HTMLElement) {
-			document.activeElement.blur();
-		}
+			if (document.activeElement instanceof HTMLElement) {
+				document.activeElement.blur();
+			}
 		}
 	});
 	</script>
