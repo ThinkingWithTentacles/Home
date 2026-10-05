@@ -1,12 +1,14 @@
 /*************/
 /* Home Sign */
 /*************/
+
 .home-sign {
   position: relative;
   display: block;
 
   width: 95%; 
   min-height: 100%;
+  font-weight: 500;
   
   margin: auto;
   margin-top: 2.5%;
@@ -14,6 +16,13 @@
   text-align: center;
 
   overflow: hidden;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+  .home-sign {
+    font-weight: 1000;
+  }
 }
 
 .home-banner {
@@ -77,6 +86,7 @@
   color: white;
   font-family: monospace;
   font-size: clamp(1rem, 1.5cqi, 1.75rem);
+  font-weight: 500;
 
   display: inline-flex;
   align-items: end;
@@ -195,7 +205,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .soul-grotto:hover .soul-halo-plate {
-    box-shadow: 0 0 50px 35px rgba(255, 208, 0, 0.75);
+    box-shadow: 0 0 50px 35px rgba(255, 208, 0, 1);
     background-image: radial-gradient(
       circle, 
       rgba(255, 208, 0, 0.33) 0%, 
@@ -245,7 +255,7 @@
 
   border-radius: 100%;
   
-  box-shadow: 0 0 25px 15px rgba(121, 9, 74, 0.75);
+  box-shadow: 0 0 25px 15px rgba(121, 9, 74, 1);
   background-image: radial-gradient(
     circle, 
     rgba(255, 0, 0, 0.1) 50%, 
@@ -262,15 +272,16 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  transform-origin: center center;
-  will-change: transform;
 
   font-size: clamp(1.25rem, 5cqi, 8rem);
   font-weight: 500;
   font-style: oblique;
   text-align: center;
   color: rgb(255, 255, 255);
+  
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center center;
+  will-change: transform;
 
   mix-blend-mode: normal;
   transition: 
@@ -282,7 +293,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .swamp-grotto:hover .swamp-halo-plate {
-    box-shadow: 0 0 5px 5px rgba(88, 171, 204, 1);
+    box-shadow: 0 0 5px 10px rgba(32, 110, 106, 1);
     background-image: radial-gradient(
       circle, 
       rgba(88, 171, 204, .5) 50%, 
@@ -295,9 +306,9 @@
   }
 
   .swamp-grotto:hover .swamp-text {  
-    transform: translate(-50%, -50%) scale(1.2);
     color: rgb(0, 0, 0);
 
+    transform: translate(-50%, -50%) scale(1.2);
     mix-blend-mode:color-dodge;
     transition:
       transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
@@ -358,14 +369,15 @@
 position: absolute;
 left: 50%;
 top: 50%;
-transform: translate(-50%, -50%) scale(1);
-transform-origin: center center;
-will-change: transform;
   
 font-size: clamp(2rem, 7cqi, 9rem);
 font-weight: 250;
 font-style: oblique;
 color: rgb(19, 159, 252);
+
+transform: translate(-50%, -50%) scale(1);
+transform-origin: center center;
+will-change: transform;
 
 mix-blend-mode: normal; 
 transition: 
@@ -391,9 +403,9 @@ z-index: 2;
   }
 
   .vault-grotto:hover .vault-text {  
-    transform: translate(-50%, -50%) scale(1.1); 
     color: rgb(43, 20, 2);
 
+    transform: translate(-50%, -50%) scale(1.1); 
     mix-blend-mode: color-burn;
     transition:
       transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
@@ -447,15 +459,16 @@ z-index: 2;
 position: absolute;
 left: 50%;
 top: 50%;
-transform: translate(-50%, -50%) scale(1);
-transform-origin: center center;
-will-change: transform;
   
 font-size: clamp(1.5rem, 6cqi, 8rem);
 font-weight: 250;
 font-style: oblique;
 text-align: center;
 color: rgb(255, 255, 255);
+
+transform: translate(-50%, -50%) scale(1);
+transform-origin: center center;
+will-change: transform;
 
 transition: 
   transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
@@ -466,6 +479,7 @@ z-index: 2;
 
 @media (hover: hover) and (pointer: fine) {
   .dead-grotto:hover .dead-halo-plate {
+    box-shadow: 0 0 10px 15px rgba(32, 1, 68, 1);
     background-image: radial-gradient(
       circle, 
       rgba(214, 122, 122, 0.301) 25%, 
@@ -473,17 +487,15 @@ z-index: 2;
       transparent 100%
     );
 
-    box-shadow: 0 0 10px 15px rgba(32, 1, 68, 1);
-
     mix-blend-mode:darken;
     backdrop-filter: blur(2px) saturate(1);
     transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .dead-grotto:hover .dead-text {
-    transform: translate(-50%, -50%) scale(1.1);
     color: rgba(224, 4, 4, 1);
     
+    transform: translate(-50%, -50%) scale(1.1);
     mix-blend-mode: hard-light;
     transition:
       transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
@@ -508,7 +520,7 @@ z-index: 2;
 }
 
 .swamp-grotto.touch-active .swamp-halo-plate {
-  box-shadow: 0 0 5px 5px rgba(88, 171, 204, 1);
+  box-shadow: 0 0 5px 10px rgba(32, 110, 106, 1);
   background-image: radial-gradient(
     circle, 
     rgba(88, 171, 204, .5) 50%, 
@@ -520,10 +532,10 @@ z-index: 2;
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.swamp-grotto.touch-active .swamp-text {
-  transform: translate(-50%, -50%) scale(1.2); 
+.swamp-grotto.touch-active .swamp-text { 
   color: rgb(0, 0, 0);
 
+  transform: translate(-50%, -50%) scale(1.2);
   mix-blend-mode:color-dodge;
   transition:
     transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
@@ -531,6 +543,7 @@ z-index: 2;
 }
 
 .vault-grotto.touch-active .vault-halo-plate {
+  box-shadow: 0 0 5px 5px rgba(65, 205, 240, 1);
   background-image: radial-gradient(
     circle, 
     rgba(223, 178, 31, 0.7) 0%, 
@@ -538,23 +551,22 @@ z-index: 2;
     transparent 100%
   );
 
-  box-shadow: 0 0 5px 5px rgba(65, 205, 240, 1);
-
   mix-blend-mode: luminosity;
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .vault-grotto.touch-active .vault-text {  
-  transform: translate(-50%, -50%) scale(1.2);  
   color: rgb(43, 20, 2);
-  mix-blend-mode: color-burn;
 
+  transform: translate(-50%, -50%) scale(1.2);
+  mix-blend-mode: color-burn;  
   transition:
     transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
     color 1500ms ease-in 50ms;
 } 
 
 .dead-grotto.touch-active .dead-halo-plate {
+  box-shadow: 0 0 10px 15px rgba(32, 1, 68, 1);
   background-image: radial-gradient(
     circle, 
       rgba(214, 122, 122, 0.301) 25%, 
@@ -562,17 +574,15 @@ z-index: 2;
     transparent 100%
   );
 
-  box-shadow: 0 0 10px 15px rgba(32, 1, 68, 1);
-
   mix-blend-mode:darken;
   backdrop-filter: blur(0px) saturate(1);
   transition: all 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .dead-grotto.touch-active .dead-text {  
-  transform: translate(-50%, -50%) scale(.6); 
   color: rgba(224, 4, 4, 1);
   
+  transform: translate(-50%, -50%) scale(.6); 
   mix-blend-mode: hard-light;
   transition:
     transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,

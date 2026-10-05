@@ -14,7 +14,7 @@
   font-style: oblique;
   color: transparent;
 
-  background-image: linear-gradient(var(--degree), rgba(121, 9, 74, 0.75) 25%, #206e6a 70%);
+  background-image: linear-gradient(var(--degree), rgba(121, 9, 74, 1) 30%, rgba(32, 110, 106, 1) 60%);
 
   border-radius: 100%;
 
@@ -30,12 +30,12 @@
   height: 100%;
 
   border-radius: 100%;
-  box-shadow: 0 0 50px 2px rgba(36, 88, 95, 0.75);
-  backdrop-filter: blur(0px) saturate(.5);
+  box-shadow: 0 0 25px 2px rgba(121, 9, 74, 1);
+  backdrop-filter: blur(0px) saturate(1);
   background-image: radial-gradient(
     circle, 
-    rgba(189, 145, 169, 0.5) 90%, 
-    rgba(121, 9, 74, 0.75) 100%, 
+    rgba(32, 110, 106, .05) 30%, 
+    rgba(32, 110, 106, .1) 100%, 
     transparent 100%
   );
 
@@ -68,7 +68,7 @@
   position: absolute;
   top: 10%;
   left: 2.5%;
-  width: 64%;
+  width: 63%;
   height: 33%;
 
   border: 4ch;
@@ -100,7 +100,7 @@
 
   color: white;
   font-family: monospace;
-  font-size: 1.85cqi;
+  font-size: 1.75cqi;
 }
 
 /***************************/
@@ -161,7 +161,7 @@
   width: 100%;
   height: 100%;
   
-  box-shadow: 0 0 25px 10px rgba(121, 9, 74, 0.75);
+  box-shadow: 0 0 25px 10px rgba(121, 9, 74, 1);
   backdrop-filter: blur(1px) saturate(2);
   background-image: radial-gradient(
     circle, 
@@ -198,7 +198,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .thinking-grotto:hover .thinking-halo-plate {
-    box-shadow: 0 0 3px 5px rgba(88, 171, 204, 1);
+    box-shadow: 0 0 3px 5px rgba(50, 121, 131, 1);
     backdrop-filter: blur(0px) saturate(0);
     
     transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -251,7 +251,7 @@
   width: 100%;
   height: 100%;
   
-  box-shadow: 0 0 25px 10px rgba(105, 55, 107, 0.75);
+  box-shadow: 0 0 25px 10px rgba(105, 55, 107, 1);
   background-image: radial-gradient(
     circle, 
     rgba(139, 131, 14, 0.25) 100%, 
@@ -311,7 +311,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .pondering-grotto:hover .pondering-halo-plate {
-    box-shadow: 0 0 100px -1px rgba(105, 55, 107, 0.75);
+    box-shadow: 0 0 100px -1px rgba(32, 110, 106, 1);
     backdrop-filter: blur(5px) saturate(0);
     
     transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -376,7 +376,7 @@
   width: 100%;
   height: 100%;
   
-  box-shadow: 0 0 25px 10px rgba(121, 9, 74, 0.75);
+  box-shadow: 0 0 25px 10px rgba(121, 9, 74, 1);
   backdrop-filter: blur(1px) saturate(2);
   background-image: radial-gradient(
     circle, 
@@ -412,7 +412,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .swampshop-grotto:hover .swampshop-halo-plate {
-    box-shadow: 0 0 3px 5px rgba(88, 171, 204, 1);
+    box-shadow: 0 0 3px 5px rgba(32, 110, 106, 1);
     backdrop-filter: blur(0px) saturate(1);
     
     transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -481,14 +481,14 @@
 .tentacular-text {
   position: absolute;
   width: 100%;
-  left: 45%;
-  top: 90%;
+  left: 50%;
+  top: 92.5%;
 
   transform: translate(-50%, 0%) scale(1);
   transform-origin: center center;
   will-change: transform;
 
-  font-size: clamp(.5rem, 1.5cqi, 2.5rem);
+  font-size: clamp(.4rem, 1.75cqi, 2rem);
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 666;
   text-align: center;
@@ -512,7 +512,7 @@
   }
 
   .tentacular-grotto:hover .tentacular-text {  
-    transform: translate(-50%, -25%) scale(.75);
+    transform: translate(-55%, -45%) scale(.75);
     color: rgb(119, 111, 111);
 
     mix-blend-mode:multiply;
@@ -522,28 +522,20 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-/* Mobile */
+/****************************************************/
+/*                      Mobile                      */
+/****************************************************/
 .thinking-grotto.touch-active .thinking-halo-plate {
-  box-shadow: 0 0 3px 5px rgba(88, 171, 204, 1);
-  backdrop-filter: blur(0px) saturate(1);
+  box-shadow: 0 0 3px 5px rgba(32, 110, 106, 1);
   
+  backdrop-filter: blur(0px) saturate(1);
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .thinking-grotto.touch-active .thinking-text {
-  transform: translate(-50%, -70%) scale(.75);
   color: rgb(119, 111, 111);
 
+  transform: translate(-50%, -70%) scale(.75);
   mix-blend-mode:multiply;
   transition:
     transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
@@ -551,16 +543,16 @@
 }
 
 .pondering-grotto.touch-active .pondering-halo-plate {
-  box-shadow: 0 0 100px -1px rgba(105, 55, 107, 0.75);
+  box-shadow: 0 0 100px -1px rgba(32, 110, 106, 1);
+
   backdrop-filter: blur(5px) saturate(1);
-  
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .pondering-grotto.touch-active .pondering-text {
-  transform: translate(-50%, -50%) scale(.75);
   color: rgb(119, 111, 111);
 
+  transform: translate(-50%, -50%) scale(.75);
   mix-blend-mode:multiply;
   transition:
     transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
@@ -568,11 +560,10 @@
 }
 
 .pondering-grotto.touch-active .soon-text {
+  color: rgb(119, 111, 111);
   opacity: 100%;
 
   transform: translate(-50%, 0%) scale(1.1);
-  color: rgb(119, 111, 111);
-
   mix-blend-mode:multiply;
   transition:
     transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
@@ -580,16 +571,16 @@
 }
 
 .swampshop-grotto.touch-active .swampshop-halo-plate {
-  box-shadow: 0 0 3px 5px rgba(88, 171, 204, 1);
+  box-shadow: 0 0 3px 5px rgba(32, 110, 106, 1);
+
   backdrop-filter: blur(0px) saturate(2);
-  
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .swampshop-grotto.touch-active .swampshop-text {
-  transform: translate(-50%, -50%) scale(.75);
   color: rgb(119, 111, 111);
 
+  transform: translate(-50%, -50%) scale(.75);
   mix-blend-mode:multiply;
   transition:
     transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
@@ -597,17 +588,17 @@
 }
 
 .tentacular-grotto.touch-active .tentacular-halo-plate {
-  box-shadow: 0 0 2px -2px rgba(10, 10, 10, 0.75);
+  box-shadow: 0 0 2px -2px rgba(10, 10, 10, 1);
+
   backdrop-filter: blur(0px) saturate(25);
-  
   mix-blend-mode:saturation;
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .tentacular-grotto.touch-active .tentacular-text {
-  transform: translate(-50%, -50%) scale(.75);
   color: rgb(119, 111, 111);
 
+  transform: translate(-55%, -45%) scale(.75);
   mix-blend-mode:multiply;
   transition:
     transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 10ms,
@@ -647,9 +638,9 @@
   width: 100%;
   height: 100%;
   
-  box-shadow: 0 0 5px 2px rgba(253, 173, 0, 0.75);
-  backdrop-filter: saturate(5);
+  box-shadow: 0 0 5px 1px rgba(253, 173, 0, 0.75);
 
   mix-blend-mode: color-burn;
+  backdrop-filter: saturate(5);
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
