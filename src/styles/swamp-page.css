@@ -43,7 +43,14 @@
   transition: all 10000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.sign-halo-plate:hover {
+@media (hover: hover) and (pointer: fine) {
+  .swamp-sign:hover .sign-halo-plate {
+    backdrop-filter: blur(0px) saturate(20);
+    transition: all 2500ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+}
+
+.swamp-sign.touch-active .sign-halo-plate {
   backdrop-filter: blur(0px) saturate(20);
   transition: all 2500ms cubic-bezier(0.25, 1, 0.5, 1);
 }

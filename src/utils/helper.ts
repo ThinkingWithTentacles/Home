@@ -91,7 +91,7 @@ export function fluffTitle(product: any): string {
   const style = product.style ? fluffWords(product.style): "";
   const flavor = product.flavor ? fluffWords(product.flavor) : "";
 
-  return (ingredient + " " + subject + " " + style + " " + flavor).trim();
+  return (ingredient + " " + style + " " + subject + " " + flavor).trim();
 }
 
 export function fluffStyle(product: any): string {

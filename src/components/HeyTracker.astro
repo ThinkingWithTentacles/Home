@@ -1,0 +1,29 @@
+---
+---
+
+<script>
+    const signs = document.querySelectorAll('.shop-sign');
+
+    signs.forEach((sign) => {
+        let y = 0; 
+        let x = 0;
+
+        const a = .025;
+        const b = .25;
+
+        function updateMovement() {
+            y = a * a * x + b * x;
+            x += 1;
+
+            if (y >= 360) {
+                y = 360;
+                x = 0;
+            }
+
+            sign.style.setProperty('--degree', `${y}deg`);
+            requestAnimationFrame(updateMovement);
+        }
+
+        requestAnimationFrame(updateMovement);
+    });
+</script>

@@ -22,13 +22,31 @@ const { source } = Astro.props;
 ---
 
 <style>
-  .social-links {
+.social-grid {
+  position: relative;
+  width: 100dww;
+  display: flex;
+  justify-content: center;
+}
 
-  }
+.social-links {
+  position: relative;
+  margin-top: 10dvh;
+  margin-bottom: 10dvh;
+  width: 90%;
+  max-width: 1080px;
+  left: .5%;
 
-  .social-image {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 45px);
+  justify-content: center;
+}
 
-  }
+.social-image {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
 </style>
 
 <section class="social-grid">

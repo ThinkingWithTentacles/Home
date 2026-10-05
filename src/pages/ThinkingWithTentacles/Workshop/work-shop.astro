@@ -13,6 +13,7 @@ import { shop} from '/src/data/swamp.ts';
 import ReturnTo from '/src/components/ReturnTo.astro';
 import ZoomDoom from '/src/components/ZoomDoom.astro';
 import SocialLinks from '/src/components/SocialLinks.astro';
+import HeyTracker from '/src/components/HeyTracker.astro';
 
 import '/src/styles/global.css';
 import '/src/styles/workshop-page.css';
@@ -21,7 +22,6 @@ const wallpaper = wallpapers.thinking.exposed;
 const me = shop.deleted.me;
 
 const shell = pages.swamp.exposed;
-{console.log(shell)}
 ---
 
 <Layouts title="About That">
@@ -39,16 +39,18 @@ const shell = pages.swamp.exposed;
           <h1>Hey</h1>
         </section>
 
+        <HeyTracker />
+
         <Image src= {me} alt= "" class="about-image" />
 
         <section class="shop-info">
           <h1> So </h1>      
-          <p> About that </p>
-          <p> About it </p>
-          <p> About I </p>
-          <p> About you </p>
-          <p> About us </p>
-          <p> About me </p>
+          <p> About that: </p>
+          <p> I am Elara. Multi-class hobby hoarder dabbling in electronics, software, wood smithing, leather crafting, introspection deep dives, math traps, DIYs and DIWhies. </p>
+          <p> Endlessly curious how to integrate analytical design, artisic creativity, and whimsical chaos into personal statements. </p>
+          <p> When life gives me opportunities to create something out of ash, blood, and sawdust, I pour my heart into making a reality where that opportunity didn't go to waste. </p>
+          <p> You can find me living my best life at a dead end grotto by the river filtering the swamp of Florida into Tampa Bay.</p>
+          <p> Or deeper. </p>
         </section>
         
         <SocialLinks source="swamp"/>

@@ -62,31 +62,9 @@ main {
   top: 0;
   left: 0;
 
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  pointer-events: none;
-
-  z-index: -1;
-}
-
-.shop-page-wrapper {
-  position: relative;
-  width: 100%;
-  
-  height: 100%; 
-}
-
-.shop-page-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  background-size: cover;
-  background-position: center top; /* Or 'center center' depending on the graphic */
-  background-repeat: no-repeat;
   pointer-events: none;
 
   z-index: -1;
@@ -159,30 +137,26 @@ main {
   z-index: -1;
 }
 
-.social-grid {
+.shop-page-wrapper {
   position: relative;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  
+  height: 100%; 
 }
 
-.social-links {
-  position: relative;
-  margin-top: 10dvh;
-  margin-bottom: 10dvh;
-  width: 90%;
-  max-width: 1080px;
-  left: .5%;
+.shop-page-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 50px);
-  justify-content: center;
-}
+  background-size: cover;
+  background-position: center top; /* Or 'center center' depending on the graphic */
+  background-repeat: no-repeat;
+  pointer-events: none;
 
-.social-image {
-  width: 2rem;
-  height: 2rem;
-  object-fit: contain;
+  z-index: -1;
 }
 
 /*****************/

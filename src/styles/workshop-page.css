@@ -3,19 +3,18 @@
   position: relative;
   text-align: center;
   align-content: center;
-  top: 2.5dvh;
-  margin: 50px;
+  top: 25px;
   
   width: 90%;
   max-width: 1080px;
   margin: 0 auto 0% auto;
 
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 3dvw;
+  font-size: clamp(1.25rem, 3.75cqi, 4rem);
   font-style: oblique;
   color: transparent;
 
-  background-image: linear-gradient(100deg, #aa1177 -25%, #257966 100%);
+  background-image: linear-gradient(var(--degree), #166363 40%, #d31a8c 50%, #167979 60%);
 
   border-radius: 100%;
 
@@ -36,12 +35,13 @@
   position: relative;
   width: 85%;
   margin: 0 auto;
-  text-align: center;
-  top: 6dvh;
+  text-align: justify;
+  text-align-last: center;
+  top: 25px;
 
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.75cqi;
+  color: rgb(0, 0, 0);
+  font-family: monospace;
+  font-size: clamp(.75rem, 2cqi, 3rem);
 }
 
 /***************************/
@@ -49,10 +49,10 @@
 /***************************/
 .about-image {
 position: relative;
-left: 37.5%;
-top: 5dvh;
+left: 30%;
+top: 10px;
 
-width: 25%;
+width: 40%;
 height: 50%;
 
 display: block;

@@ -147,7 +147,7 @@
 .dye-text {
   position: relative;
   
-  font-size: clamp(.75rem, 3.5cqi, 2.5rem);
+  font-size: clamp(1rem, 4cqi, 2.5rem);
   font-weight: 666;
   font-style: oblique;
   color: rgb(0, 0, 0, 1);
