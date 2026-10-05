@@ -29,8 +29,8 @@ const dyeDresses = import.meta.glob<{ default: ImageMetadata }>(
   { eager: true }
 );
 
-const dyeshirt = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Products/Wicked/WickedDyes/shirt/*.{jpg,jpeg,png}',
+const dyeShirts = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Products/Wicked/WickedDyes/Shirts/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
@@ -44,8 +44,8 @@ const dyeKids = import.meta.glob<{ default: ImageMetadata }>(
   { eager: true }
 );
 
-const dyeSweatshirt = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/Products/Wicked/WickedDyes/Sweatshirt/*.{jpg,jpeg,png}',
+const dyeSweatshirts = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Products/Wicked/WickedDyes/Sweatshirts/*.{jpg,jpeg,png}',
   { eager: true }
 );
 
@@ -96,7 +96,7 @@ const bluntWires = import.meta.glob<{ default: ImageMetadata }>(
 );
 
 /* SwampLand Product Catalogs */
-export const wickedDyes = {dresses: parseProducts(dyeDresses, dyeStuff), shirt: parseProducts(dyeshirt, dyeStuff), shorts: parseProducts(dyeShorts, dyeStuff), pants: parseProducts(dyePants, dyeStuff), sweatshirt: parseProducts(dyeSweatshirt, dyeStuff), rompers: parseProducts(dyeRompers, dyeStuff), hoodies: parseProducts(dyeHoodies, dyeStuff), kids: parseProducts(dyeKids, dyeStuff), tapes: parseProducts(dyeTapestries, dyeStuff)};
+export const wickedDyes = {dresses: parseProducts(dyeDresses, dyeStuff), shirts: parseProducts(dyeShirts, dyeStuff), shorts: parseProducts(dyeShorts, dyeStuff), pants: parseProducts(dyePants, dyeStuff), sweatshirts: parseProducts(dyeSweatshirts, dyeStuff), rompers: parseProducts(dyeRompers, dyeStuff), hoodies: parseProducts(dyeHoodies, dyeStuff), kids: parseProducts(dyeKids, dyeStuff), tapes: parseProducts(dyeTapestries, dyeStuff)};
 export const wickedBurns = {tame: parseProducts(tameBurns, burnStuff), tarot: parseProducts(tarotBurns, burnStuff), spicy: parseProducts(spicyBurns, burnStuff)};
 export const wickedWires = {broom: parseProducts(broomWires, wireStuff), blunt: parseProducts(bluntWires, wireStuff)};
 
