@@ -34,6 +34,11 @@ const sampleGlob = import.meta.glob<{ default: ImageMetadata }>(
   { eager: true }
 );
 
+const shopGlob = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/Resources/Icons/Swamp/*.{jpg,jpeg,png}',
+  { eager: true }
+);
+
 /* Page Assets */
 const swampGlob = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/Resources/Pages/Swamp/*.{jpg,jpeg,png}',
@@ -56,5 +61,5 @@ const randomGlob = import.meta.glob<{ default: ImageMetadata }>(
 );
 
 export const wallpapers = {"galaxy": parseResource(galaxyGlob), "landing": parseResource(landingGlob), "thinking": parseResource(thinkingGlob), "wood": parseResource(woodGlob)};
-export const icons = {"social": parseResource(socialGlob), "sample": parseResource(sampleGlob)};
+export const icons = {"social": parseResource(socialGlob), "sample": parseResource(sampleGlob), "shop": parseResource(shopGlob)};
 export const pages = {"swamp":parseResource(swampGlob), "wicked":parseResource(gardenGlob), "home":parseResource(homeGlob), "random":parseResource(randomGlob)};

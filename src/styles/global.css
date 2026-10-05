@@ -73,7 +73,7 @@ main {
   position: relative;
   width: 100%;
   
-  min-height: 135dvh; 
+  height: 100%; 
 }
 
 .shop-page-background {
@@ -83,8 +83,8 @@ main {
   width: 100%;
   height: 100%;
 
-  background-size: cover; 
-  background-position: center bottom; /* Or 'center center' depending on the graphic */
+  background-size: cover;
+  background-position: center top; /* Or 'center center' depending on the graphic */
   background-repeat: no-repeat;
   pointer-events: none;
 
@@ -231,8 +231,10 @@ main {
   margin-bottom: 75px;;
   text-align: center;
   top: 6dvh;
+  gap: 5px;
   
-  border-radius: 2.5%;
+  padding: 15px; /* Creates an equal gap on all sides */
+  border-radius: 12.5%;
   background-image: transparent;
   background-color: rgba(3, 32, 41, 0.25);
 

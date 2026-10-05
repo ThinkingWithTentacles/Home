@@ -1,6 +1,6 @@
 {
 "tapestry.01": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "landscape",
 "style": "mandala",
 "flavor": "tapestry",
@@ -8,7 +8,7 @@
 },
 
 "tapestry.02": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "landscape",
 "style": "mandala",
 "flavor": "tapestry",
@@ -16,7 +16,7 @@
 },
 
 "tapestry.03": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "square",
 "style": "twin spiral",
 "flavor": "tapestry",
@@ -24,7 +24,7 @@
 },
 
 "dress.01": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "x-large",
 "style": "galaxy void",
 "flavor": "dress",
@@ -32,7 +32,7 @@
 },
 
 "dress.02": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "large",
 "style": "firestorm",
 "flavor": "dress",
@@ -40,7 +40,7 @@
 },
 
 "shirt.01": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "large",
 "style": "fault line",
 "flavor": "shirt",
@@ -48,7 +48,7 @@
 },
 
 "shirt.02": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "medium",
 "style": "galaxy void",
 "flavor": "shirt",
@@ -56,7 +56,7 @@
 },
 
 "shirt.03": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "small",
 "style": "galaxy void",
 "flavor": "shirt",
@@ -64,7 +64,7 @@
 },
 
 "shirt.04": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "small",
 "style": "spectrum",
 "flavor": "shirt",
@@ -72,7 +72,7 @@
 },
 
 "shirt.05": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "x-large",
 "style": "worm hole",
 "flavor": "shirt",
@@ -80,7 +80,7 @@
 },
 
 "shorts.01": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "x-large",
 "style": "galaxy void",
 "flavor": "shorts",
@@ -88,7 +88,7 @@
 },
 
 "shorts.02": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "size-7",
 "style": "rainbow spectrum",
 "flavor": "shorts",
@@ -96,7 +96,7 @@
 },
 
 "kids.01": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "small",
 "style": "mandala",
 "flavor": "kids",
@@ -104,7 +104,7 @@
 },
 
 "kids.02": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "medium",
 "style": "contrast splash",
 "flavor": "kids",
@@ -112,7 +112,7 @@
 },
 
 "kids.03": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "medium",
 "style": "heart",
 "flavor": "kids",
@@ -120,7 +120,7 @@
 },
 
 "kids.04": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "medium",
 "style": "spiral",
 "flavor": "kids",
@@ -128,7 +128,7 @@
 },
 
 "kids.05": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "medium",
 "style": "contrast splash",
 "flavor": "kids",
@@ -136,7 +136,7 @@
 },
 
 "kids.06": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "x-small",
 "style": "firestorm",
 "flavor": "kids",
@@ -144,7 +144,7 @@
 },
 
 "kids.07": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "x-large",
 "style": "contrast splash",
 "flavor": "kids",
@@ -152,10 +152,344 @@
 },
 
 "kids.08": {
-"ingredients": [],
+"ingredients": ["", "Dharma dye"],
 "size": "medium",
 "style": "mandala",
 "flavor": "kids",
 "value": 15
+},
+
+"sweatshirt.03": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "goddess abs",
+"flavor": "sweatshirt",
+"size": "large",
+"value": 40
+},
+
+"sweatshirt.02": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "blossom",
+"flavor": "sweatshirt",
+"size": "medium",
+"value": 40
+},
+
+"sweatshirt.01": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "embroidered roses",
+"flavor": "sweatshirt",
+"size": "x-large",
+"value": 40
+},
+
+"romper.01": {
+"ingredients": ["", "Dharma dye"],
+"subject": "halter-top",
+"style": "goddess abs",
+"flavor": "romper",
+"size": "medium",
+"value": 40
+},
+
+"pants.01": {
+"ingredients": ["", "Dharma dye"],
+  "subject": "pocketed",
+  "style": "galaxy void",
+  "flavor": "pants",
+  "size": "x-large",
+  "value": 30
+},
+
+"dress.03": {
+"ingredients": ["", "Dharma dye"],
+"subject": "kimono",
+"style": "fault line",
+"flavor": "dress",
+"size": "torrid 4",
+"value": 30
+},
+
+"dress.04": {
+"ingredients": ["", "Dharma dye"],
+"subject": "sleeveless",
+"style": "geode",
+"flavor": "pockedted dress",
+"size": "medium",
+"value": 40
+},
+
+"dress.05": {
+"ingredients": ["", "Dharma dye"],
+"subject": "sleeveless",
+"style": "goddess abs",
+"flavor": "dress",
+"size": "large",
+"value": 30
+},
+
+"hoodie.01": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "worm hole",
+"flavor": "hoodie",
+"size": "small",
+"value": 40
+},
+
+"hoodie.02": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "",
+"flavor": "hoodie",
+"size": "18'' across",
+"value": 30
+},
+
+"hoodie.03": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "galaxy void",
+"flavor": "hoodie",
+"size": "large",
+"value": 40
+},
+
+"hoodie.04": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "galaxy void",
+"flavor": "hoodie",
+"size": "2XL",
+"value": 40
+},
+
+"hoodie.05": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "sprial",
+"flavor": "hoodie",
+"size": "medium",
+"value": 40
+},
+
+"kids.09": {
+"ingredients": ["", "Dharma dye"],
+"subject": "short-sleeve",
+"style": "goddess abs",
+"flavor": "dress",
+"size": "5T",
+"value": 20
+},
+
+"kids.10": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "galaxy void",
+"flavor": "kids hoddie",
+"size": "large",
+"value": 25
+},
+
+"shirt.06": {
+"ingredients": ["", "Dharma dye"],
+"subject": "short-sleeve",
+"style": "star fish",
+"flavor": "crop top",
+"size": "small",
+"value": 20
+},
+
+"shirt.07": {
+"ingredients": ["", "Dharma dye"],
+"subject": "sleeveless",
+"style": "sprial",
+"flavor": "shirt",
+"size": "small",
+"value": 20
+},
+
+"shirt.08": {
+"ingredients": ["", "Dharma dye"],
+"subject": "sleeveless",
+"style": "galaxy void",
+"flavor": "shirt",
+"size": "17.5'' across",
+"value": 25
+},
+
+"shirt.09": {
+"ingredients": ["", "Dharma dye"],
+"subject": "sleeveless",
+"style": "galaxy void",
+"flavor": "shirt",
+"size": "large",
+"value": 25
+},
+
+"shirt.10": {
+"ingredients": ["", "Dharma dye"],
+"subject": "sleeveless",
+"style": "spectrum",
+"flavor": "shirt",
+"size": "x-small",
+"value": 25
+},
+
+"shirt.11": {
+"ingredients": ["", "Dharma dye"],
+"subject": "sleeveless",
+"style": "galaxy",
+"flavor": "blouse",
+"size": "medium",
+"value": 25
+},
+
+"shirt.12": {
+"ingredients": ["", "Dharma dye"],
+"subject": "sleeveless",
+"style": "firestorm",
+"flavor": "blouse",
+"size": "torrid 3",
+"value": 25
+},
+
+"shirt.13": {
+"ingredients": ["", "Dharma dye"],
+"subject": "sleeveless",
+"style": "spectrum",
+"flavor": "blouse",
+"size": "medium",
+"value": 25
+},
+
+"shirt.14": {
+"ingredients": ["", "Dharma dye"],
+"subject": "short-sleeve",
+"style": "star fish",
+"flavor": "blouse",
+"size": "medium",
+"value": 30
+},
+
+"shirt.15": {
+"ingredients": ["", "Dharma dye"],
+"subject": "short-sleeve",
+"style": "fault line",
+"flavor": "crop top",
+"size": "large",
+"value": 25
+},
+
+"shirt.16": {
+"ingredients": ["", "Dharma dye"],
+"subject": "short-sleeve",
+"style": "firestorm",
+"flavor": "blouse",
+"size": "18'' across",
+"value": 25
+},
+
+"shirt.17": {
+"ingredients": ["", "Dharma dye"],
+"subject": "short-sleeve",
+"style": "lunar eclipse",
+"flavor": "shirt",
+"size": "large",
+"value": 25
+},
+
+"shirt.18": {
+"ingredients": ["", "Dharma dye"],
+"subject": "3 quarter-sleeve",
+"style": "galaxy",
+"flavor": "shirt",
+"size": "chico's 2",
+"value": 25
+},
+
+"shirt.19": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "firestorm",
+"flavor": "shirt",
+"size": "large",
+"value": 25
+},
+
+"shirt.20": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "goddess abs",
+"flavor": "shirt",
+"size": "large",
+"value": 30
+},
+
+"shirt.21": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "goddess wings",
+"flavor": "shirt",
+"size": "large",
+"value": 30
+},
+
+"shirt.22": {
+"ingredients": ["", "Dharma dye"],
+"subject": "3 quarter-sleeve",
+"style": "galaxy",
+"flavor": "shirt",
+"size": "medium",
+"value": 30
+},
+
+"shirt.23": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "galaxy",
+"flavor": "shirt",
+"size": "large",
+"value": 30
+},
+
+"shirt.24": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "galaxy",
+"flavor": "shirt",
+"size": "large",
+"value": 30
+},
+
+"shirt.25": {
+"ingredients": ["", "Dharma dye"],
+"subject": "sleeveless",
+"style": "galaxy",
+"flavor": "shirt",
+"size": "x-small",
+"value": 20
+}, 
+
+"shirt.26": {
+"ingredients": ["", "Dharma dye"],
+"subject": "short-sleeve",
+"style": "galaxy",
+"flavor": "shirt",
+"size": "medium",
+"value": 30
+},
+
+"shirt.27": {
+"ingredients": ["", "Dharma dye"],
+"subject": "long-sleeve",
+"style": "matrix",
+"flavor": "shirt",
+"size": "18'' across",
+"value": 30
 }
+
 }
