@@ -86,7 +86,7 @@ main {
   position: absolute;
 
   width: 100%;
-  min-height: 100%;
+  min-height: 110dvh;
 
   z-index: 0; 
 }
@@ -94,7 +94,7 @@ main {
 .swamp-page-background {
   position: fixed;
   width: 100dvw;
-  height: 100dvh; 
+  min-height: 110dvh; 
   top: 0;
   left: 0;
 

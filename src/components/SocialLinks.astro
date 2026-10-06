@@ -37,14 +37,9 @@ const { source } = Astro.props;
   max-width: 1080px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, 50px);
+  grid-template-columns: repeat(auto-fit, minmax(clamp(20px, 9cqi, 200px), .05fr));
   justify-content: center;
-}
-
-@media (pointer: fine) {
-  .social-links {
-    grid-template-columns: repeat(auto-fit, 80px);
-  }
+  gap: .5rem;
 }
 
 .social-image {
@@ -55,8 +50,8 @@ const { source } = Astro.props;
 
 @media (hover: hover) and (pointer: fine) {
   .social-image {
-    width: 5cqi;
-    height: 5cqi;
+    width: clamp(30px, 5.75cqi, 80px);
+    height: clamp(30px, 5.75cqi, 80px);
   }
 }
 </style>
