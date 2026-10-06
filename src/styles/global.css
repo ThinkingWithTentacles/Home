@@ -220,7 +220,7 @@ main {
   top: 6dvh;
   gap: 5px;
   
-  padding: 15px; /* Creates an equal gap on all sides */
+  padding: 15px;
   border-radius: 12.5%;
   background-image: transparent;
   background-color: rgba(3, 32, 41, 0.25);
