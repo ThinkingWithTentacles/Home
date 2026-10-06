@@ -68,13 +68,13 @@ main {
 }
 
 .home-page-background {
-  position: fixed;
-  width: 100vw;
-  height: 100dvh; 
+  position: absolute;
+  width: 100dvw;
+  height: 100%; 
   top: 0;
   left: 0;
 
-  background-size: cover;
+  background-size: fill;
   background-repeat: no-repeat;
   background-position: top center;
   pointer-events: none;

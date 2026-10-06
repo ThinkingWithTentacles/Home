@@ -10,7 +10,7 @@
   margin: 0 auto 0% auto;
 
   font-family:Georgia, 'Times New Roman', Times, serif;
-  font-size: clamp(.5rem, 2.5cqi, 4rem);
+  font-size: clamp(.5rem, 3cqi, 4rem);
   font-style: oblique;
   color: transparent;
 
