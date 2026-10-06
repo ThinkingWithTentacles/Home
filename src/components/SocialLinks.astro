@@ -24,7 +24,7 @@ const { source } = Astro.props;
 <style>
 .social-grid {
   position: relative;
-  width: 100dww;
+  width: 100dvw;
   display: flex;
   justify-content: center;
 }
@@ -33,18 +33,17 @@ const { source } = Astro.props;
   position: relative;
   margin-top: 10dvh;
   margin-bottom: 10dvh;
-  width: 90%;
+  width: 100%;
   max-width: 1080px;
-  left: .5%;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, 45px);
+  grid-template-columns: repeat(auto-fit, 50px);
   justify-content: center;
 }
 
 @media (pointer: fine) {
   .social-links {
-    grid-template-columns: repeat(auto-fit, 65px);
+    grid-template-columns: repeat(auto-fit, 80px);
   }
 }
 

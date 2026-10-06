@@ -3,8 +3,7 @@
 
 <script>
     const signs = document.querySelectorAll('[class\$="-sign"]');
-
-    // Total time in milliseconds to complete one full 360-degree rotation
+    
     const rotationDuration = 7500; 
 
     signs.forEach((sign) => {
@@ -14,18 +13,10 @@
             if (!startTime) startTime = currentTime;
             
             const totalElapsed = currentTime - startTime;
-
-            // 1. Find overall position in the full 360° loop (0 to 1)
             const overallProgress = (totalElapsed % rotationDuration) / rotationDuration;
-
-            // 2. Isolate the current 180° half-cycle (0 to 1)
             const halfCycleProgress = (overallProgress * 2) % 1;
-
-            // 3. Pure Ease-In-Out Cosine Wave
-            // Maps 0-1 smoothly into a curve that starts slow, peaks speed at 0.5, and ends slow
             const smoothCurve = (1 - Math.cos(halfCycleProgress * Math.PI)) / 2;
 
-            // 4. Scale to 180° and shift baselines continuously forward
             const baseDegree = overallProgress < 0.5 ? 90 : 270;
             const y = (baseDegree + (smoothCurve * 180)) % 360;
 
