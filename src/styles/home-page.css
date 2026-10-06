@@ -187,7 +187,7 @@
   height: 85%;
 
   border-radius: 100%;
-  box-shadow: 0 0 25px 5px rgba(255, 208, 0, 0.75);
+  box-shadow: -5px 0 25px 5px rgba(255, 208, 0, 0.75);
   background-image: radial-gradient(
     circle, 
     rgba(255, 208, 0, 0.33) 0%, 
@@ -204,7 +204,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .soul-grotto:hover .soul-halo-plate {
-    box-shadow: 0 0 50px 2.5rem rgba(255, 208, 0, 1);
+    box-shadow: -5px 0 50px 50px rgba(255, 208, 0, 1);
     background-image: radial-gradient(
       circle, 
       rgba(255, 208, 0, 0.33) 0%, 
@@ -506,7 +506,7 @@ z-index: 2;
 /* Mobile Hotfixes */
 /*******************/
 .soul-grotto.touch-active .soul-halo-plate {
-  box-shadow: 0 0 50px 2.5rem rgba(255, 208, 0, 1);
+  box-shadow: -5px 0 50px 25px rgba(255, 208, 0, 1);
   background-image: radial-gradient(
     circle, 
     rgba(255, 208, 0, 0.33) 0%, 
@@ -516,6 +516,7 @@ z-index: 2;
 
   mix-blend-mode:color-burn;
   transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1) 20ms;
+  z-index: 999;
 }
 
 .swamp-grotto.touch-active .swamp-halo-plate {
