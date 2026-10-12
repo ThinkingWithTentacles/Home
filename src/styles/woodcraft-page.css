@@ -46,7 +46,7 @@ width: 100%;
 position: relative;
 display: block;
 flex: 1;
-aspect-ratio: 6/8;
+aspect-ratio: 4/8;
 
 padding: 0;
 border: 0;
@@ -92,6 +92,6 @@ font-size: clamp(1cqi, 1.25cqi, 1.5cqi);
 background: rgba(0, 0, 0, 0.75);
 box-sizing: border-box;
 
-opacity: .5;
+opacity: .75;
 transition: opacity 0.33s ease-in-out;
 }

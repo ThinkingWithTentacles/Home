@@ -15,6 +15,8 @@ import ZoomDoom from '/src/components/ZoomDoom.astro';
 import SocialLinks from '/src/components/SocialLinks.astro';
 import HeyTracker from '/src/components/HeyTracker.astro';
 
+import receipts from "/src/assets/Resources/credits.json"
+
 import '/src/styles/global.css';
 import '/src/styles/workshop-page.css';
 
@@ -22,6 +24,9 @@ const wallpaper = wallpapers.thinking.exposed;
 const me = shop.deleted.me;
 
 const shell = pages.swamp.exposed;
+
+const giggles = pages.swamp.queen;
+const galore = pages.swamp.queenblue;
 ---
 
 <Layouts title="About That">
@@ -42,6 +47,13 @@ const shell = pages.swamp.exposed;
         <HeyTracker />
 
         <Image src= {me} alt= "" class="about-image" />
+
+        <a class="giggles-grotto" href={receipts.giggles}>
+          <div class="giggles-halo-plate"></div>
+          <Image src= {giggles} alt= "" class="giggles-image" />
+          <Image src= {galore} alt= "" class="galore-image" />
+          <span class="giggles-text">"Tentacular Queen" <br> -GigglesGalore</span>
+        </a>
 
         <section class="shop-info">
           <h1> So </h1>      
