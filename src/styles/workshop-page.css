@@ -115,23 +115,22 @@ display: block;
 .giggles-text {
   position: absolute;
   left: 50%;
-  top: 90%;
+  top: 88%;
   width: 95%;
 
   font-size: clamp(.4rem, 2cqi, 3rem);
   font-weight: 500;
   font-style: oblique;
   text-align: center;
-  color: rgb(0, 255, 255); 
+  color: rgba(0, 255, 255, 1); 
   
   transform: translate(-50%, -50%) scale(1);
   transform-origin: center center;
   will-change: transform;
 
-  mix-blend-mode: normal;
+  mix-blend-mode:hard-light;
   transition: 
-    transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms,
-    color 1500ms ease 50ms;
+    transform 1500ms cubic-bezier(0.25, 1, 0.5, 1) 50ms;
     
   z-index: 2;
 }
@@ -148,7 +147,7 @@ display: block;
   }
 
   .giggles-grotto:hover .giggles-text {  
-    mix-blend-mode: difference;
+    mix-blend-mode:difference;
     transition: all 1500ms cubic-bezier(0.25, 1, 0.5, 1) 20ms;
   }
 }
